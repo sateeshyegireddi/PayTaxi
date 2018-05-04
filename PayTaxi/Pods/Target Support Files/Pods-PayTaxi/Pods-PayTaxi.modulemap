@@ -1,0 +1,6 @@
+framework module Pods_PayTaxi {
+  umbrella header "Pods-PayTaxi-umbrella.h"
+
+  export *
+  module * { export * }
+}

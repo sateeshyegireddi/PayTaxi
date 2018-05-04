@@ -1,0 +1,1241 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72815D7121DB86C9123AD341 /* Pods_NotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFE0C37A9A131B8762BDA5F /* Pods_NotificationContent.framework */; };
+		7F4E388ACD568C0E0DBDD2F3 /* Pods_PayTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E921FB5AF17E02D37C7B5 /* Pods_PayTaxi.framework */; };
+		DCB3DBFB3324F39B356CF39A /* Pods_PayTaxiDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C67344F22375E345D11815 /* Pods_PayTaxiDriver.framework */; };
+		F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
+		F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
+		F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
+		F96380BE20999BD600C3CC1E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380BD20999BD600C3CC1E /* Splash.swift */; };
+		F96380D320999C4E00C3CC1E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380CC20999C4E00C3CC1E /* Splash.swift */; };
+		F96380D72099A5C000C3CC1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
+		F96380D92099A74A00C3CC1E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
+		F96380DC2099BE5400C3CC1E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
+		F96380DD2099BE6300C3CC1E /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
+		F96380DE2099BE6600C3CC1E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
+		F96380DF2099BE6900C3CC1E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
+		F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96381122099CAB600C3CC1E /* StringExtension.swift */; };
+		F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96381122099CAB600C3CC1E /* StringExtension.swift */; };
+		F96381182099CCAF00C3CC1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
+		F96381192099CF2600C3CC1E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96381162099CC4B00C3CC1E /* Security.framework */; };
+		F963811C2099D42400C3CC1E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
+		F963811D2099D42400C3CC1E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
+		F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
+		F9857A202097312700F2139A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
+		F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A212097312700F2139A /* PayTaxi.xcdatamodeld */; };
+		F9857A252097312800F2139A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9857A242097312800F2139A /* Assets.xcassets */; };
+		F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A262097312800F2139A /* LaunchScreen.storyboard */; };
+		F9857A362097316F00F2139A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A352097316F00F2139A /* AppDelegate.swift */; };
+		F9857A3B2097316F00F2139A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A392097316F00F2139A /* Main.storyboard */; };
+		F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A3C2097316F00F2139A /* PayTaxiDriver.xcdatamodeld */; };
+		F9857A402097317000F2139A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9857A3F2097317000F2139A /* Assets.xcassets */; };
+		F9857A432097317000F2139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A412097317000F2139A /* LaunchScreen.storyboard */; };
+		F996C440209C7B9C007849B3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E62099C1E200C3CC1E /* UserNotifications.framework */; };
+		F996C441209C7B9C007849B3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E82099C1E200C3CC1E /* UserNotificationsUI.framework */; };
+		F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C443209C7B9C007849B3 /* NotificationViewController.swift */; };
+		F996C447209C7B9C007849B3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F996C445209C7B9C007849B3 /* MainInterface.storyboard */; };
+		F996C44B209C7B9C007849B3 /* NotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F996C43F209C7B9C007849B3 /* NotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F996C44F209C7BAF007849B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
+		F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
+		F996C451209C7BF1007849B3 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380BD20999BD600C3CC1E /* Splash.swift */; };
+		F996C452209C7BF1007849B3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
+		F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96381122099CAB600C3CC1E /* StringExtension.swift */; };
+		F996C454209C7C05007849B3 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
+		F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
+		F996C456209C7C05007849B3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
+		F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F996C458209C7C07007849B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
+		F996C459209C7C0E007849B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
+		F996C461209C7C7B007849B3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C460209C7C7B007849B3 /* NotificationService.swift */; };
+		F996C465209C7C7B007849B3 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F996C45E209C7C7B007849B3 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F996C46A209C9167007849B3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C469209C9167007849B3 /* Navigation.swift */; };
+		F996C46B209C9167007849B3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C469209C9167007849B3 /* Navigation.swift */; };
+		F996C46C209C9167007849B3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C469209C9167007849B3 /* Navigation.swift */; };
+		F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
+		F996C46F209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
+		F996C470209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
+		F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F996C449209C7B9C007849B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9857A0F2097312700F2139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F996C43E209C7B9C007849B3;
+			remoteInfo = NotificationContent;
+		};
+		F996C463209C7C7B007849B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9857A0F2097312700F2139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F996C45D209C7C7B007849B3;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F96380F72099C1E200C3CC1E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F996C44B209C7B9C007849B3 /* NotificationContent.appex in Embed App Extensions */,
+				F996C465209C7C7B007849B3 /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		041304898C0B22531208F00E /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
+		196E921FB5AF17E02D37C7B5 /* Pods_PayTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C9D16541F8439072F4E146 /* Pods-PayTaxiDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTaxiDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver.debug.xcconfig"; sourceTree = "<group>"; };
+		67C67344F22375E345D11815 /* Pods_PayTaxiDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTaxiDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9509605FCDA972890EB2D92 /* Pods-PayTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTaxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi.debug.xcconfig"; sourceTree = "<group>"; };
+		C05FC18B8BB958648362B1E1 /* Pods-PayTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi.release.xcconfig"; sourceTree = "<group>"; };
+		C730CEFA7639B37AF3245F3F /* Pods-PayTaxiDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTaxiDriver.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver.release.xcconfig"; sourceTree = "<group>"; };
+		DCE5586FFBC89B8C7D935F07 /* Pods-NotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationContent/Pods-NotificationContent.release.xcconfig"; sourceTree = "<group>"; };
+		EAFE0C37A9A131B8762BDA5F /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F90C3C552099E9A800A03738 /* AESCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESCryptor.h; sourceTree = "<group>"; };
+		F951245D2099EDF000861F24 /* AESCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCryptor.swift; sourceTree = "<group>"; };
+		F96380A920998FD900C3CC1E /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		F96380B32099982600C3CC1E /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		F96380B52099983A00C3CC1E /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		F96380B92099986200C3CC1E /* PayTaxi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PayTaxi-Bridging-Header.h"; sourceTree = "<group>"; };
+		F96380BD20999BD600C3CC1E /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		F96380CC20999C4E00C3CC1E /* Splash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		F96380D62099A5C000C3CC1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F96380D82099A74A00C3CC1E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F96380E62099C1E200C3CC1E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		F96380E82099C1E200C3CC1E /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		F96381122099CAB600C3CC1E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F96381162099CC4B00C3CC1E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F963811A2099D42400C3CC1E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F963811B2099D42400C3CC1E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F963811F2099D47400C3CC1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9857A172097312700F2139A /* PayTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9857A1A2097312700F2139A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9857A1F2097312700F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9857A222097312700F2139A /* PayTaxi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayTaxi.xcdatamodel; sourceTree = "<group>"; };
+		F9857A242097312800F2139A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9857A272097312800F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9857A292097312800F2139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9857A332097316F00F2139A /* PayTaxiDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayTaxiDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9857A352097316F00F2139A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9857A3A2097316F00F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9857A3D2097316F00F2139A /* PayTaxiDriver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayTaxiDriver.xcdatamodel; sourceTree = "<group>"; };
+		F9857A3F2097317000F2139A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9857A422097317000F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9857A442097317000F2139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F996C43F209C7B9C007849B3 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F996C443209C7B9C007849B3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		F996C446209C7B9C007849B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F996C448209C7B9C007849B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F996C45E209C7C7B007849B3 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F996C460209C7C7B007849B3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F996C462209C7C7B007849B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F996C469209C9167007849B3 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		F996C46D209C91DB007849B3 /* OpenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreen.swift; sourceTree = "<group>"; };
+		F9A917AD209C20BD0027C6E4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9857A142097312700F2139A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F4E388ACD568C0E0DBDD2F3 /* Pods_PayTaxi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9857A302097316F00F2139A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96381192099CF2600C3CC1E /* Security.framework in Frameworks */,
+				DCB3DBFB3324F39B356CF39A /* Pods_PayTaxiDriver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C43C209C7B9C007849B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F996C441209C7B9C007849B3 /* UserNotificationsUI.framework in Frameworks */,
+				F996C440209C7B9C007849B3 /* UserNotifications.framework in Frameworks */,
+				72815D7121DB86C9123AD341 /* Pods_NotificationContent.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C45B209C7C7B007849B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		134B1DD4D29D54EF88E43B68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F963811F2099D47400C3CC1E /* Foundation.framework */,
+				F96381162099CC4B00C3CC1E /* Security.framework */,
+				196E921FB5AF17E02D37C7B5 /* Pods_PayTaxi.framework */,
+				67C67344F22375E345D11815 /* Pods_PayTaxiDriver.framework */,
+				F96380E62099C1E200C3CC1E /* UserNotifications.framework */,
+				F96380E82099C1E200C3CC1E /* UserNotificationsUI.framework */,
+				EAFE0C37A9A131B8762BDA5F /* Pods_NotificationContent.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9E16A73E45EB59569997A88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9509605FCDA972890EB2D92 /* Pods-PayTaxi.debug.xcconfig */,
+				C05FC18B8BB958648362B1E1 /* Pods-PayTaxi.release.xcconfig */,
+				50C9D16541F8439072F4E146 /* Pods-PayTaxiDriver.debug.xcconfig */,
+				C730CEFA7639B37AF3245F3F /* Pods-PayTaxiDriver.release.xcconfig */,
+				041304898C0B22531208F00E /* Pods-NotificationContent.debug.xcconfig */,
+				DCE5586FFBC89B8C7D935F07 /* Pods-NotificationContent.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F96380A720998E5A00C3CC1E /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F9857A1A2097312700F2139A /* AppDelegate.swift */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		F96380A820998FC400C3CC1E /* APIHandler */ = {
+			isa = PBXGroup;
+			children = (
+				F96380A920998FD900C3CC1E /* APIHandler.swift */,
+			);
+			path = APIHandler;
+			sourceTree = "<group>";
+		};
+		F96380AE2099974D00C3CC1E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F96380AF2099975900C3CC1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F96380B02099976D00C3CC1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F96380D62099A5C000C3CC1E /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F96380B1209997F800C3CC1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F96380BD20999BD600C3CC1E /* Splash.swift */,
+				F9A917AD209C20BD0027C6E4 /* Home.swift */,
+				F996C469209C9167007849B3 /* Navigation.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F96380B22099982600C3CC1E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F96380B32099982600C3CC1E /* UtilityFunctions.swift */,
+				F96380B52099983A00C3CC1E /* GlobalConstants.swift */,
+				F996C46D209C91DB007849B3 /* OpenScreen.swift */,
+				F96380D82099A74A00C3CC1E /* Keychain.swift */,
+				F90C3C552099E9A800A03738 /* AESCryptor.h */,
+				F951245D2099EDF000861F24 /* AESCryptor.swift */,
+				F963811A2099D42400C3CC1E /* Reachability.h */,
+				F963811B2099D42400C3CC1E /* Reachability.m */,
+				F96380B92099986200C3CC1E /* PayTaxi-Bridging-Header.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F96380BF20999C4E00C3CC1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F96380C720999C4E00C3CC1E /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F9857A352097316F00F2139A /* AppDelegate.swift */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		F96380CA20999C4E00C3CC1E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F96380CB20999C4E00C3CC1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F96380CC20999C4E00C3CC1E /* Splash.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F96380CD20999C4E00C3CC1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F96381112099CA9F00C3CC1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F96381122099CAB600C3CC1E /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F96381212099D6C900C3CC1E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F9857A0E2097312700F2139A = {
+			isa = PBXGroup;
+			children = (
+				F9857A192097312700F2139A /* PayTaxi */,
+				F9857A342097316F00F2139A /* PayTaxiDriver */,
+				F996C442209C7B9C007849B3 /* NotificationContent */,
+				F996C45F209C7C7B007849B3 /* NotificationService */,
+				F9857A182097312700F2139A /* Products */,
+				B9E16A73E45EB59569997A88 /* Pods */,
+				134B1DD4D29D54EF88E43B68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F9857A182097312700F2139A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9857A172097312700F2139A /* PayTaxi.app */,
+				F9857A332097316F00F2139A /* PayTaxiDriver.app */,
+				F996C43F209C7B9C007849B3 /* NotificationContent.appex */,
+				F996C45E209C7C7B007849B3 /* NotificationService.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9857A192097312700F2139A /* PayTaxi */ = {
+			isa = PBXGroup;
+			children = (
+				F96380A820998FC400C3CC1E /* APIHandler */,
+				F96380A720998E5A00C3CC1E /* Appdelegate */,
+				F96380AE2099974D00C3CC1E /* Cells */,
+				F96381212099D6C900C3CC1E /* Classes */,
+				F96380B1209997F800C3CC1E /* Controllers */,
+				F96381112099CA9F00C3CC1E /* Extensions */,
+				F96380B22099982600C3CC1E /* Helpers */,
+				F96380B02099976D00C3CC1E /* Models */,
+				F96380AF2099975900C3CC1E /* Views */,
+				F9857A1E2097312700F2139A /* Main.storyboard */,
+				F9857A242097312800F2139A /* Assets.xcassets */,
+				F9857A262097312800F2139A /* LaunchScreen.storyboard */,
+				F9857A292097312800F2139A /* Info.plist */,
+				F9857A212097312700F2139A /* PayTaxi.xcdatamodeld */,
+			);
+			path = PayTaxi;
+			sourceTree = "<group>";
+		};
+		F9857A342097316F00F2139A /* PayTaxiDriver */ = {
+			isa = PBXGroup;
+			children = (
+				F96380C720999C4E00C3CC1E /* Appdelegate */,
+				F96380CA20999C4E00C3CC1E /* Cells */,
+				F96380CB20999C4E00C3CC1E /* Controllers */,
+				F96380BF20999C4E00C3CC1E /* Models */,
+				F96380CD20999C4E00C3CC1E /* Views */,
+				F9857A392097316F00F2139A /* Main.storyboard */,
+				F9857A3F2097317000F2139A /* Assets.xcassets */,
+				F9857A412097317000F2139A /* LaunchScreen.storyboard */,
+				F9857A442097317000F2139A /* Info.plist */,
+				F9857A3C2097316F00F2139A /* PayTaxiDriver.xcdatamodeld */,
+			);
+			path = PayTaxiDriver;
+			sourceTree = "<group>";
+		};
+		F996C442209C7B9C007849B3 /* NotificationContent */ = {
+			isa = PBXGroup;
+			children = (
+				F996C443209C7B9C007849B3 /* NotificationViewController.swift */,
+				F996C445209C7B9C007849B3 /* MainInterface.storyboard */,
+				F996C448209C7B9C007849B3 /* Info.plist */,
+			);
+			path = NotificationContent;
+			sourceTree = "<group>";
+		};
+		F996C45F209C7C7B007849B3 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				F996C460209C7C7B007849B3 /* NotificationService.swift */,
+				F996C462209C7C7B007849B3 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9857A162097312700F2139A /* PayTaxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9857A2C2097312800F2139A /* Build configuration list for PBXNativeTarget "PayTaxi" */;
+			buildPhases = (
+				DC36E6A6AAE0BC0061742BD7 /* [CP] Check Pods Manifest.lock */,
+				F9857A132097312700F2139A /* Sources */,
+				F9857A142097312700F2139A /* Frameworks */,
+				F9857A152097312700F2139A /* Resources */,
+				FA4AF281CFBA2C538EE679F8 /* [CP] Embed Pods Frameworks */,
+				741B6CBCC25F4090CC793CB0 /* [CP] Copy Pods Resources */,
+				F96380F72099C1E200C3CC1E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F996C44A209C7B9C007849B3 /* PBXTargetDependency */,
+				F996C464209C7C7B007849B3 /* PBXTargetDependency */,
+			);
+			name = PayTaxi;
+			productName = PayTaxi;
+			productReference = F9857A172097312700F2139A /* PayTaxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9857A322097316F00F2139A /* PayTaxiDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9857A452097317000F2139A /* Build configuration list for PBXNativeTarget "PayTaxiDriver" */;
+			buildPhases = (
+				8DD938A72E844049995D19D7 /* [CP] Check Pods Manifest.lock */,
+				F9857A2F2097316F00F2139A /* Sources */,
+				F9857A302097316F00F2139A /* Frameworks */,
+				F9857A312097316F00F2139A /* Resources */,
+				35AD5AF3543F05ED63FBB463 /* [CP] Embed Pods Frameworks */,
+				AC3EC5232FAE201EB0BB27DC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayTaxiDriver;
+			productName = PayTaxiDriver;
+			productReference = F9857A332097316F00F2139A /* PayTaxiDriver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F996C43E209C7B9C007849B3 /* NotificationContent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F996C44C209C7B9C007849B3 /* Build configuration list for PBXNativeTarget "NotificationContent" */;
+			buildPhases = (
+				221701D7CF9F9576B0890A43 /* [CP] Check Pods Manifest.lock */,
+				F996C43B209C7B9C007849B3 /* Sources */,
+				F996C43C209C7B9C007849B3 /* Frameworks */,
+				F996C43D209C7B9C007849B3 /* Resources */,
+				73B3D457CCF1029CE413C462 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationContent;
+			productName = NotificationContent;
+			productReference = F996C43F209C7B9C007849B3 /* NotificationContent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F996C45D209C7C7B007849B3 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F996C466209C7C7B007849B3 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				F996C45A209C7C7B007849B3 /* Sources */,
+				F996C45B209C7C7B007849B3 /* Frameworks */,
+				F996C45C209C7C7B007849B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = F996C45E209C7C7B007849B3 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9857A0F2097312700F2139A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = PayTaxi;
+				TargetAttributes = {
+					F9857A162097312700F2139A = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					F9857A322097316F00F2139A = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					F996C43E209C7B9C007849B3 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					F996C45D209C7C7B007849B3 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = F9857A122097312700F2139A /* Build configuration list for PBXProject "PayTaxi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9857A0E2097312700F2139A;
+			productRefGroup = F9857A182097312700F2139A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9857A162097312700F2139A /* PayTaxi */,
+				F9857A322097316F00F2139A /* PayTaxiDriver */,
+				F996C43E209C7B9C007849B3 /* NotificationContent */,
+				F996C45D209C7C7B007849B3 /* NotificationService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9857A152097312700F2139A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */,
+				F9857A252097312800F2139A /* Assets.xcassets in Resources */,
+				F9857A202097312700F2139A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9857A312097316F00F2139A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9857A432097317000F2139A /* LaunchScreen.storyboard in Resources */,
+				F9857A402097317000F2139A /* Assets.xcassets in Resources */,
+				F9857A3B2097316F00F2139A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C43D209C7B9C007849B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F996C447209C7B9C007849B3 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C45C209C7C7B007849B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		221701D7CF9F9576B0890A43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NotificationContent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35AD5AF3543F05ED63FBB463 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73B3D457CCF1029CE413C462 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NotificationContent/Pods-NotificationContent-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationContent/Pods-NotificationContent-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		741B6CBCC25F4090CC793CB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DD938A72E844049995D19D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayTaxiDriver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC3EC5232FAE201EB0BB27DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC36E6A6AAE0BC0061742BD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayTaxi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA4AF281CFBA2C538EE679F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9857A132097312700F2139A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96380BE20999BD600C3CC1E /* Splash.swift in Sources */,
+				F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */,
+				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
+				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
+				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
+				F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */,
+				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
+				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
+				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
+				F963811C2099D42400C3CC1E /* Reachability.m in Sources */,
+				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
+				F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */,
+				F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */,
+				F96380D92099A74A00C3CC1E /* Keychain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9857A2F2097316F00F2139A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */,
+				F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */,
+				F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */,
+				F996C46B209C9167007849B3 /* Navigation.swift in Sources */,
+				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,
+				F96380DF2099BE6900C3CC1E /* Keychain.swift in Sources */,
+				F963811D2099D42400C3CC1E /* Reachability.m in Sources */,
+				F996C46F209C91DB007849B3 /* OpenScreen.swift in Sources */,
+				F96380DE2099BE6600C3CC1E /* GlobalConstants.swift in Sources */,
+				F96380DC2099BE5400C3CC1E /* APIHandler.swift in Sources */,
+				F96380DD2099BE6300C3CC1E /* UtilityFunctions.swift in Sources */,
+				F96381182099CCAF00C3CC1E /* User.swift in Sources */,
+				F9857A362097316F00F2139A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C43B209C7B9C007849B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */,
+				F996C470209C91DB007849B3 /* OpenScreen.swift in Sources */,
+				F996C44F209C7BAF007849B3 /* AppDelegate.swift in Sources */,
+				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
+				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
+				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
+				F996C451209C7BF1007849B3 /* Splash.swift in Sources */,
+				F996C456209C7C05007849B3 /* Keychain.swift in Sources */,
+				F996C454209C7C05007849B3 /* UtilityFunctions.swift in Sources */,
+				F996C459209C7C0E007849B3 /* User.swift in Sources */,
+				F996C46C209C9167007849B3 /* Navigation.swift in Sources */,
+				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
+				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
+				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F996C45A209C7C7B007849B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F996C461209C7C7B007849B3 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F996C44A209C7B9C007849B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F996C43E209C7B9C007849B3 /* NotificationContent */;
+			targetProxy = F996C449209C7B9C007849B3 /* PBXContainerItemProxy */;
+		};
+		F996C464209C7C7B007849B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F996C45D209C7C7B007849B3 /* NotificationService */;
+			targetProxy = F996C463209C7C7B007849B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F9857A1E2097312700F2139A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9857A1F2097312700F2139A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9857A262097312800F2139A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9857A272097312800F2139A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F9857A392097316F00F2139A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9857A3A2097316F00F2139A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9857A412097317000F2139A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9857A422097317000F2139A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F996C445209C7B9C007849B3 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F996C446209C7B9C007849B3 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9857A2A2097312800F2139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F9857A2B2097312800F2139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9857A2D2097312800F2139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9509605FCDA972890EB2D92 /* Pods-PayTaxi.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
+				INFOPLIST_FILE = PayTaxi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		F9857A2E2097312800F2139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C05FC18B8BB958648362B1E1 /* Pods-PayTaxi.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
+				INFOPLIST_FILE = PayTaxi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		F9857A462097317000F2139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C9D16541F8439072F4E146 /* Pods-PayTaxiDriver.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
+				INFOPLIST_FILE = PayTaxiDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		F9857A472097317000F2139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C730CEFA7639B37AF3245F3F /* Pods-PayTaxiDriver.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
+				INFOPLIST_FILE = PayTaxiDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		F996C44D209C7B9C007849B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 041304898C0B22531208F00E /* Pods-NotificationContent.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi.NotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F996C44E209C7B9C007849B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCE5586FFBC89B8C7D935F07 /* Pods-NotificationContent.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi.NotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PayTaxi/Helpers/PayTaxi-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F996C467209C7C7B007849B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F996C468209C7C7B007849B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9857A122097312700F2139A /* Build configuration list for PBXProject "PayTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9857A2A2097312800F2139A /* Debug */,
+				F9857A2B2097312800F2139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9857A2C2097312800F2139A /* Build configuration list for PBXNativeTarget "PayTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9857A2D2097312800F2139A /* Debug */,
+				F9857A2E2097312800F2139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9857A452097317000F2139A /* Build configuration list for PBXNativeTarget "PayTaxiDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9857A462097317000F2139A /* Debug */,
+				F9857A472097317000F2139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F996C44C209C7B9C007849B3 /* Build configuration list for PBXNativeTarget "NotificationContent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F996C44D209C7B9C007849B3 /* Debug */,
+				F996C44E209C7B9C007849B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F996C466209C7C7B007849B3 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F996C467209C7C7B007849B3 /* Debug */,
+				F996C468209C7C7B007849B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9857A212097312700F2139A /* PayTaxi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9857A222097312700F2139A /* PayTaxi.xcdatamodel */,
+			);
+			currentVersion = F9857A222097312700F2139A /* PayTaxi.xcdatamodel */;
+			path = PayTaxi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		F9857A3C2097316F00F2139A /* PayTaxiDriver.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9857A3D2097316F00F2139A /* PayTaxiDriver.xcdatamodel */,
+			);
+			currentVersion = F9857A3D2097316F00F2139A /* PayTaxiDriver.xcdatamodel */;
+			path = PayTaxiDriver.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F9857A0F2097312700F2139A /* Project object */;
+}

@@ -1,0 +1,44 @@
+//
+//  OpenScreen.swift
+//  PayTaxi
+//
+//  Created by Sateesh on 5/4/18.
+//  Copyright © 2018 PayTaxi. All rights reserved.
+//
+
+import UIKit
+
+class OpenScreen: NSObject {
+
+    //MARK: - Variables
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+    
+    //MARK: - Functions
+    func navigation(_ currentViewController: UIViewController) {
+        let navigation = storyboard.instantiateViewController(withIdentifier: "Navigation") as! Navigation
+        navigation.modalTransitionStyle = modalTransitionStyle
+        currentViewController.present(navigation, animated: true, completion: nil)
+    }
+    
+    /*
+    func registration(_ currentViewController: UIViewController) {
+        
+        let registration = storyboard.instantiateViewController(withIdentifier: "VWRegistration") as! VWRegistration
+        registration.modalTransitionStyle = modalTransitionStyle
+        
+        if let navigation = currentViewController as? Navigation {
+            navigation.setViewControllers([registration], animated: false)
+        } else {
+            currentViewController.navigationController?.setViewControllers([registration], animated: false)
+        }
+    }
+    
+    func navigateToVWLogin(_ currentViewController: UIViewController,isLogin:Bool) {
+        let login = storyboard.instantiateViewController(withIdentifier: "VWLogin") as! VWLogin
+        login.isLogin = isLogin
+        login.modalTransitionStyle = modalTransitionStyle
+        currentViewController.navigationController?.pushViewController(login, animated: false)
+    }
+    */
+}
