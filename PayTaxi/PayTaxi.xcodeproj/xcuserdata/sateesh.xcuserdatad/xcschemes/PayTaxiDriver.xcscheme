@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0930"
-   wasCreatedForAppExtension = "YES"
-   version = "2.0">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -15,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F996C43E209C7B9C007849B3"
-               BuildableName = "NotificationContent.appex"
-               BlueprintName = "NotificationContent"
-               ReferencedContainer = "container:PayTaxi.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9857A162097312700F2139A"
-               BuildableName = "PayTaxi.app"
-               BlueprintName = "PayTaxi"
+               BlueprintIdentifier = "F9857A322097316F00F2139A"
+               BuildableName = "PayTaxiDriver.app"
+               BlueprintName = "PayTaxiDriver"
                ReferencedContainer = "container:PayTaxi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F996C43E209C7B9C007849B3"
-            BuildableName = "NotificationContent.appex"
-            BlueprintName = "NotificationContent"
+            BlueprintIdentifier = "F9857A322097316F00F2139A"
+            BuildableName = "PayTaxiDriver.app"
+            BlueprintName = "PayTaxiDriver"
             ReferencedContainer = "container:PayTaxi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -58,25 +43,31 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      launchAutomaticallySubstyle = "2">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F9857A162097312700F2139A"
-            BuildableName = "PayTaxi.app"
-            BlueprintName = "PayTaxi"
+            BlueprintIdentifier = "F9857A322097316F00F2139A"
+            BuildableName = "PayTaxiDriver.app"
+            BlueprintName = "PayTaxiDriver"
             ReferencedContainer = "container:PayTaxi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -85,15 +76,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      launchAutomaticallySubstyle = "2">
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F9857A162097312700F2139A"
-            BuildableName = "PayTaxi.app"
-            BlueprintName = "PayTaxi"
+            BlueprintIdentifier = "F9857A322097316F00F2139A"
+            BuildableName = "PayTaxiDriver.app"
+            BlueprintName = "PayTaxiDriver"
             ReferencedContainer = "container:PayTaxi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

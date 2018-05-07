@@ -16,9 +16,17 @@ class OpenScreen: NSObject {
     
     //MARK: - Functions
     func navigation(_ currentViewController: UIViewController) {
+        
         let navigation = storyboard.instantiateViewController(withIdentifier: "Navigation") as! Navigation
         navigation.modalTransitionStyle = modalTransitionStyle
         currentViewController.present(navigation, animated: true, completion: nil)
+    }
+    
+    func home(_ currentViewController: UINavigationController) {
+        
+        let home = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+        home.modalTransitionStyle = modalTransitionStyle
+        currentViewController.setViewControllers([home], animated: false)
     }
     
     /*

@@ -13,45 +13,89 @@ import CoreLocation
 class Home: UIViewController {
 
     //MARK: - Outlets
+    @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
-    var longitude = 0.0
-    var latitude = 0.0
+    private var longitude = 0.0
+    private var latitude = 0.0
+    private var mapView: GMSMapView!
+    private var cameraZoom: Float = 17.0
     let locationManager = CLLocationManager()
 
     //MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Create and add mapView
+        presentMapView()
         
-        // Create a GMSCameraPosition that tells the map to display the
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let googleMapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = googleMapView
-
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = googleMapView
+        //Bring all other subViews to front
+        view.bringSubview(toFront: myLocationButton)
+        
+        //Register for location updates
+        registerForLocationUpdates()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .lightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Core Location
+    //MARK: - Actions
     
-    func registerForLocationUpdates() {
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
         
-        // Get Device Location -- get let and long of user location
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        // self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
+        //Get the user's location geo-coordinates
+        let myLatitude = mapView.myLocation?.coordinate.latitude
+        let myLongiude = mapView.myLocation?.coordinate.longitude
         
+        //Animate mapView to new camera position
+        let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
+        mapView.animate(to: cameraPosition)
+    }
+
+    //MARK: - Functions
+    
+    private func presentMapView() {
+        
+        // Create the default camera position with 0, 0 coordinates
+        let camera = GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: cameraZoom)
+        
+        //Create and assign mapView to view
+        mapView = GMSMapView.map(withFrame: CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.main.bounds.size), camera: camera)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        mapView.isTrafficEnabled = true
+        view.addSubview(mapView)
+        
+        //Allow map to show user's location
+        mapView.isMyLocationEnabled = true
+        
+        //Update map GUI
+        mapView.mapType = .normal
+        //mapView.settings.myLocationButton = true
+        //mapView.settings.compassButton = true
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 15)
+        
+        //Set custome style to mapView
+        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.night)
+        
+        //Hide mapView initially
+        mapView.isHidden = true
+        myLocationButton.isHidden = true
+    }
+    
+    private func registerForLocationUpdates() {
+        
+        //Ask device's permission to use location services
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //Start location updates if services are available by user
         if CLLocationManager.locationServicesEnabled() {
             
             locationManager.delegate = self
@@ -77,11 +121,40 @@ extension Home: CLLocationManagerDelegate {
         //Save location coorndinates
         latitude = coordinates.latitude
         longitude = coordinates.longitude
+        
+        //Move Maps camera position to user location
+        let cameraPosition = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: cameraZoom)
+        
+        if mapView.isHidden {
+            mapView.isHidden = false
+            mapView.camera = cameraPosition
+            myLocationButton.isHidden = false
+        } else {
+//            mapView.animate(to: cameraPosition)
+        }
     }
     
+    // Handle authorization for the location manager.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+            // Display the map using the default location.
+            mapView.isHidden = false
+        case .notDetermined:
+            print("Location status not determined.")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        }
+    }
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         print("Failed to Get User Location. Error Is :: \(error.localizedDescription)")
+        locationManager.stopUpdatingLocation()
     }
 }
 

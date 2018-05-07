@@ -39,12 +39,9 @@
 		F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A3C2097316F00F2139A /* PayTaxiDriver.xcdatamodeld */; };
 		F9857A402097317000F2139A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9857A3F2097317000F2139A /* Assets.xcassets */; };
 		F9857A432097317000F2139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A412097317000F2139A /* LaunchScreen.storyboard */; };
-		F996C440209C7B9C007849B3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E62099C1E200C3CC1E /* UserNotifications.framework */; };
-		F996C441209C7B9C007849B3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E82099C1E200C3CC1E /* UserNotificationsUI.framework */; };
 		F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C443209C7B9C007849B3 /* NotificationViewController.swift */; };
 		F996C447209C7B9C007849B3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F996C445209C7B9C007849B3 /* MainInterface.storyboard */; };
 		F996C44B209C7B9C007849B3 /* NotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F996C43F209C7B9C007849B3 /* NotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F996C44F209C7BAF007849B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
 		F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
 		F996C451209C7BF1007849B3 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380BD20999BD600C3CC1E /* Splash.swift */; };
 		F996C452209C7BF1007849B3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
@@ -64,6 +61,9 @@
 		F996C46F209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
 		F996C470209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
 		F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
+		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +149,7 @@
 		F996C469209C9167007849B3 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		F996C46D209C91DB007849B3 /* OpenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreen.swift; sourceTree = "<group>"; };
 		F9A917AD209C20BD0027C6E4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +174,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F996C441209C7B9C007849B3 /* UserNotificationsUI.framework in Frameworks */,
-				F996C440209C7B9C007849B3 /* UserNotifications.framework in Frameworks */,
 				72815D7121DB86C9123AD341 /* Pods_NotificationContent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				F96380BD20999BD600C3CC1E /* Splash.swift */,
-				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 				F996C469209C9167007849B3 /* Navigation.swift */,
+				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				F96381122099CAB600C3CC1E /* StringExtension.swift */,
+				F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -737,6 +737,7 @@
 				F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */,
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
+				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
 				F963811C2099D42400C3CC1E /* Reachability.m in Sources */,
 				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
@@ -752,6 +753,7 @@
 			files = (
 				F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */,
 				F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */,
+				F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F996C46B209C9167007849B3 /* Navigation.swift in Sources */,
 				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,
@@ -772,7 +774,7 @@
 			files = (
 				F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */,
 				F996C470209C91DB007849B3 /* OpenScreen.swift in Sources */,
-				F996C44F209C7BAF007849B3 /* AppDelegate.swift in Sources */,
+				F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
 				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
