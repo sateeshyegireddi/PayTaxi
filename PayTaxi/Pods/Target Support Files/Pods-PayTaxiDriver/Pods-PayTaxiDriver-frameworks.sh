@@ -100,6 +100,15 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS9.0/SocketIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-iOS9.0/Starscream.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS9.0/SocketIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-iOS9.0/Starscream.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
