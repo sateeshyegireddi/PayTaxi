@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +24,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="103" y="116"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="Mbn-6j-cAS">
+            <objects>
+                <navigationController storyboardIdentifier="Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="clo-aR-7oI" customClass="Navigation" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gAJ-Fi-XZ6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yd1-6D-cW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="117"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="vHx-VL-TCL">
+            <objects>
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2pa-0N-Zlg" customClass="Home" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Vx-z8-HrD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-yN-aeq">
+                                <rect key="frame" x="314" y="602" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="mSC-mG-jI1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="⦿">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="2pa-0N-Zlg" eventType="touchUpInside" id="fA4-gZ-Le5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eB4-Io-WlM" firstAttribute="bottom" secondItem="QfZ-yN-aeq" secondAttribute="bottom" constant="20" id="2aj-1F-I5q"/>
+                            <constraint firstItem="eB4-Io-WlM" firstAttribute="trailing" secondItem="QfZ-yN-aeq" secondAttribute="trailing" constant="16" id="9O1-Wd-oE1"/>
+                            <constraint firstItem="QfZ-yN-aeq" firstAttribute="width" secondItem="QfZ-yN-aeq" secondAttribute="height" multiplier="1:1" id="fFo-bY-mGM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eB4-Io-WlM"/>
+                    </view>
+                    <connections>
+                        <outlet property="myLocationButton" destination="QfZ-yN-aeq" id="guR-qR-8uI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luE-uW-iu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1506" y="117"/>
         </scene>
     </scenes>
 </document>

@@ -12,10 +12,16 @@ class Navigation: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        OpenScreen().home(self)
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .lightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

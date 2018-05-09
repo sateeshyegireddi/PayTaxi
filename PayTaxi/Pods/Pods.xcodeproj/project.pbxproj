@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -171,7 +171,7 @@
 		1A80EE2601B83A17130BF2F3F3E6AE20 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		1FF25B8B82DB408C6E5A40B631833F5D /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketIO/Util/SocketLogger.swift; sourceTree = "<group>"; };
 		2320202AEA695D211622D36CFDC71452 /* Pods-PayTaxi-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PayTaxi-resources.sh"; sourceTree = "<group>"; };
-		2444275D399380B4F31AE1411523FD38 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = "Starscream-iOS9.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2444275D399380B4F31AE1411523FD38 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24590DE96B7130B5292264117532B54E /* Starscream-iOS11.3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Starscream-iOS11.3.xcconfig"; sourceTree = "<group>"; };
 		25365E257BB94C22E6FCABAEFBA07443 /* SocketIOClientOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientOption.swift; path = Source/SocketIO/Client/SocketIOClientOption.swift; sourceTree = "<group>"; };
 		26736551CE703542272ECFD524BF078E /* Pods-NotificationContent.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NotificationContent.modulemap"; sourceTree = "<group>"; };
@@ -207,14 +207,14 @@
 		5A4C252FC82B0CCF3FA5D8CF2FC79542 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		5B220DE9811768A33367A37972807704 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5D1AB7B1E0598E46BAF3C757FBBA0824 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/WebSocket.swift; sourceTree = "<group>"; };
-		5FB41C6306D24333985AB00B0ABCC6BE /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketIO.framework; path = "Socket.IO-Client-Swift-iOS11.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB41C6306D24333985AB00B0ABCC6BE /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF32711A64B87709C944CD5E81D2881 /* Socket.IO-Client-Swift-iOS9.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Socket.IO-Client-Swift-iOS9.0-prefix.pch"; path = "../Socket.IO-Client-Swift-iOS9.0/Socket.IO-Client-Swift-iOS9.0-prefix.pch"; sourceTree = "<group>"; };
 		6563EC602BA90707D353ED08513D71A3 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		65A841FF14B6A98673965AF4A60B5AF4 /* Pods_PayTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PayTaxi.framework; path = "Pods-PayTaxi.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A841FF14B6A98673965AF4A60B5AF4 /* Pods_PayTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678986B244AE802E621A46521AB82504 /* SocketTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Source/SocketIO/Util/SocketTypes.swift; sourceTree = "<group>"; };
 		67DCFF0F0FFA6085A6E40E7FAD862A68 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		6BEDE9357D244E0FC5A5F2354F3E8A49 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		6C5BA3073F844E4457129D3E25854948 /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NotificationContent.framework; path = "Pods-NotificationContent.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5BA3073F844E4457129D3E25854948 /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C69582648A137751C5A130152D14211 /* Pods-PayTaxi-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PayTaxi-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6CE0BE14110EF608A5CED80AA1A57154 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Starscream-iOS9.0/Info.plist"; sourceTree = "<group>"; };
 		6FDF014FE237CC775AA98BC3232E1452 /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,13 +222,13 @@
 		750DE2B99FA087F30662B8531E728CF6 /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression.swift; sourceTree = "<group>"; };
 		76C11A9B3F684447A000554C5455781C /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePacketType.swift; path = Source/SocketIO/Engine/SocketEnginePacketType.swift; sourceTree = "<group>"; };
 		77CE0C493C8BA4AF32233054C9202B74 /* SocketManagerSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketManagerSpec.swift; path = Source/SocketIO/Manager/SocketManagerSpec.swift; sourceTree = "<group>"; };
-		82D0F720986A1A283D462946535D4252 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = "Starscream-iOS11.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82D0F720986A1A283D462946535D4252 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A2ED0DD50135D45E531910FCBE17AC /* Socket.IO-Client-Swift-iOS11.3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-iOS11.3-umbrella.h"; sourceTree = "<group>"; };
 		83CB011373D549F4E6106E511C13439A /* Pods-PayTaxiDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PayTaxiDriver.release.xcconfig"; sourceTree = "<group>"; };
 		855CAED7A012D5A6C1F9C3348A5D523B /* Pods-PayTaxiDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PayTaxiDriver.debug.xcconfig"; sourceTree = "<group>"; };
 		8BDCA26A6B1C7E7560AFAE3BB58AB347 /* Starscream-iOS11.3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-iOS11.3-umbrella.h"; sourceTree = "<group>"; };
 		926596A2BA0670FE063DA8DC0B4CE387 /* SocketIOStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOStatus.swift; path = Source/SocketIO/Client/SocketIOStatus.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97F5EF4B2365109DBA8D77BFB3B500A5 /* Pods-PayTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PayTaxi.debug.xcconfig"; sourceTree = "<group>"; };
 		9B5A2973D82EBE59C5F7D3ABF66B1DAD /* SocketEngineSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineSpec.swift; path = Source/SocketIO/Engine/SocketEngineSpec.swift; sourceTree = "<group>"; };
 		9FBB81E4868BE634E3D8BDFE626A6EF8 /* SocketManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketManager.swift; path = Source/SocketIO/Manager/SocketManager.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		A76253CAD7F32B09B76A00036A588A23 /* Pods-PayTaxi-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PayTaxi-acknowledgements.plist"; sourceTree = "<group>"; };
 		AC13FDC2D7CCE2EA69C9B39AE5FAD437 /* Pods-PayTaxiDriver-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PayTaxiDriver-acknowledgements.plist"; sourceTree = "<group>"; };
 		B037F2ECDA6E2E99E3FA3C1B87BCC896 /* Pods-PayTaxi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PayTaxi.modulemap"; sourceTree = "<group>"; };
-		B141AB1953248A21AB718CFB022580D4 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketIO.framework; path = "Socket.IO-Client-Swift-iOS9.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B141AB1953248A21AB718CFB022580D4 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F18ED3D7B628D70746D8DB97BF5E8 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		B86A4953E3A4044CBD05DB4DBBAFA291 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAckEmitter.swift; path = Source/SocketIO/Ack/SocketAckEmitter.swift; sourceTree = "<group>"; };
 		BA0A0377EBE690454CEDBF9B35C8300B /* Starscream-iOS9.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Starscream-iOS9.0.modulemap"; path = "../Starscream-iOS9.0/Starscream-iOS9.0.modulemap"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 		E74B128E91CD14603101E7657813DC4A /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		EACAA1BBDFBAEE19C810B3E8C39BCDCD /* SocketEnginePollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEnginePollable.swift; path = Source/SocketIO/Engine/SocketEnginePollable.swift; sourceTree = "<group>"; };
 		EB40533FAE58D4E8A5B0317C214BA963 /* Pods-PayTaxi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PayTaxi-dummy.m"; sourceTree = "<group>"; };
-		ED29BA6F71FE7315798156FF74D40325 /* Pods_PayTaxiDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PayTaxiDriver.framework; path = "Pods-PayTaxiDriver.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED29BA6F71FE7315798156FF74D40325 /* Pods_PayTaxiDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTaxiDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED36019C958676633510D4496CF87757 /* SocketEventHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEventHandler.swift; path = Source/SocketIO/Client/SocketEventHandler.swift; sourceTree = "<group>"; };
 		F71C5F7703A0648E30759BA2857B4F62 /* SocketAnyEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAnyEvent.swift; path = Source/SocketIO/Client/SocketAnyEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -371,7 +371,6 @@
 				6563EC602BA90707D353ED08513D71A3 /* Crashlytics.h */,
 				29DB317FF0B18A2E1C8C9C52ACDE587D /* Frameworks */,
 			);
-			name = Crashlytics;
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
@@ -381,7 +380,6 @@
 				F5D4B152FCB8611BB5931608525F157E /* Base */,
 				B7825BA867F6619B5FE0FC914056EA0C /* Maps */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -477,7 +475,6 @@
 				521B39E47E11F8948DDD10B4E0A3AE03 /* Frameworks */,
 				D6D033458C155220B30CC0B4DC784CA6 /* Resources */,
 			);
-			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
@@ -499,7 +496,6 @@
 				1A80EE2601B83A17130BF2F3F3E6AE20 /* Fabric.h */,
 				5F6BBD73BEAC25D5FF2609593CB6576A /* Frameworks */,
 			);
-			name = Fabric;
 			path = Fabric;
 			sourceTree = "<group>";
 		};
@@ -541,7 +537,6 @@
 				DA121D6385A25B308FA81A0F1620BB6D /* SSLSecurity.swift */,
 				D81AAC9D3E9C5C16465F7F2A8B6C58D2 /* Support Files */,
 			);
-			name = "Socket.IO-Client-Swift";
 			path = "Socket.IO-Client-Swift";
 			sourceTree = "<group>";
 		};
@@ -553,7 +548,6 @@
 				5D1AB7B1E0598E46BAF3C757FBBA0824 /* WebSocket.swift */,
 				087C12CED2ABB99EE256825E5F67557F /* Support Files */,
 			);
-			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -1185,6 +1179,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739A75CEF9842F2E2D1A201EB2400F2A /* Socket.IO-Client-Swift-iOS9.0.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1547,6 +1542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739A75CEF9842F2E2D1A201EB2400F2A /* Socket.IO-Client-Swift-iOS9.0.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

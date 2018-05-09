@@ -11,6 +11,8 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -75,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Initialize Fabric/crashlytics
-        //        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self])
         
         //Assign API key to Google Services and Places
         GMSServices.provideAPIKey(GlobalConstants.GoogleKeys.APIKey)

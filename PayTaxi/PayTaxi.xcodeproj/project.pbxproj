@@ -38,6 +38,16 @@
 		F96E679F20A3033300F00FEA /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E679E20A3033300F00FEA /* OpenScreen.swift */; };
 		F96E67A120A3035A00F00FEA /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A020A3035A00F00FEA /* Navigation.swift */; };
 		F96E67A320A3037300F00FEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A220A3037300F00FEA /* Home.swift */; };
+		F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A420A32B0000F00FEA /* MainMenu.swift */; };
+		F96E67A620A32B0000F00FEA /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A420A32B0000F00FEA /* MainMenu.swift */; };
+		F96E67AA20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E67A820A32CDF00F00FEA /* MainMenuHeader.xib */; };
+		F96E67AB20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E67A820A32CDF00F00FEA /* MainMenuHeader.xib */; };
+		F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A920A32CDF00F00FEA /* MainMenuHeader.swift */; };
+		F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A920A32CDF00F00FEA /* MainMenuHeader.swift */; };
+		F96E67B020A32D6000F00FEA /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */; };
+		F96E67B120A32D6000F00FEA /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */; };
+		F96E67B220A32D6000F00FEA /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
+		F96E67B320A32D6000F00FEA /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
 		F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
 		F9857A202097312700F2139A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
 		F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A212097312700F2139A /* PayTaxi.xcdatamodeld */; };
@@ -137,6 +147,11 @@
 		F96E679E20A3033300F00FEA /* OpenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreen.swift; sourceTree = "<group>"; };
 		F96E67A020A3035A00F00FEA /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		F96E67A220A3037300F00FEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F96E67A420A32B0000F00FEA /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		F96E67A820A32CDF00F00FEA /* MainMenuHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuHeader.xib; sourceTree = "<group>"; };
+		F96E67A920A32CDF00F00FEA /* MainMenuHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuHeader.swift; sourceTree = "<group>"; };
+		F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
+		F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		F9857A172097312700F2139A /* PayTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9857A1A2097312700F2139A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9857A1F2097312700F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -246,6 +261,8 @@
 		F96380AE2099974D00C3CC1E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */,
+				F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 		F96380AF2099975900C3CC1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F96E67A420A32B0000F00FEA /* MainMenu.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,6 +374,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F96E67A720A32CD300F00FEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F96E67A920A32CDF00F00FEA /* MainMenuHeader.swift */,
+				F96E67A820A32CDF00F00FEA /* MainMenuHeader.xib */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		F9857A0E2097312700F2139A = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +416,7 @@
 				F96381212099D6C900C3CC1E /* Classes */,
 				F96380B1209997F800C3CC1E /* Controllers */,
 				F96381112099CA9F00C3CC1E /* Extensions */,
+				F96E67A720A32CD300F00FEA /* Headers */,
 				F96380B22099982600C3CC1E /* Helpers */,
 				F96380B02099976D00C3CC1E /* Models */,
 				F96380AF2099975900C3CC1E /* Views */,
@@ -574,8 +602,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96E67B020A32D6000F00FEA /* MainMenuCell.xib in Resources */,
 				F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */,
 				F9857A252097312800F2139A /* Assets.xcassets in Resources */,
+				F96E67AA20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
 				F9857A202097312700F2139A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,7 +624,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96E67AB20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
 				F996C447209C7B9C007849B3 /* MainInterface.storyboard in Resources */,
+				F96E67B120A32D6000F00FEA /* MainMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96380BE20999BD600C3CC1E /* Splash.swift in Sources */,
+				F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */,
 				F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */,
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
@@ -807,12 +840,14 @@
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
 				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
+				F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
 				F963811C2099D42400C3CC1E /* Reachability.m in Sources */,
 				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
 				F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */,
 				F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */,
 				F96380D92099A74A00C3CC1E /* Keychain.swift in Sources */,
+				F96E67B220A32D6000F00FEA /* MainMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +879,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */,
 				F996C470209C91DB007849B3 /* OpenScreen.swift in Sources */,
 				F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */,
@@ -853,12 +889,14 @@
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
 				F996C451209C7BF1007849B3 /* Splash.swift in Sources */,
+				F96E67A620A32B0000F00FEA /* MainMenu.swift in Sources */,
 				F996C456209C7C05007849B3 /* Keychain.swift in Sources */,
 				F996C454209C7C05007849B3 /* UtilityFunctions.swift in Sources */,
 				F996C459209C7C0E007849B3 /* User.swift in Sources */,
 				F996C46C209C9167007849B3 /* Navigation.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
+				F96E67B320A32D6000F00FEA /* MainMenuCell.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
