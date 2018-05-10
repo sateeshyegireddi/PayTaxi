@@ -15,9 +15,8 @@ class MainMenu: UIView {
     
     //MARK: - Variables
     weak var vc: UIViewController!
-    var titles: [String?]!
-    var images: [UIImage?]!
-    var menuTitles: [[String?]]!
+    var titles: [String]!
+//    var images: [UIImage]!
     var selectedIndex: Int!
     
     //MARK: - View
@@ -33,8 +32,7 @@ class MainMenu: UIView {
         
         //Init Variables
         titles = ["Home", "My Wallet", "Services", "Cards", "Payments", "Support", "My Profile", "Settings", "Logout"]
-        images = [#imageLiteral(resourceName: "icon-home-border"),#imageLiteral(resourceName: "icon-my-wallet"), #imageLiteral(resourceName: "icon-service"), #imageLiteral(resourceName: "icon-card"), #imageLiteral(resourceName: "icon-payment"), #imageLiteral(resourceName: "icon-support"), #imageLiteral(resourceName: "icon-myProfile"),#imageLiteral(resourceName: "icon-settings"), #imageLiteral(resourceName: "icon-logout")]
-        menuTitles = [[],["Load Wallet", "Sub Account", "Transactions"], ["Recharge", "Bill Payments", "Bookings", "My Beneficiaries"], ["Currency Card" ,"Secondary Card"], ["Payee", "Triple Clik", "Card", "Pay"], ["Chat", "Phone", "Offline"], [], [], []]
+//        images = [#imageLiteral(resourceName: "icon-home-border"),#imageLiteral(resourceName: "icon-my-wallet"), #imageLiteral(resourceName: "icon-service"), #imageLiteral(resourceName: "icon-card"), #imageLiteral(resourceName: "icon-payment"), #imageLiteral(resourceName: "icon-support"), #imageLiteral(resourceName: "icon-myProfile"),#imageLiteral(resourceName: "icon-settings"), #imageLiteral(resourceName: "icon-logout")]
         selectedIndex = -1
         
         //Register tableView cells
@@ -159,14 +157,10 @@ class MainMenu: UIView {
 //MARK: - UITableView Delegate
 extension MainMenu: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return titles.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return 55
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -176,7 +170,7 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         let mainMenuHeader = nibs![0] as! MainMenuHeader
         
         //Setup header values
-        mainMenuHeader.setupValuesInHeader(WithTitle: titles[section], Image: images[section])
+//        mainMenuHeader.setupValuesInHeader(WithTitle: titles[section], Image: images[section])
         mainMenuHeader.sectionButton.tag = section + 100
         mainMenuHeader.sectionButton.addTarget(self, action: #selector(MainMenu.sectionHeaderButtonTapped(_:)), for: .touchUpInside)
         
@@ -190,25 +184,13 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         return mainMenuHeader
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //Show the menu items if section is opened by user
-        if section == selectedIndex && section != titles.count - 1 { return menuTitles[section].count } else { return 0 }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 45
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //Create cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainMenuCell", for: indexPath) as! MainMenuCell
         
         //Setup values
-        cell.setTitle(menuTitles[indexPath.section][indexPath.row])
+//        cell.setTitle(menuTitles[indexPath.section][indexPath.row])
         
         //Return cell
         return cell

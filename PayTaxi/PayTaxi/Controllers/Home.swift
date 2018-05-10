@@ -13,6 +13,7 @@ import CoreLocation
 class Home: UIViewController {
 
     //MARK: - Outlets
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
@@ -21,19 +22,27 @@ class Home: UIViewController {
     private var mapView: GMSMapView!
     private var cameraZoom: Float = 17.0
     let locationManager = CLLocationManager()
-
+    private var rootNavigation: Navigation!
+    
     //MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Init variables
+        rootNavigation = navigationController as! Navigation
+        rootNavigation.navigationDelegate = self
+        
         //Create and add mapView
         presentMapView()
         
         //Bring all other subViews to front
         view.bringSubview(toFront: myLocationButton)
+        view.bringSubview(toFront: menuButton)
         
         //Register for location updates
         registerForLocationUpdates()
+        
+        //Home for driver
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -59,6 +68,14 @@ class Home: UIViewController {
         mapView.animate(to: cameraPosition)
     }
 
+    @IBAction func menuButtonTapped(_ sender: UIButton) {
+        
+        if let navigation = navigationController as? Navigation {
+            
+            navigation.toggleMenu()
+        }
+    }
+    
     //MARK: - Functions
     
     private func presentMapView() {
@@ -158,3 +175,12 @@ extension Home: CLLocationManagerDelegate {
     }
 }
 
+//MARK: - Navigation Delegate
+
+extension Home: NavigationDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, selectedRow row: Int, at section: Int) {
+        
+        print("selectedRow: \(row) Section: \(section)")
+    }
+}

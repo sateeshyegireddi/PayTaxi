@@ -24,7 +24,7 @@ public struct GlobalConstants {
         
         static let baseURL = ""
 
-        static let socketUrl = ""
+        static let socketUrl = "http://192.168.102.167:3000"
         
         //Registration, Login, Logout
         static let register = "registration"

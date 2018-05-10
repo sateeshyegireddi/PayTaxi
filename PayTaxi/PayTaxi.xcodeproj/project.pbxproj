@@ -35,6 +35,8 @@
 		F96381192099CF2600C3CC1E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96381162099CC4B00C3CC1E /* Security.framework */; };
 		F963811C2099D42400C3CC1E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
 		F963811D2099D42400C3CC1E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
+		F9642E7B20A4837800027977 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9642E7A20A4837300027977 /* MainMenu.xib */; };
+		F9642E7C20A4837800027977 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9642E7A20A4837300027977 /* MainMenu.xib */; };
 		F96E679F20A3033300F00FEA /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E679E20A3033300F00FEA /* OpenScreen.swift */; };
 		F96E67A120A3035A00F00FEA /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A020A3035A00F00FEA /* Navigation.swift */; };
 		F96E67A320A3037300F00FEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A220A3037300F00FEA /* Home.swift */; };
@@ -144,6 +146,7 @@
 		F963811A2099D42400C3CC1E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F963811B2099D42400C3CC1E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F963811F2099D47400C3CC1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9642E7A20A4837300027977 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F96E679E20A3033300F00FEA /* OpenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreen.swift; sourceTree = "<group>"; };
 		F96E67A020A3035A00F00FEA /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		F96E67A220A3037300F00FEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				F96E67A420A32B0000F00FEA /* MainMenu.swift */,
+				F9642E7A20A4837300027977 /* MainMenu.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -607,6 +611,7 @@
 				F9857A252097312800F2139A /* Assets.xcassets in Resources */,
 				F96E67AA20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
 				F9857A202097312700F2139A /* Main.storyboard in Resources */,
+				F9642E7B20A4837800027977 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +632,7 @@
 				F96E67AB20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
 				F996C447209C7B9C007849B3 /* MainInterface.storyboard in Resources */,
 				F96E67B120A32D6000F00FEA /* MainMenuCell.xib in Resources */,
+				F9642E7C20A4837800027977 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,12 +672,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxiDriver/Pods-PayTaxiDriver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS9.0/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream-iOS9.0/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -805,16 +809,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PayTaxi/Pods-PayTaxi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS9.0/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream-iOS9.0/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS11.3/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream-iOS11.3/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

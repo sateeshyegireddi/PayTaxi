@@ -76,7 +76,7 @@ class SocketsManager: NSObject {
     ///- parameter location: The location to be sent to server.
     func shareUserCurrentLocation(_ location: Location) {
         
-        socket.emit("disconnectTrackedUser", location.userId, location.userName, location.latitude, location.longitude)
+        socket.emit("trackedUserCoordinates", location.userId, location.userName, location.latitude, location.longitude)
     }
     
     ///Share user's stop location with socket server

@@ -34,6 +34,9 @@ class Navigation: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Setup Menu
+        setupMenu()
+        
         // Do any additional setup after loading the view.
         OpenScreen().home(self)
     }
