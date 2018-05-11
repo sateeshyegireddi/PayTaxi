@@ -88,31 +88,45 @@ class SocketsManager: NSObject {
     
     //MARK: - Location Tracking
     
-    ///Send the status to server user started tracking a sharing location user
+    ///Send the status to server user started tracking a driver
     ///- parameter trackedUserSocketId: the id of user to be tracked.
-    ///- parameter coordinatesUpdateHandler: The callback that will execute when the tracked user coordinates are being updated.
-    ///- parameter trackedUserCoordinatesUpdate: the dictionary of updated coordinates for tracked user.
-    ///- parameter trackedUserStoppedTrackingHandler: The callback that will execute when the tracked user stops sharing location.
-    ///- parameter userId: the id of tracked user.
-    func userStartedTracking(trackedUserSocketId: String, coordinatesUpdateHandler: @escaping (_ trackedUserCoordinatesUpdate: [String: AnyObject]?) -> Void, trackedUserStoppedTrackingHandler: @escaping (_ userId: String?) -> Void) {
-        socket.emit("connectTrackedUserTracker", trackedUserSocketId)
+    ///- parameter coordinatesUpdateHandler: The callback that will execute when the driver coordinates are being updated.
+    ///- parameter trackedUserCoordinatesUpdate: the dictionary of updated coordinates for the driver.
+    ///- parameter trackedUserStoppedTrackingHandler: The callback that will execute when the driver stops sharing location.
+    ///- parameter userId: the id of the driver.
+    func userStartedTracking(driverSocketId: String, coordinatesUpdateHandler: @escaping (_ driverCoordinatesUpdate: [String: AnyObject]?) -> Void, driverStoppedTrackingHandler: @escaping (_ userId: String?) -> Void) {
+        socket.emit("connectTrackedUserTracker", driverSocketId)
         
-        //Listen to tracked user coordinates update
+        //Listen to the driver coordinates update
         socket.on("trackedUserCoordinatesUpdate") { ( dataArray, ack) -> Void in
             coordinatesUpdateHandler(dataArray[0] as? [String: AnyObject])
         }
         
-        //Listen to whenever tracked user stops sharing location
+        //Listen to whenever the driver stops sharing location
         socket.on("trackedUserHasStoppedUpdate") { ( dataArray, ack) -> Void in
-            trackedUserStoppedTrackingHandler(dataArray[0] as? String)
+            driverStoppedTrackingHandler(dataArray[0] as? String)
         }
     }
     
-    ///Send the status to server a user stopped tracking a sharing location user
-    ///- parameter trackedUserSocketId: the id of user to be tracked.
-    func userStoppedTracking(trackedUserSocketId: String) {
+    ///Send the status to server a user stopped tracking the driver
+    ///- parameter driverSocketId: id of the driver.
+    func userStoppedTracking(driverSocketId: String) {
         
-        socket.emit("disconnectTrackedUserTracker", trackedUserSocketId)
+        socket.emit("disconnectTrackedUserTracker", driverSocketId)
+    }
+    
+    // MARK: - Drivers list monitoring
+    
+    ///Send to server a message requesting the updated drivers list
+    func checkForUpdatedDriversList() {
+        socket.emit("requestUpdatedTrackedUsersList")
+    }
+    
+    //Listen to updated in the tracked users list
+    func listenToTrackedUsersListUpdate(completionHandler: @escaping (_ trackedUsersListUpdate: [[String: AnyObject]]?) -> Void) {
+        socket.on("trackedUsersListUpdate") { ( dataArray, ack) -> Void in
+            completionHandler(dataArray[0] as? [[String: AnyObject]])
+        }
     }
     
 }

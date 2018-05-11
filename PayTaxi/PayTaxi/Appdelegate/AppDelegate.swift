@@ -89,6 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Register app for location updates
         registerForLocationUpdates()
         
+        //Establish connection with socket server
+        SocketsManager.sharedInstance.establishConnection()
+        
         return true
     }
 
