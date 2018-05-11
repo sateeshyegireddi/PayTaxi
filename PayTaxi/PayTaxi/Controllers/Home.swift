@@ -42,7 +42,8 @@ class Home: UIViewController {
         //Register for location updates
         registerForLocationUpdates()
         
-        //Home for driver
+        //Listen to sever events
+        listenToEvents()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -120,6 +121,54 @@ class Home: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
+    
+    //Listen to all necessary events
+    private func listenToEvents() {
+        
+        addHandlers()
+
+//        listenToConnectionChanges()
+//        listenToDriversListUpdate()
+    }
+    
+    private func addHandlers() {
+        SocketsManager.sharedInstance.socket.on("connect") {data, ack in
+            print("socket connected")
+        }
+        
+        SocketsManager.sharedInstance.socket.on("chat message") {[weak self] data, ack in
+            if let value = data.first as? String {
+                print(value)
+            }
+        }
+    }
+    
+    //MARK: - Socket functions
+    func listenToConnectionChanges() {
+        SocketsManager.sharedInstance.listenToConnectionChanges(onConnectHandler: {
+            
+            //if user was successfully connected to server we ask for a updated drivers list
+            SocketsManager.sharedInstance.checkForUpdatedDriversList()
+            self.locationManager.startUpdatingLocation()
+            
+        }, onDisconnectHandler: {
+            
+            //if user was disconnected from server we update the app interface
+            self.locationManager.stopUpdatingLocation()
+            
+        })
+    }
+    
+    //Listen to updates in drivers list, whenever it is updated or when we request
+    func listenToDriversListUpdate() {
+        SocketsManager.sharedInstance.listenToTrackedUsersListUpdate() { driversListUpdate in
+            if let listUpdate = driversListUpdate {
+//                self.trackedUsers = listUpdate
+                print(listUpdate)
+            }
+        }
+    }
+    
 }
 
 //MARK: - CLLocationManager Delegate
