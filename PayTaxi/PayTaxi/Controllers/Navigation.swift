@@ -37,8 +37,17 @@ class Navigation: UINavigationController {
         //Setup Menu
         setupMenu()
         
-        // Do any additional setup after loading the view.
-        OpenScreen().home(self)
+        //Check if the user has logged into app already
+        let isAutoLogin = UtilityFunctions().isAutoLogin()
+        
+        //Move the user home screen
+        if isAutoLogin {
+        
+            OpenScreen().home(self)
+        } else {
+            
+            OpenScreen().registration(self)
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {

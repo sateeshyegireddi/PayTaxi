@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="537" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="T0K-LB-GHO">
             <objects>
-                <viewController id="lQ7-nO-b1w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lQ7-nO-b1w" customClass="Login" customModule="PayTaxi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubI-jb-RKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="1226" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration-->
         <scene sceneID="cMh-og-ieh">
             <objects>
-                <viewController id="Leo-lF-S72" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Registration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Leo-lF-S72" customClass="Registration" customModule="PayTaxi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5T9-Iq-uVt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
