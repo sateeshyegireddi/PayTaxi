@@ -17,12 +17,14 @@ class Home: UIViewController {
     @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
+    let locationManager = CLLocationManager()
+
     private var longitude = 0.0
     private var latitude = 0.0
     private var mapView: GMSMapView!
     private var cameraZoom: Float = 17.0
-    let locationManager = CLLocationManager()
     private var rootNavigation: Navigation!
+    private var markers: [String: GMSMarker]!
     
     var trackedUser: [String:AnyObject]!
     
@@ -31,6 +33,8 @@ class Home: UIViewController {
         super.viewDidLoad()
 
         //Init variables
+        markers = [:]
+        
         rootNavigation = navigationController as! Navigation
         rootNavigation.navigationDelegate = self
         
@@ -121,6 +125,16 @@ class Home: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    private func addMarkers() {
+        
+        DispatchQueue.main.async {
+            
+            //Create marker
+            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.3850, longitude: 78.4867), title: "Hyderabad", placeOn: self.mapView)
+            self.markers.updateValue(marker, forKey: "Hyderabad")
         }
     }
     

@@ -15,16 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-YC-qTR">
-                    <rect key="frame" x="0.0" y="50" width="230" height="617"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-YC-qTR">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nMU-YC-qTR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="CQE-Iq-CJi"/>
+                <constraint firstItem="nMU-YC-qTR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3DN-sx-eSz"/>
                 <constraint firstItem="nMU-YC-qTR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KNm-pz-dz3"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nMU-YC-qTR" secondAttribute="trailing" constant="20" id="PN1-dx-hUD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nMU-YC-qTR" secondAttribute="trailing" id="PN1-dx-hUD"/>
                 <constraint firstItem="nMU-YC-qTR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eX0-UR-xCi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

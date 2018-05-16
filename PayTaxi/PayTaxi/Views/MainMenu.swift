@@ -16,84 +16,69 @@ class MainMenu: UIView {
     //MARK: - Variables
     weak var vc: UIViewController!
     var titles: [String]!
-//    var images: [UIImage]!
+    var images: [UIImage]!
     var selectedIndex: Int!
     
     //MARK: - View
     override func draw(_ rect: CGRect) {
         
         //Setup View
-        backgroundColor = UIColor.clear
+//        backgroundColor = UIColor.clear
         
         //Setup tableView
-        menuTableView.backgroundColor = UIColor.black
+        //menuTableView.backgroundColor = UIColor.black
         menuTableView.dataSource = self
         menuTableView.delegate = self
         
         //Init Variables
-        titles = ["Home", "My Wallet", "Services", "Cards", "Payments", "Support", "My Profile", "Settings", "Logout"]
-//        images = [#imageLiteral(resourceName: "icon-home-border"),#imageLiteral(resourceName: "icon-my-wallet"), #imageLiteral(resourceName: "icon-service"), #imageLiteral(resourceName: "icon-card"), #imageLiteral(resourceName: "icon-payment"), #imageLiteral(resourceName: "icon-support"), #imageLiteral(resourceName: "icon-myProfile"),#imageLiteral(resourceName: "icon-settings"), #imageLiteral(resourceName: "icon-logout")]
+        titles = ["Book a ride", "My rides", "Rate card", "Refer & Earn", "Emergency Contact", "Support"]
+        images = [#imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker")]
         selectedIndex = -1
         
         //Register tableView cells
-        menuTableView.separatorStyle = .none
         menuTableView.register(UINib(nibName: "MainMenuCell", bundle: nil), forCellReuseIdentifier: "MainMenuCell")
+        
         reloadData()
     }
     
     //MARK: - Actions
     @IBAction func sectionHeaderButtonTapped(_ sender: UIButton) {
-        
-        //Close the menu, if user tap the same section, again
-        if selectedIndex == sender.tag - 100 {
-            
-            selectedIndex = -1
-        } else {
-            
-            switch sender.tag - 100 {
-            case 0:
-                
-                //Move user to home screen
-                if let navigation = vc as? Navigation {
-                    
-                    navigation.closeMenuView()
-                    OpenScreen().home(self.vc as! UINavigationController)
-                }
-            case 6:
-                if let navigation = vc as? Navigation {
-                    
-                    navigation.closeMenuView()
-                    //OpenScreen().profile(vc)
-                }
-                
-            case 7:
-                if let navigation = vc as? Navigation {
-                    
-                    navigation.closeMenuView()
-                    //OpenScreen().settings(vc)
-                }
-                
-            case 8:
-                
-                //Call Logout API
-                logoutFromVWallet()
-                
-            default:
-                break
-            }
-            
-            selectedIndex = sender.tag - 100
-        }
-        
-        reloadData()
+
     }
     
     @IBAction func menuTopButonTapped(_ sender: UIButton) {
         
         //Close main menu
-        if let navigation = vc as? Navigation {
+        switch sender.tag - 100 {
+        case 0:
             
-            navigation.closeMenuView()
+            //Move user to home screen
+            if let navigation = vc as? Navigation {
+                
+                navigation.closeMenuView()
+                OpenScreen().home(self.vc as! UINavigationController)
+            }
+        case 6:
+            if let navigation = vc as? Navigation {
+                
+                navigation.closeMenuView()
+                //OpenScreen().profile(vc)
+            }
+            
+        case 7:
+            if let navigation = vc as? Navigation {
+                
+                navigation.closeMenuView()
+                //OpenScreen().settings(vc)
+            }
+            
+        case 8:
+            
+            //Call Logout API
+            self.logout()
+            
+        default:
+            break
         }
     }
     
@@ -105,7 +90,7 @@ class MainMenu: UIView {
         menuTableView.reloadData()
     }
     
-    func logoutFromVWallet() {
+    func logout() {
         
         /*
         //Create request params
@@ -163,25 +148,9 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         return titles.count
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        //Create header
-        let nibs = Bundle.main.loadNibNamed("MainMenuHeader", owner: self, options: nil)
-        let mainMenuHeader = nibs![0] as! MainMenuHeader
-        
-        //Setup header values
-//        mainMenuHeader.setupValuesInHeader(WithTitle: titles[section], Image: images[section])
-        mainMenuHeader.sectionButton.tag = section + 100
-        mainMenuHeader.sectionButton.addTarget(self, action: #selector(MainMenu.sectionHeaderButtonTapped(_:)), for: .touchUpInside)
-        
-        //Don't need add >/v icon if it is logout
-        if (section != titles.count - 1) && (section != 0) && (section != titles.count - 2) && (section != titles.count - 3) {
-            
-            mainMenuHeader.highlightHeaderSection(section == selectedIndex)
-        }
-        
-        //Return header view
-        return mainMenuHeader
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,13 +159,47 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainMenuCell", for: indexPath) as! MainMenuCell
         
         //Setup values
-//        cell.setTitle(menuTitles[indexPath.section][indexPath.row])
+        cell.menuTitleLabel.text = titles[indexPath.row]
+        cell.menuImageView.image = images[indexPath.row]
         
         //Return cell
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        //Create header
+        let nibs = Bundle.main.loadNibNamed("MainMenuHeader", owner: self, options: nil)
+        let mainMenuHeader = nibs![0] as! MainMenuHeader
+        
+        //Setup header values
+        mainMenuHeader.sectionTitleLabel.text = "User name"
+        mainMenuHeader.sectionImageView.image = nil
+        mainMenuHeader.sectionImageView.backgroundColor = UIColor.orange
+        mainMenuHeader.sectionButton.addTarget(self, action: #selector(MainMenu.sectionHeaderButtonTapped(_:)), for: .touchUpInside)
+        
+        //Return header view
+        return mainMenuHeader
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let navigation = vc as? Navigation {
+        
+            switch indexPath.row {
+            case 0:
+                break
+            case 1:
+                break
+            default:
+                navigation.navigationDelegate?.navigationController(navigation, selectedRow: indexPath.row, at: indexPath.section)
+            }
+        }
         /*
         if let navigation = vc as? Navigation {
             

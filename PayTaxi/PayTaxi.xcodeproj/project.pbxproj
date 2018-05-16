@@ -18,6 +18,13 @@
 		F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075DC420A1D5BA001A2E02 /* Location.swift */; };
 		F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
 		F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F961FE8620ABF4EF00580D62 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8520ABF4EF00580D62 /* Login.swift */; };
+		F961FE8720ABF4EF00580D62 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8520ABF4EF00580D62 /* Login.swift */; };
+		F961FE8920ABF50600580D62 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8820ABF50600580D62 /* Registration.swift */; };
+		F961FE8A20ABF50600580D62 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8820ABF50600580D62 /* Registration.swift */; };
+		F961FE8C20ABF5DB00580D62 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
+		F961FE8D20ABF5DB00580D62 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
+		F961FE8E20ABF5DB00580D62 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
 		F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
 		F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
 		F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
@@ -131,6 +138,9 @@
 		F9075DC420A1D5BA001A2E02 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F90C3C552099E9A800A03738 /* AESCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESCryptor.h; sourceTree = "<group>"; };
 		F951245D2099EDF000861F24 /* AESCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCryptor.swift; sourceTree = "<group>"; };
+		F961FE8520ABF4EF00580D62 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		F961FE8820ABF50600580D62 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		F961FE8B20ABF5DB00580D62 /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
 		F96380A920998FD900C3CC1E /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		F96380B32099982600C3CC1E /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		F96380B52099983A00C3CC1E /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
@@ -293,6 +303,8 @@
 			children = (
 				F96380BD20999BD600C3CC1E /* Splash.swift */,
 				F996C469209C9167007849B3 /* Navigation.swift */,
+				F961FE8520ABF4EF00580D62 /* Login.swift */,
+				F961FE8820ABF50600580D62 /* Registration.swift */,
 				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 			);
 			path = Controllers;
@@ -366,6 +378,7 @@
 		F96381212099D6C900C3CC1E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F961FE8B20ABF5DB00580D62 /* MapMarker.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -828,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F961FE8620ABF4EF00580D62 /* Login.swift in Sources */,
 				F96380BE20999BD600C3CC1E /* Splash.swift in Sources */,
 				F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */,
 				F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */,
@@ -835,10 +849,12 @@
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
+				F961FE8C20ABF5DB00580D62 /* MapMarker.swift in Sources */,
 				F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */,
 				F9075DC120A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
+				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
 				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
@@ -869,6 +885,7 @@
 				F96380DC2099BE5400C3CC1E /* APIHandler.swift in Sources */,
 				F96E67A120A3035A00F00FEA /* Navigation.swift in Sources */,
 				F96380DD2099BE6300C3CC1E /* UtilityFunctions.swift in Sources */,
+				F961FE8D20ABF5DB00580D62 /* MapMarker.swift in Sources */,
 				F96E679F20A3033300F00FEA /* OpenScreen.swift in Sources */,
 				F96381182099CCAF00C3CC1E /* User.swift in Sources */,
 				F9857A362097316F00F2139A /* AppDelegate.swift in Sources */,
@@ -890,10 +907,13 @@
 				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
 				F996C451209C7BF1007849B3 /* Splash.swift in Sources */,
 				F96E67A620A32B0000F00FEA /* MainMenu.swift in Sources */,
+				F961FE8720ABF4EF00580D62 /* Login.swift in Sources */,
 				F996C456209C7C05007849B3 /* Keychain.swift in Sources */,
 				F996C454209C7C05007849B3 /* UtilityFunctions.swift in Sources */,
 				F996C459209C7C0E007849B3 /* User.swift in Sources */,
 				F996C46C209C9167007849B3 /* Navigation.swift in Sources */,
+				F961FE8E20ABF5DB00580D62 /* MapMarker.swift in Sources */,
+				F961FE8A20ABF50600580D62 /* Registration.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
 				F96E67B320A32D6000F00FEA /* MainMenuCell.swift in Sources */,

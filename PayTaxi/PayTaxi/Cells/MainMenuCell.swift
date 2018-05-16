@@ -11,8 +11,9 @@ import UIKit
 class MainMenuCell: UITableViewCell {
 
     //MARK: - Outlets
-    @IBOutlet var menuTitleLabel: UILabel!
-    @IBOutlet var menuImageView: UIImageView!
+    @IBOutlet weak var menuTitleLabel: UILabel!
+    @IBOutlet weak var menuImageView: UIImageView!
+    @IBOutlet weak var seperatorLabel: UILabel!
     
     //MARK: - Cell Functions
     override func awakeFromNib() {
@@ -20,21 +21,13 @@ class MainMenuCell: UITableViewCell {
         // Initialization code
         
         //Setup view
-        backgroundColor = UIColor.black
-        contentView.backgroundColor = UIColor.black
+        //backgroundColor = UIColor.black
+        //contentView.backgroundColor = UIColor.black
         
         //Setup Label
-        menuTitleLabel.textColor = UIColor.white
-        
+        //menuTitleLabel.textColor = UIColor.white
+        seperatorLabel.backgroundColor = UIColor.darkGray
+
         //Setup ImageView
-//        menuImageView.layer.borderColor = GlobalConstants.Colors.tangerine.cgColor
-//        menuImageView.layer.borderWidth = 2
-        menuImageView.layer.cornerRadius = menuImageView.bounds.height/2
-        menuImageView.layer.masksToBounds = true
-    }
-    
-    func setTitle(_ title: String?) {
-        
-        menuTitleLabel.text = title
     }
 }

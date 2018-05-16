@@ -20,12 +20,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayTaxi/Helpers/SocketsManager.swift"
-            timestampString = "547736467.099283"
+            timestampString = "548161649.457916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
             endingLineNumber = "128"
             landmarkName = "listenToTrackedUsersListUpdate(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayTaxi/Helpers/SocketsManager.swift"
+            timestampString = "548161649.458222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "userStartedTracking(driverSocketId:coordinatesUpdateHandler:driverStoppedTrackingHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
