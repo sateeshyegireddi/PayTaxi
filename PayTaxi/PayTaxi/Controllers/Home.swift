@@ -24,6 +24,8 @@ class Home: UIViewController {
     let locationManager = CLLocationManager()
     private var rootNavigation: Navigation!
     
+    var trackedUser: [String:AnyObject]!
+    
     //MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,12 +165,36 @@ class Home: UIViewController {
     func listenToDriversListUpdate() {
         SocketsManager.sharedInstance.listenToTrackedUsersListUpdate() { driversListUpdate in
             if let listUpdate = driversListUpdate {
-//                self.trackedUsers = listUpdate
-                print(listUpdate)
+                self.trackedUser = listUpdate[0]
+                print(self.trackedUser)
             }
         }
     }
     
+    func startTrackingUser() {
+        if let trackedUserId = trackedUser["id"] as? String {
+            
+            //Send to server a message that user is now tracking a tracked user location
+            SocketsManager.sharedInstance.userStartedTracking(driverSocketId: trackedUserId, coordinatesUpdateHandler: { (trakedUsersCorrdinatesUpdate) in
+                //When we receive tracked user current location the map is updated
+                if let latitudeString = trakedUsersCorrdinatesUpdate?["latitude"] as? String, let longitudeString = trakedUsersCorrdinatesUpdate?["longitude"] as? String, let latitude = Double(latitudeString), let longitude = Double(longitudeString) {
+                    //self.updateTrackedUserLocation(withLatitude: latitude, andLongitude: longitude)
+                }
+            }) { (trackedUserNickname) in
+                //When the tracked user stops sharing location we return to the tracked users list
+                if let nickname = trackedUserNickname {
+                    let alert = UIAlertController(title: "Ops!", message: "\(nickname) has stopped sharing location", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "Ok", style: .default) { action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                    
+                    alert.addAction(okButton)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }
 
 //MARK: - CLLocationManager Delegate
