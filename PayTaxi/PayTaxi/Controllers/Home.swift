@@ -66,13 +66,39 @@ class Home: UIViewController {
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         
+        
         //Get the user's location geo-coordinates
         let myLatitude = mapView.myLocation?.coordinate.latitude
         let myLongiude = mapView.myLocation?.coordinate.longitude
         
+        let source = "\(myLatitude!),\(myLongiude!)"
+        let destination = "17.6868,83.2185"
+
+        //Get routes between source and destination
+        APIHandler().getRoutes(from: source, to: destination, completionHandler: { (success, distance, duration, polylinePointsString, error) in
+            
+            //On success
+            if success {
+                
+                //Make this func async to not have any conflict
+                DispatchQueue.main.async {
+                    
+                    //Draw a physical line path between source and destination
+                    let path = GMSPath(fromEncodedPath: polylinePointsString ?? "")
+                    let polyline = GMSPolyline(path: path)
+                    polyline.map = self.mapView
+                    
+                    
+                }
+            } else {
+                
+            }
+        })
+        /*
         //Animate mapView to new camera position
         let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
         mapView.animate(to: cameraPosition)
+        */
     }
 
     @IBAction func menuButtonTapped(_ sender: UIButton) {
@@ -133,8 +159,12 @@ class Home: UIViewController {
         DispatchQueue.main.async {
             
             //Create marker
-            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.3850, longitude: 78.4867), title: "Hyderabad", placeOn: self.mapView)
-            self.markers.updateValue(marker, forKey: "Hyderabad")
+            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.6868, longitude: 83.2185), title: "Vizag", placeOn: self.mapView)
+            let currentLocationMarker = MapMarker().createMarker(with: nil, at: self.mapView.myLocation!.coordinate, title: "Hyderabad", placeOn: self.mapView)
+            self.markers.updateValue(marker, forKey: "Vizag")
+            self.markers.updateValue(currentLocationMarker, forKey: "Hyderabad")
+            
+            //TODO: Add Fit to bounds only show the placed markers on the map
         }
     }
     

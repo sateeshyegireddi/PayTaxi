@@ -19,21 +19,21 @@ class OpenScreen: NSObject {
     
         let registration = storyboard.instantiateViewController(withIdentifier: "Registration") as! Registration
         registration.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(registration, animated: true, completion: nil)
+        currentViewController.present(registration, animated: false, completion: nil)
     }
     
     func login(_ currentViewController: UIViewController) {
         
         let login = storyboard.instantiateViewController(withIdentifier: "Login") as! Login
         login.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(login, animated: true, completion: nil)
+        currentViewController.present(login, animated: false, completion: nil)
     }
     
     func navigation(_ currentViewController: UIViewController) {
         
         let navigation = storyboard.instantiateViewController(withIdentifier: "Navigation") as! Navigation
         navigation.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(navigation, animated: true, completion: nil)
+        currentViewController.present(navigation, animated: false, completion: nil)
     }
     
     func home(_ currentViewController: UINavigationController) {

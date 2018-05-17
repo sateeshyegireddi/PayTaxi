@@ -96,12 +96,6 @@ public struct GlobalConstants {
     }
     
     //MARK: -
-    struct GoogleKeys {
-        
-        static let APIKey = "AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA"
-    }
-    
-    //MARK: -
     struct Localisation {
         
         static let key = "i18n_language"
@@ -120,6 +114,34 @@ public struct GlobalConstants {
         
         //Notification
         static let NotificationsDidChangeNotification = "UserNotificationsHasBeenChanged"
+    }
+    
+    //MARK: -
+    struct TravelMode {
+        
+        static let driving = "driving"
+        static let walking = "walking"
+        static let bicycling = "bicycling"
+        static let transit = "transit"
+    }
+    
+    //MARK: - Google -
+    struct GoogleKeys {
+        
+        static let APIKey = "AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA"
+    }
+    
+    //MARK: -
+    struct GoogleAPI {
+        
+        //'https://maps.googleapis.com/maps/api/directions/json?origin=17.25,78.20&destination=17.78,78.60&mode=driving&key=AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA'
+        static let directions = "https://maps.googleapis.com/maps/api/directions/json?"
+    }
+    
+    //MARK: -
+    struct GoogleAPIResponseStatus {
+        
+        static let ok = "OK"
     }
     
     //MARK: -

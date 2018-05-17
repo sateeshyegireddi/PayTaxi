@@ -16,15 +16,15 @@ class MapMarker: NSObject {
         super.init()
     }
     
-    func createMarker(with image: UIImage, at position: CLLocationCoordinate2D, title name: String, placeOn mapView: GMSMapView) -> GMSMarker {
+    func createMarker(with image: UIImage?, at position: CLLocationCoordinate2D, title name: String, placeOn mapView: GMSMapView) -> GMSMarker {
         
-        let markerImage = image.withRenderingMode(.alwaysTemplate)
+        let markerImage = image?.withRenderingMode(.alwaysTemplate)
         let markerView = UIImageView(image: markerImage)
         markerView.tintColor = .red
         
         let marker = GMSMarker(position: position)
 //        marker.title = name
-        marker.iconView = markerView
+        marker.iconView = image != nil ? markerView : nil
         marker.tracksViewChanges = true
         marker.map = mapView
         return marker

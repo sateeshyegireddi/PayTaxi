@@ -297,10 +297,171 @@ class APIHandler: NSObject {
         return ""
     }
     
-    //MARK: - User
+    //MARK: - Google Maps -
+    fileprivate func sendRequestToGoogleMaps(withUrl: String, parameters: [String: Any]?, httpMethod: HTTPMethod, completionHandler: @escaping (_ success: Bool, _ response: [String: Any]?, _ error: String?) ->()) {
+        
+        //Check that there is an internet connection available before to send the request
+        if UtilityFunctions().connectionToInternetIsAvailable() {
+            
+            //Create request
+            var request = URLRequest(url: URL(string: withUrl)!)
+            request.timeoutInterval = 30
+            
+            //Set http request method type
+            if httpMethod == .get {
+                
+                request.httpMethod = "GET"
+            } else {
+                
+                request.httpMethod = "POST"
+            }
+            
+            print("Request URL: \(String(describing: request.url))")
+            print("Request httpBody: \(String(describing: request.httpBody))")
+            print("Request httpMethod: \(String(describing: request.httpMethod))")
+            print("Request allHTTPHeaderFields: \(String(describing: request.allHTTPHeaderFields))")
+            
+            //Create session configuration
+            let sessionConfig = URLSessionConfiguration.default
+            sessionConfig.timeoutIntervalForRequest = TimeInterval(30)
+            sessionConfig.timeoutIntervalForResource = TimeInterval(30)
+            let session = URLSession(configuration: sessionConfig)
+            
+            session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+                
+                guard data != nil && error == nil else {
+                    completionHandler(false, nil, "Session has timed out")
+                    return
+                }
+                
+                //Request Response
+                //Test if an error have
+                if let strError = error?.localizedDescription {
+                    
+                    //Error has been enconter with the request return error message to the user
+                    completionHandler(false, nil, strError)
+                } else {
+                    
+                    //Query sucessfull
+                    do {
+                        //Get the JSON data
+                        let responseDict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
+                        
+                        let jsonString = String(data: data!, encoding: .utf8)
+                        print("JSON RESPONSE: ---> \(String(describing: jsonString?.replacingOccurrences(of: "\\", with: "")))")
+                        print("responseDict \(responseDict)")
+                        
+                        //Check if the query have been successful
+                        if let status = responseDict["status"] as? String {
+                            
+                            if status == GlobalConstants.GoogleAPIResponseStatus.ok {
+                                
+                                //Response and query have been successful return data dictionary
+                                completionHandler(true, responseDict, nil)
+
+                            } else {
+                                
+                                //Extract error from response
+                                let error = responseDict["error_message"] as? String ?? ""
+                                
+                                //Error occured in response return the message
+                                completionHandler(false, nil, error)
+                            }
+                        } else {
+                            
+                            //Extract error from response
+                            let error = responseDict["error_message"] as? String ?? ""
+                            
+                            //Error occured in response return the message
+                            completionHandler(false, nil, error)
+                        }
+                        
+                    } catch let catchError as NSError {
+                        
+                        //Issue has been encontered when parsing JSON return error message
+                        completionHandler(false, nil, "JSON Parser has encountered an issue parse response, \(catchError.localizedDescription)")
+                    }
+                }
+            }).resume()
+            session.finishTasksAndInvalidate()
+        } else {
+            
+            //Internet connection not available return error
+            completionHandler(false, nil, GlobalConstants.Errors.internetConnectionError)
+        }
+    }
+    
+    ///Get the most efficient routes between two geo-coordinates
+    /// - parameter source: The address, textual latitude/longitude value, or place ID from which you wish to calculate directions. Eg. origin=78.1234,78.56416; origin=24+Sussex+Drive+Ottawa+ON; origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE;
+    /// - parameter destination: The address, textual latitude/longitude value, or place ID to which you wish to calculate directions. Eg. origin=78.1234,78.56416; origin=24+Sussex+Drive+Ottawa+ON; origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE;
+    /// - parameter completionHandler: The callback will get called after fetching the response from server.
+    /// - parameter distance: The distance between source and destination in meters.
+    /// - parameter duration: The time takes to reach destination from source in seconds.
+    /// - parameter polylinePoints: The polyline is an approximate (smoothed) path of the resulting directions. It is an encoded polyline representation of the route.
+    /// - parameter error: The error received from server/user.
+    func getRoutes(from source: String, to destination: String, completionHandler handler: @escaping (_ success: Bool, _ distance: String?, _ duration: String?, _ polylinePoints: String?, _ error: String?) ->()) {
+        
+        let baseUrl = "\(GlobalConstants.GoogleAPI.directions)origin=\(source)&destination=\(destination)&mode=\(GlobalConstants.TravelMode.driving)&key=\(GlobalConstants.GoogleKeys.APIKey)"
+        //https://maps.googleapis.com/maps/api/directions/json?origin=17.25,78.20&destination=17.78,78.60&mode=driving&key=AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA
+        sendRequestToGoogleMaps(withUrl: baseUrl, parameters: nil, httpMethod: .get, completionHandler: { (success, response, error) in
+            
+            //On success
+            if success {
+                
+                var distance = ""
+                var duration = ""
+                var polyLinePoint = ""
+                
+                //Check if response is nil
+                if response != nil {
+                    
+                    //Extract routes from the response
+                    if let routes = response!["routes"] as? [[String: Any]] {
+                        
+                        //Check if the routes are exists
+                        if routes.count > 0 {
+                            
+                            //Extract overview polyline from the routes array
+                            if let overlayPolyline = routes[0]["overview_polyline"] as? [String: Any] {
+                                
+                                polyLinePoint = overlayPolyline["points"] as? String ?? ""
+                            }
+                            
+                            //Extract legs from the routes array
+                            if let legs = routes[0]["legs"] as? [[String: Any]] {
+                                
+                                //Check if the legs are exists
+                                if legs.count > 0 {
+                                    
+                                    //Extract distance from the response
+                                    if let distanceDict = legs[0]["distance"] as? [String: Any] {
+                                        
+                                        distance = distanceDict["text"] as? String ?? ""
+                                    }
+                                    
+                                    //Extract duration from the response
+                                    if let durationDict = legs[0]["duration"] as? [String: Any] {
+                                        
+                                        duration = durationDict["text"] as? String ?? ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                handler(true, distance, duration, polyLinePoint, nil)
+            } else {
+                
+                handler(false, nil, nil, nil, error)
+            }
+        })
+    }
+    
+    //MARK: - User -
     
     
-    //MARK: - Driver
+    //MARK: - Driver -
     
     
 }

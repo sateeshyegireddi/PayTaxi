@@ -178,4 +178,47 @@ class UtilityFunctions: NSObject {
         
         return UserDefaults.standard.string(forKey: GlobalConstants.UserDefaultsConstants.kDeviceToken) ?? ""
     }
+    
+    //MARK: - Model
+    func parseDouble(in dict: [String: Any]?, for key: String) -> Double {
+        
+        var double = 0.00
+        
+        if let value = dict?[key] as? String {
+            double = Double(value) ?? 0
+        } else if let value = dict?[key] as? Int {
+            double = Double(value)
+        } else if let value = dict?[key] as? Double {
+            double = value
+        }
+        
+        return double
+    }
+    
+    func parseInt(in dict: [String: Any]?, for key: String) -> Int {
+        
+        var int = 0
+        
+        if let value = dict?[key] as? String {
+            int = Int(value) ?? 0
+        } else if let value = dict?[key] as? Int {
+            int = Int(value)
+        }
+        
+        return int
+    }
+    
+    func parseString(in dict: [String: Any]?, for key: String) -> String {
+        
+        var str = ""
+        
+        if let value = dict?[key] as? String {
+            str = value
+        } else if let value = dict?[key] as? Int {
+            str = String(value)
+        }
+        
+        return str
+    }
+    
 }
