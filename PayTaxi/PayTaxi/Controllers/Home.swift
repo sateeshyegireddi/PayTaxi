@@ -303,3 +303,122 @@ extension Home: NavigationDelegate {
         print("selectedRow: \(row) Section: \(section)")
     }
 }
+
+/*
+class ViewController: UIViewController {
+    
+    var markers: [GMSMarker]!
+    var mapView: GMSMapView!
+    var path: GMSPath!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        /*
+         //Check if the location services are enabled
+         if !CLLocationManager.locationServicesEnabled() {
+         
+         // If general location settings are disabled then open general location settings
+         if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+         
+         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+         }
+         } else {
+         
+         // If general location settings are enabled then open location settings for the app
+         if let url = URL(string: UIApplicationOpenSettingsURLString) {
+         
+         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+         }
+         }
+         */
+        
+        markers = []
+        
+        // Create a GMSCameraPosition that tells the map to display the
+        // coordinate -33.86,151.20 at zoom level 6.
+        let camera = GMSCameraPosition.camera(withLatitude: 17.3850, longitude: 78.4867, zoom: 17.0)
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view = mapView
+        
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 17.3850, longitude: 78.4867)
+        marker.title = "Hyderabad"
+        marker.map = mapView
+        markers.append(marker)
+        
+        // Creates a marker in the center of the map.
+        let marker2 = GMSMarker()
+        marker2.position = CLLocationCoordinate2D(latitude: 17.3840, longitude: 78.4867)
+        marker2.title = "Visakhapatnam"
+        marker2.map = mapView
+        markers.append(marker2)
+        
+        let points = "onbiB{l`~MCoEFiAR@CjA~AKz@@?~BBrA"
+        path = GMSPath(fromEncodedPath: points)
+        let distance = GMSGeometryLength(path!)
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = UIColor.black
+        polyline.strokeWidth = 4.0
+        polyline.map = mapView
+        self.view = mapView
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.003, target: self, selector: #selector(animatePolylinePath), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            //self.focusMapToShowAllMarkers()
+            self.fitAllMarkers(self.path)
+        }
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func focusMapToShowAllMarkers() {
+        let myLocation: CLLocationCoordinate2D = self.markers.first!.position
+        var bounds: GMSCoordinateBounds = GMSCoordinateBounds(coordinate: myLocation, coordinate: myLocation)
+        
+        for marker in self.markers {
+            bounds = bounds.includingCoordinate(marker.position)
+            self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 150))
+            //self.mapView.animate(with: GMSCameraUpdate.fit(GMSCoordinateBounds(path: self.polyLineObject.path!), withPadding: 10))
+        }
+    }
+    
+    func fitAllMarkers(_ path: GMSPath) {
+        var bounds = GMSCoordinateBounds()
+        for index in 1...path.count() {
+            bounds = bounds.includingCoordinate(path.coordinate(at: index))
+        }
+        mapView.animate(with: GMSCameraUpdate.fit(bounds))
+    }
+    
+    var i: UInt = 0
+    var timer: Timer!
+    var animationPath = GMSMutablePath()
+    var animationPolyline = GMSPolyline()
+    
+    @objc func animatePolylinePath() {
+        
+        if (self.i < self.path.count()) {
+            self.animationPath.add(self.path.coordinate(at: self.i))
+            self.animationPolyline.path = self.animationPath
+            self.animationPolyline.strokeColor = UIColor.gray
+            self.animationPolyline.strokeWidth = 3
+            self.animationPolyline.map = self.mapView
+            self.i += 1
+        }
+        else {
+            self.i = 0
+            self.animationPath = GMSMutablePath()
+            self.animationPolyline.map = nil
+        }
+    }
+}
+*/
