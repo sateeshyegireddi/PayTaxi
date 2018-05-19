@@ -13,33 +13,49 @@ import CoreLocation
 class Home: UIViewController {
     
     //MARK: - Outlets
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
+    let locationManager = CLLocationManager()
+    
     private var longitude = 0.0
     private var latitude = 0.0
     private var mapView: GMSMapView!
     private var cameraZoom: Float = 17.0
-    let locationManager = CLLocationManager()
+    private var rootNavigation: Navigation!
+    private var markers: [String: GMSMarker]!
+    
+    var trackedUser: [String:AnyObject]!
     
     //MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Init variables
+        markers = [:]
+        
+        rootNavigation = navigationController as! Navigation
+        rootNavigation.navigationDelegate = self
         
         //Create and add mapView
         presentMapView()
         
         //Bring all other subViews to front
         view.bringSubview(toFront: myLocationButton)
+        view.bringSubview(toFront: menuButton)
         
         //Register for location updates
         registerForLocationUpdates()
+        
+        //Listen to sever events
+        listenToEvents()
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        
-//        return .lightContent
-//    }
+    //    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //
+    //        return .lightContent
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,13 +66,47 @@ class Home: UIViewController {
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         
+        
         //Get the user's location geo-coordinates
         let myLatitude = mapView.myLocation?.coordinate.latitude
         let myLongiude = mapView.myLocation?.coordinate.longitude
         
-        //Animate mapView to new camera position
-        let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
-        mapView.animate(to: cameraPosition)
+        let source = "\(myLatitude!),\(myLongiude!)"
+        let destination = "17.6868,83.2185"
+        
+        //Get routes between source and destination
+        APIHandler().getRoutes(from: source, to: destination, completionHandler: { (success, distance, duration, polylinePointsString, error) in
+            
+            //On success
+            if success {
+                
+                //Make this func async to not have any conflict
+                DispatchQueue.main.async {
+                    
+                    //Draw a physical line path between source and destination
+                    let path = GMSPath(fromEncodedPath: polylinePointsString ?? "")
+                    let polyline = GMSPolyline(path: path)
+                    polyline.map = self.mapView
+                    
+                    
+                }
+            } else {
+                
+            }
+        })
+        /*
+         //Animate mapView to new camera position
+         let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
+         mapView.animate(to: cameraPosition)
+         */
+    }
+    
+    @IBAction func menuButtonTapped(_ sender: UIButton) {
+        
+        if let navigation = navigationController as? Navigation {
+            
+            navigation.toggleMenu()
+        }
     }
     
     //MARK: - Functions
@@ -82,7 +132,7 @@ class Home: UIViewController {
         mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 15)
         
         //Set custome style to mapView
-        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.night)
+        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.silver)
         
         //Hide mapView initially
         mapView.isHidden = true
@@ -101,6 +151,92 @@ class Home: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    private func addMarkers() {
+        
+        DispatchQueue.main.async {
+            
+            //Create marker
+            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.6868, longitude: 83.2185), title: "Vizag", placeOn: self.mapView)
+            let currentLocationMarker = MapMarker().createMarker(with: nil, at: self.mapView.myLocation!.coordinate, title: "Hyderabad", placeOn: self.mapView)
+            self.markers.updateValue(marker, forKey: "Vizag")
+            self.markers.updateValue(currentLocationMarker, forKey: "Hyderabad")
+            
+            //TODO: Add Fit to bounds only show the placed markers on the map
+        }
+    }
+    
+    //Listen to all necessary events
+    private func listenToEvents() {
+        
+        addHandlers()
+        
+        //        listenToConnectionChanges()
+        //        listenToDriversListUpdate()
+    }
+    
+    private func addHandlers() {
+        SocketsManager.sharedInstance.socket.on("connect") {data, ack in
+            print("socket connected")
+        }
+        
+        SocketsManager.sharedInstance.socket.on("chat message") {[weak self] data, ack in
+            if let value = data.first as? String {
+                print(value)
+            }
+        }
+    }
+    
+    //MARK: - Socket functions
+    func listenToConnectionChanges() {
+        SocketsManager.sharedInstance.listenToConnectionChanges(onConnectHandler: {
+            
+            //if user was successfully connected to server we ask for a updated drivers list
+            SocketsManager.sharedInstance.checkForUpdatedDriversList()
+            self.locationManager.startUpdatingLocation()
+            
+        }, onDisconnectHandler: {
+            
+            //if user was disconnected from server we update the app interface
+            self.locationManager.stopUpdatingLocation()
+            
+        })
+    }
+    
+    //Listen to updates in drivers list, whenever it is updated or when we request
+    func listenToDriversListUpdate() {
+        SocketsManager.sharedInstance.listenToTrackedUsersListUpdate() { driversListUpdate in
+            if let listUpdate = driversListUpdate {
+                self.trackedUser = listUpdate[0]
+                print(self.trackedUser)
+            }
+        }
+    }
+    
+    func startTrackingUser() {
+        if let trackedUserId = trackedUser["id"] as? String {
+            
+            //Send to server a message that user is now tracking a tracked user location
+            SocketsManager.sharedInstance.userStartedTracking(driverSocketId: trackedUserId, coordinatesUpdateHandler: { (trakedUsersCorrdinatesUpdate) in
+                //When we receive tracked user current location the map is updated
+                if let latitudeString = trakedUsersCorrdinatesUpdate?["latitude"] as? String, let longitudeString = trakedUsersCorrdinatesUpdate?["longitude"] as? String, let latitude = Double(latitudeString), let longitude = Double(longitudeString) {
+                    //self.updateTrackedUserLocation(withLatitude: latitude, andLongitude: longitude)
+                }
+            }) { (trackedUserNickname) in
+                //When the tracked user stops sharing location we return to the tracked users list
+                if let nickname = trackedUserNickname {
+                    let alert = UIAlertController(title: "Ops!", message: "\(nickname) has stopped sharing location", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "Ok", style: .default) { action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                    
+                    alert.addAction(okButton)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
 }
@@ -130,7 +266,7 @@ extension Home: CLLocationManagerDelegate {
             mapView.camera = cameraPosition
             myLocationButton.isHidden = false
         } else {
-//            mapView.animate(to: cameraPosition)
+            //            mapView.animate(to: cameraPosition)
         }
     }
     
@@ -155,5 +291,16 @@ extension Home: CLLocationManagerDelegate {
         
         print("Failed to Get User Location. Error Is :: \(error.localizedDescription)")
         locationManager.stopUpdatingLocation()
+    }
+}
+
+
+//MARK: - Navigation Delegate
+
+extension Home: NavigationDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, selectedRow row: Int, at section: Int) {
+        
+        print("selectedRow: \(row) Section: \(section)")
     }
 }

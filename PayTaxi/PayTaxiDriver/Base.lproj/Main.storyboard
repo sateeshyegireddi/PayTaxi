@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="Splash" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="Splash" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -24,7 +24,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="116"/>
+            <point key="canvasLocation" x="-1278" y="116"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="zXb-zT-VzA">
+            <objects>
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zju-R5-hto" customClass="Login" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qBX-EV-XP5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TTx-u1-gAj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBs-aB-g9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="116"/>
+        </scene>
+        <!--Registration-->
+        <scene sceneID="669-tb-gn9">
+            <objects>
+                <viewController storyboardIdentifier="Registration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eft-X9-IDK" customClass="Registration" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XwP-qP-VQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NdQ-8y-mn5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHz-Ts-P9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="116"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="Mbn-6j-cAS">
@@ -43,11 +73,11 @@
             <objects>
                 <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2pa-0N-Zlg" customClass="Home" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Vx-z8-HrD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-yN-aeq">
-                                <rect key="frame" x="314" y="602" width="45" height="45"/>
+                                <rect key="frame" x="314" y="713" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="mSC-mG-jI1"/>
                                 </constraints>
@@ -59,16 +89,26 @@
                                     <action selector="locationButtonTapped:" destination="2pa-0N-Zlg" eventType="touchUpInside" id="fA4-gZ-Le5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISF-zZ-K6T">
+                                <rect key="frame" x="35" y="69" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="menuButtonTapped:" destination="2pa-0N-Zlg" eventType="touchUpInside" id="i7Q-pK-Fnk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eB4-Io-WlM" firstAttribute="bottom" secondItem="QfZ-yN-aeq" secondAttribute="bottom" constant="20" id="2aj-1F-I5q"/>
                             <constraint firstItem="eB4-Io-WlM" firstAttribute="trailing" secondItem="QfZ-yN-aeq" secondAttribute="trailing" constant="16" id="9O1-Wd-oE1"/>
+                            <constraint firstItem="ISF-zZ-K6T" firstAttribute="top" secondItem="eB4-Io-WlM" secondAttribute="top" constant="25" id="AeN-Pr-q3r"/>
                             <constraint firstItem="QfZ-yN-aeq" firstAttribute="width" secondItem="QfZ-yN-aeq" secondAttribute="height" multiplier="1:1" id="fFo-bY-mGM"/>
+                            <constraint firstItem="ISF-zZ-K6T" firstAttribute="leading" secondItem="eB4-Io-WlM" secondAttribute="leading" constant="35" id="yho-rw-q6N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eB4-Io-WlM"/>
                     </view>
                     <connections>
+                        <outlet property="menuButton" destination="ISF-zZ-K6T" id="QXr-lU-NAt"/>
                         <outlet property="myLocationButton" destination="QfZ-yN-aeq" id="guR-qR-8uI"/>
                     </connections>
                 </viewController>

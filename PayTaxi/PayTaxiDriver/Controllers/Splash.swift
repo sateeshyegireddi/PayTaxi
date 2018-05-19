@@ -20,7 +20,17 @@ class Splash: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        OpenScreen().navigation(self)
+        //Check if the user has logged into app already
+        let isAutoLogin = true//UtilityFunctions().isAutoLogin()
+        
+        if isAutoLogin {
+            
+            OpenScreen().navigation(self)
+        } else {
+            
+            OpenScreen().registration(self)
+        }
+        
     }
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
