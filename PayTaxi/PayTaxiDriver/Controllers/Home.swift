@@ -36,10 +36,10 @@ class Home: UIViewController {
         registerForLocationUpdates()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        
+//        return .lightContent
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

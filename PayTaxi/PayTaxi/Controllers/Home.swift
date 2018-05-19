@@ -52,10 +52,10 @@ class Home: UIViewController {
         listenToEvents()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        
+//        return .lightContent
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
