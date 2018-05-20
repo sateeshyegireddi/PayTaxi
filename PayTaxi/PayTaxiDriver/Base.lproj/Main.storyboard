@@ -7,9 +7,27 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Black.ttf">
+            <string>Poppins-Black</string>
+        </array>
+        <array key="Poppins-BlackItalic.ttf">
+            <string>Poppins-BlackItalic</string>
+        </array>
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Splash-->
         <scene sceneID="tne-QT-ifu">
@@ -25,21 +43,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1278" y="116"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="zXb-zT-VzA">
-            <objects>
-                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zju-R5-hto" customClass="Login" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qBX-EV-XP5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="TTx-u1-gAj"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LBs-aB-g9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-572" y="116"/>
         </scene>
         <!--Registration-->
         <scene sceneID="669-tb-gn9">
@@ -115,6 +118,149 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luE-uW-iu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1506" y="117"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="p22-CQ-MTU">
+            <objects>
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="klR-rb-uLv" customClass="Login" customModule="PayTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cbf-Il-4fb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nih-uV-7xn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SKI-lK-9fh">
+                                <rect key="frame" x="122.33333333333333" y="52" width="131.33333333333337" height="131.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SKI-lK-9fh" secondAttribute="height" multiplier="1:1" id="uYn-y3-it9"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk7-gX-3gB">
+                                <rect key="frame" x="25" y="258.66666666666669" width="325" height="295.00000000000006"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EW-UG-Jpp">
+                                        <rect key="frame" x="0.0" y="30" width="325" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to continue using PayTaxi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-yJ-2S8">
+                                        <rect key="frame" x="0.0" y="55.333333333333307" width="325" height="19.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-VF-bKn" customClass="PTTextField" customModule="PayTaxiDriver" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="105" width="285" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bOz-h3-JvD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w66-IG-7C5" customClass="PTTextField" customModule="PayTaxiDriver" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="167" width="285" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X41-2u-Gj3">
+                                        <rect key="frame" x="92.666666666666686" y="230" width="140" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="X41-2u-Gj3" secondAttribute="height" multiplier="4:1" id="8dc-5W-HBg"/>
+                                            <constraint firstAttribute="height" constant="35" id="UJa-Ds-mpm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                        <state key="normal" title="FORGOT PASSWORD?"/>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="aZ5-nA-CNV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="X41-2u-Gj3" firstAttribute="centerX" secondItem="Mk7-gX-3gB" secondAttribute="centerX" id="9CT-Tm-W8C"/>
+                                    <constraint firstItem="w66-IG-7C5" firstAttribute="height" secondItem="zj4-VF-bKn" secondAttribute="height" id="Cw2-wZ-Hzt"/>
+                                    <constraint firstAttribute="width" secondItem="Mk7-gX-3gB" secondAttribute="height" multiplier="65:59" id="Hso-1N-dWd"/>
+                                    <constraint firstAttribute="trailing" secondItem="8EW-UG-Jpp" secondAttribute="trailing" id="Lm1-gQ-TvN"/>
+                                    <constraint firstItem="zj4-VF-bKn" firstAttribute="leading" secondItem="Mk7-gX-3gB" secondAttribute="leading" constant="20" id="NkC-k4-0ud"/>
+                                    <constraint firstItem="I1t-yJ-2S8" firstAttribute="leading" secondItem="Mk7-gX-3gB" secondAttribute="leading" id="OkE-R1-cTR"/>
+                                    <constraint firstItem="8EW-UG-Jpp" firstAttribute="leading" secondItem="Mk7-gX-3gB" secondAttribute="leading" id="R1Y-1R-0aR"/>
+                                    <constraint firstItem="w66-IG-7C5" firstAttribute="top" secondItem="zj4-VF-bKn" secondAttribute="bottom" constant="12" id="Tdl-pA-xf0"/>
+                                    <constraint firstItem="w66-IG-7C5" firstAttribute="trailing" secondItem="zj4-VF-bKn" secondAttribute="trailing" id="VAy-Xu-1XD"/>
+                                    <constraint firstItem="zj4-VF-bKn" firstAttribute="top" secondItem="I1t-yJ-2S8" secondAttribute="bottom" constant="30" id="ZXC-bj-hQy"/>
+                                    <constraint firstItem="I1t-yJ-2S8" firstAttribute="top" secondItem="8EW-UG-Jpp" secondAttribute="bottom" id="iD9-o3-rxF"/>
+                                    <constraint firstItem="w66-IG-7C5" firstAttribute="centerX" secondItem="zj4-VF-bKn" secondAttribute="centerX" id="jd6-9E-Lb9"/>
+                                    <constraint firstItem="8EW-UG-Jpp" firstAttribute="top" secondItem="Mk7-gX-3gB" secondAttribute="top" constant="30" id="kO1-Xs-8ku"/>
+                                    <constraint firstItem="w66-IG-7C5" firstAttribute="leading" secondItem="zj4-VF-bKn" secondAttribute="leading" id="lsF-wN-cmQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="I1t-yJ-2S8" secondAttribute="trailing" id="sbR-UD-amK"/>
+                                    <constraint firstAttribute="trailing" secondItem="zj4-VF-bKn" secondAttribute="trailing" constant="20" id="t5q-0N-SfM"/>
+                                    <constraint firstAttribute="bottom" secondItem="X41-2u-Gj3" secondAttribute="bottom" constant="30" id="zzB-im-Zl4"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6A-is-S9n">
+                                <rect key="frame" x="25" y="573.66666666666663" width="325" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kIT-4b-0Kv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="14"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="g18-0E-WhD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDJ-hK-mjM">
+                                <rect key="frame" x="25" y="723" width="325" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="YsB-Pc-2Yj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-BlackItalic" family="Poppins" pointSize="14"/>
+                                <state key="normal" title="New User? Signup for a new account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registrationButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="azW-Ao-gog"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mk7-gX-3gB" firstAttribute="trailing" secondItem="WDJ-hK-mjM" secondAttribute="trailing" id="6Sd-aU-6hm"/>
+                            <constraint firstItem="SKI-lK-9fh" firstAttribute="centerX" secondItem="Nih-uV-7xn" secondAttribute="centerX" id="CRg-Xe-Yru"/>
+                            <constraint firstItem="SKI-lK-9fh" firstAttribute="width" secondItem="Cbf-Il-4fb" secondAttribute="width" multiplier="0.35" id="Cmc-1C-qwM"/>
+                            <constraint firstItem="Nih-uV-7xn" firstAttribute="trailing" secondItem="cKq-r1-mRF" secondAttribute="trailing" id="H19-D4-AR8"/>
+                            <constraint firstItem="cKq-r1-mRF" firstAttribute="bottom" secondItem="WDJ-hK-mjM" secondAttribute="bottom" constant="20" id="MrC-RV-N6T"/>
+                            <constraint firstItem="Nih-uV-7xn" firstAttribute="leading" secondItem="cKq-r1-mRF" secondAttribute="leading" id="TgT-13-2Wg"/>
+                            <constraint firstItem="cKq-r1-mRF" firstAttribute="trailing" secondItem="Mk7-gX-3gB" secondAttribute="trailing" constant="25" id="Th6-jZ-Di8"/>
+                            <constraint firstItem="M6A-is-S9n" firstAttribute="centerX" secondItem="Mk7-gX-3gB" secondAttribute="centerX" id="UsX-MX-iXs"/>
+                            <constraint firstAttribute="bottom" secondItem="Nih-uV-7xn" secondAttribute="bottom" id="WnU-Do-Yi9"/>
+                            <constraint firstItem="Mk7-gX-3gB" firstAttribute="leading" secondItem="cKq-r1-mRF" secondAttribute="leading" constant="25" id="Xno-yM-V5b"/>
+                            <constraint firstItem="Mk7-gX-3gB" firstAttribute="centerX" secondItem="Cbf-Il-4fb" secondAttribute="centerX" id="gv8-A3-cC9"/>
+                            <constraint firstItem="M6A-is-S9n" firstAttribute="top" secondItem="Mk7-gX-3gB" secondAttribute="bottom" constant="20" id="kW3-oX-dok"/>
+                            <constraint firstItem="Nih-uV-7xn" firstAttribute="top" secondItem="Cbf-Il-4fb" secondAttribute="top" id="lLq-So-lYz"/>
+                            <constraint firstItem="Mk7-gX-3gB" firstAttribute="centerY" secondItem="Cbf-Il-4fb" secondAttribute="centerY" id="qyc-NK-rPq"/>
+                            <constraint firstItem="WDJ-hK-mjM" firstAttribute="leading" secondItem="Mk7-gX-3gB" secondAttribute="leading" id="rRC-gk-BmH"/>
+                            <constraint firstItem="SKI-lK-9fh" firstAttribute="top" secondItem="cKq-r1-mRF" secondAttribute="top" constant="8" id="ud8-o8-V79"/>
+                            <constraint firstItem="M6A-is-S9n" firstAttribute="width" secondItem="Mk7-gX-3gB" secondAttribute="width" id="zSf-8h-6jI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cKq-r1-mRF"/>
+                    </view>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="X41-2u-Gj3" id="eto-DS-3Qr"/>
+                        <outlet property="loginButton" destination="M6A-is-S9n" id="ofm-xT-2aY"/>
+                        <outlet property="loginLabel" destination="I1t-yJ-2S8" id="rjR-lD-spS"/>
+                        <outlet property="loginView" destination="Mk7-gX-3gB" id="Epz-ut-m9e"/>
+                        <outlet property="logoImageView" destination="SKI-lK-9fh" id="SOn-jJ-jdh"/>
+                        <outlet property="mobileTextField" destination="zj4-VF-bKn" id="yAn-nk-XEY"/>
+                        <outlet property="overlayImageView" destination="Nih-uV-7xn" id="uCl-iX-YQo"/>
+                        <outlet property="passwordTextField" destination="w66-IG-7C5" id="dby-Fj-1EW"/>
+                        <outlet property="registrationButton" destination="WDJ-hK-mjM" id="Ugs-3q-ZqJ"/>
+                        <outlet property="welcomeLabel" destination="8EW-UG-Jpp" id="uSK-fl-P6o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rwr-YF-XRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="116.74876847290641"/>
         </scene>
     </scenes>
 </document>

@@ -179,6 +179,54 @@ class UtilityFunctions: NSObject {
         return UserDefaults.standard.string(forKey: GlobalConstants.UserDefaultsConstants.kDeviceToken) ?? ""
     }
     
+    //MARK: - Styles
+    func addRoudedBorder(to view: UIView, borderColor color: UIColor, borderWidth width: CGFloat) {
+        
+        view.layer.cornerRadius = (view is UIButton) ? GlobalConstants.View.buttonCornerRadius : GlobalConstants.View.viewCornerRadius
+        view.layer.masksToBounds = true
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = width
+    }
+    
+    func addRoudedBorder(to view: UIView, showCorners corners: Bool, borderColor color: UIColor, borderWidth width: CGFloat, showShadow show: Bool) {
+        
+        view.layer.masksToBounds = false
+        
+        //Corners
+        if corners {
+            view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
+            view.layer.masksToBounds = true
+        }
+        
+        //Border
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = width
+
+        //Shadow
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowRadius = 1.5
+        view.layer.shadowOpacity = 0.3
+    }
+    
+    func addAttributedFont(for button: UIButton) {
+        
+        let attributedString = NSMutableAttributedString(string: button.titleLabel!.text!)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.lightText!, range: NSRange(location: 0, length: 9))
+        button.setAttributedTitle(attributedString, for: UIControlState.normal)
+    }
+    
+    func setGradientLayer(for view: UIView, fromColor color1: UIColor, toColor color2: UIColor) {
+        
+        let layer = CAGradientLayer()
+        layer.frame = view.bounds
+        layer.startPoint = CGPoint(x: 1.0, y: 0.2)
+        layer.endPoint = CGPoint(x: 1.0, y: 1)
+        layer.colors = [color1.cgColor, color2.cgColor]
+        //layer.locations = [NSNumber(value: 0.0), NSNumber(value: 0.6), NSNumber(value: 1.0)]
+        view.layer.addSublayer(layer)
+    }
+    
     //MARK: - Model
     func parseDouble(in dict: [String: Any]?, for key: String) -> Double {
         
@@ -221,4 +269,104 @@ class UtilityFunctions: NSObject {
         return str
     }
     
+    //MARK: - Custom UI
+    
+    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?) {
+        
+        textField.margin = 20
+        textField.borderColor = GlobalConstants.Colors.mercury
+        textField.textColor = GlobalConstants.Colors.megnisium
+        textField.text = textString
+        textField.placeHolderText = placeHolder
+        textField.image = leftImage
+    }
+    
+    //MARK: - Native UI
+    func showSimpleAlert(OnViewController vc: UIViewController, Message message: String) {
+        
+        //Create alertController object with specific message
+        let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
+        
+        //Add OK button to alert and dismiss it on action
+        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(alertAction)
+        
+        //Show alert to user
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSimpleAlert(OnViewController vc: UIViewController, Message message: String, Handler handler: @escaping (_ action: UIAlertAction) -> Void) {
+        
+        //Create alertController object with specific message
+        let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
+        
+        //Add OK button to alert and dismiss it on action
+        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            //Call Action handler
+            handler(action)
+        }
+        alertController.addAction(alertAction)
+        
+        //Show alert to user
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSimpleAlertWithCancel(OnViewController vc: UIViewController, Message message: String, Handler handler: @escaping (_ action: UIAlertAction) -> Void) {
+        
+        //Create alertController object with specific message
+        let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
+        
+        //Add OK button to alert and dismiss it on action
+        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            //Call Action handler
+            handler(action)
+        }
+        alertController.addAction(alertAction)
+        
+        //Add Cancel button to alert and dismiss it on action
+        let alertAction2 = UIAlertAction(title: "Cancel".localized, style: .default) { (action) in
+        }
+        alertController.addAction(alertAction2)
+        
+        //Show alert to user
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    func showActionSheet(on viewController: UIViewController, withTitle title: String, andMessage message: String, firstActionTitle actionTitle1: String, andItsHandler handler1: @escaping (_ action: UIAlertAction) -> Void, secondActionTitle actionTitle2: String, andItsHandler handler2: @escaping (_ action: UIAlertAction) -> Void) {
+        
+        //Create an alert Controller of type action sheet
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .actionSheet)
+        
+        //Add first action
+        let action1 = UIAlertAction.init(title: actionTitle1, style: .default, handler: { (action: UIAlertAction) in
+            
+            //Call Action handler
+            handler1(action)
+        })
+        
+        //Add second action
+        let action2 = UIAlertAction.init(title: actionTitle2, style: .default, handler: { (action: UIAlertAction) in
+            
+            //Call Action handler
+            handler2(action)
+        })
+        
+        //Add cancel action
+        let cancelAction = UIAlertAction.init(title: "Cancel".localized, style: .cancel, handler: { (action: UIAlertAction) in
+        })
+        
+        //Add actions to alert controller
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(cancelAction)
+        
+        //Present the alert controller on current view controller
+        viewController.present(alertController, animated: true, completion: nil)
+    }
 }

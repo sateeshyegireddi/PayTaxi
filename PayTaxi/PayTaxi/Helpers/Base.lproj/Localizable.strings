@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  PayTaxi
+
+  Created by Sateesh Yegireddi on 20/05/18.
+  Copyright © 2018 PayTaxi. All rights reserved.
+*/
+
+//MARK: - Internet messages
+
+//MARK: - Error messages
+
+//MARK: - Success messages
+
+//MARK: - Common messages
+
+//Login
+"login_message" = "Login to continue using PayTaxi";
+
+//MARK: - Validation messages
+
+//MARK: - Titles
+
+//General
+"welcome_back" = "Welcome Back!";
+
+//Login
+"forgot_password" = "FORGOT PASSWORD?";
+"login" = "Login";
+"new_user" = "New user? Signup for a new account";
+
+//MARK: - Placeholders
+"mobile" = "Mobile Number";
+"password" = "Password";

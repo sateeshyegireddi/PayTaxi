@@ -10,24 +10,39 @@ import UIKit
 
 public struct GlobalConstants {
 
-    //MARK: - 
+    private static let target = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+
+    //MARK: - Constants -
     struct Constants {
         
-        static let appName = "PayTaxi"
+        static let appName = GlobalConstants.target
+        static let userAppName = "PayTaxi"
+        static let driverAppName = "PayTaxiDriver"
         static let loading = "Loading"
         static let topViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 95)
         static let localEncryptionKey = "LDUH!Zpq^yFnrhkPMy4Yevybx%WB*3428009wLgERlH"
     }
     
-    //MARK: -
+    //MARK: - API -
     struct API {
         
-        static let baseURL = ""
+        static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://paytaxi.kamakshisarees.com/customerapis/" : "http://paytaxi.kamakshisarees.com/driverapis/"
 
         static let socketUrl = "http://192.168.102.167:3000"
         
+        //MARK: - User
+        
         //Registration, Login, Logout
         static let register = "registration"
+        
+        
+        
+        //MARK: - Driver
+        
+        //Registration, Login, Logout
+        static let driverRegistration = "driverRegistration"
+        static let checkRegistrationOTP = "checkRegistrationOtp"
+        static let resendOTP = "resendOtp"
     }
     
     //MARK: -
@@ -56,8 +71,19 @@ public struct GlobalConstants {
     //MARK: -
     struct APIKeys {
         
-        //Login
+        //Registration
+        static let fullName = "fullName"
+        static let mobileNumber = "mobileNumber"
         static let email = "email"
+        static let password = "password"
+        static let vehicleType = "vehicleType"
+        static let vehicleNoPlate = "vehicleNoPlate"
+        static let licenceRegNo = "licenceRegNo"
+        
+        //OTP Verification, Resend OTP
+        static let userId = "userId"
+        static let otpId = "otpId"
+        static let otp = "otp"
     }
     
     //MARK: -
@@ -83,16 +109,29 @@ public struct GlobalConstants {
         static let kAuthToken = "kWallet_auth_token"
     }
     
-    //MARK: -
+    //MARK: - View -
     struct Colors {
      
-        static let orange = UIColor(red: 242/255, green: 138/255, blue: 0, alpha: 1)
+        static let blue = UIColor(red: 38/255, green: 34/255, blue: 98/255, alpha: 1)
+        static let green = UIColor(red: 126/255, green: 211/255, blue: 33/255, alpha: 1)
+        static let iron = UIColor(red: 96/255, green: 100/255, blue: 112/255, alpha: 1)
+        static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
+        static let megnisium = UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
     }
     
     //MARK: -
     struct Fonts {
         
-        static let titleText = UIFont(name: "OpenSans-Regular", size: 13.0)
+        static let titleText = UIFont(name: "Poppins-Black", size: 14.0)
+        static let textFieldText = UIFont(name: "Poppins-SemiBold", size: 14.0)
+        static let lightText = UIFont(name: "Poppins-Light", size: 14.0)
+        static let titleItalicText = UIFont(name: "Poppins-BlackItalic", size: 14.0)
+    }
+    
+    struct View {
+        
+        static let buttonCornerRadius: CGFloat = 8
+        static let viewCornerRadius: CGFloat = 12
     }
     
     //MARK: -

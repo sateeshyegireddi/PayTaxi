@@ -21,14 +21,14 @@ class Splash: UIViewController {
         super.viewDidAppear(animated)
         
         //Check if the user has logged into app already
-        let isAutoLogin = true//UtilityFunctions().isAutoLogin()
+        let isAutoLogin = false//UtilityFunctions().isAutoLogin()
         
         if isAutoLogin {
             
             OpenScreen().navigation(self)
         } else {
             
-            OpenScreen().registration(self)
+            OpenScreen().login(self)
         }
         
     }
