@@ -238,7 +238,7 @@ class APIHandler: NSObject {
         }
     }
     
-    func extractErrorMessage(responseDict: [String: Any]?) -> String {
+    private func extractErrorMessage(responseDict: [String: Any]?) -> String {
         
         //Init variables
         var errorMessage = ""
@@ -271,7 +271,7 @@ class APIHandler: NSObject {
         return errorMessage
     }
     
-    func getHeaderFieldsDictionary() -> [String: Any] {
+    private func getHeaderFieldsDictionary() -> [String: Any] {
         
         var dict = [String: Any]()
         dict.updateValue(GlobalConstants.APIHeaderFieldValues.applicationType, forKey: GlobalConstants.APIHeaderFieldKeys.applicationType)
@@ -285,7 +285,7 @@ class APIHandler: NSObject {
         return dict
     }
     
-    func convertJSONtoEncryptedString(_ paramsDictionary: [String: Any]) -> String {
+    private func convertJSONtoEncryptedString(_ paramsDictionary: [String: Any]) -> String {
         
         do {
             let paramsData = try JSONSerialization.data(withJSONObject: paramsDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -458,10 +458,96 @@ class APIHandler: NSObject {
         })
     }
     
-    //MARK: - User -
+    //MARK: - User API Requests -
     
     
-    //MARK: - Driver -
+    //MARK: - Driver API Requests -
     
+    func loginDriver(with parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.driverLogin, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
+ 
+    func registrationDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.driverRegistration, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
     
+    func verifyOTPDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.verifyDriverOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
+    
+    func resendOTPDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.resendOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
 }

@@ -209,10 +209,10 @@ class UtilityFunctions: NSObject {
         view.layer.shadowOpacity = 0.3
     }
     
-    func addAttributedFont(for button: UIButton) {
+    func addAttributedFont(for button: UIButton, till index: Int) {
         
         let attributedString = NSMutableAttributedString(string: button.titleLabel!.text!)
-        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.lightText!, range: NSRange(location: 0, length: 9))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.lightText!, range: NSRange(location: 0, length: index))
         button.setAttributedTitle(attributedString, for: UIControlState.normal)
     }
     

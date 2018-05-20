@@ -17,18 +17,36 @@
 //Login
 "login_message" = "Login to continue using PayTaxi";
 
+//Registration
+"registration_message" = "Signup with PayTaxi in simple steps";
+
 //MARK: - Validation messages
 
 //MARK: - Titles
 
 //General
 "welcome_back" = "Welcome Back!";
+"welcome_abord" = "Welcome Abord!";
 
 //Login
 "forgot_password" = "FORGOT PASSWORD?";
-"login" = "Login";
-"new_user" = "New user?   Signup for a new account";
+"login" = "LOGIN";
+"new_user" = "New user?   Signup  for  a  new  account";
+
+//Registration
+"signup" = "SIGNUP";
+"existing_user" = "Already a user?   Login  now";
+"terms_conditions" = "Terms and Conditions";
 
 //MARK: - Placeholders
+
+//Login
 "mobile" = "Mobile Number";
 "password" = "Password";
+
+//Registration
+"user_name" = "User Name";
+"gender" = "Gender";
+"email" = "Email";
+
+

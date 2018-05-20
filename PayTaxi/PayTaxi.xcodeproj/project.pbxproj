@@ -158,6 +158,12 @@
 		F9A0385D20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
 		F9A0385E20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
 		F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
+		F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
+		F9AC8E2F20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
+		F9AC8E3020B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
+		F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
+		F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
+		F9AC8E3320B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
@@ -290,6 +296,8 @@
 		F9A0382420B199B60044A1A5 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F9A917AD209C20BD0027C6E4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
+		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
 		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -377,6 +385,8 @@
 			children = (
 				F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */,
 				F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */,
+				F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */,
+				F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -772,6 +782,7 @@
 				F9A0384420B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384120B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
 				F9A0384D20B199B60044A1A5 /* License.txt in Resources */,
+				F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */,
 				F9A0384720B199B60044A1A5 /* Poppins-LightItalic.ttf in Resources */,
 				F9A0383820B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				F9A0385020B199B60044A1A5 /* Poppins-Black.ttf in Resources */,
@@ -805,6 +816,7 @@
 				F9A0384520B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384220B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
 				F9A0384E20B199B60044A1A5 /* License.txt in Resources */,
+				F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */,
 				F9A0384820B199B60044A1A5 /* Poppins-LightItalic.ttf in Resources */,
 				F9A0383920B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				F9A0385120B199B60044A1A5 /* Poppins-Black.ttf in Resources */,
@@ -844,6 +856,7 @@
 				F9A0384F20B199B60044A1A5 /* License.txt in Resources */,
 				F9A0382820B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
 				F9A0383D20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				F9AC8E3320B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */,
 				F9A0383A20B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				F9A0384620B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384320B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
@@ -1066,6 +1079,7 @@
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
 				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
+				F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
 				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
@@ -1097,6 +1111,7 @@
 				F9A0293920B0943E009011CF /* MainMenu.swift in Sources */,
 				F9A0294320B094BE009011CF /* MainMenuHeader.swift in Sources */,
 				F96380DE2099BE6600C3CC1E /* GlobalConstants.swift in Sources */,
+				F9AC8E2F20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
 				F96380DC2099BE5400C3CC1E /* APIHandler.swift in Sources */,
 				F96E67A120A3035A00F00FEA /* Navigation.swift in Sources */,
 				F9A0292A20B09256009011CF /* Login.swift in Sources */,
@@ -1122,6 +1137,7 @@
 				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
+				F9AC8E3020B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
 				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
 				F996C451209C7BF1007849B3 /* Splash.swift in Sources */,
 				F96E67A620A32B0000F00FEA /* MainMenu.swift in Sources */,

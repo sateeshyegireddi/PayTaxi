@@ -23,8 +23,8 @@ class Login: UIViewController {
     @IBOutlet weak var registrationButton: UIButton!
     
     //MARK: - Variables
-    var mobileNumber: String!
-    var password: String!
+    fileprivate var mobileNumber: String!
+    fileprivate var password: String!
     
     //MARK: - Views
     override func viewDidLoad() {
@@ -41,6 +41,32 @@ class Login: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Web Services
+    private func login() {
+        
+        //Create request parameters
+        let parameters = [GlobalConstants.APIKeys.mobileNumber: mobileNumber,
+                          GlobalConstants.APIKeys.password: password] as [String: Any]
+        
+        //Request to Login API
+        APIHandler().loginDriver(with: parameters, completionHandler: { (success, error) in
+            
+            //On success
+            if success {
+                
+                //Make this func async to not have being crashed
+                DispatchQueue.main.async {
+                    
+                    //Move user to home screen
+                    OpenScreen().navigation(self)
+                }
+            } else {
+                
+                
+            }
+        })
     }
     
     //MARK: - Actions
@@ -69,7 +95,7 @@ class Login: UIViewController {
         //Setup View
         UtilityFunctions().addRoudedBorder(to: loginView, borderColor: UIColor.clear, borderWidth: 0)
         
-        //Setup label
+        //Setup labels
         welcomeLabel.text = "welcome_back".localized
         welcomeLabel.textColor = GlobalConstants.Colors.blue
         loginLabel.text = "login_message".localized
@@ -84,14 +110,14 @@ class Login: UIViewController {
         UtilityFunctions().setTextField(passwordTextField, text: "", placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"))
         passwordTextField.isSecureEntry = true
         
-        //Setup button
+        //Setup buttons
         forgotPasswordButton.setTitleColor(GlobalConstants.Colors.megnisium, for: .normal)
         forgotPasswordButton.setTitle("forgot_password".localized, for: .normal)
         loginButton.setTitle("login".localized, for: .normal)
         loginButton.backgroundColor = GlobalConstants.Colors.green
         UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
         registrationButton.setTitle("new_user".localized, for: .normal)
-        UtilityFunctions().addAttributedFont(for: registrationButton)
+        UtilityFunctions().addAttributedFont(for: registrationButton, till: 9)
     }
 }
 

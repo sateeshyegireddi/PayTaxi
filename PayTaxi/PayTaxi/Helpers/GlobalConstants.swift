@@ -41,8 +41,9 @@ public struct GlobalConstants {
         
         //Registration, Login, Logout
         static let driverRegistration = "driverRegistration"
-        static let checkRegistrationOTP = "checkRegistrationOtp"
+        static let verifyDriverOTP = "checkRegistrationOtp"
         static let resendOTP = "resendOtp"
+        static let driverLogin = "driverLogin"
     }
     
     //MARK: -
