@@ -34,10 +34,26 @@ class Login: UIViewController {
         mobileNumber = ""
         password = ""
         
+        //Add notification listener for keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
         //Setup basic UI
         setupUI()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        closeKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //Remove notification listener for the keyboard
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,6 +99,32 @@ class Login: UIViewController {
     @IBAction func registrationButtonTapped(_ sender: UIButton) {
         
         OpenScreen().registration(self)
+    }
+    
+    //MARK: - Keyboard Delegate Method
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        //Move screen little bit up to show fields in 5S
+        if UIScreen.main.bounds.width == 320 {
+            
+            //Call function to move the view up
+            UtilityFunctions().keyboardWillShow(notification, inView: self.view, percent: 0.3)
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        
+        //Move screen little bit up to show fields in 5S
+        if UIScreen.main.bounds.width == 320 {
+            
+            //Call function to move the view back down
+            UtilityFunctions().keyboardWillHide(notification, inView: self.view)
+        }
+    }
+    
+    func closeKeyboard() {
+        
+        view.endEditing(true)
     }
     
     //MARK: - Functions

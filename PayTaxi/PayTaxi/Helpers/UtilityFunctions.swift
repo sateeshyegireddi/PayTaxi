@@ -281,6 +281,19 @@ class UtilityFunctions: NSObject {
         textField.image = leftImage
     }
     
+    //MARK: - Keyboard Functions
+    func keyboardWillShow(_ notification: NSNotification, inView: UIView, percent: CGFloat) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            inView.frame.origin.y = 0 - keyboardSize.height * percent
+        }
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification, inView: UIView) {
+        
+        inView.frame.origin.y = 0
+    }
+    
     //MARK: - Native UI
     func showSimpleAlert(OnViewController vc: UIViewController, Message message: String) {
         

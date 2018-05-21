@@ -19,6 +19,7 @@
 
 //Registration
 "registration_message" = "Signup with PayTaxi in simple steps";
+"terms_conditions_message" = "Upon clicking Signup you are accepting Terms and Conditions";
 
 //MARK: - Validation messages
 
@@ -48,5 +49,6 @@
 "user_name" = "User Name";
 "gender" = "Gender";
 "email" = "Email";
-
+"driver_license_no" = "Driver license no";
+"vehicle_registration_no" = "Vehicle registration no";
 

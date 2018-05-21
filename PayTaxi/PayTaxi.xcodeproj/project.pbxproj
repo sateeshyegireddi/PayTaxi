@@ -167,6 +167,12 @@
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9FC1E7F20B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
+		F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
+		F9FC1E8120B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
+		F9FC1E8220B3121300D8789B /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */; };
+		F9FC1E8320B3121300D8789B /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */; };
+		F9FC1E8420B3121300D8789B /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +305,8 @@
 		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
 		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
 		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
+		F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +395,8 @@
 				F96E67AE20A32D6000F00FEA /* MainMenuCell.xib */,
 				F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */,
 				F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */,
+				F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */,
+				F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -777,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96E67B020A32D6000F00FEA /* MainMenuCell.xib in Resources */,
+				F9FC1E8220B3121300D8789B /* TermsConditionsCell.xib in Resources */,
 				F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */,
 				F9A0382C20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				F9A0384420B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
@@ -811,6 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9A0294420B094BE009011CF /* MainMenuHeader.xib in Resources */,
+				F9FC1E8320B3121300D8789B /* TermsConditionsCell.xib in Resources */,
 				F9A0293F20B0945A009011CF /* MainMenuCell.xib in Resources */,
 				F9A0382D20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				F9A0384520B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
@@ -853,6 +865,7 @@
 				F9A0385B20B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383720B199B60044A1A5 /* Poppins-Medium.ttf in Resources */,
 				F9A0382E20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				F9FC1E8420B3121300D8789B /* TermsConditionsCell.xib in Resources */,
 				F9A0384F20B199B60044A1A5 /* License.txt in Resources */,
 				F9A0382820B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
 				F9A0383D20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
@@ -1065,6 +1078,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F961FE8620ABF4EF00580D62 /* Login.swift in Sources */,
+				F9FC1E7F20B3121300D8789B /* TermsConditionsCell.swift in Sources */,
 				F9A037DF20B164780044A1A5 /* PTTextField.swift in Sources */,
 				F96380BE20999BD600C3CC1E /* Splash.swift in Sources */,
 				F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */,
@@ -1097,6 +1111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */,
+				F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */,
 				F9A037E020B164780044A1A5 /* PTTextField.swift in Sources */,
 				F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */,
 				F9075DC620A1D5BA001A2E02 /* Location.swift in Sources */,
@@ -1128,6 +1143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FC1E8120B3121300D8789B /* TermsConditionsCell.swift in Sources */,
 				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F9A037E120B164780044A1A5 /* PTTextField.swift in Sources */,
 				F996C450209C7BE9007849B3 /* APIHandler.swift in Sources */,

@@ -10,15 +10,22 @@ import UIKit
 
 class TermsConditionsCell: UITableViewCell {
 
+    //MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    //MARK: - Variables
+    public static let identifier = "TermsConditionsCell"
+    
+    //MARK: - Cell Fuctions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        selectionStyle = .none
+        backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.clear
+        
+        //Setup label
+        titleLabel.textColor = GlobalConstants.Colors.megnisium
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
