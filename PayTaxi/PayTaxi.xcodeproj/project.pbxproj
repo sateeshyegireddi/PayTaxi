@@ -58,7 +58,6 @@
 		F96E67B220A32D6000F00FEA /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
 		F96E67B320A32D6000F00FEA /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
 		F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
-		F9857A202097312700F2139A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
 		F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A212097312700F2139A /* PayTaxi.xcdatamodeld */; };
 		F9857A252097312800F2139A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9857A242097312800F2139A /* Assets.xcassets */; };
 		F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A262097312800F2139A /* LaunchScreen.storyboard */; };
@@ -167,6 +166,7 @@
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9FB263C20B32464005DE756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
 		F9FC1E7F20B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
 		F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
 		F9FC1E8120B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
@@ -793,6 +793,7 @@
 				F9A0384420B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384120B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
 				F9A0384D20B199B60044A1A5 /* License.txt in Resources */,
+				F9FB263C20B32464005DE756 /* Main.storyboard in Resources */,
 				F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */,
 				F9A0384720B199B60044A1A5 /* Poppins-LightItalic.ttf in Resources */,
 				F9A0383820B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -812,7 +813,6 @@
 				F9A0385320B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
 				F9A0382F20B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
 				F9A0385620B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
-				F9857A202097312700F2139A /* Main.storyboard in Resources */,
 				F9642E7B20A4837800027977 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

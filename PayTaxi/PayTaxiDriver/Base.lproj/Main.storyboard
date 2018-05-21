@@ -125,26 +125,26 @@
                                 <rect key="frame" x="25" y="258.66666666666669" width="325" height="295.00000000000006"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EW-UG-Jpp">
-                                        <rect key="frame" x="0.0" y="30" width="325" height="25.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="30" width="325" height="21"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to continue using PayTaxi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-yJ-2S8">
-                                        <rect key="frame" x="0.0" y="55.333333333333314" width="325" height="20"/>
+                                        <rect key="frame" x="0.0" y="51" width="325" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-VF-bKn" customClass="PTTextField" customModule="PayTaxiDriver" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="105.33333333333331" width="285" height="50"/>
+                                        <rect key="frame" x="20" y="97.333333333333314" width="285" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bOz-h3-JvD"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w66-IG-7C5" customClass="PTTextField" customModule="PayTaxiDriver" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="167.33333333333331" width="285" height="50"/>
+                                        <rect key="frame" x="20" y="159.33333333333331" width="285" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X41-2u-Gj3">
@@ -155,9 +155,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <state key="normal" title="FORGOT PASSWORD?"/>
-                                        <connections>
-                                            <action selector="forgotPasswordButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="aZ5-nA-CNV"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,9 +187,6 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="g18-0E-WhD"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDJ-hK-mjM">
                                 <rect key="frame" x="25" y="723" width="325" height="35"/>
@@ -203,9 +197,6 @@
                                 <state key="normal" title="New User? Signup for a new account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="registrationButtonTapped:" destination="klR-rb-uLv" eventType="touchUpInside" id="azW-Ao-gog"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,18 +221,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cKq-r1-mRF"/>
                     </view>
-                    <connections>
-                        <outlet property="forgotPasswordButton" destination="X41-2u-Gj3" id="eto-DS-3Qr"/>
-                        <outlet property="loginButton" destination="M6A-is-S9n" id="ofm-xT-2aY"/>
-                        <outlet property="loginLabel" destination="I1t-yJ-2S8" id="rjR-lD-spS"/>
-                        <outlet property="loginView" destination="Mk7-gX-3gB" id="Epz-ut-m9e"/>
-                        <outlet property="logoImageView" destination="SKI-lK-9fh" id="SOn-jJ-jdh"/>
-                        <outlet property="mobileTextField" destination="zj4-VF-bKn" id="yAn-nk-XEY"/>
-                        <outlet property="overlayImageView" destination="Nih-uV-7xn" id="uCl-iX-YQo"/>
-                        <outlet property="passwordTextField" destination="w66-IG-7C5" id="dby-Fj-1EW"/>
-                        <outlet property="registrationButton" destination="WDJ-hK-mjM" id="Ugs-3q-ZqJ"/>
-                        <outlet property="welcomeLabel" destination="8EW-UG-Jpp" id="uSK-fl-P6o"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rwr-YF-XRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,13 +247,13 @@
                                 <rect key="frame" x="25" y="193.66666666666666" width="325" height="439.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-dT-9GE">
-                                        <rect key="frame" x="0.0" y="30.333333333333343" width="325" height="25"/>
+                                        <rect key="frame" x="0.0" y="30.333333333333343" width="325" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moc-gv-pfM">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="325" height="20"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666679" width="325" height="19.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -282,10 +261,6 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W5q-Cg-cpl">
                                         <rect key="frame" x="0.0" y="100.33333333333334" width="325" height="324.33333333333326"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="bz2-ak-1dN" id="TKs-iG-ZXf"/>
-                                            <outlet property="delegate" destination="bz2-ak-1dN" id="nJz-jP-obm"/>
-                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -311,9 +286,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="registerButtonTapped:" destination="bz2-ak-1dN" eventType="touchUpInside" id="h3d-78-R0S"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRa-5O-Q79">
                                 <rect key="frame" x="25" y="723" width="325" height="35"/>
@@ -324,9 +296,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="bz2-ak-1dN" eventType="touchUpInside" id="uFk-dO-xPL"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -352,16 +321,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="All-N3-gl1"/>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="fRa-5O-Q79" id="p4v-7V-ZTs"/>
-                        <outlet property="logoImageView" destination="zB2-14-PRJ" id="SET-9X-Jqq"/>
-                        <outlet property="overlayImageView" destination="9F6-ls-3S9" id="arX-Xf-4Qy"/>
-                        <outlet property="registrationButton" destination="j1l-to-Q1h" id="WuN-GG-yys"/>
-                        <outlet property="registrationLabel" destination="moc-gv-pfM" id="6NE-kA-UjL"/>
-                        <outlet property="registrationTableView" destination="W5q-Cg-cpl" id="MlS-fL-iCT"/>
-                        <outlet property="registrationView" destination="9OV-ok-y1s" id="aek-Cp-OeC"/>
-                        <outlet property="welcomeLabel" destination="ZR9-dT-9GE" id="lUz-B5-A6a"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsP-Nc-5UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

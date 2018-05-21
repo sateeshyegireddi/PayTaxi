@@ -28,7 +28,7 @@ class Splash: UIViewController {
             OpenScreen().navigation(self)
         } else {
             
-            OpenScreen().registration(self)
+            OpenScreen().login(self)
         }
         
     }
