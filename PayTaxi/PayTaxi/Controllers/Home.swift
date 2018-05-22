@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import GooglePlaces
 
 class Home: UIViewController {
 
@@ -20,14 +21,19 @@ class Home: UIViewController {
     //MARK: - Variables
     let locationManager = CLLocationManager()
 
+    var places: [Place]!
+    var fetcher: GMSAutocompleteFetcher?
     private var longitude = 0.0
     private var latitude = 0.0
     private var mapView: GMSMapView!
     private var cameraZoom: Float = 16.5
     private var rootNavigation: Navigation!
-    private var markers: [String: GMSMarker]!
+    private var markers: [GMSMarker]!
     fileprivate var isFirst: Bool = true
     fileprivate var selectPickDropPointsView: SelectPickDropPointsView!
+    fileprivate var searchPlacesView: SearchPlacesView!
+    fileprivate var isPickupPointSelection: Bool!
+
     var trackedUser: [String:AnyObject]!
     
     //MARK: - Views
@@ -35,7 +41,9 @@ class Home: UIViewController {
         super.viewDidLoad()
 
         //Init variables
-        markers = [:]
+        markers = []
+        places = []
+        isPickupPointSelection = true
         
         rootNavigation = navigationController as! Navigation
         rootNavigation.navigationDelegate = self
@@ -57,6 +65,9 @@ class Home: UIViewController {
         
         //Add Select pickup and drop points view
         addSelectPickAndDropPointsView()
+        
+        //Init autoComplete fetcher
+        initiateAutoCompleteFetcher()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +88,7 @@ class Home: UIViewController {
                 //Make this func async not getting crash
                 DispatchQueue.main.async {
                     
-                    weakSelf.selectPickDropPointsView.pickupPoint = address
+                    weakSelf.selectPickDropPointsView.pickupPoint.title = address!
                     weakSelf.selectPickDropPointsView.pickPointTextField.text = address
                 }
             } else {
@@ -200,21 +211,59 @@ class Home: UIViewController {
         DispatchQueue.main.async {
             
             //Create marker
-            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.6868, longitude: 83.2185), title: "Vizag", placeOn: self.mapView)
-            let currentLocationMarker = MapMarker().createMarker(with: nil, at: self.mapView.myLocation!.coordinate, title: "Hyderabad", placeOn: self.mapView)
-            self.markers.updateValue(marker, forKey: "Vizag")
-            self.markers.updateValue(currentLocationMarker, forKey: "Hyderabad")
+//            let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: CLLocationCoordinate2D(latitude: 17.6868, longitude: 83.2185), title: "Vizag", placeOn: self.mapView)
+//            let currentLocationMarker = MapMarker().createMarker(with: nil, at: self.mapView.myLocation!.coordinate, title: "Hyderabad", placeOn: self.mapView)
+//            self.markers.updateValue(marker, forKey: "Vizag")
+//            self.markers.updateValue(currentLocationMarker, forKey: "Hyderabad")
             
             //TODO: Add Fit to bounds only show the placed markers on the map
         }
     }
     
-    func addSelectPickAndDropPointsView() {
+    private func addSelectPickAndDropPointsView() {
         
         //Create and add select pickup and drop points view
         selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 106 : 82, width: view.bounds.width, height: 115), inView: self)
+        selectPickDropPointsView.delegate = self
         view.addSubview(selectPickDropPointsView)
         view.bringSubview(toFront: selectPickDropPointsView)
+    }
+    
+    private func addSearchPlacesView() {
+        
+        //Calculate frame
+        let originY: CGFloat = UIScreen.main.bounds.height == 812 ? 106 + 115: 82 + 115
+        let frame = CGRect(x: 0, y: originY, width: view.bounds.width, height: view.bounds.height)
+        
+        //Create and add search places view
+        searchPlacesView = SearchPlacesView(frame: frame, inView: self)
+        searchPlacesView.delegate = self
+        view.addSubview(searchPlacesView)
+        view.bringSubview(toFront: searchPlacesView)
+    }
+    
+    private func removeSearchPlacesView() {
+        
+        searchPlacesView.removeFromSuperview()
+    }
+    
+    private func initiateAutoCompleteFetcher() {
+        
+        // Set bounds to inner-west Sydney Australia.
+//        let neBoundsCorner = CLLocationCoordinate2D(latitude: -33.843366,
+//                                                    longitude: 151.134002)
+//        let swBoundsCorner = CLLocationCoordinate2D(latitude: -33.875725,
+//                                                    longitude: 151.200349)
+//        let bounds = GMSCoordinateBounds(coordinate: neBoundsCorner,
+//                                         coordinate: swBoundsCorner)
+        
+        // Set up the autocomplete filter
+        let filter = GMSAutocompleteFilter()
+        filter.type = .establishment
+        
+        // Create the fetcher
+        fetcher = GMSAutocompleteFetcher(bounds: nil, filter: filter)
+        fetcher?.delegate = self
     }
     
     //MARK: - Socket Functions
@@ -287,6 +336,10 @@ class Home: UIViewController {
                 //Copy drivers location object from data object
                 if let driverLocations = driverLocationsData[0] as? [[String: Any]] {
                 
+                    //Clear all markers, overlays and all..
+                    self.mapView.clear()
+                    self.markers.removeAll()
+                    
                     //Going through each driver's location
                     for driverLocation in driverLocations {
                         
@@ -294,6 +347,14 @@ class Home: UIViewController {
                         let lat = driverLocation["lat"] as? String ?? ""
                         let long = driverLocation["lng"] as? String ?? ""
                         print("\(lat)----\(long)")
+                        
+                        //Create geo-coordinate from latitude and longitude
+                        let coordinate = CLLocationCoordinate2DMake(Double(lat) ?? 0, Double(long) ?? 0)
+                        
+                        //Create and add marker with geo-coordinate
+                        let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-marker"), at: coordinate, title: "", placeOn: self.mapView)
+                        marker.map = self.mapView
+                        self.markers.append(marker)
                     }
                 }
             }
@@ -301,7 +362,7 @@ class Home: UIViewController {
     }
 }
 
-//MARK: - CLLocationManager Delegate
+//MARK: - CLLocationManager Delegate -
 
 extension Home: CLLocationManagerDelegate {
     
@@ -361,7 +422,7 @@ extension Home: CLLocationManagerDelegate {
     }
 }
 
-//MARK: - Navigation Delegate
+//MARK: - Navigation Delegate -
 
 extension Home: NavigationDelegate {
     
@@ -370,6 +431,83 @@ extension Home: NavigationDelegate {
         print("selectedRow: \(row) Section: \(section)")
     }
 }
+
+//MARK: - GMSAutocompleteFetcher Delegate -
+extension Home: GMSAutocompleteFetcherDelegate {
+    
+    func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
+        
+        //Remove all places first
+        places.removeAll()
+        
+        //Add new place from autoCompletePrediction
+        for prediction in predictions {
+            let place = Place(id: prediction.placeID ?? "", title: prediction.attributedPrimaryText.string, subTitle: prediction.attributedFullText.string)
+            places.append(place)
+            print("\n",prediction.attributedFullText.string)
+            print("\n",prediction.attributedPrimaryText.string)
+            print("\n********")
+        }
+        
+        //Reload data
+        searchPlacesView.places = places
+        searchPlacesView.reloadData()
+    }
+    
+    func didFailAutocompleteWithError(_ error: Error) {
+        
+        print(error.localizedDescription)
+    }
+}
+
+//MARK: - SearchPlacesView Delegate -
+extension Home: SearchPlacesViewDelegate {
+    
+    func placeDidSelect(_ place: Place) {
+        
+        if isPickupPointSelection {
+            selectPickDropPointsView.pickupPoint = place
+            selectPickDropPointsView.pickPointTextField.text = place.title
+        } else {
+            selectPickDropPointsView.dropPoint = place
+            selectPickDropPointsView.dropPointTextField.text = place.title
+        }
+        
+        view.endEditing(true)
+        
+        //Remove search places view after selection of particular place
+        removeSearchPlacesView()
+    }
+}
+
+//MARK: - SelectPickDropPointsView Delegate -
+extension Home: SelectPickDropPointsViewDelegate {
+    
+    func pickPointTextFieldDidChange(_ textField: UITextField) {
+        
+        isPickupPointSelection = true
+        fetcher?.sourceTextHasChanged(textField.text)
+    }
+    
+    func dropPointTextFieldDidChange(_ textField: UITextField) {
+        
+        isPickupPointSelection = false
+        fetcher?.sourceTextHasChanged(textField.text)
+    }
+    
+    func placeTextFieldDidBeginEditing(_ textField: UITextField) {
+        
+        //Show search places view while searching for places
+        addSearchPlacesView()
+    }
+    
+    func placeTextFieldDidEndEditing(_ textField: UITextField) {
+        
+        //Remove search places view after selection of particular place
+        removeSearchPlacesView()
+    }
+}
+
 
 /*
 class ViewController: UIViewController {

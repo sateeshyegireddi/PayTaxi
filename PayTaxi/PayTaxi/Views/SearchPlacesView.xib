@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchPlacesView" customModule="NotificationContent" customModuleProvider="target">
+            <connections>
+                <outlet property="overlayView" destination="1zq-Ck-agV" id="7y1-f3-rjD"/>
+                <outlet property="searchPlacesTableView" destination="GaH-ES-Riz" id="cXJ-fG-aaH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchPlacesView" customModule="NotificationContent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zq-Ck-agV">
+                    <rect key="frame" x="20" y="10" width="335" height="657"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GaH-ES-Riz">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="657"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="VxE-pM-qQM"/>
+                                <outlet property="delegate" destination="-1" id="IrT-gq-czS"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="GaH-ES-Riz" secondAttribute="bottom" id="02u-xn-jK9"/>
+                        <constraint firstItem="GaH-ES-Riz" firstAttribute="leading" secondItem="1zq-Ck-agV" secondAttribute="leading" id="QOp-8x-J3C"/>
+                        <constraint firstAttribute="trailing" secondItem="GaH-ES-Riz" secondAttribute="trailing" id="UHR-cO-bZp"/>
+                        <constraint firstItem="GaH-ES-Riz" firstAttribute="top" secondItem="1zq-Ck-agV" secondAttribute="top" id="Voq-xA-iIv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1zq-Ck-agV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="MqU-CD-3gi"/>
+                <constraint firstItem="1zq-Ck-agV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="nNL-0q-aZg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1zq-Ck-agV" secondAttribute="trailing" constant="20" id="pps-Ng-TQx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1zq-Ck-agV" secondAttribute="bottom" id="ufe-De-xrP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

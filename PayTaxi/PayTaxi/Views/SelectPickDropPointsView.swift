@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol SelectPickDropPointsViewDelegate {
+    
+    func pickPointTextFieldDidChange(_ textField: UITextField)
+    func dropPointTextFieldDidChange(_ textField: UITextField)
+    func placeTextFieldDidBeginEditing(_ textField: UITextField)
+    func placeTextFieldDidEndEditing(_ textField: UITextField)
+}
+
 class SelectPickDropPointsView: UIView {
 
     //MARK: - Outlets
@@ -19,10 +27,11 @@ class SelectPickDropPointsView: UIView {
     //MARK: - Variables
     fileprivate weak var vc: UIViewController!
     fileprivate weak var view: UIView!
-    var pickupPoint: String!
-    var dropPoint: String!
+    var pickupPoint: Place!
+    var dropPoint: Place!
+    var delegate: SelectPickDropPointsViewDelegate?
     
-    //MARK: - Init
+    //MARK: - View
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -49,8 +58,8 @@ class SelectPickDropPointsView: UIView {
         addSubview(view)
         
         //Init
-        pickupPoint = ""
-        dropPoint = ""
+        pickupPoint = Place()
+        dropPoint = Place()
         
         //Setup view
         UtilityFunctions().addRoudedBorder(to: pickPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
@@ -63,6 +72,8 @@ class SelectPickDropPointsView: UIView {
         dropPointTextField.attributedPlaceholder = NSAttributedString(string: "destination".localized, attributes: [NSAttributedStringKey.foregroundColor: GlobalConstants.Colors.tungesten])
         pickPointTextField.textColor = GlobalConstants.Colors.tungesten
         dropPointTextField.textColor = GlobalConstants.Colors.tungesten
+        pickPointTextField.addTarget(self, action: #selector(pickPointTextFieldDidChange(_:)), for: .editingChanged)
+        dropPointTextField.addTarget(self, action: #selector(dropPointTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func loadViewFromNib() -> UIView {
@@ -73,13 +84,25 @@ class SelectPickDropPointsView: UIView {
         
         return view
     }
-}
+    
+    //MARK: - Actions
+    @objc func pickPointTextFieldDidChange(_ textField: UITextField) {
+        
+        delegate?.pickPointTextFieldDidChange(textField)
+    }
+    
+    @objc func dropPointTextFieldDidChange(_ textField: UITextField) {
+        
+        delegate?.dropPointTextFieldDidChange(textField)
+    }
+ }
 
+//MARK: - UITextField Delegate
 extension SelectPickDropPointsView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        
+     
+        delegate?.placeTextFieldDidBeginEditing(textField)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -90,10 +113,11 @@ extension SelectPickDropPointsView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField == pickPointTextField {
-            pickupPoint = pickPointTextField.text
+            pickupPoint.title = pickPointTextField.text!
         } else {
-            dropPoint = dropPointTextField.text
+            dropPoint.title = dropPointTextField.text!
         }
+        delegate?.placeTextFieldDidEndEditing(textField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
