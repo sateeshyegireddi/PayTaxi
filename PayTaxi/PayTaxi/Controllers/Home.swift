@@ -64,6 +64,34 @@ class Home: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Web Services
+    private func address(for location: CLLocationCoordinate2D) {
+        
+        //Get address from Google API Services
+        APIHandler().address(from: location, completionHandler: { [weak self] (success, address, error) in
+            guard let weakSelf = self else { return }
+            
+            //On sucess
+            if success {
+                
+                //Make this func async not getting crash
+                DispatchQueue.main.async {
+                    
+                    weakSelf.selectPickDropPointsView.pickupPoint = address
+                    weakSelf.selectPickDropPointsView.pickPointTextField.text = address
+                }
+            } else {
+                
+                //Make this func async not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error!)
+                }
+            }
+        })
+    }
+    
     //MARK: - Actions
     
     @IBAction func notificationsButtonTapped(_ sender: UIButton) {
@@ -81,10 +109,20 @@ class Home: UIViewController {
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         
-        //Get the user's location geo-coordinates
-        let myLatitude = mapView.myLocation?.coordinate.latitude
-        let myLongiude = mapView.myLocation?.coordinate.longitude
+        //Get address from
+        if mapView.myLocation != nil {
         
+            //Get the user's location geo-coordinates
+            let myLatitude = mapView.myLocation!.coordinate.latitude
+            let myLongiude = mapView.myLocation!.coordinate.longitude
+
+            //Update address of the current locaiton
+            address(for: mapView.myLocation!.coordinate)
+            
+            //Animate mapView to new camera position
+            let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude, longitude: myLongiude, zoom: cameraZoom)
+            mapView.animate(to: cameraPosition)
+        }
         /*
         let source = "\(myLatitude!),\(myLongiude!)"
         let destination = "17.6868,83.2185"
@@ -110,10 +148,6 @@ class Home: UIViewController {
             }
         })
         */
-        //Animate mapView to new camera position
-        let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
-        mapView.animate(to: cameraPosition)
- 
     }
 
     //MARK: - Functions
@@ -274,20 +308,21 @@ extension Home: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //Get geographical coordinates from location manager
-        let coordinates = manager.location!.coordinate
+        let coordinate = manager.location!.coordinate
         //print("latitude is:  \(coordinates.latitude) and  longitude is:\(coordinates.longitude)")
         
         //Set the highest possible accuracy
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
         //Save location coorndinates
-        latitude = coordinates.latitude
-        longitude = coordinates.longitude
+        latitude = coordinate.latitude
+        longitude = coordinate.longitude
         
         if isFirst {
          
             isFirst = false
             connectUserToSocket()
+            address(for: coordinate)
         }
         
         //Move Maps camera position to user location

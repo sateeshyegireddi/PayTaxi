@@ -29,13 +29,13 @@ class SelectPickDropPointsView: UIView {
     
     init(frame: CGRect, inView vc: UIViewController) {
         super.init(frame: frame)
-        xibSetup(frame: frame)
+        xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.vc = vc
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        xibSetup(frame: frame)
+        xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
     }
     
     private func xibSetup(frame: CGRect) {
@@ -53,7 +53,6 @@ class SelectPickDropPointsView: UIView {
         dropPoint = ""
         
         //Setup view
-        backgroundColor = UIColor.clear
         UtilityFunctions().addRoudedBorder(to: pickPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
         UtilityFunctions().addRoudedBorder(to: dropPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
         
@@ -99,6 +98,7 @@ extension SelectPickDropPointsView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        textField.resignFirstResponder()
         return true
     }
 }

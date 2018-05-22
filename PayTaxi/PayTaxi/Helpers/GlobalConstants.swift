@@ -209,6 +209,8 @@ public struct GlobalConstants {
         
         //'https://maps.googleapis.com/maps/api/directions/json?origin=17.25,78.20&destination=17.78,78.60&mode=driving&key=AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA'
         static let directions = "https://maps.googleapis.com/maps/api/directions/json?"
+        //https://maps.googleapis.com/maps/api/geocode/json?latlng=17.45149,78.389911&sensor=true&key=AIzaSyBUHL8D1R31ARmKvXmig-PyohDSP9FKKSA
+        static let geocode = "https://maps.googleapis.com/maps/api/geocode/json?"
     }
     
     //MARK: -

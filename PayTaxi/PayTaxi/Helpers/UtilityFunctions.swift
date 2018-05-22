@@ -195,7 +195,6 @@ class UtilityFunctions: NSObject {
         //Corners
         if corners {
             view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
-            view.layer.masksToBounds = true
         }
         
         //Border
@@ -203,9 +202,9 @@ class UtilityFunctions: NSObject {
         view.layer.borderWidth = width
 
         //Shadow
-        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowRadius = 2.5
+        view.layer.shadowRadius = 3
         view.layer.shadowOpacity = 0.15
     }
     

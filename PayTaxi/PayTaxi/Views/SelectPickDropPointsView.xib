@@ -40,6 +40,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="gAa-pY-vHK" secondAttribute="bottom" constant="17" id="4s8-F5-hhr"/>
                         <constraint firstItem="gAa-pY-vHK" firstAttribute="leading" secondItem="DHb-pS-KC5" secondAttribute="leading" constant="15" id="BYm-Vf-kuV"/>
@@ -64,8 +65,8 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="6PP-Ui-FuF"/>
                         <constraint firstAttribute="bottom" secondItem="bEA-KF-wcv" secondAttribute="bottom" id="9Ma-KM-gjr"/>
                         <constraint firstItem="bEA-KF-wcv" firstAttribute="leading" secondItem="txW-Ae-kKU" secondAttribute="trailing" constant="15" id="EYs-6d-4SL"/>
                         <constraint firstItem="bEA-KF-wcv" firstAttribute="top" secondItem="3Ab-fx-ypx" secondAttribute="top" id="OoK-QN-0DC"/>
@@ -76,7 +77,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="DHb-pS-KC5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="86V-Jt-4Nr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHb-pS-KC5" secondAttribute="trailing" constant="20" id="GQr-ew-DtN"/>

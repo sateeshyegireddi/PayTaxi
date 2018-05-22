@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 private enum HTTPMethod {
     case post
@@ -530,6 +531,43 @@ class APIHandler: NSObject {
                 handler(false, nil, nil, nil, error)
             }
         })
+    }
+    
+    func address(from location: CLLocationCoordinate2D, completionHandler handler: @escaping(_ sucess: Bool, _ address: String?, _ error: String?) -> ()) {
+        
+        let baseUrl = "\(GlobalConstants.GoogleAPI.geocode)latlng=\(location.latitude),\(location.longitude)&sensor=true&key=\(GlobalConstants.GoogleKeys.APIKey)"
+        
+        sendRequestToGoogleMaps(withUrl: baseUrl, parameters: nil, httpMethod: .get) { (success, response, error) in
+            
+            //On suceess
+            if success {
+                
+                var address = ""
+                
+                //Check if response is nil
+                if response != nil {
+                    
+                    //Extract results from response
+                    if let results = response!["results"] as? [[String: Any]] {
+                        
+                        //Check if results are exist
+                        if results.count > 0 {
+                            
+                            //Extract address from result
+                            let result = results[0]
+                            address = result["formatted_address"] as? String ?? ""
+                        }
+                    }
+                }
+                handler(true, address, error)
+                
+            } else {
+                
+                //No success response from Google, show error message to user
+                handler(false, nil, error)
+            }
+        }
+
     }
     
     //MARK: - User API Requests -
