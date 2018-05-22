@@ -41,6 +41,9 @@
 "existing_user" = "Already a user?   Login  now";
 "terms_conditions" = "Terms and Conditions";
 
+//Pickup
+"confirm_pickup" = "CONFIRM PICKUP";
+
 //MARK: - Placeholders
 
 //Login

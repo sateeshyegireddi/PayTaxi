@@ -18,13 +18,9 @@ class MapMarker: NSObject {
     
     func createMarker(with image: UIImage?, at position: CLLocationCoordinate2D, title name: String, placeOn mapView: GMSMapView) -> GMSMarker {
         
-        let markerImage = image?.withRenderingMode(.alwaysTemplate)
-        let markerView = UIImageView(image: markerImage)
-        markerView.tintColor = .red
-        
         let marker = GMSMarker(position: position)
 //        marker.title = name
-        marker.iconView = image != nil ? markerView : nil
+        marker.icon = image
         marker.tracksViewChanges = true
         marker.map = mapView
         return marker

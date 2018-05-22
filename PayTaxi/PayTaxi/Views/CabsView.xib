@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Black.ttf">
+            <string>Poppins-Black</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CabsView" customModule="NotificationContent" customModuleProvider="target">
+            <connections>
+                <outlet property="cabsCollectionView" destination="hNk-QX-eRo" id="Ifb-VL-V1b"/>
+                <outlet property="confirmPickupButton" destination="LGP-mm-agM" id="v1u-mq-twj"/>
+                <outlet property="overlayView" destination="L3f-4h-hMC" id="wlL-eo-Abt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CabsView" customModule="NotificationContent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3f-4h-hMC">
+                    <rect key="frame" x="15" y="0.0" width="345" height="170"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hNk-QX-eRo">
+                            <rect key="frame" x="15" y="0.0" width="315" height="170"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EMC-RI-8ob">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="TUR-00-Tci"/>
+                                <outlet property="delegate" destination="-1" id="8Ug-I1-4kF"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hNk-QX-eRo" firstAttribute="leading" secondItem="L3f-4h-hMC" secondAttribute="leading" constant="15" id="Fok-5u-zek"/>
+                        <constraint firstAttribute="height" constant="170" id="WnS-EP-WvM"/>
+                        <constraint firstAttribute="bottom" secondItem="hNk-QX-eRo" secondAttribute="bottom" id="wNu-vK-ZL7"/>
+                        <constraint firstAttribute="trailing" secondItem="hNk-QX-eRo" secondAttribute="trailing" constant="15" id="zKp-IL-csu"/>
+                        <constraint firstItem="hNk-QX-eRo" firstAttribute="top" secondItem="L3f-4h-hMC" secondAttribute="top" id="zSC-2J-dQN"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGP-mm-agM">
+                    <rect key="frame" x="15" y="190" width="345" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Hjn-MV-Y7N"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="14"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmPickupButtonTapped:" destination="-1" eventType="touchUpInside" id="Ov1-vc-Ya9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LGP-mm-agM" firstAttribute="top" secondItem="L3f-4h-hMC" secondAttribute="bottom" constant="20" id="8sw-YH-Suz"/>
+                <constraint firstItem="L3f-4h-hMC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="FbN-Sa-WQ1"/>
+                <constraint firstItem="LGP-mm-agM" firstAttribute="leading" secondItem="L3f-4h-hMC" secondAttribute="leading" id="O2q-FG-iI6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="L3f-4h-hMC" secondAttribute="trailing" constant="15" id="swX-uk-KX3"/>
+                <constraint firstItem="L3f-4h-hMC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ub7-eC-ZV2"/>
+                <constraint firstItem="LGP-mm-agM" firstAttribute="trailing" secondItem="L3f-4h-hMC" secondAttribute="trailing" id="ygX-ME-t1y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24.5" y="56"/>
+        </view>
+    </objects>
+</document>

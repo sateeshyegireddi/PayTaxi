@@ -74,11 +74,26 @@ class SocketsManager: NSObject {
         socket.emit(GlobalConstants.SocketEventEmitters.findNearCabs, data)
     }
     
+    func requestARide(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.requestARide, data)
+    }
+    
     //MARK: - Listners from User
     func fetchNearByCabs(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
         
         socket.on(GlobalConstants.SocketEventListeners.nearCabs) { (data, ack) in
             
+            print(data)
+            handler(data)
+        }
+    }
+    
+    func rideStatus(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.rideAccepted) { (data, ack) in
+            
+            print(data)
             handler(data)
         }
     }

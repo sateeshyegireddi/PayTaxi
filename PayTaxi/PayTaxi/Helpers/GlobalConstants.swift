@@ -28,7 +28,7 @@ public struct GlobalConstants {
         
         static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://159.89.170.96/paytaxi/customerapis/" : "http://159.89.170.96/paytaxi/driverapis/"
 
-        static let socketUrl = "http://192.168.0.102:3000"//"http://139.59.42.31:3000"
+        static let socketUrl = "http://139.59.42.31:3000"
         
         //MARK: - User
         
@@ -109,6 +109,8 @@ public struct GlobalConstants {
         static let lat = "lat"
         static let long = "lng"
         static let cabType = "cabType"
+        static let type = "type"
+        static let rideId = "rideId"
     }
     
     //MARK: - General Constants -
@@ -150,8 +152,10 @@ public struct GlobalConstants {
         static let tungesten = UIColor(red: 50/255, green: 54/255, blue: 67/255, alpha: 1)
         static let iron = UIColor(red: 96/255, green: 100/255, blue: 112/255, alpha: 1)
         static let megnisium = UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
+        static let silver = UIColor(red: 206/255, green: 208/255, blue: 210/255, alpha: 1)
         static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
         static let orange = UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)
+        static let aqua = UIColor(red: 35/255, green: 153/255, blue: 213/255, alpha: 1)
     }
     
     //MARK: -
