@@ -33,7 +33,9 @@ class Home: UIViewController {
     fileprivate var selectPickDropPointsView: SelectPickDropPointsView!
     fileprivate var searchPlacesView: SearchPlacesView!
     fileprivate var isPickupPointSelection: Bool!
-
+    fileprivate var currentLocationMarker: GMSMarker!
+    fileprivate var destinationLocationMarker: GMSMarker!
+    
     var trackedUser: [String:AnyObject]!
     
     //MARK: - Views
@@ -266,6 +268,94 @@ class Home: UIViewController {
         fetcher?.delegate = self
     }
     
+    private func createPolyLinePath(with polyLinePoint: String) {
+        
+        //Create new path between source and destination
+        let path = GMSPath(fromEncodedPath: polyLinePoint)
+        //let distance = GMSGeometryLength(path!)
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = GlobalConstants.Colors.orange
+        polyline.strokeWidth = 4.0
+        polyline.map = mapView
+        
+        //make sure all markers fit in the map
+        fitAllMarkers(path!)
+    }
+    
+    func showPathBetweenSourceAndDestination() {
+        
+        let source = selectPickDropPointsView.pickupPoint.title.replacingOccurrences(of: " ", with: "+")
+        let destination = selectPickDropPointsView.dropPoint.title.replacingOccurrences(of: " ", with: "+")
+        
+        //Get routes between source and destination
+        APIHandler().getRoutes(from: source, to: destination) { [weak self] (success, distance, duration, polyLinePoint, error) in
+            guard let weakSelf = self else { return }
+            
+            //On success
+            if success {
+                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    weakSelf.createPolyLinePath(with: polyLinePoint!)
+                }
+                
+            } else {
+                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                }
+            }
+        }
+    }
+    
+    private func createDestinationMarker(with destination: Place) {
+        
+        let placeId = destination.id
+        GMSPlacesClient().lookUpPlaceID(placeId) { [weak self] (place, error) in
+            guard let weakSelf = self else { return }
+            
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                return
+            }
+            guard let place = place else {
+                print("No place details for \(placeId)")
+                return
+            }
+            
+            //Make this func async to not have getting crash
+            DispatchQueue.main.async {
+                
+                //Create destination location marker
+                if weakSelf.destinationLocationMarker == nil {
+                    
+                    weakSelf.destinationLocationMarker = GMSMarker.init(position: place.coordinate)
+                    weakSelf.destinationLocationMarker.icon = #imageLiteral(resourceName: "icon-destinaton")
+                    weakSelf.destinationLocationMarker.map = weakSelf.mapView
+                    weakSelf.destinationLocationMarker.position = place.coordinate
+                } else {
+                    
+                    //Rotate and update current location
+                    weakSelf.destinationLocationMarker.position = place.coordinate
+                }
+                
+                weakSelf.showPathBetweenSourceAndDestination()
+            }
+        }
+    }
+    
+    private func fitAllMarkers(_ path: GMSPath) {
+        var bounds = GMSCoordinateBounds()
+        for index in 1...path.count() {
+            bounds = bounds.includingCoordinate(path.coordinate(at: index))
+        }
+        mapView.animate(with: GMSCameraUpdate.fit(bounds))
+    }
+    
     //MARK: - Socket Functions
     
     //Listen to all necessary events
@@ -379,6 +469,21 @@ extension Home: CLLocationManagerDelegate {
         latitude = coordinate.latitude
         longitude = coordinate.longitude
         
+        //Create current location marker
+        if currentLocationMarker == nil {
+            
+            currentLocationMarker = GMSMarker.init(position: coordinate)
+            currentLocationMarker.icon = #imageLiteral(resourceName: "icon-source")
+            currentLocationMarker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+            currentLocationMarker.map = mapView
+        } else {
+            
+            //Rotate and update current location
+            let head = locationManager.location?.course ?? 0
+            currentLocationMarker.rotation = head
+            currentLocationMarker.position = coordinate
+        }
+        
         if isFirst {
          
             isFirst = false
@@ -471,6 +576,7 @@ extension Home: SearchPlacesViewDelegate {
         } else {
             selectPickDropPointsView.dropPoint = place
             selectPickDropPointsView.dropPointTextField.text = place.title
+            createDestinationMarker(with: place)
         }
         
         view.endEditing(true)

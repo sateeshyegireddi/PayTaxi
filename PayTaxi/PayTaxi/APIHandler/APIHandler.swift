@@ -468,7 +468,7 @@ class APIHandler: NSObject {
     
     ///Get the most efficient routes between two geo-coordinates
     /// - parameter source: The address, textual latitude/longitude value, or place ID from which you wish to calculate directions. Eg. origin=78.1234,78.56416; origin=24+Sussex+Drive+Ottawa+ON; origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE;
-    /// - parameter destination: The address, textual latitude/longitude value, or place ID to which you wish to calculate directions. Eg. origin=78.1234,78.56416; origin=24+Sussex+Drive+Ottawa+ON; origin=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE;
+    /// - parameter destination: The address, textual latitude/longitude value, or place ID to which you wish to calculate directions. Eg. destination=78.1234,78.56416; destination=24+Sussex+Drive+Ottawa+ON; destination=place_id:ChIJ3S-JXmauEmsRUcIaWtf4MzE;
     /// - parameter completionHandler: The callback will get called after fetching the response from server.
     /// - parameter distance: The distance between source and destination in meters.
     /// - parameter duration: The time takes to reach destination from source in seconds.

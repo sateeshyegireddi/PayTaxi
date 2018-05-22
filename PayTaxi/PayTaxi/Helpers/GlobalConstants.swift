@@ -151,6 +151,7 @@ public struct GlobalConstants {
         static let iron = UIColor(red: 96/255, green: 100/255, blue: 112/255, alpha: 1)
         static let megnisium = UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
         static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
+        static let orange = UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)
     }
     
     //MARK: -
