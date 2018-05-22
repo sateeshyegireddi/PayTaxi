@@ -28,6 +28,8 @@
 //General
 "welcome_back" = "Welcome Back!";
 "welcome_abord" = "Welcome Abord!";
+"ok" = "OK";
+"cancel" = "Cancel";
 
 //Login
 "forgot_password" = "FORGOT PASSWORD?";
@@ -52,3 +54,6 @@
 "driver_license_no" = "Driver license no";
 "vehicle_registration_no" = "Vehicle registration no";
 
+//Home
+"current_location" = "Current Location";
+"destination" = "Destination please.?";

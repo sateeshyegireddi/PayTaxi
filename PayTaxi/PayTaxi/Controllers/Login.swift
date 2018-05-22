@@ -67,7 +67,7 @@ class Login: UIViewController {
                           GlobalConstants.APIKeys.password: password] as [String: Any]
         
         //Request to Login API
-        APIHandler().loginDriver(with: parameters, completionHandler: { (success, error) in
+        APIHandler().loginUser(with: parameters, completionHandler: { (success, error) in
             
             //On success
             if success {
@@ -94,6 +94,7 @@ class Login: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
         //Call API Service
+        login()
     }
     
     @IBAction func registrationButtonTapped(_ sender: UIButton) {

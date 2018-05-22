@@ -163,6 +163,18 @@
 		F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9AC8E3320B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
+		F9C6A58720B32C9200FF68A4 /* PTPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */; };
+		F9C6A58820B32C9200FF68A4 /* PTPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */; };
+		F9C6A58920B32C9200FF68A4 /* PTPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */; };
+		F9C6A58A20B32C9200FF68A4 /* PTPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */; };
+		F9C6A58B20B32C9200FF68A4 /* PTPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */; };
+		F9C6A58C20B32C9200FF68A4 /* PTPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */; };
+		F9C6A58E20B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
+		F9C6A58F20B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
+		F9C6A59020B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
+		F9C6A59220B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
+		F9C6A59320B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
+		F9C6A59420B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADC20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
@@ -304,6 +316,10 @@
 		F9A917AD209C20BD0027C6E4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
 		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
+		F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTPickerView.swift; sourceTree = "<group>"; };
+		F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPickerView.xib; sourceTree = "<group>"; };
+		F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPickDropPointsView.swift; sourceTree = "<group>"; };
+		F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPickDropPointsView.xib; sourceTree = "<group>"; };
 		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
 		F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
@@ -406,6 +422,8 @@
 			children = (
 				F96E67A420A32B0000F00FEA /* MainMenu.swift */,
 				F9642E7A20A4837300027977 /* MainMenu.xib */,
+				F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */,
+				F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,6 +502,8 @@
 			children = (
 				F961FE8B20ABF5DB00580D62 /* MapMarker.swift */,
 				F9A037DE20B164780044A1A5 /* PTTextField.swift */,
+				F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */,
+				F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -788,6 +808,7 @@
 			files = (
 				F96E67B020A32D6000F00FEA /* MainMenuCell.xib in Resources */,
 				F9FC1E8220B3121300D8789B /* TermsConditionsCell.xib in Resources */,
+				F9C6A58A20B32C9200FF68A4 /* PTPickerView.xib in Resources */,
 				F9857A282097312800F2139A /* LaunchScreen.storyboard in Resources */,
 				F9A0382C20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				F9A0384420B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
@@ -814,6 +835,7 @@
 				F9A0382F20B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
 				F9A0385620B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
 				F9642E7B20A4837800027977 /* MainMenu.xib in Resources */,
+				F9C6A59220B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +845,7 @@
 			files = (
 				F9A0294420B094BE009011CF /* MainMenuHeader.xib in Resources */,
 				F9FC1E8320B3121300D8789B /* TermsConditionsCell.xib in Resources */,
+				F9C6A58B20B32C9200FF68A4 /* PTPickerView.xib in Resources */,
 				F9A0293F20B0945A009011CF /* MainMenuCell.xib in Resources */,
 				F9A0382D20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				F9A0384520B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
@@ -849,6 +872,7 @@
 				F9A0385720B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
 				F9857A402097317000F2139A /* Assets.xcassets in Resources */,
 				F9857A3B2097316F00F2139A /* Main.storyboard in Resources */,
+				F9C6A59320B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +885,8 @@
 				F9A0384C20B199B60044A1A5 /* Poppins-Bold.ttf in Resources */,
 				F9A0383120B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
 				F9A0383420B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
+				F9C6A59420B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */,
+				F9C6A58C20B32C9200FF68A4 /* PTPickerView.xib in Resources */,
 				F9A0385220B199B60044A1A5 /* Poppins-Black.ttf in Resources */,
 				F9A0385B20B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383720B199B60044A1A5 /* Poppins-Medium.ttf in Resources */,
@@ -1094,9 +1120,11 @@
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
 				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
 				F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
+				F9C6A58E20B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */,
 				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
+				F9C6A58720B32C9200FF68A4 /* PTPickerView.swift in Sources */,
 				F963811C2099D42400C3CC1E /* Reachability.m in Sources */,
 				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
 				F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */,
@@ -1127,9 +1155,11 @@
 				F9A0294320B094BE009011CF /* MainMenuHeader.swift in Sources */,
 				F96380DE2099BE6600C3CC1E /* GlobalConstants.swift in Sources */,
 				F9AC8E2F20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
+				F9C6A58F20B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */,
 				F96380DC2099BE5400C3CC1E /* APIHandler.swift in Sources */,
 				F96E67A120A3035A00F00FEA /* Navigation.swift in Sources */,
 				F9A0292A20B09256009011CF /* Login.swift in Sources */,
+				F9C6A58820B32C9200FF68A4 /* PTPickerView.swift in Sources */,
 				F96380DD2099BE6300C3CC1E /* UtilityFunctions.swift in Sources */,
 				F961FE8D20ABF5DB00580D62 /* MapMarker.swift in Sources */,
 				F96E679F20A3033300F00FEA /* OpenScreen.swift in Sources */,
@@ -1155,6 +1185,7 @@
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F9AC8E3020B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
 				F996C452209C7BF1007849B3 /* Home.swift in Sources */,
+				F9C6A58920B32C9200FF68A4 /* PTPickerView.swift in Sources */,
 				F996C451209C7BF1007849B3 /* Splash.swift in Sources */,
 				F96E67A620A32B0000F00FEA /* MainMenu.swift in Sources */,
 				F961FE8720ABF4EF00580D62 /* Login.swift in Sources */,
@@ -1163,6 +1194,7 @@
 				F996C459209C7C0E007849B3 /* User.swift in Sources */,
 				F996C46C209C9167007849B3 /* Navigation.swift in Sources */,
 				F961FE8E20ABF5DB00580D62 /* MapMarker.swift in Sources */,
+				F9C6A59020B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */,
 				F961FE8A20ABF50600580D62 /* Registration.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,

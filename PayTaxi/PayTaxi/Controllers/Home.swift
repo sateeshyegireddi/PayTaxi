@@ -14,6 +14,7 @@ class Home: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var notificationsButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
@@ -22,10 +23,11 @@ class Home: UIViewController {
     private var longitude = 0.0
     private var latitude = 0.0
     private var mapView: GMSMapView!
-    private var cameraZoom: Float = 17.0
+    private var cameraZoom: Float = 16.5
     private var rootNavigation: Navigation!
     private var markers: [String: GMSMarker]!
-    
+    fileprivate var isFirst: Bool = true
+    fileprivate var selectPickDropPointsView: SelectPickDropPointsView!
     var trackedUser: [String:AnyObject]!
     
     //MARK: - Views
@@ -41,22 +43,22 @@ class Home: UIViewController {
         //Create and add mapView
         presentMapView()
         
-        //Bring all other subViews to front
-        view.bringSubview(toFront: myLocationButton)
-        view.bringSubview(toFront: menuButton)
-        
         //Register for location updates
         registerForLocationUpdates()
         
         //Listen to sever events
         listenToEvents()
+        
+        //Setup Buttons
+        UtilityFunctions().addRoudedBorder(to: myLocationButton, showCorners: false, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
+        view.bringSubview(toFront: menuButton)
+        view.bringSubview(toFront: notificationsButton)
+        view.bringSubview(toFront: myLocationButton)
+        
+        //Add Select pickup and drop points view
+        addSelectPickAndDropPointsView()
     }
 
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        
-//        return .lightContent
-//    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,13 +66,26 @@ class Home: UIViewController {
     
     //MARK: - Actions
     
-    @IBAction func locationButtonTapped(_ sender: UIButton) {
+    @IBAction func notificationsButtonTapped(_ sender: UIButton) {
         
+        
+    }
+    
+    @IBAction func menuButtonTapped(_ sender: UIButton) {
+        
+        if let navigation = navigationController as? Navigation {
+            
+            navigation.toggleMenu()
+        }
+    }
+    
+    @IBAction func locationButtonTapped(_ sender: UIButton) {
         
         //Get the user's location geo-coordinates
         let myLatitude = mapView.myLocation?.coordinate.latitude
         let myLongiude = mapView.myLocation?.coordinate.longitude
         
+        /*
         let source = "\(myLatitude!),\(myLongiude!)"
         let destination = "17.6868,83.2185"
 
@@ -94,21 +109,13 @@ class Home: UIViewController {
                 
             }
         })
-        /*
+        */
         //Animate mapView to new camera position
         let cameraPosition = GMSCameraPosition.camera(withLatitude: myLatitude ?? 0, longitude: myLongiude ?? 0, zoom: cameraZoom)
         mapView.animate(to: cameraPosition)
-        */
+ 
     }
 
-    @IBAction func menuButtonTapped(_ sender: UIButton) {
-        
-        if let navigation = navigationController as? Navigation {
-            
-            navigation.toggleMenu()
-        }
-    }
-    
     //MARK: - Functions
     
     private func presentMapView() {
@@ -132,7 +139,7 @@ class Home: UIViewController {
         mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 15)
         
         //Set custome style to mapView
-        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.night)
+        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.silver)
         
         //Hide mapView initially
         mapView.isHidden = true
@@ -168,33 +175,27 @@ class Home: UIViewController {
         }
     }
     
+    func addSelectPickAndDropPointsView() {
+        
+        //Create and add select pickup and drop points view
+        selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 106 : 82, width: view.bounds.width, height: 115), inView: self)
+        view.addSubview(selectPickDropPointsView)
+        view.bringSubview(toFront: selectPickDropPointsView)
+    }
+    
+    //MARK: - Socket Functions
+    
     //Listen to all necessary events
     private func listenToEvents() {
         
-        addHandlers()
-
-//        listenToConnectionChanges()
-//        listenToDriversListUpdate()
+        listenToConnectionChanges()
+        listenToDriverUpdate()
     }
     
-    private func addHandlers() {
-        SocketsManager.sharedInstance.socket.on("connect") {data, ack in
-            print("socket connected")
-        }
-        
-        SocketsManager.sharedInstance.socket.on("chat message") {[weak self] data, ack in
-            if let value = data.first as? String {
-                print(value)
-            }
-        }
-    }
-    
-    //MARK: - Socket functions
     func listenToConnectionChanges() {
         SocketsManager.sharedInstance.listenToConnectionChanges(onConnectHandler: {
             
             //if user was successfully connected to server we ask for a updated drivers list
-            SocketsManager.sharedInstance.checkForUpdatedDriversList()
             self.locationManager.startUpdatingLocation()
             
         }, onDisconnectHandler: {
@@ -206,38 +207,63 @@ class Home: UIViewController {
     }
     
     //Listen to updates in drivers list, whenever it is updated or when we request
-    func listenToDriversListUpdate() {
-        SocketsManager.sharedInstance.listenToTrackedUsersListUpdate() { driversListUpdate in
-            if let listUpdate = driversListUpdate {
-                self.trackedUser = listUpdate[0]
-                print(self.trackedUser)
-            }
-        }
+    func listenToDriverUpdate() {
+        
+        //Fetch near by cabs
+        fetchNearByCabs()
     }
     
-    func startTrackingUser() {
-        if let trackedUserId = trackedUser["id"] as? String {
+    //
+    fileprivate func connectUserToSocket() {
+        
+        //Create request data for socket
+        let userId = 17
+        let jsonDict = [GlobalConstants.SocketKeys.id: userId,
+                        GlobalConstants.SocketKeys.lat: latitude,
+                        GlobalConstants.SocketKeys.long: longitude] as [String : Any]
+        
+        //Connect user to socket server with specific user data
+        SocketsManager.sharedInstance.connectUser(with: jsonDict)
+        
+        //Request to fetch near by cabs for user
+        requestToFetchNearByCabs(ofType: .mini)
+    }
+    
+    fileprivate func requestToFetchNearByCabs(ofType type: GlobalConstants.CabRideType) {
+        
+        //Create request data for socket
+        let userId = 17
+        let jsonDict = [GlobalConstants.SocketKeys.id: userId,
+                        GlobalConstants.SocketKeys.cabType: type.rawValue,
+                        GlobalConstants.SocketKeys.lat: latitude,
+                        GlobalConstants.SocketKeys.long: longitude] as [String : Any]
+        
+        //Request to get near by cabs for user by sending request to socket server
+        SocketsManager.sharedInstance.requestToFindNearByCabs(with: jsonDict)
+    }
+    
+    fileprivate func fetchNearByCabs() {
+        
+        //Get near by cabs for user by sending request to socket server
+        SocketsManager.sharedInstance.fetchNearByCabs(completionHandler: { (driverLocationsData) in
             
-            //Send to server a message that user is now tracking a tracked user location
-            SocketsManager.sharedInstance.userStartedTracking(driverSocketId: trackedUserId, coordinatesUpdateHandler: { (trakedUsersCorrdinatesUpdate) in
-                //When we receive tracked user current location the map is updated
-                if let latitudeString = trakedUsersCorrdinatesUpdate?["latitude"] as? String, let longitudeString = trakedUsersCorrdinatesUpdate?["longitude"] as? String, let latitude = Double(latitudeString), let longitude = Double(longitudeString) {
-                    //self.updateTrackedUserLocation(withLatitude: latitude, andLongitude: longitude)
-                }
-            }) { (trackedUserNickname) in
-                //When the tracked user stops sharing location we return to the tracked users list
-                if let nickname = trackedUserNickname {
-                    let alert = UIAlertController(title: "Ops!", message: "\(nickname) has stopped sharing location", preferredStyle: .alert)
-                    let okButton = UIAlertAction(title: "Ok", style: .default) { action in
-                        self.navigationController?.popToRootViewController(animated: true)
+            //Check if drivers data exists
+            if driverLocationsData.count > 0 {
+                
+                //Copy drivers location object from data object
+                if let driverLocations = driverLocationsData[0] as? [[String: Any]] {
+                
+                    //Going through each driver's location
+                    for driverLocation in driverLocations {
+                        
+                        //Save latitude and longitude
+                        let lat = driverLocation["lat"] as? String ?? ""
+                        let long = driverLocation["lng"] as? String ?? ""
+                        print("\(lat)----\(long)")
                     }
-                    
-                    alert.addAction(okButton)
-                    
-                    self.present(alert, animated: true, completion: nil)
                 }
             }
-        }
+        })
     }
 }
 
@@ -249,7 +275,7 @@ extension Home: CLLocationManagerDelegate {
         
         //Get geographical coordinates from location manager
         let coordinates = manager.location!.coordinate
-        print("latitude is:  \(coordinates.latitude) and  longitude is:\(coordinates.longitude)")
+        //print("latitude is:  \(coordinates.latitude) and  longitude is:\(coordinates.longitude)")
         
         //Set the highest possible accuracy
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -257,6 +283,12 @@ extension Home: CLLocationManagerDelegate {
         //Save location coorndinates
         latitude = coordinates.latitude
         longitude = coordinates.longitude
+        
+        if isFirst {
+         
+            isFirst = false
+            connectUserToSocket()
+        }
         
         //Move Maps camera position to user location
         let cameraPosition = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: cameraZoom)

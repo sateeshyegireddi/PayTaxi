@@ -63,6 +63,26 @@ class SocketsManager: NSObject {
         }
     }
     
+    //MARK: - Emitters from User
+    func connectUser(with data: [String: Any]) {
+
+        socket.emit(GlobalConstants.SocketEventEmitters.userConnect, data)
+    }
+    
+    func requestToFindNearByCabs(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.findNearCabs, data)
+    }
+    
+    //MARK: - Listners from User
+    func fetchNearByCabs(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.nearCabs) { (data, ack) in
+            
+            handler(data)
+        }
+    }
+    
     //MARK: - Location Sharing
     
     ///Share user's started location with socket server

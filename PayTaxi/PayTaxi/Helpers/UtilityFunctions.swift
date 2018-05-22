@@ -204,9 +204,9 @@ class UtilityFunctions: NSObject {
 
         //Shadow
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 2, height: 2)
-        view.layer.shadowRadius = 1.5
-        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowRadius = 2.5
+        view.layer.shadowOpacity = 0.15
     }
     
     func addAttributedFont(for button: UIButton, till index: Int) {
@@ -301,7 +301,7 @@ class UtilityFunctions: NSObject {
         let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
         
         //Add OK button to alert and dismiss it on action
-        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        let alertAction = UIAlertAction(title: "ok".localized, style: .default) { (action) in
             
             alertController.dismiss(animated: true, completion: nil)
         }
@@ -317,7 +317,7 @@ class UtilityFunctions: NSObject {
         let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
         
         //Add OK button to alert and dismiss it on action
-        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        let alertAction = UIAlertAction(title: "ok".localized, style: .default) { (action) in
             
             //Call Action handler
             handler(action)
@@ -334,7 +334,7 @@ class UtilityFunctions: NSObject {
         let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: message, preferredStyle: .alert)
         
         //Add OK button to alert and dismiss it on action
-        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        let alertAction = UIAlertAction(title: "ok".localized, style: .default) { (action) in
             
             //Call Action handler
             handler(action)
@@ -342,7 +342,7 @@ class UtilityFunctions: NSObject {
         alertController.addAction(alertAction)
         
         //Add Cancel button to alert and dismiss it on action
-        let alertAction2 = UIAlertAction(title: "Cancel".localized, style: .default) { (action) in
+        let alertAction2 = UIAlertAction(title: "cancel".localized, style: .default) { (action) in
         }
         alertController.addAction(alertAction2)
         
@@ -371,7 +371,7 @@ class UtilityFunctions: NSObject {
         })
         
         //Add cancel action
-        let cancelAction = UIAlertAction.init(title: "Cancel".localized, style: .cancel, handler: { (action: UIAlertAction) in
+        let cancelAction = UIAlertAction.init(title: "cancel".localized, style: .cancel, handler: { (action: UIAlertAction) in
         })
         
         //Add actions to alert controller
@@ -381,5 +381,32 @@ class UtilityFunctions: NSObject {
         
         //Present the alert controller on current view controller
         viewController.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showAlertWithTextField(OnViewController vc: UIViewController, message info: String, placeHolder holder: String, Handler handler: @escaping (_ textFieldText: String) -> Void) {
+        
+        //Create an alert Controller of type action sheet
+        let alertController = UIAlertController.init(title: GlobalConstants.Constants.appName, message: info, preferredStyle: .alert)
+
+        //Add textField to alertController
+        alertController.addTextField { (textField) in
+            textField.placeholder = holder
+        }
+        
+        //Add OK button to alert and dismiss it on action
+        let alertAction = UIAlertAction(title: "ok".localized, style: .default) { (action) in
+            
+            let textField = alertController.textFields![0] as UITextField
+            handler(textField.text!)
+        }
+        alertController.addAction(alertAction)
+        
+        //Add Cancel button to alert and dismiss it on action
+        let alertAction2 = UIAlertAction(title: "cancel".localized, style: .default) { (action) in
+        }
+        alertController.addAction(alertAction2)
+                
+        //Present the alert controller on current view controller
+        vc.present(alertController, animated: true, completion: nil)
     }
 }

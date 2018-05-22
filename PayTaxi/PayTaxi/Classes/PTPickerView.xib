@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PTPickerView" customModule="NotificationContent" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="e4A-6C-rSD" id="tiL-Cy-6ih"/>
+                <outlet property="chooseButton" destination="wna-ft-oiZ" id="tPK-FZ-IEW"/>
+                <outlet property="dataPickerView" destination="RiJ-a8-H53" id="HJV-oI-zvx"/>
+                <outlet property="overlayImageView" destination="ZgB-I6-A1v" id="12e-vP-Isn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-I6-A1v">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaZ-Vh-7jv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DIM-Nn-9SK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wna-ft-oiZ">
+                    <rect key="frame" x="285" y="10" width="80" height="25"/>
+                    <accessibility key="accessibilityConfiguration" identifier="RegistrationButton"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="eWK-cE-VYc"/>
+                        <constraint firstAttribute="height" constant="25" id="zy3-FS-Khj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                    <state key="normal" title="Choose">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="Login as Buyer"/>
+                    <connections>
+                        <action selector="chooseButtonTapped:" destination="-1" eventType="touchUpInside" id="3ut-9f-so8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-6C-rSD">
+                    <rect key="frame" x="10" y="10" width="80" height="25"/>
+                    <accessibility key="accessibilityConfiguration" identifier="RegistrationButton"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="MfC-Qz-PrE"/>
+                        <constraint firstAttribute="height" constant="25" id="zWn-wv-Cjh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="Login as Buyer"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="VHT-9H-LBN"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiJ-a8-H53">
+                    <rect key="frame" x="0.0" y="34" width="375" height="216"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7Qv-pI-Pjt"/>
+                        <outlet property="delegate" destination="-1" id="Ld6-nb-NIm"/>
+                    </connections>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RiJ-a8-H53" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="35U-qW-srA"/>
+                <constraint firstItem="eaZ-Vh-7jv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5w2-f5-ujA"/>
+                <constraint firstItem="RiJ-a8-H53" firstAttribute="top" secondItem="e4A-6C-rSD" secondAttribute="bottom" constant="-1" id="8JL-1j-hQs"/>
+                <constraint firstItem="eaZ-Vh-7jv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GO7-PU-9RH"/>
+                <constraint firstItem="eaZ-Vh-7jv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NyL-g0-m1W"/>
+                <constraint firstItem="e4A-6C-rSD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Ogj-GZ-POO"/>
+                <constraint firstItem="ZgB-I6-A1v" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="UZI-Sg-KhN"/>
+                <constraint firstItem="RiJ-a8-H53" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bae-4p-w0X"/>
+                <constraint firstItem="ZgB-I6-A1v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d3c-ci-fm4"/>
+                <constraint firstItem="ZgB-I6-A1v" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ehc-Zx-cMx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wna-ft-oiZ" secondAttribute="trailing" constant="10" id="fOT-fG-miV"/>
+                <constraint firstItem="ZgB-I6-A1v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gA7-Yy-K9m"/>
+                <constraint firstItem="wna-ft-oiZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="h1o-Ej-EJe"/>
+                <constraint firstItem="eaZ-Vh-7jv" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jxy-il-yfE"/>
+                <constraint firstItem="RiJ-a8-H53" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="oA3-6d-Rqg"/>
+                <constraint firstItem="e4A-6C-rSD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="xS0-cv-trt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="22.5" y="136"/>
+        </view>
+    </objects>
+</document>

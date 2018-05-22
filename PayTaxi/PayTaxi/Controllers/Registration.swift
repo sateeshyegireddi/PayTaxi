@@ -56,6 +56,8 @@ class Registration: UIViewController {
     fileprivate var otpId: String!
     fileprivate var otp: String!
     fileprivate var currentTextField: PTTextField?
+    fileprivate var pickerView: PTPickerView!
+    fileprivate var genderIndex: Int!
     
     //MARK: - Views
     override func viewDidLoad() {
@@ -63,6 +65,7 @@ class Registration: UIViewController {
         
         //Init Variables
         userParameters = UserParameters()
+        genderIndex = 0
         
         //Add notification listener for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -70,6 +73,7 @@ class Registration: UIViewController {
         
         //Setup basic UI
         setupUI()
+        let _ = getPickerView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -90,7 +94,7 @@ class Registration: UIViewController {
     }
     
     //MARK: - Web Services
-    private func registration() {
+    private func registerUser() {
         
         let parameters = [GlobalConstants.APIKeys.fullName: userParameters.name,
                           GlobalConstants.APIKeys.mobileNumber: userParameters.mobile,
@@ -98,16 +102,38 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.password: userParameters.password] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().registrationDriver(parameters: parameters, completionHandler: { (success, error) in
+        APIHandler().registerUser(parameters: parameters) { [weak self] (success, userId, otpId, error) in
+            guard let weakSelf = self else { return }
             
+            //On success
             if success {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Copy response parameters
+                    weakSelf.otpId = otpId ?? ""
+                    weakSelf.userParameters.id = userId ?? ""
+                    
+                    //Show alert with textField to user
+                    UtilityFunctions().showAlertWithTextField(OnViewController: weakSelf, message: "Please enter OTP sent to mobile", placeHolder: "OTP", Handler: { (otp) in
+                        
+                        weakSelf.otp = otp
+                        
+                        //Request verify OTP API
+                        weakSelf.verifyOTP()
+                    })
+                }
             } else {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                }
             }
-        })
+        }
         
     }
     
@@ -118,14 +144,26 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otp: otp] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().registrationDriver(parameters: parameters, completionHandler: { (success, error) in
-            
+        APIHandler().verifyOTP(parameters: parameters, completionHandler: { [weak self] (success, error) in
+            guard let weakSelf = self else { return }
+
+            //On success
             if success {
                 
+                //Move user to Navigation
+                DispatchQueue.main.async {
+                 
+                    OpenScreen().navigation(weakSelf)
+                }
                 
             } else {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                }
             }
         })
     }
@@ -136,7 +174,7 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otpId: otpId] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().resendOTPDriver(parameters: parameters, completionHandler: { (success, error) in
+        APIHandler().resendOTP(parameters: parameters, completionHandler: { (success, error) in
             
             if success {
                 
@@ -151,7 +189,8 @@ class Registration: UIViewController {
     //MARK: - Actions
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
-        dismiss(animated: false, completion: nil)
+        //Register user to PayTaxi
+        registerUser()
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -166,7 +205,7 @@ class Registration: UIViewController {
         if UIScreen.main.bounds.width <= 375 {
             
             //Call function to move the view up
-            UtilityFunctions().keyboardWillShow(notification, inView: self.view, percent: 0.3)
+            UtilityFunctions().keyboardWillShow(notification, inView: self.view, percent: 0.4)
         }
     }
     
@@ -221,6 +260,23 @@ class Registration: UIViewController {
         let nib2 = UINib(nibName: TermsConditionsCell.identifier, bundle: nil)
         registrationTableView.register(nib2, forCellReuseIdentifier: TermsConditionsCell.identifier)
     }
+    
+    
+    func getPickerView() -> UIView {
+        
+        //Check if pickerView is nil
+        if pickerView == nil {
+            
+            //Setup View
+            pickerView = PTPickerView.initPickerView(with: [Gender.male.rawValue, Gender.female.rawValue])
+            pickerView.delegate = self
+        }
+        
+        //Setup pickerView items
+        pickerView.setPickerViewObjects([Gender.male.rawValue, Gender.female.rawValue], selectedRow: genderIndex)
+        
+        return pickerView.view
+    }
 }
 
 //MARK: - UITableView Delegate -
@@ -256,19 +312,25 @@ extension Registration: UITableViewDataSource, UITableViewDelegate {
         //Setup cell values
         cell.textField.delegate = self
         cell.textField.tag = 100 + indexPath.row
-        currentTextField = cell.textField
-        
+        cell.textField.isSecureEntry = false
+
         switch indexPath.row {
         case 0:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.name, placeHolderText: "user_name".localized, image: #imageLiteral(resourceName: "icon-user"))
+            
         case 1:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.mobile, placeHolderText: "mobile".localized, image: #imageLiteral(resourceName: "icon-mobile"))
+            
         case 2:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.gender.rawValue, placeHolderText: "gender".localized, image: #imageLiteral(resourceName: "icon-gender"))
+            
         case 3:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.email, placeHolderText: "email".localized, image: #imageLiteral(resourceName: "icon-email"))
+            
         case 4:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"))
+            cell.textField.isSecureEntry = true
+            
         case 5:
             //Create cell
             let termsCell = tableView.dequeueReusableCell(withIdentifier: TermsConditionsCell.identifier, for: indexPath) as! TermsConditionsCell
@@ -293,9 +355,13 @@ extension Registration: PTTextFieldDelegate {
     
     func PTTextFieldDidBeginEditing(_ textField: UITextField) {
         
+        currentTextField = textField.superview as? PTTextField
+        textField.inputView = nil
         switch textField.superview!.tag {
         case 101:
             textField.keyboardType = .numberPad
+        case 102:
+            textField.inputView = getPickerView()
         case 103:
             textField.keyboardType = .emailAddress
         default:
@@ -308,7 +374,7 @@ extension Registration: PTTextFieldDelegate {
         let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         switch textField.superview!.tag {
-        case 100, 103, 104:
+        case 100, 104:
             return newString.count < 20
         case 101:
             return newString.count < 11
@@ -333,5 +399,27 @@ extension Registration: PTTextFieldDelegate {
         default:
             break
         }
+    }
+}
+
+//MARK: - PTPickerView Delegate -
+extension Registration: PTPickerViewDelegate {
+    
+    func pickerViewDidEndEditing() {
+        
+        closeKeyboard()
+        genderIndex = 0
+        currentTextField?.text = ""
+    }
+    
+    func pickerViewDidChangeItem(_ item: String) {
+        
+        currentTextField?.text = item
+    }
+    
+    func pickerViewDidSelectItemAtIndex(_ index: Int) {
+        
+        closeKeyboard()
+        genderIndex = index
     }
 }

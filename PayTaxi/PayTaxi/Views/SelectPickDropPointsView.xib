@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectPickDropPointsView" customModule="NotificationContent" customModuleProvider="target">
+            <connections>
+                <outlet property="dropPointTextField" destination="bEA-KF-wcv" id="PUS-1p-hwI"/>
+                <outlet property="dropPointView" destination="3Ab-fx-ypx" id="Juy-fg-xWP"/>
+                <outlet property="pickPointTextField" destination="5Ik-gz-mmI" id="PJG-Ot-aVd"/>
+                <outlet property="pickPointView" destination="DHb-pS-KC5" id="HQe-GJ-35P"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectPickDropPointsView" customModule="NotificationContent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHb-pS-KC5">
+                    <rect key="frame" x="20" y="7" width="335" height="48"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-pickup-location" translatesAutoresizingMaskIntoConstraints="NO" id="gAa-pY-vHK">
+                            <rect key="frame" x="15" y="17" width="11" height="14"/>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-gz-mmI">
+                            <rect key="frame" x="41" y="0.0" width="254" height="48"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gAa-pY-vHK" secondAttribute="bottom" constant="17" id="4s8-F5-hhr"/>
+                        <constraint firstItem="gAa-pY-vHK" firstAttribute="leading" secondItem="DHb-pS-KC5" secondAttribute="leading" constant="15" id="BYm-Vf-kuV"/>
+                        <constraint firstItem="5Ik-gz-mmI" firstAttribute="top" secondItem="DHb-pS-KC5" secondAttribute="top" id="MuR-Hu-NYt"/>
+                        <constraint firstAttribute="height" constant="48" id="NTT-ks-orU"/>
+                        <constraint firstAttribute="bottom" secondItem="5Ik-gz-mmI" secondAttribute="bottom" id="Yac-Bj-FYn"/>
+                        <constraint firstAttribute="trailing" secondItem="5Ik-gz-mmI" secondAttribute="trailing" constant="40" id="Yd1-h2-rHH"/>
+                        <constraint firstItem="5Ik-gz-mmI" firstAttribute="leading" secondItem="gAa-pY-vHK" secondAttribute="trailing" constant="15" id="YdX-wq-XgY"/>
+                        <constraint firstItem="gAa-pY-vHK" firstAttribute="top" secondItem="DHb-pS-KC5" secondAttribute="top" constant="17" id="unQ-It-lee"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ab-fx-ypx">
+                    <rect key="frame" x="20" y="65" width="335" height="48"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-destination-location" translatesAutoresizingMaskIntoConstraints="NO" id="txW-Ae-kKU">
+                            <rect key="frame" x="15" y="17" width="14" height="14"/>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination please.?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEA-KF-wcv">
+                            <rect key="frame" x="44" y="0.0" width="251" height="48"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="6PP-Ui-FuF"/>
+                        <constraint firstAttribute="bottom" secondItem="bEA-KF-wcv" secondAttribute="bottom" id="9Ma-KM-gjr"/>
+                        <constraint firstItem="bEA-KF-wcv" firstAttribute="leading" secondItem="txW-Ae-kKU" secondAttribute="trailing" constant="15" id="EYs-6d-4SL"/>
+                        <constraint firstItem="bEA-KF-wcv" firstAttribute="top" secondItem="3Ab-fx-ypx" secondAttribute="top" id="OoK-QN-0DC"/>
+                        <constraint firstAttribute="trailing" secondItem="bEA-KF-wcv" secondAttribute="trailing" constant="40" id="URV-Jz-vN7"/>
+                        <constraint firstItem="txW-Ae-kKU" firstAttribute="top" secondItem="3Ab-fx-ypx" secondAttribute="top" constant="17" id="V1g-ch-pyv"/>
+                        <constraint firstAttribute="bottom" secondItem="txW-Ae-kKU" secondAttribute="bottom" constant="17" id="dFq-2z-xOS"/>
+                        <constraint firstItem="txW-Ae-kKU" firstAttribute="leading" secondItem="3Ab-fx-ypx" secondAttribute="leading" constant="15" id="eTr-m4-FSe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DHb-pS-KC5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="86V-Jt-4Nr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHb-pS-KC5" secondAttribute="trailing" constant="20" id="GQr-ew-DtN"/>
+                <constraint firstItem="3Ab-fx-ypx" firstAttribute="leading" secondItem="DHb-pS-KC5" secondAttribute="leading" id="Gy0-Wx-i9I"/>
+                <constraint firstItem="3Ab-fx-ypx" firstAttribute="top" secondItem="DHb-pS-KC5" secondAttribute="bottom" constant="10" id="HDd-kR-LIj"/>
+                <constraint firstItem="3Ab-fx-ypx" firstAttribute="trailing" secondItem="DHb-pS-KC5" secondAttribute="trailing" id="Qpr-cT-qDc"/>
+                <constraint firstItem="3Ab-fx-ypx" firstAttribute="height" secondItem="DHb-pS-KC5" secondAttribute="height" id="UdF-5s-ZZL"/>
+                <constraint firstItem="DHb-pS-KC5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="X2W-Vz-G6g"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="30.5" y="114.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-destination-location" width="14" height="14"/>
+        <image name="icon-pickup-location" width="11" height="14"/>
+    </resources>
+</document>

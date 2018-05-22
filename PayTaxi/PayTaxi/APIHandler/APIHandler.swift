@@ -27,14 +27,13 @@ class APIHandler: NSObject {
             //Add header fields
             request.addValue(GlobalConstants.APIHeaderFieldValues.applicationJson, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.contentType)
             request.addValue(getHeaderFieldsDictionary().description, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceInfo)
-            request.addValue(UIDevice.current.identifierForVendor!.uuidString, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceUDID)
-            request.addValue(UtilityFunctions().getApiToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.apiToken)
-            request.addValue(UtilityFunctions().deviceToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceToken)
-            request.addValue(GlobalConstants.APIHeaderFieldValues.deviceType, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceType)
-            request.addValue(UtilityFunctions().currentLanguage(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.language)
-            request.addValue(UtilityFunctions().getIPAddressOfNetworkInterface()[1], forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.ipAddress)
-            request.addValue(UtilityFunctions().getAuthToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.authToken)
-            
+//            request.addValue(UIDevice.current.identifierForVendor!.uuidString, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceUDID)
+//            request.addValue(UtilityFunctions().getApiToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.apiToken)
+//            request.addValue(UtilityFunctions().deviceToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceToken)
+//            request.addValue(GlobalConstants.APIHeaderFieldValues.deviceType, forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.deviceType)
+//            request.addValue(UtilityFunctions().currentLanguage(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.language)
+//            request.addValue(UtilityFunctions().getIPAddressOfNetworkInterface()[1], forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.ipAddress)
+//            request.addValue(UtilityFunctions().getAuthToken(), forHTTPHeaderField: GlobalConstants.APIHeaderFieldKeys.authToken)
             
             request.timeoutInterval = 30
             
@@ -51,18 +50,19 @@ class APIHandler: NSObject {
                     do {
                         
                         //Parameters available create JSON data
-                        //                        request.httpBody = try JSONSerialization.data(withJSONObject: parameters!, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        
+                        request.httpBody = try JSONSerialization.data(withJSONObject: parameters!, options: JSONSerialization.WritingOptions.prettyPrinted)
+                        print(NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue) ?? "POST Empty")
+
                         //Create and send encrypted data
-                        let paramsDictionary = parameters!
-                        let paramsData = try JSONSerialization.data(withJSONObject: paramsDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        let parametersString = String.init(data: paramsData, encoding: String.Encoding.utf8)
-                        let encryptedData = parametersString?.encryptedString ?? ""
-                        let body = ["encryptedData": encryptedData]
-                        let bodyData = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        request.httpBody = bodyData
-                        
-                        print(parametersString!)
+//                        let paramsDictionary = parameters!
+//                        let paramsData = try JSONSerialization.data(withJSONObject: paramsDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
+//                        let parametersString = String.init(data: paramsData, encoding: String.Encoding.utf8)
+//                        let encryptedData = parametersString?.encryptedString ?? ""
+//                        let body = ["encryptedData": encryptedData]
+//                        let bodyData = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
+//                        request.httpBody = bodyData
+//
+//                        print(parametersString!)
                         
                     } catch let catchError {
                         
@@ -93,6 +93,78 @@ class APIHandler: NSObject {
             sessionConfig.timeoutIntervalForResource = TimeInterval(30)
             let session = URLSession(configuration: sessionConfig)
             
+            session.dataTask(with: request) { (data, response, error) in
+                
+                guard data != nil && error == nil else {
+                    completionHandler(false, nil, "Session has timed out")
+                    return
+                }
+                
+                //Request Response
+                //Test if an error have
+                if let strError = error?.localizedDescription {
+                    
+                    //Error has been enconter with the request return error message to the user
+                    completionHandler(false, nil, strError)
+                } else {
+                    
+                    //Query sucessfull
+                    do {
+                        //Get the JSON data
+                        let responseDict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any>
+                        
+                        let jsonString = String(data: data!, encoding: .utf8)
+                        print("JSON RESPONSE: ---> \(String(describing: jsonString?.replacingOccurrences(of: "\\", with: "")))")
+                        print("responseDict \(responseDict)")
+                        
+                        //Check if the query have been successful
+                        if let status = responseDict["status"] as? Int {
+                            
+                            //Status is OK, everything is going perfect :)
+                            if status == 200 {
+                              
+                                //Check if the responseDict as response
+                                if let apiResponseDict = responseDict["resultArray"] as? [String: Any] {
+
+                                    //Response and query have been successful return data dictionary
+                                    completionHandler(true, apiResponseDict, nil)
+
+                                } else {
+
+                                    //Response key not found
+                                    completionHandler(false, nil, self.extractErrorMessage(responseDict: responseDict))
+                                }
+                            } else if status == 201 {
+                                
+                                //Status is not good, some fields are missing from front-end :(
+                                
+                                //The query have been unsuccuessful show error message to the user
+                                completionHandler(false, nil, self.extractErrorMessage(responseDict: responseDict))
+                                
+                            } else if status == 500 {
+                                
+                                //There is issue at server end ;(
+                            } else {
+                                
+                                //The query have been unseccuessful show error message to the user
+                                completionHandler(false, nil, self.extractErrorMessage(responseDict: responseDict))
+                            }
+
+                        } else {
+                            
+                            //Info status key not found
+                            completionHandler(false, nil, self.extractErrorMessage(responseDict: responseDict))
+                        }
+                        
+                    } catch let catchError as NSError{
+                        
+                        //Issue has been enconter when parsing JSON return error message
+                        completionHandler(false, nil, "JSON Parser has encountered an issue parse response, \(catchError.localizedDescription)")
+                    }
+                }
+            }.resume()
+            session.finishTasksAndInvalidate()
+            /*
             //let session = URLSession.shared
             session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
                 guard data != nil && error == nil else {
@@ -104,6 +176,7 @@ class APIHandler: NSObject {
                     
                     UtilityFunctions().saveAuthToken(authToken)
                 }
+                
                 if let sessionExpired = (response as? HTTPURLResponse)?.allHeaderFields["session-expired"] as? String {
                     
                     if sessionExpired == "N" {
@@ -230,6 +303,7 @@ class APIHandler: NSObject {
                 
             }).resume()
             session.finishTasksAndInvalidate()
+            */
             
         } else {
             
@@ -244,7 +318,7 @@ class APIHandler: NSObject {
         var errorMessage = ""
         
         //Check if there is any error message
-        if let messages = responseDict?["display_msg"] as? [String: Any] {
+        if let messages = responseDict?["displayMsge"] as? [String: Any] {
             
             //Detailed message found look through it
             for detailedMessage in messages.values {
@@ -256,7 +330,7 @@ class APIHandler: NSObject {
             errorMessage.remove(at: errorMessage.index(before: errorMessage.endIndex))
             errorMessage.remove(at: errorMessage.index(before: errorMessage.endIndex))
             
-        } else if let message = responseDict?["display_msg"] as? String {
+        } else if let message = responseDict?["displayMsge"] as? String {
             
             //Set error message to original object
             errorMessage = message
@@ -460,6 +534,97 @@ class APIHandler: NSObject {
     
     //MARK: - User API Requests -
     
+    func loginUser(with parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.login, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
+    
+    func registerUser(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ userId: String?, _ otpId: String?, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.userRegistration, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    //Extract userId, otpId from respose
+                    let userId = UtilityFunctions().parseString(in: response!, for: "userId")
+                    let otpId = UtilityFunctions().parseString(in: response!, for: "otpId")
+                    
+                    handler(true, userId, otpId, error)
+                    
+                } else {
+                    
+                    handler(false, nil, nil, error)
+                }
+            } else {
+                
+                handler(false, nil, nil, error)
+            }
+        }
+    }
+    
+    func verifyOTP(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.verifyOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
+    
+    func resendOTP(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+        
+        sendRequest(withUrl: GlobalConstants.API.resendOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
+            
+            if success {
+                
+                //Check response is nil
+                if response != nil {
+                    
+                    handler(true, error)
+                    
+                } else {
+                    
+                    handler(false, error)
+                }
+            } else {
+                
+                handler(false, error)
+            }
+        }
+    }
     
     //MARK: - Driver API Requests -
     
@@ -506,48 +671,5 @@ class APIHandler: NSObject {
             }
         }
     }
-    
-    func verifyOTPDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
-        
-        sendRequest(withUrl: GlobalConstants.API.verifyDriverOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
-            
-            if success {
-                
-                //Check response is nil
-                if response != nil {
-                    
-                    handler(true, error)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
-            } else {
-                
-                handler(false, error)
-            }
-        }
-    }
-    
-    func resendOTPDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
-        
-        sendRequest(withUrl: GlobalConstants.API.resendOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
-            
-            if success {
-                
-                //Check response is nil
-                if response != nil {
-                    
-                    handler(true, error)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
-            } else {
-                
-                handler(false, error)
-            }
-        }
-    }
+
 }

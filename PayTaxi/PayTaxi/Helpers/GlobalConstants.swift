@@ -26,30 +26,29 @@ public struct GlobalConstants {
     //MARK: - API -
     struct API {
         
-        static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://paytaxi.kamakshisarees.com/customerapis/" : "http://paytaxi.kamakshisarees.com/driverapis/"
+        static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://159.89.170.96/paytaxi/customerapis/" : "http://159.89.170.96/paytaxi/driverapis/"
 
-        static let socketUrl = "http://192.168.102.167:3000"
+        static let socketUrl = "http://192.168.0.102:3000"//"http://139.59.42.31:3000"
         
         //MARK: - User
         
         //Registration, Login, Logout
-        static let register = "registration"
-        
-        
-        
+        static let userRegistration = "userRegistration"
+        static let verifyOTP = "checkRegistrationOtp"
+        static let resendOTP = "resendOtp"
+        static let login = "login"
+
         //MARK: - Driver
         
         //Registration, Login, Logout
         static let driverRegistration = "driverRegistration"
-        static let verifyDriverOTP = "checkRegistrationOtp"
-        static let resendOTP = "resendOtp"
         static let driverLogin = "driverLogin"
     }
     
     //MARK: -
     struct APIHeaderFieldKeys {
         
-        static let deviceInfo = "device-info"
+        static let deviceInfo = "deviceInfo"
         static let deviceUDID = "device-uid"
         static let deviceToken = "device-token"
         static let deviceType = "device-type"
@@ -87,7 +86,32 @@ public struct GlobalConstants {
         static let otp = "otp"
     }
     
-    //MARK: -
+    //MARK: - Sockets -
+    struct SocketEventEmitters {
+        
+        //User
+        static let userConnect = "userConnected"
+        static let findNearCabs = "findNearCabs"
+        static let requestARide = "requestRide"
+        static let cancelARideFromUser = "userCancelRide"
+    }
+    
+    struct SocketEventListeners {
+        
+        //User
+        static let nearCabs = "nearCabs"
+        static let rideAccepted = "rideAccepted"
+    }
+    
+    struct SocketKeys {
+        
+        static let id = "id"
+        static let lat = "lat"
+        static let long = "lng"
+        static let cabType = "cabType"
+    }
+    
+    //MARK: - General Constants -
     struct Errors {
         
         static let internetConnectionError = "Internet connection not available"
@@ -110,14 +134,23 @@ public struct GlobalConstants {
         static let kAuthToken = "kWallet_auth_token"
     }
     
+    //MARK; -
+    enum CabRideType: String {
+        
+        case mini = "mini"
+        case sedan = "sedan"
+        case suv = "suv"
+    }
+    
     //MARK: - View -
     struct Colors {
      
         static let blue = UIColor(red: 38/255, green: 34/255, blue: 98/255, alpha: 1)
         static let green = UIColor(red: 126/255, green: 211/255, blue: 33/255, alpha: 1)
+        static let tungesten = UIColor(red: 50/255, green: 54/255, blue: 67/255, alpha: 1)
         static let iron = UIColor(red: 96/255, green: 100/255, blue: 112/255, alpha: 1)
-        static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
         static let megnisium = UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
+        static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
     }
     
     //MARK: -
