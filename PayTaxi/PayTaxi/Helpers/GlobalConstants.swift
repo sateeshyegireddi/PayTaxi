@@ -28,7 +28,7 @@ public struct GlobalConstants {
         
         static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://159.89.170.96/paytaxi/customerapis/" : "http://159.89.170.96/paytaxi/driverapis/"
 
-        static let socketUrl = "http://139.59.42.31:3000"
+        static let socketUrl = "http://139.59.42.31:3000"//"http://192.168.0.100:3000"//
         
         //MARK: - User
         

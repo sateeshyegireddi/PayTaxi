@@ -79,6 +79,11 @@ class SocketsManager: NSObject {
         socket.emit(GlobalConstants.SocketEventEmitters.requestARide, data)
     }
     
+    func cancelARide(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.cancelARideFromUser, data)
+    }
+    
     //MARK: - Listners from User
     func fetchNearByCabs(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
         

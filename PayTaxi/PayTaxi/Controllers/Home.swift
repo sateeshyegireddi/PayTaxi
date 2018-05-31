@@ -37,7 +37,8 @@ class Home: UIViewController {
     fileprivate var destinationLocationMarker: GMSMarker!
     fileprivate var cabsView: CabsView!
     fileprivate var polyline: GMSPolyline?
-    
+    fileprivate var driverMarker: GMSMarker!
+
     var trackedUser: [String:AnyObject]!
     
     //MARK: - Views
@@ -142,7 +143,7 @@ class Home: UIViewController {
     
     @IBAction func confirmPickupButtonTapped(_ sender: UIButton) {
         
-        
+        requestARide(of: .mini)
     }
 
     //MARK: - Functions
@@ -350,7 +351,7 @@ class Home: UIViewController {
         }
         markers.removeAll()
         polyline?.map = nil
-        currentLocationMarker = nil
+        currentLocationMarker = nil        
     }
     
     //MARK: - Socket Functions
@@ -456,7 +457,7 @@ class Home: UIViewController {
         //Create request data for socket
         let userId = 17
         let jsonDict = [GlobalConstants.SocketKeys.id: userId,
-                        GlobalConstants.SocketKeys.rideId: "43480",
+                        GlobalConstants.SocketKeys.rideId: arc4random(),
                         GlobalConstants.SocketKeys.cabType: type.rawValue,
                         GlobalConstants.SocketKeys.lat: latitude,
                         GlobalConstants.SocketKeys.long: longitude] as [String : Any]
@@ -468,7 +469,58 @@ class Home: UIViewController {
         
         SocketsManager.sharedInstance.rideStatus(completionHandler: { (data) in
             
+            if data.count > 0 {
+                
+                if let rideDict = data[0] as? [String: Any] {
+                    
+                    let lat = rideDict["lat"] as? String ?? ""
+                    let long = rideDict["lng"] as? String ?? ""
+                    let coordinate = CLLocationCoordinate2D(latitude: Double(lat) ?? 0, longitude: Double(long) ?? 0)
+                    
+                    self.driverMarker?.map = nil
+                    self.driverMarker = nil
+                    
+                    if self.driverMarker == nil {
+                        self.driverMarker = GMSMarker(position: coordinate)
+                        self.driverMarker.icon = #imageLiteral(resourceName: "icon-taxi")
+                        self.driverMarker.map = self.mapView
+                        self.driverMarker.position = coordinate
+                    }
+                    
+                    //Create alertController object with specific message
+                    let alertController = UIAlertController(title: GlobalConstants.Constants.appName, message: "Driver is arriving", preferredStyle: .alert)
+                    
+                    //Add OK button to alert and dismiss it on action
+                    let alertAction = UIAlertAction(title: "ok".localized, style: .default) { (action) in
+                        
+                    }
+                    
+                    alertController.addAction(alertAction)
+                    
+                    //Add Cancel button to alert and dismiss it on action
+                    let alertAction2 = UIAlertAction(title: "Cancel Ride", style: .default) { (action) in
+                        
+                        //Call Action handler
+                        self.cancelARide()
+                    }
+                    
+                    alertController.addAction(alertAction2)
+                    
+                    //Show alert to user
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         })
+    }
+    
+    fileprivate func cancelARide() {
+        
+        //Create request data for socket
+        let userId = 17
+        let jsonDict = [GlobalConstants.SocketKeys.id: userId,
+                        GlobalConstants.SocketKeys.rideId: arc4random() ] as [String : Any]
+        
+        SocketsManager.sharedInstance.cancelARide(with: jsonDict)
     }
 }
 
