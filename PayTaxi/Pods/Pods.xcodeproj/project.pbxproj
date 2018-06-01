@@ -1111,7 +1111,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4CB559C8313BE6739E230923C06E7BC /* Socket.IO-Client-Swift-iOS11.3.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1143,7 +1143,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A353FB9AE4F1D7B5266BC7925824540 /* Pods-NotificationContent.release.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1179,7 +1179,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739A75CEF9842F2E2D1A201EB2400F2A /* Socket.IO-Client-Swift-iOS9.0.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1246,7 +1246,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29504D0BB1CC3903460D4A33E211DA9B /* Starscream-iOS9.0.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1313,7 +1313,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4CB559C8313BE6739E230923C06E7BC /* Socket.IO-Client-Swift-iOS11.3.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1346,7 +1346,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24590DE96B7130B5292264117532B54E /* Starscream-iOS11.3.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1510,7 +1510,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29504D0BB1CC3903460D4A33E211DA9B /* Starscream-iOS9.0.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1542,7 +1542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739A75CEF9842F2E2D1A201EB2400F2A /* Socket.IO-Client-Swift-iOS9.0.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1574,7 +1574,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24590DE96B7130B5292264117532B54E /* Starscream-iOS11.3.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1606,7 +1606,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FDF014FE237CC775AA98BC3232E1452 /* Pods-NotificationContent.debug.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

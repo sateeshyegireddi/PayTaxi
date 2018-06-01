@@ -582,14 +582,20 @@ extension Home: CLLocationManagerDelegate {
         switch status {
         case .restricted:
             print("Location access was restricted.")
+            OpenScreen().locationSettings(self)
         case .denied:
             print("User denied access to location.")
+            OpenScreen().locationSettings(self)
             // Display the map using the default location.
             mapView.isHidden = false
         case .notDetermined:
             print("Location status not determined.")
+            OpenScreen().locationSettings(self)
         case .authorizedAlways: fallthrough
         case .authorizedWhenInUse:
+            if let locationSettings = presentedViewController as? LocationSettings {
+                locationSettings.dismiss(animated: false, completion: nil)
+            }
             print("Location status is OK.")
         }
     }

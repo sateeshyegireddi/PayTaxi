@@ -22,6 +22,10 @@
 "terms_conditions_message" = "Upon clicking Signup you are accepting Terms and Conditions";
 
 //MARK: - Validation messages
+"email_validation" = "Please enter valid email";
+"password_validation" = "Please enter valid password";
+"mobile_validation" = "Please enter valid mobile number";
+"username_validation" = "Please enter valid user name";
 
 //MARK: - Titles
 
@@ -47,7 +51,7 @@
 //MARK: - Placeholders
 
 //Login
-"mobile" = "Mobile Number";
+"mobile" = "Mobile number";
 "password" = "Password";
 
 //Registration

@@ -136,12 +136,20 @@ public struct GlobalConstants {
         static let kAuthToken = "kWallet_auth_token"
     }
     
-    //MARK; -
     enum CabRideType: String {
         
         case mini = "mini"
         case sedan = "sedan"
         case suv = "suv"
+    }
+    
+    struct Regex {
+        
+        static let email = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        static let password = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*<>?~_]).{8,20}$"
+        static let otp = "[0-9]{6}"
+        static let userName = "^[a-z,A-Z, ]{5,70}$"
+        static let mobile = "^\\d{10}$"
     }
     
     //MARK: - View -

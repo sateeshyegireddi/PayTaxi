@@ -25,6 +25,8 @@ class Login: UIViewController {
     //MARK: - Variables
     fileprivate var mobileNumber: String!
     fileprivate var password: String!
+    fileprivate var mobileNumberError: String!
+    fileprivate var passwordError: String!
     
     //MARK: - Views
     override func viewDidLoad() {
@@ -93,8 +95,17 @@ class Login: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        //Call API Service
-        login()
+        //Validate fields
+        let isFieldsValid = validateInputFields()
+        
+        //Call login API service if all fields are valid
+        if isFieldsValid {
+            
+            login()
+        } else {
+            
+            //TODO: Show error pop-over message to user
+        }
     }
     
     @IBAction func registrationButtonTapped(_ sender: UIButton) {
@@ -129,6 +140,15 @@ class Login: UIViewController {
     }
     
     //MARK: - Functions
+    private func validateInputFields() -> Bool {
+        
+        //Check field validations
+        mobileNumberError = Validator().validateEmail(mobileNumber)
+        passwordError = Validator().validatePassword(password)
+        
+        return mobileNumberError.isEmpty && passwordError.isEmpty
+    }
+    
     private func setupUI() {
         
         //Setup imageView

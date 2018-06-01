@@ -147,6 +147,49 @@
             </objects>
             <point key="canvasLocation" x="3360.8000000000002" y="26.600985221674879"/>
         </scene>
+        <!--Location Settings-->
+        <scene sceneID="Oud-gS-I6H">
+            <objects>
+                <viewController storyboardIdentifier="LocationSettings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xhM-Y2-het" customClass="LocationSettings" customModule="PayTaxi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WxP-HI-94P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgg-Ps-xvw">
+                                <rect key="frame" x="101" y="318.5" width="172" height="30"/>
+                                <state key="normal" title="Enable Location Services"/>
+                                <connections>
+                                    <action selector="locationServicesButtonTapped:" destination="xhM-Y2-het" eventType="touchUpInside" id="0IT-az-s07"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dgg-Ps-xvw" firstAttribute="centerY" secondItem="WxP-HI-94P" secondAttribute="centerY" id="MiK-fd-RQh"/>
+                            <constraint firstItem="Dgg-Ps-xvw" firstAttribute="centerX" secondItem="WxP-HI-94P" secondAttribute="centerX" id="gtU-Gc-2Pj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tMS-dn-eau"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUR-IQ-mqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4094" y="27"/>
+        </scene>
+        <!--PTLoading-->
+        <scene sceneID="HAO-fE-pZt">
+            <objects>
+                <viewController storyboardIdentifier="PTLoading" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pHl-89-t2a" userLabel="PTLoading" customClass="PTLoading" customModule="PayTaxi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="se7-FA-aau">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZLv-xJ-nBs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rW9-mz-Yf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4802" y="27"/>
+        </scene>
         <!--Navigation-->
         <scene sceneID="JPb-Wz-hBU">
             <objects>
@@ -182,26 +225,26 @@
                                 <rect key="frame" x="25" y="186" width="325" height="295"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wr-jq-mQ4">
-                                        <rect key="frame" x="0.0" y="30" width="325" height="21"/>
+                                        <rect key="frame" x="0.0" y="30" width="325" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to continue using PayTaxi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu7-8I-OeM">
-                                        <rect key="frame" x="0.0" y="51" width="325" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="325" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3U-fH-kWo" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="97.5" width="285" height="50"/>
+                                        <rect key="frame" x="20" y="105.5" width="285" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="xtK-zO-vPJ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-el-9XI" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="159.5" width="285" height="50"/>
+                                        <rect key="frame" x="20" y="167.5" width="285" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50X-7o-H2R">
@@ -325,19 +368,19 @@
                                 <rect key="frame" x="25" y="169.5" width="325" height="352.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iei-qq-m52">
-                                        <rect key="frame" x="0.0" y="30.5" width="325" height="21"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="325" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7T-E9-TC7">
-                                        <rect key="frame" x="0.0" y="51.5" width="325" height="16"/>
+                                        <rect key="frame" x="0.0" y="56" width="325" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XaX-vb-Eu7">
-                                        <rect key="frame" x="0.0" y="92.5" width="325" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="101" width="325" height="237"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="mrd-ZQ-RQ9" id="AHX-bl-e5b"/>
