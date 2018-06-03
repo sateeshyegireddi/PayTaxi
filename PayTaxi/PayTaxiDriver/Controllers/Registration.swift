@@ -22,30 +22,21 @@ class Registration: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
 
     //MARK: - Variables
-    public enum Gender: String {
-        
-        case none = ""
-        case male = "Male"
-        case female = "Female"
-    }
-    
     public struct UserParameters {
         
         var id: String
         var name: String
         var mobile: String
-        var gender: Gender
         var email: String
         var password: String
         var licenseNumber: String
         var vehicleRegistrationNumber: String
-        
+
         init() {
             
             id = ""
             name = ""
             mobile = ""
-            gender = Gender.none
             email = ""
             password = ""
             licenseNumber = ""
@@ -54,6 +45,7 @@ class Registration: UIViewController {
     }
     
     fileprivate var userParameters: UserParameters!
+    fileprivate var userParametersErrors: UserParameters!
     fileprivate var otpId: String!
     fileprivate var otp: String!
     fileprivate var currentTextField: PTTextField?
@@ -64,7 +56,10 @@ class Registration: UIViewController {
 
         //Init Variables
         userParameters = UserParameters()
-        
+        userParametersErrors = UserParameters()
+        otpId = ""
+        otp = ""
+
         //Add notification listener for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -91,7 +86,7 @@ class Registration: UIViewController {
     }
     
     //MARK: - Web Services
-    private func registration() {
+    private func registerDriver() {
         
         let parameters = [GlobalConstants.APIKeys.fullName: userParameters.name,
                           GlobalConstants.APIKeys.mobileNumber: userParameters.mobile,
@@ -99,14 +94,36 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.password: userParameters.password] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().registrationDriver(parameters: parameters, completionHandler: { (success, error) in
+        APIHandler().registrationDriver(parameters: parameters, completionHandler: { [weak self] (success, userId, otpId, error) in
+            guard let weakSelf = self else { return }
             
+            //On success
             if success {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Copy response parameters
+                    weakSelf.otpId = otpId ?? ""
+                    weakSelf.userParameters.id = userId ?? ""
+                    
+                    //Show alert with textField to user
+                    UtilityFunctions().showAlertWithTextField(OnViewController: weakSelf, message: "Please enter OTP sent to mobile", placeHolder: "OTP", Handler: { (otp) in
+                        
+                        weakSelf.otp = otp
+                        
+                        //Request verify OTP API
+                        weakSelf.verifyOTP()
+                    })
+                }
             } else {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                }
             }
         })
         
@@ -118,15 +135,27 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otpId: otpId,
                           GlobalConstants.APIKeys.otp: otp] as [String: Any]
         
-        //Request to Driver Registeration API
-        APIHandler().registrationDriver(parameters: parameters, completionHandler: { (success, error) in
+        //Request to User Registeration API
+        APIHandler().verifyOTP(parameters: parameters, completionHandler: { [weak self] (success, error) in
+            guard let weakSelf = self else { return }
             
+            //On success
             if success {
                 
+                //Move user to Navigation
+                DispatchQueue.main.async {
+                    
+                    OpenScreen().navigation(weakSelf)
+                }
                 
             } else {
                 
-                
+                //Make this func async to not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                }
             }
         })
     }
@@ -137,7 +166,7 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otpId: otpId] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().resendOTPDriver(parameters: parameters, completionHandler: { (success, error) in
+        APIHandler().resendOTP(parameters: parameters, completionHandler: { (success, error) in
             
             if success {
                 
@@ -152,7 +181,24 @@ class Registration: UIViewController {
     //MARK: - Actions
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
-        dismiss(animated: false, completion: nil)
+        //Hide keyboard
+        closeKeyboard()
+        
+        //Validate fields
+        let isFieldsValid = validateInputFields()
+        
+        //Register user to PayTaxi if all fields are valid
+        if isFieldsValid {
+            
+            registerDriver()
+        } else {
+            
+            //Get error message
+            let error = getInputFieldError()
+            
+            //Show error pop-over message to user
+            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
+        }
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -167,7 +213,7 @@ class Registration: UIViewController {
         if UIScreen.main.bounds.width <= 375 {
             
             //Call function to move the view up
-            UtilityFunctions().keyboardWillShow(notification, inView: self.view, percent: 0.3)
+            UtilityFunctions().keyboardWillShow(notification, inView: self.view, percent: 0.35)
         }
     }
     
@@ -222,6 +268,27 @@ class Registration: UIViewController {
         let nib2 = UINib(nibName: TermsConditionsCell.identifier, bundle: nil)
         registrationTableView.register(nib2, forCellReuseIdentifier: TermsConditionsCell.identifier)
     }
+    
+    private func validateInputFields() -> Bool {
+        
+        //Check field validations
+        userParametersErrors.name = Validator().validateUserName(userParameters.name)
+        userParametersErrors.mobile = Validator().validateMobile(userParameters.mobile)
+        userParametersErrors.email = Validator().validateEmail(userParameters.email)
+        userParametersErrors.password = Validator().validatePassword(userParameters.password)
+        
+        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty && userParametersErrors.email.isEmpty && userParametersErrors.password.isEmpty
+    }
+    
+    private func getInputFieldError() -> String {
+        
+        guard userParametersErrors.name.isEmpty else { return userParametersErrors.name }
+        guard userParametersErrors.mobile.isEmpty else { return userParametersErrors.mobile }
+        guard userParametersErrors.email.isEmpty else { return userParametersErrors.email }
+        guard userParametersErrors.password.isEmpty else { return userParametersErrors.password }
+        
+        return ""
+    }
 }
 
 //MARK: - UITableView Delegate -
@@ -269,9 +336,9 @@ extension Registration: UITableViewDataSource, UITableViewDelegate {
         case 3:
             UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"))
         case 4:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "driver_license_no".localized, image: #imageLiteral(resourceName: "icon-driver-license-no"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.licenseNumber, placeHolderText: "driver_license_no".localized, image: #imageLiteral(resourceName: "icon-driver-license-no"))
         case 5:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "vehicle_registration_no".localized, image: #imageLiteral(resourceName: "icon-vehicle-registration-no"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.vehicleRegistrationNumber, placeHolderText: "vehicle_registration_no".localized, image: #imageLiteral(resourceName: "icon-vehicle-registration-no"))
         case 6:
             //Create cell
             let termsCell = tableView.dequeueReusableCell(withIdentifier: TermsConditionsCell.identifier, for: indexPath) as! TermsConditionsCell
@@ -297,11 +364,15 @@ extension Registration: PTTextFieldDelegate {
     func PTTextFieldDidBeginEditing(_ textField: UITextField) {
         
         switch textField.superview!.tag {
+        case 100:
+            textField.autocorrectionType = .yes
         case 101:
             textField.keyboardType = .numberPad
         case 102:
+            textField.autocorrectionType = .yes
             textField.keyboardType = .emailAddress
         default:
+            textField.autocorrectionType = .no
             textField.keyboardType = .default
         }
     }

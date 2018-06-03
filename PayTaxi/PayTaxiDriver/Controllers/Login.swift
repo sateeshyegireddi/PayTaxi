@@ -25,6 +25,8 @@ class Login: UIViewController {
     //MARK: - Variables
     fileprivate var mobileNumber: String!
     fileprivate var password: String!
+    fileprivate var mobileNumberError: String!
+    fileprivate var passwordError: String!
     
     //MARK: - Views
     override func viewDidLoad() {
@@ -33,6 +35,8 @@ class Login: UIViewController {
         //Init variables
         mobileNumber = ""
         password = ""
+        mobileNumberError = ""
+        passwordError = ""
         
         //Add notification listener for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -93,7 +97,24 @@ class Login: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        //Call API Service
+        //Hide keyboard
+        closeKeyboard()
+        
+        //Validate fields
+        let isFieldsValid = validateInputFields()
+        
+        //Call login API service if all fields are valid
+        if isFieldsValid {
+            
+            login()
+        } else {
+            
+            //Get error message
+            let error = getInputFieldError()
+            
+            //Show error pop-over message to user
+            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
+        }
     }
     
     @IBAction func registrationButtonTapped(_ sender: UIButton) {
@@ -160,6 +181,23 @@ class Login: UIViewController {
         UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
         registrationButton.setTitle("new_user".localized, for: .normal)
         UtilityFunctions().addAttributedFont(for: registrationButton, till: 9)
+    }
+    
+    private func validateInputFields() -> Bool {
+        
+        //Check field validations
+        mobileNumberError = Validator().validateMobile(mobileNumber)
+        passwordError = Validator().validatePassword(password)
+        
+        return mobileNumberError.isEmpty && passwordError.isEmpty
+    }
+    
+    private func getInputFieldError() -> String {
+        
+        guard mobileNumberError.isEmpty else { return mobileNumberError }
+        guard passwordError.isEmpty else { return passwordError }
+        
+        return ""
     }
 }
 

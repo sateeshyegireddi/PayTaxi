@@ -35,6 +35,8 @@ class Login: UIViewController {
         //Init variables
         mobileNumber = ""
         password = ""
+        mobileNumberError = ""
+        passwordError = ""
         
         //Add notification listener for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

@@ -74,6 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Splash") as! Splash
             }
+        } else {
+            
+            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Splash") as! Splash
         }
         
         //Initialize Fabric/crashlytics

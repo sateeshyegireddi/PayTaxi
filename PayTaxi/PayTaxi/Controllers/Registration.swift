@@ -70,6 +70,8 @@ class Registration: UIViewController {
         userParameters = UserParameters()
         userParametersErrors = UserParameters()
         genderIndex = 0
+        otpId = ""
+        otp = ""
         
         //Add notification listener for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -147,7 +149,7 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otpId: otpId,
                           GlobalConstants.APIKeys.otp: otp] as [String: Any]
         
-        //Request to Driver Registeration API
+        //Request to User Registeration API
         APIHandler().verifyOTP(parameters: parameters, completionHandler: { [weak self] (success, error) in
             guard let weakSelf = self else { return }
 
@@ -402,13 +404,17 @@ extension Registration: PTTextFieldDelegate {
         currentTextField = textField.superview as? PTTextField
         textField.inputView = nil
         switch textField.superview!.tag {
+        case 100:
+            textField.autocorrectionType = .yes
         case 101:
             textField.keyboardType = .numberPad
         case 102:
             textField.inputView = getPickerView()
         case 103:
+            textField.autocorrectionType = .yes
             textField.keyboardType = .emailAddress
         default:
+            textField.autocorrectionType = .no
             textField.keyboardType = .default
         }
     }

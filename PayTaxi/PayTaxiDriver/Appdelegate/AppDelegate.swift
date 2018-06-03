@@ -74,6 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Splash") as! Splash
             }
+        } else {
+            
+            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Splash") as! Splash
         }
         
         //Initialize Fabric/crashlytics
@@ -88,6 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Register app for location updates
         registerForLocationUpdates()
+        
+        //Establish connection with socket server
+        SocketsManager.sharedInstance.establishConnection()
         
         return true
     }

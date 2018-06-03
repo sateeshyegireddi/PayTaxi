@@ -43,6 +43,12 @@ class OpenScreen: NSObject {
         currentViewController.setViewControllers([home], animated: false)
     }
     
+    func locationSettings(_ currentViewController: UIViewController) {
+        
+        let locationSettings = storyboard.instantiateViewController(withIdentifier: "LocationSettings") as! LocationSettings
+        locationSettings.modalTransitionStyle = modalTransitionStyle
+        currentViewController.present(locationSettings, animated: false, completion: nil)
+    }
     /*
      func registration(_ currentViewController: UIViewController) {
      

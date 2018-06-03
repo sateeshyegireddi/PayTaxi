@@ -692,7 +692,7 @@ class APIHandler: NSObject {
         }
     }
  
-    func registrationDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ error: String?) ->() ) {
+    func registrationDriver(parameters: [String: Any], completionHandler handler: @escaping (_ success: Bool, _ userId: String?, _ otpId: String?, _ error: String?) ->() ) {
         
         sendRequest(withUrl: GlobalConstants.API.driverRegistration, parameters: parameters, httpMethod: .post) { (success, response, error) in
             
@@ -701,15 +701,19 @@ class APIHandler: NSObject {
                 //Check response is nil
                 if response != nil {
                     
-                    handler(true, error)
+                    //Extract userId, otpId from respose
+                    let userId = UtilityFunctions().parseString(in: response!, for: "userId")
+                    let otpId = UtilityFunctions().parseString(in: response!, for: "otpId")
+                    
+                    handler(true, userId, otpId, error)
                     
                 } else {
                     
-                    handler(false, error)
+                    handler(false, nil, nil, error)
                 }
             } else {
                 
-                handler(false, error)
+                handler(false, nil, nil, error)
             }
         }
     }
