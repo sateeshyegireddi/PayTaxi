@@ -22,10 +22,11 @@
 "terms_conditions_message" = "Upon clicking Signup you are accepting Terms and Conditions";
 
 //MARK: - Validation messages
-"email_validation" = "Please enter valid email";
-"password_validation" = "Please enter valid password";
-"mobile_validation" = "Please enter valid mobile number";
-"username_validation" = "Please enter valid user name";
+"email_validation" = "Please enter valid Email";
+"password_validation" = "Please enter valid Password";
+"mobile_validation" = "Please enter valid Mobile number";
+"username_validation" = "Please enter valid User name";
+"gender_validation" = "Please select valid Gender";
 
 //MARK: - Titles
 
@@ -55,7 +56,7 @@
 "password" = "Password";
 
 //Registration
-"user_name" = "User Name";
+"user_name" = "User name";
 "gender" = "Gender";
 "email" = "Email";
 "driver_license_no" = "Driver license no";

@@ -308,6 +308,9 @@ class APIHandler: NSObject {
             
         } else {
             
+            //Show internet not avaible message to user
+            UtilityFunctions().showInternetNotAvailable()
+            
             //Internet connection not available return error
             completionHandler(false, nil, GlobalConstants.Errors.internetConnectionError)
         }
@@ -581,7 +584,8 @@ class APIHandler: NSObject {
                 //Check response is nil
                 if response != nil {
                     
-                    handler(true, error)
+                    //Save user locally
+                    handler(true, nil)
                     
                 } else {
                     

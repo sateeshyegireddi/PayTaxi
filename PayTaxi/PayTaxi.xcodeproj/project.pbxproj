@@ -152,6 +152,8 @@
 		F9AC8E2F20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
 		F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
+		F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
+		F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
 		F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FE20B42B2B0043DFA5 /* SearchPlacesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */; };
@@ -324,6 +326,7 @@
 		F9AB2AF220B4817100E6E1A8 /* CabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabCell.xib; sourceTree = "<group>"; };
 		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
 		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
+		F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesView.swift; sourceTree = "<group>"; };
 		F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPlacesView.xib; sourceTree = "<group>"; };
 		F9C2350120B42D080043DFA5 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
@@ -522,6 +525,7 @@
 			children = (
 				F96381122099CAB600C3CC1E /* StringExtension.swift */,
 				F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */,
+				F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1146,6 +1150,7 @@
 				F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */,
 				F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */,
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
+				F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
@@ -1189,6 +1194,7 @@
 				F9075DC620A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
 				F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */,
+				F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9075DC220A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F96E67A320A3037300F00FEA /* Home.swift in Sources */,
 				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,

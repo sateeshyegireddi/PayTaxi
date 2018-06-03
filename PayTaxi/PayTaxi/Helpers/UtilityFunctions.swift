@@ -280,6 +280,14 @@ class UtilityFunctions: NSObject {
         textField.image = leftImage
     }
     
+    func showInternetNotAvailable() {
+        
+        let networkError = GlobalConstants.Errors.internetConnectionError
+        if let vc = UIApplication.topViewController() {
+            showSimpleAlert(OnViewController: vc, Message: networkError)
+        }
+    }
+    
     //MARK: - Keyboard Functions
     func keyboardWillShow(_ notification: NSNotification, inView: UIView, percent: CGFloat) {
         

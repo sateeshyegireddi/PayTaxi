@@ -82,7 +82,6 @@ class Login: UIViewController {
                 }
             } else {
                 
-                
             }
         })
     }
@@ -95,6 +94,9 @@ class Login: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
+        //Hide keyboard
+        closeKeyboard()
+        
         //Validate fields
         let isFieldsValid = validateInputFields()
         
@@ -104,7 +106,11 @@ class Login: UIViewController {
             login()
         } else {
             
-            //TODO: Show error pop-over message to user
+            //Get error message
+            let error = getInputFieldError()
+            
+            //Show error pop-over message to user
+            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
         }
     }
     
@@ -143,7 +149,7 @@ class Login: UIViewController {
     private func validateInputFields() -> Bool {
         
         //Check field validations
-        mobileNumberError = Validator().validateEmail(mobileNumber)
+        mobileNumberError = Validator().validateMobile(mobileNumber)
         passwordError = Validator().validatePassword(password)
         
         return mobileNumberError.isEmpty && passwordError.isEmpty
@@ -181,6 +187,14 @@ class Login: UIViewController {
         UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
         registrationButton.setTitle("new_user".localized, for: .normal)
         UtilityFunctions().addAttributedFont(for: registrationButton, till: 9)
+    }
+    
+    private func getInputFieldError() -> String {
+        
+        guard mobileNumberError.isEmpty else { return mobileNumberError }
+        guard passwordError.isEmpty else { return passwordError }
+        
+        return ""
     }
 }
 

@@ -43,6 +43,13 @@ class Validator: NSObject {
         return validationMessage
     }
     
+    func validateGender(_ text: String) -> String {
+        
+        let regex = GlobalConstants.Regex.gender
+        let validationMessage = validateText(text, withRegex: regex, errorMessage: "gender_validation".localized)
+        return validationMessage
+    }
+    
     //MARK: -
     private func validateText(_ text: String, withRegex regex: String, errorMessage error: String) -> String {
         

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PTPickerView" customModule="NotificationContent" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PTPickerView" customModule="PayTaxi" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="e4A-6C-rSD" id="tiL-Cy-6ih"/>
                 <outlet property="chooseButton" destination="wna-ft-oiZ" id="tPK-FZ-IEW"/>
@@ -47,9 +48,7 @@
                         <constraint firstAttribute="height" constant="25" id="zy3-FS-Khj"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                    <state key="normal" title="Choose">
-                        <color key="titleColor" red="0.96862745098039216" green="0.41960784313725491" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
+                    <state key="normal" title="Choose"/>
                     <state key="selected" title="Login as Buyer"/>
                     <connections>
                         <action selector="chooseButtonTapped:" destination="-1" eventType="touchUpInside" id="3ut-9f-so8"/>

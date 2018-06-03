@@ -27,7 +27,7 @@ public struct GlobalConstants {
     struct API {
         
         static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://159.89.170.96/paytaxi/customerapis/" : "http://159.89.170.96/paytaxi/driverapis/"
-
+        //static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://paytaxi.kamakshisarees.com/customerapis/" : "http://paytaxi.kamakshisarees.com/driverapis"
         static let socketUrl = "http://139.59.42.31:3000"//"http://192.168.0.100:3000"//
         
         //MARK: - User
@@ -146,10 +146,14 @@ public struct GlobalConstants {
     struct Regex {
         
         static let email = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        static let password = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*<>?~_]).{8,20}$"
+        static let password = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,20}$" //Number, Letter, Special Character
+        //"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" //Number, Letter
+        //"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" //Upper Letter, Lower Letter, Number
+        //"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" //Upper Letter, Lower Letter, Number, Special Character
         static let otp = "[0-9]{6}"
         static let userName = "^[a-z,A-Z, ]{5,70}$"
         static let mobile = "^\\d{10}$"
+        static let gender = "^[a-z,A-Z]{4,}$"
     }
     
     //MARK: - View -

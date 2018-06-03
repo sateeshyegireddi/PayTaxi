@@ -38,6 +38,7 @@ class Registration: UIViewController {
         var password: String
         var licenseNumber: String
         var vehicleRegistrationNumber: String
+        var genderError: String
         
         init() {
             
@@ -49,10 +50,12 @@ class Registration: UIViewController {
             password = ""
             licenseNumber = ""
             vehicleRegistrationNumber = ""
+            genderError = ""
         }
     }
     
     fileprivate var userParameters: UserParameters!
+    fileprivate var userParametersErrors: UserParameters!
     fileprivate var otpId: String!
     fileprivate var otp: String!
     fileprivate var currentTextField: PTTextField?
@@ -65,6 +68,7 @@ class Registration: UIViewController {
         
         //Init Variables
         userParameters = UserParameters()
+        userParametersErrors = UserParameters()
         genderIndex = 0
         
         //Add notification listener for keyboard
@@ -189,8 +193,24 @@ class Registration: UIViewController {
     //MARK: - Actions
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
-        //Register user to PayTaxi
-        registerUser()
+        //Hide keyboard
+        closeKeyboard()
+        
+        //Validate fields
+        let isFieldsValid = validateInputFields()
+        
+        //Register user to PayTaxi if all fields are valid
+        if isFieldsValid {
+            
+            registerUser()
+        } else {
+            
+            //Get error message
+            let error = getInputFieldError()
+            
+            //Show error pop-over message to user
+            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
+        }
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -262,7 +282,7 @@ class Registration: UIViewController {
     }
     
     
-    func getPickerView() -> UIView {
+    private func getPickerView() -> UIView {
         
         //Check if pickerView is nil
         if pickerView == nil {
@@ -276,6 +296,30 @@ class Registration: UIViewController {
         pickerView.setPickerViewObjects([Gender.male.rawValue, Gender.female.rawValue], selectedRow: genderIndex)
         
         return pickerView.view
+    }
+    
+    private func validateInputFields() -> Bool {
+        
+        //Check field validations
+        userParametersErrors.name = Validator().validateUserName(userParameters.name)
+        userParametersErrors.mobile = Validator().validateMobile(userParameters.mobile)
+        userParametersErrors.genderError = Validator().validateGender(userParameters.gender.rawValue)
+        userParametersErrors.email = Validator().validateEmail(userParameters.email)
+        userParametersErrors.password = Validator().validatePassword(userParameters.password)
+
+        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty &&
+            userParametersErrors.genderError.isEmpty && userParametersErrors.email.isEmpty && userParametersErrors.password.isEmpty
+    }
+    
+    private func getInputFieldError() -> String {
+        
+        guard userParametersErrors.name.isEmpty else { return userParametersErrors.name }
+        guard userParametersErrors.mobile.isEmpty else { return userParametersErrors.mobile }
+        guard userParametersErrors.genderError.isEmpty else { return userParametersErrors.genderError }
+        guard userParametersErrors.email.isEmpty else { return userParametersErrors.email }
+        guard userParametersErrors.password.isEmpty else { return userParametersErrors.password }
+        
+        return ""
     }
 }
 
