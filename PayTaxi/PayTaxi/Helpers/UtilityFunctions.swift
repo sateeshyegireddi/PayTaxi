@@ -282,9 +282,19 @@ class UtilityFunctions: NSObject {
     
     func showInternetNotAvailable() {
         
-        let networkError = GlobalConstants.Errors.internetConnectionError
         if let vc = UIApplication.topViewController() {
-            showSimpleAlert(OnViewController: vc, Message: networkError)
+            let noConnectionView = NoConnectionView(frame: CGRect(x: 0,
+                                                                  y: 0,
+                                                                  width: UIScreen.main.bounds.width,
+                                                                  height: UIScreen.main.bounds.height == 812 ? 73 : 50),
+                                                    inView: vc)
+            noConnectionView.alpha = 0.0
+            vc.view.addSubview(noConnectionView)
+            UIView.animate(withDuration: 1.0, animations: {
+                noConnectionView.alpha = 1.0
+            }) { (finished) in
+                noConnectionView.alpha = 1.0
+            }
         }
     }
     

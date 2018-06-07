@@ -188,6 +188,10 @@
 		F9E1700C20C06B35001023B5 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700A20C06B35001023B5 /* Validator.swift */; };
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9F2D51120C8383000ED749A /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F9F2D51220C8383000ED749A /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F9F2D51420C8383E00ED749A /* NoConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* NoConnectionView.xib */; };
+		F9F2D51520C8383E00ED749A /* NoConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* NoConnectionView.xib */; };
 		F9FB263C20B32464005DE756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
 		F9FC1E7F20B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
 		F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
@@ -342,6 +346,8 @@
 		F9E1700720C06982001023B5 /* PTLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoading.swift; sourceTree = "<group>"; };
 		F9E1700A20C06B35001023B5 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		F9F2D51020C8383000ED749A /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
+		F9F2D51320C8383E00ED749A /* NoConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoConnectionView.xib; sourceTree = "<group>"; };
 		F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
 		F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -453,6 +459,8 @@
 				F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */,
 				F9C2350D20B4778A0043DFA5 /* CabsView.swift */,
 				F9C2351120B477950043DFA5 /* CabsView.xib */,
+				F9F2D51020C8383000ED749A /* NoConnectionView.swift */,
+				F9F2D51320C8383E00ED749A /* NoConnectionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -865,6 +873,7 @@
 				F9A0385C20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */,
 				F9A0383B20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				F9A0383220B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
+				F9F2D51420C8383E00ED749A /* NoConnectionView.xib in Resources */,
 				F9A0382920B199B60044A1A5 /* Poppins-ThinItalic.ttf in Resources */,
 				F9A0385920B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383E20B199B60044A1A5 /* Poppins-ExtraBold.ttf in Resources */,
@@ -906,6 +915,7 @@
 				F9A0383C20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				F9A0383320B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
 				F9A0382A20B199B60044A1A5 /* Poppins-ThinItalic.ttf in Resources */,
+				F9F2D51520C8383E00ED749A /* NoConnectionView.xib in Resources */,
 				F9A0385A20B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383F20B199B60044A1A5 /* Poppins-ExtraBold.ttf in Resources */,
 				F9A0385420B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
@@ -1152,6 +1162,7 @@
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
 				F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
+				F9F2D51120C8383000ED749A /* NoConnectionView.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
@@ -1196,6 +1207,7 @@
 				F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9075DC220A1AA09001A2E02 /* SocketsManager.swift in Sources */,
+				F9F2D51220C8383000ED749A /* NoConnectionView.swift in Sources */,
 				F96E67A320A3037300F00FEA /* Home.swift in Sources */,
 				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,
 				F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,

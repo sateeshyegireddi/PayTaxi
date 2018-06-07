@@ -7,6 +7,7 @@
 */
 
 //MARK: - Internet messages
+"network_error" = "Can't reach to network";
 
 //MARK: - Error messages
 

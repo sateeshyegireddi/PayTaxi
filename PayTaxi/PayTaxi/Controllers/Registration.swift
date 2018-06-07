@@ -132,11 +132,14 @@ class Registration: UIViewController {
                 }
             } else {
                 
-                //Make this func async to not getting crash
+                //Make this func async not getting crash
                 DispatchQueue.main.async {
                     
                     //Show error message to user
-                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    if error != GlobalConstants.Errors.internetConnection {
+                        
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    }
                 }
             }
         }
@@ -164,11 +167,14 @@ class Registration: UIViewController {
                 
             } else {
                 
-                //Make this func async to not getting crash
+                //Make this func async not getting crash
                 DispatchQueue.main.async {
                     
                     //Show error message to user
-                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    if error != GlobalConstants.Errors.internetConnection {
+                        
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    }
                 }
             }
         })
@@ -180,14 +186,23 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otpId: otpId] as [String: Any]
         
         //Request to Driver Registeration API
-        APIHandler().resendOTP(parameters: parameters, completionHandler: { (success, error) in
+        APIHandler().resendOTP(parameters: parameters, completionHandler: { [weak self] (success, error) in
+            guard let weakSelf = self else { return }
             
             if success {
                 
                 
             } else {
                 
-                
+                //Make this func async not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    if error != GlobalConstants.Errors.internetConnection {
+                        
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    }
+                }
             }
         })
     }

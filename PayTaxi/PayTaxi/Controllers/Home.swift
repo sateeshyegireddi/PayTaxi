@@ -102,7 +102,10 @@ class Home: UIViewController {
                 DispatchQueue.main.async {
                     
                     //Show error message to user
-                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error!)
+                    if error != GlobalConstants.Errors.internetConnection {
+                    
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error!)
+                    }
                 }
             }
         })
@@ -271,11 +274,14 @@ class Home: UIViewController {
                 
             } else {
                 
-                //Make this func async to not getting crash
+                //Make this func async not getting crash
                 DispatchQueue.main.async {
                     
                     //Show error message to user
-                    UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    if error != GlobalConstants.Errors.internetConnection {
+                        
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    }
                 }
             }
         }

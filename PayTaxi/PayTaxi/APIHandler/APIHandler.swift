@@ -312,7 +312,7 @@ class APIHandler: NSObject {
             UtilityFunctions().showInternetNotAvailable()
             
             //Internet connection not available return error
-            completionHandler(false, nil, GlobalConstants.Errors.internetConnectionError)
+            completionHandler(false, nil, GlobalConstants.Errors.internetConnection)
         }
     }
     
@@ -464,8 +464,11 @@ class APIHandler: NSObject {
             session.finishTasksAndInvalidate()
         } else {
             
+            //Show internet not avaible message to user
+            UtilityFunctions().showInternetNotAvailable()
+            
             //Internet connection not available return error
-            completionHandler(false, nil, GlobalConstants.Errors.internetConnectionError)
+            completionHandler(false, nil, GlobalConstants.Errors.internetConnection)
         }
     }
     

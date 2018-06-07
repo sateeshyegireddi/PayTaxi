@@ -116,7 +116,7 @@ public struct GlobalConstants {
     //MARK: - General Constants -
     struct Errors {
         
-        static let internetConnectionError = "Internet connection not available"
+        static let internetConnection = "network_error".localized
     }
     
     //MARK: -
@@ -144,7 +144,6 @@ public struct GlobalConstants {
     }
     
     struct Regex {
-        
         static let email = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         static let password = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,20}$" //Number, Letter, Special Character
         //"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" //Number, Letter

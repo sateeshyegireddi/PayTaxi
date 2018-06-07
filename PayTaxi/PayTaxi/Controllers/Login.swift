@@ -71,7 +71,8 @@ class Login: UIViewController {
                           GlobalConstants.APIKeys.password: password] as [String: Any]
         
         //Request to Login API
-        APIHandler().loginUser(with: parameters, completionHandler: { (success, error) in
+        APIHandler().loginUser(with: parameters, completionHandler: { [weak self] (success, error) in
+            guard let weakSelf = self else { return }
             
             //On success
             if success {
@@ -80,10 +81,19 @@ class Login: UIViewController {
                 DispatchQueue.main.async {
                     
                     //Move user to home screen
-                    OpenScreen().navigation(self)
+                    OpenScreen().navigation(weakSelf)
                 }
             } else {
                 
+                //Make this func async not getting crash
+                DispatchQueue.main.async {
+                    
+                    //Show error message to user
+                    if error != GlobalConstants.Errors.internetConnection {
+                        
+                        UtilityFunctions().showSimpleAlert(OnViewController: weakSelf, Message: error ?? "")
+                    }
+                }
             }
         })
     }
