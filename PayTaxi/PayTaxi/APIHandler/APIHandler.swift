@@ -582,18 +582,21 @@ class APIHandler: NSObject {
         
         sendRequest(withUrl: GlobalConstants.API.login, parameters: parameters, httpMethod: .post) { (success, response, error) in
             
+            //On success
             if success {
                 
-                //Check response is nil
-                if response != nil {
-                    
-                    //Save user locally
-                    handler(true, nil)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
+                //Extract and save api token
+                let sessionId = response?["sessionId"] as? String ?? ""
+                UtilityFunctions().saveSessionId(sessionId)
+                
+                //Save the current user details
+                let user = User.init(response)
+                UtilityFunctions().saveUser(user)
+                
+                //Set auto-login to not show login page again after login with success
+                UtilityFunctions().setAutoLogin(true)
+                
+                handler(true, nil)
             } else {
                 
                 handler(false, error)
@@ -605,21 +608,15 @@ class APIHandler: NSObject {
         
         sendRequest(withUrl: GlobalConstants.API.userRegistration, parameters: parameters, httpMethod: .post) { (success, response, error) in
             
+            //On success
             if success {
                 
-                //Check response is nil
-                if response != nil {
-                    
-                    //Extract userId, otpId from respose
-                    let userId = UtilityFunctions().parseString(in: response!, for: "userId")
-                    let otpId = UtilityFunctions().parseString(in: response!, for: "otpId")
-                    
-                    handler(true, userId, otpId, error)
-                    
-                } else {
-                    
-                    handler(false, nil, nil, error)
-                }
+                //Extract userId, otpId from respose
+                let userId = UtilityFunctions().parseString(in: response, for: "userId")
+                let otpId = UtilityFunctions().parseString(in: response, for: "otpId")
+                
+                handler(true, userId, otpId, error)
+
             } else {
                 
                 handler(false, nil, nil, error)
@@ -631,17 +628,21 @@ class APIHandler: NSObject {
         
         sendRequest(withUrl: GlobalConstants.API.verifyOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
             
+            //On success
             if success {
                 
-                //Check response is nil
-                if response != nil {
-                    
-                    handler(true, error)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
+                //Extract and save api token
+                let sessionId = response?["sessionId"] as? String ?? ""
+                UtilityFunctions().saveSessionId(sessionId)
+                
+                //Save the current user details
+                let user = User.init(response)
+                UtilityFunctions().saveUser(user)
+                
+                //Set auto-login to not show login page again after login with success
+                UtilityFunctions().setAutoLogin(true)
+                
+                handler(true, nil)
             } else {
                 
                 handler(false, error)
@@ -653,17 +654,11 @@ class APIHandler: NSObject {
         
         sendRequest(withUrl: GlobalConstants.API.resendOTP, parameters: parameters, httpMethod: .post) { (success, response, error) in
             
+            //On success
             if success {
                 
-                //Check response is nil
-                if response != nil {
-                    
-                    handler(true, error)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
+                handler(true, error)
+
             } else {
                 
                 handler(false, error)
@@ -679,15 +674,8 @@ class APIHandler: NSObject {
             
             if success {
                 
-                //Check response is nil
-                if response != nil {
-                    
-                    handler(true, error)
-                    
-                } else {
-                    
-                    handler(false, error)
-                }
+                handler(true, error)
+
             } else {
                 
                 handler(false, error)

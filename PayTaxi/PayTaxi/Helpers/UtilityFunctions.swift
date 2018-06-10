@@ -98,6 +98,7 @@ class UtilityFunctions: NSObject {
         return UserDefaults.standard.string(forKey: GlobalConstants.Localisation.key) ?? GlobalConstants.Localisation.english
     }
     
+    //MARK: - Keychain
     func clearKeychainData() {
         
         do {
@@ -127,7 +128,6 @@ class UtilityFunctions: NSObject {
         return ""
     }
     
-    
     func saveAuthToken(_ token: String) {
         
         do {
@@ -141,6 +141,26 @@ class UtilityFunctions: NSObject {
         
         do {
             return try Keychain.standard.getAuthToken()
+        } catch let error {
+            print("\(error.localizedDescription)")
+        }
+        
+        return ""
+    }
+    
+    func saveSessionId(_ sessionId: String) {
+        
+        do {
+            try Keychain.standard.saveApiToken(sessionId)
+        } catch let error {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    func getSessionId() -> String {
+        
+        do {
+            return try Keychain.standard.getApiToken()
         } catch let error {
             print("\(error.localizedDescription)")
         }

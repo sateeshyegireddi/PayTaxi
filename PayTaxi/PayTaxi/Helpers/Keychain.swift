@@ -260,6 +260,90 @@ class Keychain: NSObject {
         guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
     }
     
+    //MARK: - API Token
+    func saveSessionId(_ sessionId: String) throws {
+        
+        // Encode the sessionid into an Data object.
+        let encodedSessionId = sessionId.data(using: String.Encoding.utf8)!
+        
+        do {
+            // Check for an existing item in the keychain.
+            try _ = getSessionId()
+            
+            // Update the existing item with the new password.
+            var attributesToUpdate = [String : AnyObject]()
+            attributesToUpdate[kSecValueData as String] = encodedSessionId as AnyObject?
+            
+            //Build a query to find the item that matches the service, account and access group.
+            let query = self.keychainQuery(forKey: GlobalConstants.KeyChainConstants.kSessionId)
+            
+            // Try to update the existing keychain item that matches the query.
+            let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
+            
+            // Throw an error if an unexpected status was returned.
+            guard status == noErr else { throw KeychainError.unhandledError(status: status) }
+        }
+        catch KeychainError.noKeychainData {
+            
+            //No password was found in the keychain. Create a dictionary to save as a new keychain item.
+            var newItem = self.keychainQuery(forKey: GlobalConstants.KeyChainConstants.kSessionId)
+            newItem[kSecValueData as String] = encodedSessionId as AnyObject?
+            
+            // Add a the new item to the keychain.
+            let status = SecItemAdd(newItem as CFDictionary, nil)
+            
+            // Throw an error if an unexpected status was returned.
+            guard status == noErr else { throw KeychainError.unhandledError(status: status) }
+        }
+    }
+    
+    func getSessionId() throws -> String {
+        
+        //Build a query to find the item that matches the service, account and access group.
+        var query = self.keychainQuery(forKey: GlobalConstants.KeyChainConstants.kSessionId)
+        
+        // Limit search results to one
+        query[kSecMatchLimit as String] = kSecMatchLimitOne
+        
+        // Specify we want SecAttrAccessible returned
+        query[kSecReturnAttributes as String] = kCFBooleanTrue
+        
+        // Specify we want Data/CFData returned
+        query[kSecReturnData as String] = kCFBooleanTrue
+        
+        // Try to fetch the existing keychain item that matches the query.
+        var queryResult: AnyObject?
+        let status = withUnsafeMutablePointer(to: &queryResult) {
+            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+        }
+        
+        // Check the return status and throw an error if appropriate.
+        guard status != errSecItemNotFound else { throw KeychainError.noKeychainData }
+        guard status == noErr else { throw KeychainError.unhandledError(status: status) }
+        
+        // Parse the token string from the query result.
+        guard let existingItem = queryResult as? [String : AnyObject],
+            let tokenData = existingItem[kSecValueData as String] as? Data,
+            let token = String(data: tokenData, encoding: String.Encoding.utf8)
+            else {
+                throw KeychainError.unexpectedKeychainData
+        }
+        
+        return token
+    }
+    
+    func deleteSessionId() throws {
+        
+        //Build a query to find the item that matches the service, account and access group.
+        let query = self.keychainQuery(forKey: GlobalConstants.KeyChainConstants.kSessionId)
+        
+        // Delete the existing item from the keychain.
+        let status: OSStatus = SecItemDelete(query as CFDictionary)
+        
+        // Throw an error if an unexpected status was returned.
+        guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
+    }
+    
     //MARK: - User
     func saveUser(_ user: User) throws {
         

@@ -65,10 +65,8 @@
 		F996C44B209C7B9C007849B3 /* NotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F996C43F209C7B9C007849B3 /* NotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96381122099CAB600C3CC1E /* StringExtension.swift */; };
 		F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
-		F996C456209C7C05007849B3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
 		F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
 		F996C458209C7C07007849B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
-		F996C459209C7C0E007849B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
 		F996C461209C7C7B007849B3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C460209C7C7B007849B3 /* NotificationService.swift */; };
 		F996C465209C7C7B007849B3 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F996C45E209C7C7B007849B3 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F996C46A209C9167007849B3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C469209C9167007849B3 /* Navigation.swift */; };
@@ -1249,8 +1247,6 @@
 				F9C2350C20B4388C0043DFA5 /* Place.swift in Sources */,
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
-				F996C456209C7C05007849B3 /* Keychain.swift in Sources */,
-				F996C459209C7C0E007849B3 /* User.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,

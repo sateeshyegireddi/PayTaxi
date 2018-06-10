@@ -153,7 +153,7 @@ class Registration: UIViewController {
                           GlobalConstants.APIKeys.otp: otp] as [String: Any]
         
         //Request to User Registeration API
-        APIHandler().verifyOTP(parameters: parameters, completionHandler: { [weak self] (success, error) in
+        APIHandler().verifyOTP(parameters: parameters, completionHandler: { [weak self] (success, error)  in
             guard let weakSelf = self else { return }
 
             //On success
