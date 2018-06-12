@@ -28,7 +28,7 @@ public struct GlobalConstants {
         
 //        static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://159.89.170.96/paytaxi/customerapis/" : "http://159.89.170.96/paytaxi/driverapis/"
         static let baseURL = GlobalConstants.target == GlobalConstants.Constants.userAppName ? "http://paytaxi.kamakshisarees.com/customerapis/" : "http://paytaxi.kamakshisarees.com/driverapis"
-        static let socketUrl = "http://139.59.42.31:3000"//"http://192.168.0.100:3000"//
+        static let socketUrl = "http://139.59.1.54:3000"//"http://192.168.0.100:3000"//
         
         //MARK: - User
         
@@ -90,6 +90,7 @@ public struct GlobalConstants {
     struct SocketEventEmitters {
         
         //User
+        static let authenticate = "authentication"
         static let userConnect = "userConnected"
         static let findNearCabs = "findNearCabs"
         static let requestARide = "requestRide"
@@ -100,7 +101,9 @@ public struct GlobalConstants {
         
         //User
         static let nearCabs = "nearCabs"
-        static let rideAccepted = "rideAccepted"
+        static let rideAcceptedByDriver = "rideAccepted"
+        static let rideCompletedByUser = "rideCompleted"
+        static let driverCancelRide = "ridecancldri"
     }
     
     struct SocketKeys {

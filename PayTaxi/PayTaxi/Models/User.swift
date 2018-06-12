@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject {
+class User: NSObject, NSCoding {
 
     //MARK: - Properties
     var id: Int
@@ -34,6 +34,22 @@ class User: NSObject {
         fullName = dict?["fullName"] as? String ?? ""
         
         mobile = dict?["mobileNumber"] as? String ?? ""
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        id = aDecoder.decodeInteger(forKey: "id")
+        email = aDecoder.decodeObject(forKey: "email") as! String
+        fullName = aDecoder.decodeObject(forKey: "fullName") as! String
+        mobile = aDecoder.decodeObject(forKey: "mobile") as! String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(email, forKey: "email")
+        aCoder.encode(fullName, forKey: "fullName")
+        aCoder.encode(mobile, forKey: "mobile")
     }
     
     //MARK: - Print

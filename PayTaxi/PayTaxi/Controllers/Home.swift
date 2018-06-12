@@ -360,7 +360,7 @@ class Home: UIViewController {
         currentLocationMarker = nil        
     }
     
-    //MARK: - Socket Functions
+    //MARK: - Socket Listening Functions
     
     //Listen to all necessary events
     private func listenToEvents() {
@@ -473,7 +473,7 @@ class Home: UIViewController {
     
     fileprivate func checkRideStatus() {
         
-        SocketsManager.sharedInstance.rideStatus(completionHandler: { (data) in
+        SocketsManager.sharedInstance.rideDidAcceptByDriver(completionHandler: { (data) in
             
             if data.count > 0 {
                 
@@ -526,7 +526,7 @@ class Home: UIViewController {
         let jsonDict = [GlobalConstants.SocketKeys.id: userId,
                         GlobalConstants.SocketKeys.rideId: arc4random() ] as [String : Any]
         
-        SocketsManager.sharedInstance.cancelARide(with: jsonDict)
+        SocketsManager.sharedInstance.cancelARideFromUser(with: jsonDict)
     }
 }
 

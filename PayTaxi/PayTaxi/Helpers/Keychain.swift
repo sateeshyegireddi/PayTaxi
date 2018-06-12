@@ -28,7 +28,7 @@ class Keychain: NSObject {
     public static let standard = Keychain()
     
     private static let defaultServiceName: String = {
-        return Bundle.main.bundleIdentifier ?? "com.paytaxi.PayTaxi"
+        return Bundle.main.bundleIdentifier ?? "com.PayTaxi.PayTaxi"
     }()
     
     private convenience override init() {
@@ -432,7 +432,7 @@ class Keychain: NSObject {
 
 //MARK: - Keychain Configuration
 public struct KeychainConfiguration {
-    static let serviceName = "eu.vwallet.V-Wallet"
+    static let serviceName = "com.PayTaxi.PayTaxi"
     
     /*
      Specifying an access group to use with `KeychainPasswordItem` instances
@@ -449,5 +449,5 @@ public struct KeychainConfiguration {
      Not specifying an access group to use with `KeychainPasswordItem` instances
      will create items specific to each app.
      */
-    static let accessGroup: String? = Bundle.main.bundleIdentifier ?? "eu.vwallet.V-Wallet"
+    static let accessGroup: String? = Bundle.main.bundleIdentifier ?? "com.PayTaxi.PayTaxi"
 }

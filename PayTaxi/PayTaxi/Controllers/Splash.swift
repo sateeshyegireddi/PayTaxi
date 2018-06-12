@@ -35,7 +35,6 @@ class Splash: UIViewController {
             
             OpenScreen().login(self)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

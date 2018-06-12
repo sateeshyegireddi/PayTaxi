@@ -63,28 +63,65 @@ class SocketsManager: NSObject {
         }
     }
     
-    //MARK: - Emitters from User
+    //MARK: - >>>>>------->>  User Socket Functions  <<-------<<<<< -
+    
+    //MARK: Emitters from User
+    
+    ///Authenticate user with socket server.
+    ///- parameter data: The authentication data to be sent to server.
+    ///eg. `{key:"paytaxi@development@app",id:"P@yT@xi143"}`
+    func authenticateUser(with data: [String: Any]) {
+      
+        socket.emit(GlobalConstants.SocketEventEmitters.authenticate, data)
+    }
+    
+    ///Request socket server to connect user.
+    ///- parameter data: The location to be sent to server.
+    ///eg. `{"id": "userid", "type": "driver", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
     func connectUser(with data: [String: Any]) {
 
         socket.emit(GlobalConstants.SocketEventEmitters.userConnect, data)
     }
     
+    ///Send the request for fetching the nearby cabs information to socket server.
+    ///
+    ///Basically, the request information contains type of the cab and user's current location.
+    ///- parameter data: The data of current user's location and type of the cab to be sent to server.
+    ///eg. `{cabType:"mini",lat:'17.3850',lng:'78.4867'}`
     func requestToFindNearByCabs(with data: [String: Any]) {
         
         socket.emit(GlobalConstants.SocketEventEmitters.findNearCabs, data)
     }
     
+    ///Send the request for confirming the ride with driver to socket server.
+    ///
+    ///Basically, the request information contains user details, ride details and the type of the cab.
+    ///- parameter data: The data of current user details, ride details and type of the cab to be sent to server.
+    ///eg. `{"id": "userid", "rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
     func requestARide(with data: [String: Any]) {
         
         socket.emit(GlobalConstants.SocketEventEmitters.requestARide, data)
     }
     
-    func cancelARide(with data: [String: Any]) {
+    ///Send the request for cancelling the ride with driver to socket server.
+    ///
+    ///Basically, the request information contains user details and ride specific details
+    ///- parameter data: The data of current user and ride info to be sent to server.
+    ///eg. `{"id": "userid", "rideId": "1234"}`
+    func cancelARideFromUser(with data: [String: Any]) {
         
         socket.emit(GlobalConstants.SocketEventEmitters.cancelARideFromUser, data)
     }
     
-    //MARK: - Listners from User
+    //MARK: - Listners for User
+    
+    ///Fetch the nearby available cabs information by listening to socket server.
+    ///This service will get called after the `findNearCabs` request sent to socket server.
+    ///
+    ///Basically, the response information contains drivers current locations.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `findNearCabs`.
+    ///- parameter data: The data of drivers current locations to be recieved from socket server.
+    ///eg. `[{"lat": "12.34", "lng": "14.232"}, {"lat": "15.34", "lng": "18.232"}]`
     func fetchNearByCabs(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
         
         socket.on(GlobalConstants.SocketEventListeners.nearCabs) { (data, ack) in
@@ -94,9 +131,48 @@ class SocketsManager: NSObject {
         }
     }
     
-    func rideStatus(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+    ///Fetch the information regarding the driver accepted the ride or not by listening to socket server.
+    ///This service will get called after the `requestRide` request sent to socket server.
+    ///
+    ///Basically, the response information contains ride details and drivers current location.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `requestRide`.
+    ///- parameter data: The data of driver's information update to be recieved from socket server.
+    ///eg. `{"cabType": "mini", "distanceFromUser": "1.7752", "id": "PAY2", "lat" :"17.45400041341781616", "lng": "78.38313034344933783", "rideId": "RIDE423", "riderUserId": "PAY8"}`
+    func rideDidAcceptByDriver(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
         
-        socket.on(GlobalConstants.SocketEventListeners.rideAccepted) { (data, ack) in
+        socket.on(GlobalConstants.SocketEventListeners.rideAcceptedByDriver) { (data, ack) in
+            
+            print(data)
+            handler(data)
+        }
+    }
+    
+    ///Fetch the information regarding the driver completed the ride or not by listening to socket server.
+    ///This service will get called after the driver has emitted the request `rideComplete`.
+    ///
+    ///Basically, the response information contains user and ride information.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `requestRide`.
+    ///- parameter data: The data of ride information to be recieved from socket server.
+    ///eg. `{"rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func rideDidCompleteByDriver(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.rideCompletedByUser) { (data, ack) in
+            
+            print(data)
+            handler(data)
+        }
+    }
+    
+    ///Fetch the information regarding the driver cancelled the ride or not by listening to socket server.
+    ///This service will get called after the driver has emitted the request `ridecanclusr`.
+    ///
+    ///Basically, the response information contains user and ride information.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `ridecanclusr`.
+    ///- parameter data: The data of ride information to be recieved from socket server.
+    ///eg. `{"rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func rideDidCancelByDriver(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.driverCancelRide) { (data, ack) in
             
             print(data)
             handler(data)
