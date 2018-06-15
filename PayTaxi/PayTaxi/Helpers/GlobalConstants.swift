@@ -95,6 +95,12 @@ public struct GlobalConstants {
         static let findNearCabs = "findNearCabs"
         static let requestARide = "requestRide"
         static let cancelARideFromUser = "userCancelRide"
+        
+        //Driver
+        static let availableDriverLocation = "driverLocation"
+        static let rideCancel = "driverTimeout"
+        static let acceptRide = "driverAcceptRide"
+        static let completeRide = "rideComplete"
     }
     
     struct SocketEventListeners {
@@ -104,6 +110,11 @@ public struct GlobalConstants {
         static let rideAcceptedByDriver = "rideAccepted"
         static let rideCompletedByUser = "rideCompleted"
         static let driverCancelRide = "ridecancldri"
+        
+        //Driver
+        static let driverGetRide = "youGotRide"
+        static let rideDetails = "rideDetails"
+        static let userCancelRide = "ridecanclusr"
     }
     
     struct SocketKeys {

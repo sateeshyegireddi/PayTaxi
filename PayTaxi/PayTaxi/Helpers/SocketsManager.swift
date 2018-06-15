@@ -179,6 +179,108 @@ class SocketsManager: NSObject {
         }
     }
     
+    //MARK: - >>>>>------->>  Driver Socket Functions  <<-------<<<<< -
+    
+    //MARK: Emitters from Driver
+    
+    ///Authenticate driver with socket server.
+    ///- parameter data: The authentication data to be sent to server.
+    ///eg. `{key:"paytaxi@development@app",id:"P@yT@xi143"}`
+    func authenticateDriver(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.authenticate, data)
+    }
+    
+    ///Request socket server to connect driver.
+    ///- parameter data: The driver's information to be sent to server.
+    ///eg. `{"id": "userid", "type": "driver", "cabType": "mini", "lat": "17.3850", "lng": "78.4867", "enabled": "false"}`
+    func connectDriver(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.userConnect, data)
+    }
+    
+    ///Request socket server to update the driver is available for the current ride booking.
+    ///- parameter data: The driver's information to be sent to server.
+    ///eg. `{"id": "userid", "type": "driver", "cabType": "mini", "lat": "17.3850", "lng": "78.4867", "enabled": "true"}`
+    func driverAvailableForRide(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.availableDriverLocation, data)
+    }
+    
+    ///Request socket server to update the ride has timed out or driver has cancelled the ride.
+    ///- parameter data: The driver's information to be sent to server.
+    ///eg. `{"id": "userid", "rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func rideDidCancel(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.rideCancel, data)
+    }
+    
+    ///Request socket server to update the ride has been accepted by the driver.
+    ///- parameter data: The ride's information to be sent to server.
+    ///eg. `{"id": "userid", "rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func driverDidAcceptRide(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.acceptRide, data)
+    }
+    
+    ///Request socket server to update the ride has been completed by the driver.
+    ///- parameter data: The ride's information to be sent to server.
+    ///eg. `{"rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func driverDidCompleteRide(with data: [String: Any]) {
+        
+        socket.emit(GlobalConstants.SocketEventEmitters.completeRide, data)
+    }
+    
+    //MARK: - Listeners for Driver
+    
+    ///Fetch the information of the ride request that has been requested to driver by listening to socket server.
+    ///This service will get called after the `request ride` request sent to socket server.
+    ///
+    ///Basically, the response information contains ride request details.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `request ride`.
+    ///- parameter data: The detailed information of ride request to be recieved from socket server.
+    ///eg. `{"rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func driverDidGetRide(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.nearCabs) { (data, ack) in
+            
+            print(data)
+            handler(data)
+        }
+    }
+    
+    ///Fetch the information of the ride that has been requested to driver by listening to socket server.
+    ///This service will get called after the `request ride` request sent to socket server.
+    ///
+    ///Basically, the response information contains ride details.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `request ride`.
+    ///- parameter data: The detailed information of ride request to be recieved from socket server.
+    ///eg. `{"id": "userid", "rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func getRideDetails(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.rideDetails) { (data, ack) in
+            
+            print(data)
+            handler(data)
+        }
+    }
+    
+    ///Fetch the information of the ride that has been cancelled by user by listening to socket server.
+    ///This service will get called after the `ridecancldri` request sent to socket server.
+    ///
+    ///Basically, the response information contains cancellation of the ride.
+    ///- parameter completionHandler: The callback get called after the socket server responds to the request `ridecancldri`.
+    ///- parameter data: The detailed information of cancellation of the ride to be recieved from socket server.
+    ///eg. `{"rideId": "1234", "cabType": "mini", "lat": "17.3850", "lng": "78.4867"}`
+    func rideDidCancelByUser(completionHandler handler: @escaping(_ data: [Any]) -> ()) {
+        
+        socket.on(GlobalConstants.SocketEventListeners.userCancelRide) { (data, ack) in
+            
+            print(data)
+            handler(data)
+        }
+    }
+    
     //MARK: - Location Sharing
     
     ///Share user's started location with socket server
@@ -202,7 +304,8 @@ class SocketsManager: NSObject {
         socket.emit("disconnectDriver", location.userId)
     }
     
-    //MARK: - Location Tracking
+    /*
+    //MARK Location Tracking
     
     ///Send the status to server user started tracking a driver
     ///- parameter trackedUserSocketId: the id of user to be tracked.
@@ -231,7 +334,7 @@ class SocketsManager: NSObject {
         socket.emit("disconnectDriverTracker", driverSocketId)
     }
     
-    // MARK: - Drivers list monitoring
+    // MARK Drivers list monitoring
     
     ///Send to server a message requesting the updated drivers list
     func checkForUpdatedDriversList() {
@@ -244,5 +347,5 @@ class SocketsManager: NSObject {
             completionHandler(dataArray[0] as? [[String: AnyObject]])
         }
     }
-    
+    */
 }
