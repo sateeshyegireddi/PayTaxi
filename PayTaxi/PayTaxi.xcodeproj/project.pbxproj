@@ -18,6 +18,101 @@
 		F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075DC420A1D5BA001A2E02 /* Location.swift */; };
 		F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
 		F951245F2099EDF000861F24 /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F9614FC020D5065400DADC0E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E62099C1E200C3CC1E /* UserNotifications.framework */; };
+		F9614FC120D5065400DADC0E /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96380E82099C1E200C3CC1E /* UserNotificationsUI.framework */; };
+		F9614FC420D5065400DADC0E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614FC320D5065400DADC0E /* NotificationViewController.swift */; };
+		F9614FC720D5065400DADC0E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9614FC520D5065400DADC0E /* MainInterface.storyboard */; };
+		F9614FCB20D5065400DADC0E /* NotificationContentDriver.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F9614FBF20D5065400DADC0E /* NotificationContentDriver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F9614FD720D5069200DADC0E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614FD620D5069200DADC0E /* NotificationService.swift */; };
+		F9614FDB20D5069200DADC0E /* NotificationServiceDriver.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F9614FD420D5069200DADC0E /* NotificationServiceDriver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F9614FDF20D506CD00DADC0E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
+		F9614FE020D506CF00DADC0E /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380A920998FD900C3CC1E /* APIHandler.swift */; };
+		F9614FE120D506F600DADC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A1A2097312700F2139A /* AppDelegate.swift */; };
+		F9614FE220D5070600DADC0E /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
+		F9614FE320D5070700DADC0E /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
+		F9614FE420D5071000DADC0E /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
+		F9614FE520D5071100DADC0E /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
+		F9614FE620D5071600DADC0E /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350120B42D080043DFA5 /* PlaceCell.swift */; };
+		F9614FE720D5071700DADC0E /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350120B42D080043DFA5 /* PlaceCell.swift */; };
+		F9614FE820D5071B00DADC0E /* CabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB2AF120B4817100E6E1A8 /* CabCell.swift */; };
+		F9614FE920D5071C00DADC0E /* CabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB2AF120B4817100E6E1A8 /* CabCell.swift */; };
+		F9614FEA20D5072A00DADC0E /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
+		F9614FEB20D5072B00DADC0E /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
+		F9614FEC20D5072E00DADC0E /* PTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A037DE20B164780044A1A5 /* PTTextField.swift */; };
+		F9614FED20D5072F00DADC0E /* PTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A037DE20B164780044A1A5 /* PTTextField.swift */; };
+		F9614FEE20D5073300DADC0E /* PTPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */; };
+		F9614FEF20D5073400DADC0E /* PTPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */; };
+		F9614FF020D5074200DADC0E /* PTLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700720C06982001023B5 /* PTLoading.swift */; };
+		F9614FF120D5074300DADC0E /* PTLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700720C06982001023B5 /* PTLoading.swift */; };
+		F9614FF220D5075A00DADC0E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380BD20999BD600C3CC1E /* Splash.swift */; };
+		F9614FF320D5075A00DADC0E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C469209C9167007849B3 /* Navigation.swift */; };
+		F9614FF420D5075A00DADC0E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8520ABF4EF00580D62 /* Login.swift */; };
+		F9614FF520D5075A00DADC0E /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8820ABF50600580D62 /* Registration.swift */; };
+		F9614FF620D5075A00DADC0E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A917AD209C20BD0027C6E4 /* Home.swift */; };
+		F9614FF720D5076800DADC0E /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
+		F9614FF820D5076900DADC0E /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
+		F9614FF920D5077C00DADC0E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9614FFA20D5077C00DADC0E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
+		F9614FFB20D5077E00DADC0E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96381122099CAB600C3CC1E /* StringExtension.swift */; };
+		F9614FFC20D5077E00DADC0E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
+		F9614FFD20D5077E00DADC0E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
+		F9614FFE20D5078800DADC0E /* MainMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A920A32CDF00F00FEA /* MainMenuHeader.swift */; };
+		F9614FFF20D5079500DADC0E /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
+		F961500020D5079500DADC0E /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B32099982600C3CC1E /* UtilityFunctions.swift */; };
+		F961500120D5079900DADC0E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380B52099983A00C3CC1E /* GlobalConstants.swift */; };
+		F961500220D507A200DADC0E /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
+		F961500320D507AB00DADC0E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
+		F961500420D507AC00DADC0E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D82099A74A00C3CC1E /* Keychain.swift */; };
+		F961500520D507B300DADC0E /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951245D2099EDF000861F24 /* AESCryptor.swift */; };
+		F961500620D507B900DADC0E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F963811B2099D42400C3CC1E /* Reachability.m */; };
+		F961500720D507BD00DADC0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381020B17E240044A1A5 /* Localizable.strings */; };
+		F961500820D507C200DADC0E /* SocketsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075DC020A1AA09001A2E02 /* SocketsManager.swift */; };
+		F961500920D507C700DADC0E /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700A20C06B35001023B5 /* Validator.swift */; };
+		F961500A20D507C800DADC0E /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700A20C06B35001023B5 /* Validator.swift */; };
+		F961500B20D507D300DADC0E /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381320B199B60044A1A5 /* Poppins-ExtraLight.ttf */; };
+		F961500C20D507D300DADC0E /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381420B199B60044A1A5 /* Poppins-ThinItalic.ttf */; };
+		F961500D20D507D300DADC0E /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381520B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf */; };
+		F961500E20D507D300DADC0E /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381620B199B60044A1A5 /* Poppins-BoldItalic.ttf */; };
+		F961500F20D507D300DADC0E /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381720B199B60044A1A5 /* Poppins-Light.ttf */; };
+		F961501020D507D300DADC0E /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381820B199B60044A1A5 /* Poppins-Medium.ttf */; };
+		F961501120D507D300DADC0E /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381920B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf */; };
+		F961501220D507D300DADC0E /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381A20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf */; };
+		F961501320D507D300DADC0E /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381B20B199B60044A1A5 /* Poppins-ExtraBold.ttf */; };
+		F961501420D507D300DADC0E /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381C20B199B60044A1A5 /* Poppins-BlackItalic.ttf */; };
+		F961501520D507D300DADC0E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381D20B199B60044A1A5 /* Poppins-Regular.ttf */; };
+		F961501620D507D300DADC0E /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381E20B199B60044A1A5 /* Poppins-LightItalic.ttf */; };
+		F961501720D507D300DADC0E /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0381F20B199B60044A1A5 /* Poppins-Bold.ttf */; };
+		F961501820D507D300DADC0E /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382020B199B60044A1A5 /* License.txt */; };
+		F961501920D507D300DADC0E /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382120B199B60044A1A5 /* Poppins-Black.ttf */; };
+		F961501A20D507D300DADC0E /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382220B199B60044A1A5 /* Poppins-Thin.ttf */; };
+		F961501B20D507D300DADC0E /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382320B199B60044A1A5 /* Poppins-SemiBold.ttf */; };
+		F961501C20D507D300DADC0E /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382420B199B60044A1A5 /* Poppins-Italic.ttf */; };
+		F961501D20D507D300DADC0E /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
+		F961501E20D507DB00DADC0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
+		F961501F20D507DC00DADC0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380D62099A5C000C3CC1E /* User.swift */; };
+		F961502020D507E000DADC0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075DC420A1D5BA001A2E02 /* Location.swift */; };
+		F961502120D507E400DADC0E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350920B4388C0043DFA5 /* Place.swift */; };
+		F961502220D5083300DADC0E /* CabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350D20B4778A0043DFA5 /* CabsView.swift */; };
+		F961502320D5083300DADC0E /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F961502420D5083400DADC0E /* CabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350D20B4778A0043DFA5 /* CabsView.swift */; };
+		F961502520D5083400DADC0E /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F961502620D5084000DADC0E /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
+		F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
+		F961502820D5084100DADC0E /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
+		F961502920D5084100DADC0E /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
+		F961502A20D5084400DADC0E /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A420A32B0000F00FEA /* MainMenu.swift */; };
+		F961502B20D5084600DADC0E /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A420A32B0000F00FEA /* MainMenu.swift */; };
+		F961502C20D5084700DADC0E /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A420A32B0000F00FEA /* MainMenu.swift */; };
+		F961502D20D5085D00DADC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9857A352097316F00F2139A /* AppDelegate.swift */; };
+		F961502E20D5087400DADC0E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96380CC20999C4E00C3CC1E /* Splash.swift */; };
+		F961502F20D5087400DADC0E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0292920B09256009011CF /* Login.swift */; };
+		F961503020D5087400DADC0E /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0292B20B09279009011CF /* Registration.swift */; };
+		F961503120D5087400DADC0E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A020A3035A00F00FEA /* Navigation.swift */; };
+		F961503220D5087400DADC0E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67A220A3037300F00FEA /* Home.swift */; };
+		F961503320D5088900DADC0E /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E679E20A3033300F00FEA /* OpenScreen.swift */; };
+		F961503520D508DD00DADC0E /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
+		F961503620D508DE00DADC0E /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
+		F961503720D508DF00DADC0E /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E67AF20A32D6000F00FEA /* MainMenuCell.swift */; };
 		F961FE8620ABF4EF00580D62 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8520ABF4EF00580D62 /* Login.swift */; };
 		F961FE8920ABF50600580D62 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8820ABF50600580D62 /* Registration.swift */; };
 		F961FE8C20ABF5DB00580D62 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961FE8B20ABF5DB00580D62 /* MapMarker.swift */; };
@@ -73,8 +168,6 @@
 		F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C46D209C91DB007849B3 /* OpenScreen.swift */; };
 		F9A0292A20B09256009011CF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0292920B09256009011CF /* Login.swift */; };
 		F9A0292C20B09279009011CF /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0292B20B09279009011CF /* Registration.swift */; };
-		F9A0293920B0943E009011CF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0293520B0943E009011CF /* MainMenu.swift */; };
-		F9A0293A20B0943E009011CF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A0293620B0943E009011CF /* MainMenu.xib */; };
 		F9A0293E20B0945A009011CF /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0293C20B09459009011CF /* MainMenuCell.swift */; };
 		F9A0293F20B0945A009011CF /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A0293D20B09459009011CF /* MainMenuCell.xib */; };
 		F9A0294320B094BE009011CF /* MainMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0294120B094BE009011CF /* MainMenuHeader.swift */; };
@@ -198,6 +291,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F9614FC920D5065400DADC0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9857A0F2097312700F2139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9614FBE20D5065400DADC0E;
+			remoteInfo = NotificationContentDriver;
+		};
+		F9614FD920D5069200DADC0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9857A0F2097312700F2139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9614FD320D5069200DADC0E;
+			remoteInfo = NotificationServiceDriver;
+		};
 		F996C449209C7B9C007849B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9857A0F2097312700F2139A /* Project object */;
@@ -215,6 +322,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F9614FCF20D5065400DADC0E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F9614FCB20D5065400DADC0E /* NotificationContentDriver.appex in Embed App Extensions */,
+				F9614FDB20D5069200DADC0E /* NotificationServiceDriver.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F96380F72099C1E200C3CC1E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +362,13 @@
 		F9075DC420A1D5BA001A2E02 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F90C3C552099E9A800A03738 /* AESCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESCryptor.h; sourceTree = "<group>"; };
 		F951245D2099EDF000861F24 /* AESCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCryptor.swift; sourceTree = "<group>"; };
+		F9614FBF20D5065400DADC0E /* NotificationContentDriver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContentDriver.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9614FC320D5065400DADC0E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		F9614FC620D5065400DADC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F9614FC820D5065400DADC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9614FD420D5069200DADC0E /* NotificationServiceDriver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceDriver.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9614FD620D5069200DADC0E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F9614FD820D5069200DADC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F961FE8520ABF4EF00580D62 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F961FE8820ABF50600580D62 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		F961FE8B20ABF5DB00580D62 /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
@@ -295,8 +421,6 @@
 		F996C46D209C91DB007849B3 /* OpenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScreen.swift; sourceTree = "<group>"; };
 		F9A0292920B09256009011CF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F9A0292B20B09279009011CF /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
-		F9A0293520B0943E009011CF /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		F9A0293620B0943E009011CF /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F9A0293C20B09459009011CF /* MainMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		F9A0293D20B09459009011CF /* MainMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
 		F9A0294120B094BE009011CF /* MainMenuHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuHeader.swift; sourceTree = "<group>"; };
@@ -351,6 +475,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F9614FBC20D5065400DADC0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9614FC120D5065400DADC0E /* UserNotificationsUI.framework in Frameworks */,
+				F9614FC020D5065400DADC0E /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9614FD120D5069200DADC0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9857A142097312700F2139A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +551,25 @@
 				DCE5586FFBC89B8C7D935F07 /* Pods-NotificationContent.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9614FC220D5065400DADC0E /* NotificationContentDriver */ = {
+			isa = PBXGroup;
+			children = (
+				F9614FC320D5065400DADC0E /* NotificationViewController.swift */,
+				F9614FC520D5065400DADC0E /* MainInterface.storyboard */,
+				F9614FC820D5065400DADC0E /* Info.plist */,
+			);
+			path = NotificationContentDriver;
+			sourceTree = "<group>";
+		};
+		F9614FD520D5069200DADC0E /* NotificationServiceDriver */ = {
+			isa = PBXGroup;
+			children = (
+				F9614FD620D5069200DADC0E /* NotificationService.swift */,
+				F9614FD820D5069200DADC0E /* Info.plist */,
+			);
+			path = NotificationServiceDriver;
 			sourceTree = "<group>";
 		};
 		F96380A720998E5A00C3CC1E /* Appdelegate */ = {
@@ -572,6 +731,8 @@
 				F9857A342097316F00F2139A /* PayTaxiDriver */,
 				F996C442209C7B9C007849B3 /* NotificationContent */,
 				F996C45F209C7C7B007849B3 /* NotificationService */,
+				F9614FC220D5065400DADC0E /* NotificationContentDriver */,
+				F9614FD520D5069200DADC0E /* NotificationServiceDriver */,
 				F9857A182097312700F2139A /* Products */,
 				B9E16A73E45EB59569997A88 /* Pods */,
 				134B1DD4D29D54EF88E43B68 /* Frameworks */,
@@ -585,6 +746,8 @@
 				F9857A332097316F00F2139A /* PayTaxiDriver.app */,
 				F996C43F209C7B9C007849B3 /* NotificationContent.appex */,
 				F996C45E209C7C7B007849B3 /* NotificationService.appex */,
+				F9614FBF20D5065400DADC0E /* NotificationContentDriver.appex */,
+				F9614FD420D5069200DADC0E /* NotificationServiceDriver.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -659,8 +822,6 @@
 		F9A0293420B0943E009011CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F9A0293520B0943E009011CF /* MainMenu.swift */,
-				F9A0293620B0943E009011CF /* MainMenu.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -713,6 +874,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F9614FBE20D5065400DADC0E /* NotificationContentDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9614FCE20D5065400DADC0E /* Build configuration list for PBXNativeTarget "NotificationContentDriver" */;
+			buildPhases = (
+				F9614FBB20D5065400DADC0E /* Sources */,
+				F9614FBC20D5065400DADC0E /* Frameworks */,
+				F9614FBD20D5065400DADC0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationContentDriver;
+			productName = NotificationContentDriver;
+			productReference = F9614FBF20D5065400DADC0E /* NotificationContentDriver.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F9614FD320D5069200DADC0E /* NotificationServiceDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9614FDC20D5069200DADC0E /* Build configuration list for PBXNativeTarget "NotificationServiceDriver" */;
+			buildPhases = (
+				F9614FD020D5069200DADC0E /* Sources */,
+				F9614FD120D5069200DADC0E /* Frameworks */,
+				F9614FD220D5069200DADC0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationServiceDriver;
+			productName = NotificationServiceDriver;
+			productReference = F9614FD420D5069200DADC0E /* NotificationServiceDriver.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F9857A162097312700F2139A /* PayTaxi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9857A2C2097312800F2139A /* Build configuration list for PBXNativeTarget "PayTaxi" */;
@@ -748,10 +943,13 @@
 				35AD5AF3543F05ED63FBB463 /* [CP] Embed Pods Frameworks */,
 				AC3EC5232FAE201EB0BB27DC /* [CP] Copy Pods Resources */,
 				F96E679C20A2FD5200F00FEA /* ShellScript */,
+				F9614FCF20D5065400DADC0E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F9614FCA20D5065400DADC0E /* PBXTargetDependency */,
+				F9614FDA20D5069200DADC0E /* PBXTargetDependency */,
 			);
 			name = PayTaxiDriver;
 			productName = PayTaxiDriver;
@@ -804,6 +1002,12 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PayTaxi;
 				TargetAttributes = {
+					F9614FBE20D5065400DADC0E = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					F9614FD320D5069200DADC0E = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
 					F9857A162097312700F2139A = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
@@ -837,11 +1041,48 @@
 				F9857A322097316F00F2139A /* PayTaxiDriver */,
 				F996C43E209C7B9C007849B3 /* NotificationContent */,
 				F996C45D209C7C7B007849B3 /* NotificationService */,
+				F9614FBE20D5065400DADC0E /* NotificationContentDriver */,
+				F9614FD320D5069200DADC0E /* NotificationServiceDriver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F9614FBD20D5065400DADC0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F961500F20D507D300DADC0E /* Poppins-Light.ttf in Resources */,
+				F961501920D507D300DADC0E /* Poppins-Black.ttf in Resources */,
+				F961500B20D507D300DADC0E /* Poppins-ExtraLight.ttf in Resources */,
+				F961501A20D507D300DADC0E /* Poppins-Thin.ttf in Resources */,
+				F961501520D507D300DADC0E /* Poppins-Regular.ttf in Resources */,
+				F961501B20D507D300DADC0E /* Poppins-SemiBold.ttf in Resources */,
+				F961500C20D507D300DADC0E /* Poppins-ThinItalic.ttf in Resources */,
+				F961500D20D507D300DADC0E /* Poppins-ExtraLightItalic.ttf in Resources */,
+				F961501420D507D300DADC0E /* Poppins-BlackItalic.ttf in Resources */,
+				F961501220D507D300DADC0E /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				F961501720D507D300DADC0E /* Poppins-Bold.ttf in Resources */,
+				F961500E20D507D300DADC0E /* Poppins-BoldItalic.ttf in Resources */,
+				F961501120D507D300DADC0E /* Poppins-SemiBoldItalic.ttf in Resources */,
+				F961501620D507D300DADC0E /* Poppins-LightItalic.ttf in Resources */,
+				F961501320D507D300DADC0E /* Poppins-ExtraBold.ttf in Resources */,
+				F961501820D507D300DADC0E /* License.txt in Resources */,
+				F961501020D507D300DADC0E /* Poppins-Medium.ttf in Resources */,
+				F9614FC720D5065400DADC0E /* MainInterface.storyboard in Resources */,
+				F961501C20D507D300DADC0E /* Poppins-Italic.ttf in Resources */,
+				F961501D20D507D300DADC0E /* Poppins-MediumItalic.ttf in Resources */,
+				F961500720D507BD00DADC0E /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9614FD220D5069200DADC0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9857A152097312700F2139A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -904,7 +1145,6 @@
 				F9A0385120B199B60044A1A5 /* Poppins-Black.ttf in Resources */,
 				F9A0384B20B199B60044A1A5 /* Poppins-Bold.ttf in Resources */,
 				F9A0383620B199B60044A1A5 /* Poppins-Medium.ttf in Resources */,
-				F9A0293A20B0943E009011CF /* MainMenu.xib in Resources */,
 				F9C234FF20B42B2B0043DFA5 /* SearchPlacesView.xib in Resources */,
 				F9A0380D20B17E240044A1A5 /* Localizable.strings in Resources */,
 				F9A0382720B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
@@ -1147,6 +1387,59 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F9614FBB20D5065400DADC0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9614FFE20D5078800DADC0E /* MainMenuHeader.swift in Sources */,
+				F9614FFC20D5077E00DADC0E /* ViewControllerExtension.swift in Sources */,
+				F961503120D5087400DADC0E /* Navigation.swift in Sources */,
+				F9614FE320D5070700DADC0E /* EditTextFieldCell.swift in Sources */,
+				F9614FED20D5072F00DADC0E /* PTTextField.swift in Sources */,
+				F961500120D5079900DADC0E /* GlobalConstants.swift in Sources */,
+				F961500420D507AC00DADC0E /* Keychain.swift in Sources */,
+				F961500520D507B300DADC0E /* AESCryptor.swift in Sources */,
+				F9614FEF20D5073400DADC0E /* PTPickerView.swift in Sources */,
+				F9614FE720D5071700DADC0E /* PlaceCell.swift in Sources */,
+				F961502F20D5087400DADC0E /* Login.swift in Sources */,
+				F9614FF820D5076900DADC0E /* LocationSettings.swift in Sources */,
+				F961502920D5084100DADC0E /* SearchPlacesView.swift in Sources */,
+				F961503720D508DF00DADC0E /* MainMenuCell.swift in Sources */,
+				F961502020D507E000DADC0E /* Location.swift in Sources */,
+				F9614FE420D5071000DADC0E /* TermsConditionsCell.swift in Sources */,
+				F9614FC420D5065400DADC0E /* NotificationViewController.swift in Sources */,
+				F9614FF120D5074300DADC0E /* PTLoading.swift in Sources */,
+				F9614FFB20D5077E00DADC0E /* StringExtension.swift in Sources */,
+				F961500620D507B900DADC0E /* Reachability.m in Sources */,
+				F9614FEA20D5072A00DADC0E /* MapMarker.swift in Sources */,
+				F961502E20D5087400DADC0E /* Splash.swift in Sources */,
+				F961502820D5084100DADC0E /* SelectPickDropPointsView.swift in Sources */,
+				F961503220D5087400DADC0E /* Home.swift in Sources */,
+				F961500A20D507C800DADC0E /* Validator.swift in Sources */,
+				F9614FE920D5071C00DADC0E /* CabCell.swift in Sources */,
+				F961502420D5083400DADC0E /* CabsView.swift in Sources */,
+				F961502D20D5085D00DADC0E /* AppDelegate.swift in Sources */,
+				F961502120D507E400DADC0E /* Place.swift in Sources */,
+				F961503320D5088900DADC0E /* OpenScreen.swift in Sources */,
+				F961500820D507C200DADC0E /* SocketsManager.swift in Sources */,
+				F9614FFD20D5077E00DADC0E /* UIApplicationExtension.swift in Sources */,
+				F961503020D5087400DADC0E /* Registration.swift in Sources */,
+				F961502C20D5084700DADC0E /* MainMenu.swift in Sources */,
+				F961500020D5079500DADC0E /* UtilityFunctions.swift in Sources */,
+				F961502520D5083400DADC0E /* NoConnectionView.swift in Sources */,
+				F9614FE020D506CF00DADC0E /* APIHandler.swift in Sources */,
+				F961501F20D507DC00DADC0E /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9614FD020D5069200DADC0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9614FD720D5069200DADC0E /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9857A132097312700F2139A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1209,12 +1502,12 @@
 				F96E67A320A3037300F00FEA /* Home.swift in Sources */,
 				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,
 				F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
+				F961502A20D5084400DADC0E /* MainMenu.swift in Sources */,
 				F9C2350420B42D080043DFA5 /* PlaceCell.swift in Sources */,
 				F9E1700520C05676001023B5 /* LocationSettings.swift in Sources */,
 				F9A0292C20B09279009011CF /* Registration.swift in Sources */,
 				F96380DF2099BE6900C3CC1E /* Keychain.swift in Sources */,
 				F963811D2099D42400C3CC1E /* Reachability.m in Sources */,
-				F9A0293920B0943E009011CF /* MainMenu.swift in Sources */,
 				F9C2350B20B4388C0043DFA5 /* Place.swift in Sources */,
 				F9A0294320B094BE009011CF /* MainMenuHeader.swift in Sources */,
 				F96380DE2099BE6600C3CC1E /* GlobalConstants.swift in Sources */,
@@ -1234,6 +1527,7 @@
 				F9857A362097316F00F2139A /* AppDelegate.swift in Sources */,
 				F9AB2AF420B4817100E6E1A8 /* CabCell.swift in Sources */,
 				F9A0293E20B0945A009011CF /* MainMenuCell.swift in Sources */,
+				F961503520D508DD00DADC0E /* MainMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,15 +1535,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9614FF920D5077C00DADC0E /* ViewControllerExtension.swift in Sources */,
+				F9614FE120D506F600DADC0E /* AppDelegate.swift in Sources */,
+				F9614FE520D5071100DADC0E /* TermsConditionsCell.swift in Sources */,
+				F9614FEE20D5073300DADC0E /* PTPickerView.swift in Sources */,
+				F961501E20D507DB00DADC0E /* User.swift in Sources */,
+				F9614FF720D5076800DADC0E /* LocationSettings.swift in Sources */,
+				F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */,
 				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
+				F961502320D5083300DADC0E /* NoConnectionView.swift in Sources */,
+				F9614FFA20D5077C00DADC0E /* UIApplicationExtension.swift in Sources */,
 				F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */,
+				F961502620D5084000DADC0E /* SelectPickDropPointsView.swift in Sources */,
 				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
 				F9C2350C20B4388C0043DFA5 /* Place.swift in Sources */,
+				F961502220D5083300DADC0E /* CabsView.swift in Sources */,
+				F9614FF520D5075A00DADC0E /* Registration.swift in Sources */,
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
+				F961503620D508DE00DADC0E /* MainMenuCell.swift in Sources */,
+				F9614FE820D5071B00DADC0E /* CabCell.swift in Sources */,
+				F9614FF420D5075A00DADC0E /* Login.swift in Sources */,
+				F9614FF320D5075A00DADC0E /* Navigation.swift in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
+				F9614FEC20D5072E00DADC0E /* PTTextField.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
+				F9614FEB20D5072B00DADC0E /* MapMarker.swift in Sources */,
+				F961502B20D5084600DADC0E /* MainMenu.swift in Sources */,
+				F9614FE620D5071600DADC0E /* PlaceCell.swift in Sources */,
+				F9614FF220D5075A00DADC0E /* Splash.swift in Sources */,
+				F9614FDF20D506CD00DADC0E /* APIHandler.swift in Sources */,
+				F961500220D507A200DADC0E /* OpenScreen.swift in Sources */,
+				F9614FF020D5074200DADC0E /* PTLoading.swift in Sources */,
+				F9614FE220D5070600DADC0E /* EditTextFieldCell.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
+				F9614FF620D5075A00DADC0E /* Home.swift in Sources */,
+				F9614FFF20D5079500DADC0E /* UtilityFunctions.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,
+				F961500320D507AB00DADC0E /* Keychain.swift in Sources */,
+				F961500920D507C700DADC0E /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,6 +1587,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F9614FCA20D5065400DADC0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9614FBE20D5065400DADC0E /* NotificationContentDriver */;
+			targetProxy = F9614FC920D5065400DADC0E /* PBXContainerItemProxy */;
+		};
+		F9614FDA20D5069200DADC0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9614FD320D5069200DADC0E /* NotificationServiceDriver */;
+			targetProxy = F9614FD920D5069200DADC0E /* PBXContainerItemProxy */;
+		};
 		F996C44A209C7B9C007849B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F996C43E209C7B9C007849B3 /* NotificationContent */;
@@ -1277,6 +1610,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F9614FC520D5065400DADC0E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9614FC620D5065400DADC0E /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		F9857A1E2097312700F2139A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1329,6 +1670,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F9614FCC20D5065400DADC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationContentDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver.NotificationContentDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9614FCD20D5065400DADC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationContentDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver.NotificationContentDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F9614FDD20D5069200DADC0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationServiceDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver.NotificationServiceDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9614FDE20D5069200DADC0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationServiceDriver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxiDriver.NotificationServiceDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F9857A2A2097312800F2139A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1506,6 +1925,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50C9D16541F8439072F4E146 /* Pods-PayTaxiDriver.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1535,6 +1955,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C730CEFA7639B37AF3245F3F /* Pods-PayTaxiDriver.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1563,6 +1984,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 041304898C0B22531208F00E /* Pods-NotificationContent.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -1571,6 +1993,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayTaxi.PayTaxi.NotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1584,6 +2007,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCE5586FFBC89B8C7D935F07 /* Pods-NotificationContent.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -1642,6 +2066,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F9614FCE20D5065400DADC0E /* Build configuration list for PBXNativeTarget "NotificationContentDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9614FCC20D5065400DADC0E /* Debug */,
+				F9614FCD20D5065400DADC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9614FDC20D5069200DADC0E /* Build configuration list for PBXNativeTarget "NotificationServiceDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9614FDD20D5069200DADC0E /* Debug */,
+				F9614FDE20D5069200DADC0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9857A122097312700F2139A /* Build configuration list for PBXProject "PayTaxi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
