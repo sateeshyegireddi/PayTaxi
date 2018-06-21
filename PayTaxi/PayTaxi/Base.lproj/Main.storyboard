@@ -18,11 +18,17 @@
         <array key="Poppins-BlackItalic.ttf">
             <string>Poppins-BlackItalic</string>
         </array>
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-ExtraLight.ttf">
+            <string>Poppins-ExtraLight</string>
+        </array>
         <array key="Poppins-Light.ttf">
             <string>Poppins-Light</string>
         </array>
-        <array key="Poppins-Medium.ttf">
-            <string>Poppins-Medium</string>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
         </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
@@ -41,7 +47,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7JQ-bk-ALE">
-                                <rect key="frame" x="90" y="236" width="195" height="195"/>
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7JQ-bk-ALE" secondAttribute="height" multiplier="1:1" id="YqD-8u-kwU"/>
                                 </constraints>
@@ -50,7 +56,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7JQ-bk-ALE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Glb-Zg-fxl"/>
-                            <constraint firstItem="7JQ-bk-ALE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="195/375" id="MSS-z1-MqU"/>
+                            <constraint firstItem="7JQ-bk-ALE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="150/375" id="MSS-z1-MqU"/>
                             <constraint firstItem="Pnx-up-c2g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="N1x-nv-mhi"/>
                             <constraint firstItem="Pnx-up-c2g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NP7-ql-gSh"/>
                             <constraint firstItem="7JQ-bk-ALE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ORl-7b-GvU"/>
@@ -156,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgg-Ps-xvw">
-                                <rect key="frame" x="101" y="318.5" width="172" height="30"/>
+                                <rect key="frame" x="101.5" y="318.5" width="172" height="30"/>
                                 <state key="normal" title="Enable Location Services"/>
                                 <connections>
                                     <action selector="locationServicesButtonTapped:" destination="xhM-Y2-het" eventType="touchUpInside" id="0IT-az-s07"/>
@@ -212,81 +218,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-Ck-Mpu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-Ck-Mpu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-HD-32X">
-                                <rect key="frame" x="122.5" y="28" width="131" height="131.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6ef-HD-32X" secondAttribute="height" multiplier="1:1" id="O3S-Hj-pY0"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I19-Z3-8WO">
-                                <rect key="frame" x="25" y="186" width="325" height="295"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wr-jq-mQ4">
-                                        <rect key="frame" x="0.0" y="30" width="325" height="25.5"/>
-                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to continue using PayTaxi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu7-8I-OeM">
-                                        <rect key="frame" x="0.0" y="55.5" width="325" height="20"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3U-fH-kWo" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="105.5" width="285" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="xtK-zO-vPJ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-el-9XI" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="167.5" width="285" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50X-7o-H2R">
-                                        <rect key="frame" x="92.5" y="230" width="140" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="50X-7o-H2R" secondAttribute="height" multiplier="4:1" id="iGU-9T-hAU"/>
-                                            <constraint firstAttribute="height" constant="35" id="wS8-eL-G32"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
-                                        <state key="normal" title="FORGOT PASSWORD?"/>
-                                        <connections>
-                                            <action selector="forgotPasswordButtonTapped:" destination="cJB-ZT-jqE" eventType="touchUpInside" id="lVM-JT-Ypw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-CN-Iet">
+                                <rect key="frame" x="25" y="145" width="325" height="48"/>
+                                <fontDescription key="fontDescription" name="Poppins-ExtraLight" family="Poppins" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to continue using PayTaxi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rui-K7-Oms">
+                                <rect key="frame" x="25" y="193" width="325" height="23"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kK6-dh-c4a" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
+                                <rect key="frame" x="25" y="232" width="325" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxd-rn-sVf" customClass="PTTextField" customModule="PayTaxi" customModuleProvider="target">
+                                <rect key="frame" x="25" y="292.5" width="325" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="I19-Z3-8WO" secondAttribute="height" multiplier="65:59" id="4fd-gu-WFh"/>
-                                    <constraint firstItem="C3U-fH-kWo" firstAttribute="leading" secondItem="I19-Z3-8WO" secondAttribute="leading" constant="20" id="6ox-ab-Nia"/>
-                                    <constraint firstAttribute="bottom" secondItem="50X-7o-H2R" secondAttribute="bottom" constant="30" id="AQ8-MD-Kfb"/>
-                                    <constraint firstItem="50X-7o-H2R" firstAttribute="centerX" secondItem="I19-Z3-8WO" secondAttribute="centerX" id="DZ3-Cw-QM2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pu7-8I-OeM" secondAttribute="trailing" id="KkE-Fq-hED"/>
-                                    <constraint firstItem="lTh-el-9XI" firstAttribute="centerX" secondItem="C3U-fH-kWo" secondAttribute="centerX" id="MPO-fc-avQ"/>
-                                    <constraint firstItem="lTh-el-9XI" firstAttribute="leading" secondItem="C3U-fH-kWo" secondAttribute="leading" id="QcY-R4-bZy"/>
-                                    <constraint firstItem="C3U-fH-kWo" firstAttribute="top" secondItem="Pu7-8I-OeM" secondAttribute="bottom" constant="30" id="Seo-nO-LzA"/>
-                                    <constraint firstItem="7Wr-jq-mQ4" firstAttribute="top" secondItem="I19-Z3-8WO" secondAttribute="top" constant="30" id="TUh-wJ-6C6"/>
-                                    <constraint firstItem="Pu7-8I-OeM" firstAttribute="top" secondItem="7Wr-jq-mQ4" secondAttribute="bottom" id="cmI-Vo-yJZ"/>
-                                    <constraint firstItem="7Wr-jq-mQ4" firstAttribute="leading" secondItem="I19-Z3-8WO" secondAttribute="leading" id="i21-dz-lET"/>
-                                    <constraint firstItem="lTh-el-9XI" firstAttribute="height" secondItem="C3U-fH-kWo" secondAttribute="height" id="lRw-f6-Tt6"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Wr-jq-mQ4" secondAttribute="trailing" id="qou-Ma-XOd"/>
-                                    <constraint firstAttribute="trailing" secondItem="C3U-fH-kWo" secondAttribute="trailing" constant="20" id="tlG-JR-f8f"/>
-                                    <constraint firstItem="lTh-el-9XI" firstAttribute="trailing" secondItem="C3U-fH-kWo" secondAttribute="trailing" id="vWE-wM-gE0"/>
-                                    <constraint firstItem="lTh-el-9XI" firstAttribute="top" secondItem="C3U-fH-kWo" secondAttribute="bottom" constant="12" id="ymn-Mf-gdg"/>
-                                    <constraint firstItem="Pu7-8I-OeM" firstAttribute="leading" secondItem="I19-Z3-8WO" secondAttribute="leading" id="zSX-er-2OG"/>
+                                    <constraint firstAttribute="height" constant="50" id="1a2-cS-iN4"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-9A-rEP">
-                                <rect key="frame" x="25" y="501" width="325" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awi-mL-LZX">
+                                <rect key="frame" x="107.5" y="597" width="160" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="JwB-Jy-oVA"/>
+                                    <constraint firstAttribute="width" secondItem="awi-mL-LZX" secondAttribute="height" multiplier="4:1" id="3WI-af-MHe"/>
+                                    <constraint firstAttribute="height" constant="40" id="9XQ-P6-XCP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <state key="normal" title="Forgot password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordButtonTapped:" destination="cJB-ZT-jqE" eventType="touchUpInside" id="L5K-co-Tvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-9A-rEP">
+                                <rect key="frame" x="25" y="372" width="325" height="50"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -295,12 +267,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-uq-fI6">
-                                <rect key="frame" x="25" y="612" width="325" height="35"/>
+                                <rect key="frame" x="52.5" y="522" width="270" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="mWU-KT-wK7"/>
+                                    <constraint firstAttribute="height" constant="45" id="gcL-I4-EEu"/>
+                                    <constraint firstAttribute="width" secondItem="zBh-uq-fI6" secondAttribute="height" multiplier="6:1" id="tjH-fL-51Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-BlackItalic" family="Poppins" pointSize="14"/>
-                                <state key="normal" title="New User? Signup for a new account">
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                <state key="normal" title="Don't have an account? Sign up!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -310,42 +283,49 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I19-Z3-8WO" firstAttribute="centerY" secondItem="9gz-uU-VEc" secondAttribute="centerY" id="0ZL-Kf-zHt"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="trailing" secondItem="jsY-9A-rEP" secondAttribute="trailing" id="111-yg-r2e"/>
                             <constraint firstAttribute="bottom" secondItem="vZX-Ck-Mpu" secondAttribute="bottom" id="2MV-df-i3E"/>
-                            <constraint firstItem="I19-Z3-8WO" firstAttribute="trailing" secondItem="zBh-uq-fI6" secondAttribute="trailing" id="67b-mi-zzi"/>
-                            <constraint firstItem="6ef-HD-32X" firstAttribute="centerX" secondItem="vZX-Ck-Mpu" secondAttribute="centerX" id="8z1-fx-Bdy"/>
-                            <constraint firstItem="6ef-HD-32X" firstAttribute="top" secondItem="Fhy-Xg-8Ba" secondAttribute="top" constant="8" id="BN2-Pl-urp"/>
-                            <constraint firstItem="I19-Z3-8WO" firstAttribute="leading" secondItem="Fhy-Xg-8Ba" secondAttribute="leading" constant="25" id="KCx-f2-Eu9"/>
-                            <constraint firstItem="jsY-9A-rEP" firstAttribute="centerX" secondItem="I19-Z3-8WO" secondAttribute="centerX" id="MNB-Vo-B0m"/>
-                            <constraint firstItem="jsY-9A-rEP" firstAttribute="width" secondItem="I19-Z3-8WO" secondAttribute="width" id="VC1-OV-2fs"/>
-                            <constraint firstItem="Fhy-Xg-8Ba" firstAttribute="trailing" secondItem="I19-Z3-8WO" secondAttribute="trailing" constant="25" id="bfe-a6-hU9"/>
+                            <constraint firstItem="awi-mL-LZX" firstAttribute="centerX" secondItem="zBh-uq-fI6" secondAttribute="centerX" id="4Lc-lB-KVh"/>
+                            <constraint firstItem="rui-K7-Oms" firstAttribute="top" secondItem="8Dc-CN-Iet" secondAttribute="bottom" id="4S2-6E-bAs"/>
+                            <constraint firstItem="kK6-dh-c4a" firstAttribute="top" secondItem="rui-K7-Oms" secondAttribute="bottom" constant="16" id="61Z-2M-ebk"/>
+                            <constraint firstItem="rui-K7-Oms" firstAttribute="trailing" secondItem="8Dc-CN-Iet" secondAttribute="trailing" id="6LM-eJ-Dcd"/>
+                            <constraint firstItem="Fhy-Xg-8Ba" firstAttribute="trailing" secondItem="rxd-rn-sVf" secondAttribute="trailing" constant="25" id="7QU-Gd-GKO"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="centerX" secondItem="9gz-uU-VEc" secondAttribute="centerX" id="92e-U5-OQa"/>
+                            <constraint firstItem="jsY-9A-rEP" firstAttribute="top" secondItem="rxd-rn-sVf" secondAttribute="bottom" constant="29.5" id="9on-Yv-Sct"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="height" secondItem="jsY-9A-rEP" secondAttribute="height" id="DNw-Za-5hN"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="centerY" secondItem="9gz-uU-VEc" secondAttribute="centerY" constant="-16" id="Df1-AV-j94"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="leading" secondItem="kK6-dh-c4a" secondAttribute="leading" id="F5h-s0-hBf"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="leading" secondItem="Fhy-Xg-8Ba" secondAttribute="leading" constant="25" id="GYd-SD-G5L"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="trailing" secondItem="kK6-dh-c4a" secondAttribute="trailing" id="Iqk-ba-4b5"/>
+                            <constraint firstItem="awi-mL-LZX" firstAttribute="centerX" secondItem="9gz-uU-VEc" secondAttribute="centerX" id="QcX-99-sIL"/>
+                            <constraint firstItem="rui-K7-Oms" firstAttribute="leading" secondItem="8Dc-CN-Iet" secondAttribute="leading" id="UYf-Ll-SQG"/>
+                            <constraint firstItem="rui-K7-Oms" firstAttribute="trailing" secondItem="kK6-dh-c4a" secondAttribute="trailing" id="gbG-OO-HD1"/>
                             <constraint firstItem="vZX-Ck-Mpu" firstAttribute="trailing" secondItem="Fhy-Xg-8Ba" secondAttribute="trailing" id="gzx-Lb-6Db"/>
-                            <constraint firstItem="6ef-HD-32X" firstAttribute="width" secondItem="9gz-uU-VEc" secondAttribute="width" multiplier="0.35" id="iYo-Cs-dfo"/>
-                            <constraint firstItem="Fhy-Xg-8Ba" firstAttribute="bottom" secondItem="zBh-uq-fI6" secondAttribute="bottom" constant="20" id="ibE-YX-zdo"/>
                             <constraint firstItem="vZX-Ck-Mpu" firstAttribute="top" secondItem="9gz-uU-VEc" secondAttribute="top" id="jn5-Rx-ZvU"/>
-                            <constraint firstItem="jsY-9A-rEP" firstAttribute="top" secondItem="I19-Z3-8WO" secondAttribute="bottom" constant="20" id="oPs-jJ-bHY"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="height" secondItem="kK6-dh-c4a" secondAttribute="height" id="kL7-wQ-I5A"/>
+                            <constraint firstItem="rui-K7-Oms" firstAttribute="leading" secondItem="kK6-dh-c4a" secondAttribute="leading" id="l4o-bt-Vpl"/>
+                            <constraint firstItem="awi-mL-LZX" firstAttribute="top" secondItem="zBh-uq-fI6" secondAttribute="bottom" constant="30" id="mgD-ic-fX4"/>
+                            <constraint firstItem="Fhy-Xg-8Ba" firstAttribute="bottom" secondItem="awi-mL-LZX" secondAttribute="bottom" constant="30" id="nxw-LS-8Df"/>
                             <constraint firstItem="vZX-Ck-Mpu" firstAttribute="leading" secondItem="Fhy-Xg-8Ba" secondAttribute="leading" id="t2u-Cy-6jK"/>
-                            <constraint firstItem="I19-Z3-8WO" firstAttribute="centerX" secondItem="9gz-uU-VEc" secondAttribute="centerX" id="x5I-EZ-g2x"/>
-                            <constraint firstItem="zBh-uq-fI6" firstAttribute="leading" secondItem="I19-Z3-8WO" secondAttribute="leading" id="xv9-HI-vTq"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="leading" secondItem="jsY-9A-rEP" secondAttribute="leading" id="t6n-97-xBB"/>
+                            <constraint firstItem="rxd-rn-sVf" firstAttribute="top" secondItem="kK6-dh-c4a" secondAttribute="bottom" constant="10.5" id="wUY-2H-DUQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fhy-Xg-8Ba"/>
                     </view>
                     <connections>
-                        <outlet property="forgotPasswordButton" destination="50X-7o-H2R" id="BZH-J6-fNj"/>
+                        <outlet property="forgotPasswordButton" destination="awi-mL-LZX" id="hh8-vy-amS"/>
                         <outlet property="loginButton" destination="jsY-9A-rEP" id="GwJ-tN-GAP"/>
-                        <outlet property="loginLabel" destination="Pu7-8I-OeM" id="iaE-LY-Nhf"/>
-                        <outlet property="loginView" destination="I19-Z3-8WO" id="Wgt-Tr-XzJ"/>
-                        <outlet property="logoImageView" destination="6ef-HD-32X" id="Mz1-0x-aeN"/>
-                        <outlet property="mobileTextField" destination="C3U-fH-kWo" id="spd-JQ-IbF"/>
+                        <outlet property="loginLabel" destination="rui-K7-Oms" id="iCW-2R-yfL"/>
+                        <outlet property="mobileTextField" destination="kK6-dh-c4a" id="27x-5j-acR"/>
                         <outlet property="overlayImageView" destination="vZX-Ck-Mpu" id="PJG-Qi-k4k"/>
-                        <outlet property="passwordTextField" destination="lTh-el-9XI" id="KdS-8X-nIW"/>
+                        <outlet property="passwordTextField" destination="rxd-rn-sVf" id="580-XE-1qG"/>
                         <outlet property="registrationButton" destination="zBh-uq-fI6" id="bA7-kn-smc"/>
-                        <outlet property="welcomeLabel" destination="7Wr-jq-mQ4" id="awf-vE-WZM"/>
+                        <outlet property="welcomeLabel" destination="8Dc-CN-Iet" id="Xe9-LJ-OaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQb-v1-5XD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="27"/>
+            <point key="canvasLocation" x="1949.5999999999999" y="26.53673163418291"/>
         </scene>
         <!--Registration-->
         <scene sceneID="eFl-4l-3CW">
@@ -368,19 +348,19 @@
                                 <rect key="frame" x="25" y="169.5" width="325" height="352.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iei-qq-m52">
-                                        <rect key="frame" x="0.0" y="30.5" width="325" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="325" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7T-E9-TC7">
-                                        <rect key="frame" x="0.0" y="56" width="325" height="20"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="325" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XaX-vb-Eu7">
-                                        <rect key="frame" x="0.0" y="101" width="325" height="237"/>
+                                        <rect key="frame" x="0.0" y="100.5" width="325" height="237"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="mrd-ZQ-RQ9" id="AHX-bl-e5b"/>

@@ -173,29 +173,35 @@ public struct GlobalConstants {
     //MARK: - View -
     struct Colors {
      
-        static let blue = UIColor(red: 38/255, green: 34/255, blue: 98/255, alpha: 1)
-        static let green = UIColor(red: 126/255, green: 211/255, blue: 33/255, alpha: 1)
-        static let tungesten = UIColor(red: 50/255, green: 54/255, blue: 67/255, alpha: 1)
-        static let iron = UIColor(red: 96/255, green: 100/255, blue: 112/255, alpha: 1)
-        static let megnisium = UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
-        static let silver = UIColor(red: 206/255, green: 208/255, blue: 210/255, alpha: 1)
-        static let mercury = UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
-        static let orange = UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)
-        static let aqua = UIColor(red: 35/255, green: 153/255, blue: 213/255, alpha: 1)
+        static let blue       = #colorLiteral(red: 0.1490196078, green: 0.1333333333, blue: 0.3843137255, alpha: 1)    //UIColor(red: 038/255, green: 034/255, blue: 098/255, alpha: 1)
+        static let tungesten  = #colorLiteral(red: 0.1960784314, green: 0.2117647059, blue: 0.262745098, alpha: 1)    //UIColor(red: 050/255, green: 054/255, blue: 067/255, alpha: 1)
+        static let iron       = #colorLiteral(red: 0.3764705882, green: 0.3921568627, blue: 0.4392156863, alpha: 1)    //UIColor(red: 096/255, green: 100/255, blue: 112/255, alpha: 1)
+        static let megnisium  = #colorLiteral(red: 0.6588235294, green: 0.7137254902, blue: 0.7843137255, alpha: 1)    //UIColor(red: 168/255, green: 182/255, blue: 200/255, alpha: 1)
+        static let silver     = #colorLiteral(red: 0.8078431373, green: 0.8156862745, blue: 0.8235294118, alpha: 1)    //UIColor(red: 206/255, green: 208/255, blue: 210/255, alpha: 1)
+        static let mercury    = #colorLiteral(red: 0.9294117647, green: 0.9411764706, blue: 0.9568627451, alpha: 1)    //UIColor(red: 237/255, green: 240/255, blue: 244/255, alpha: 1)
+        static let orange     = #colorLiteral(red: 0.968627451, green: 0.4196078431, blue: 0.1098039216, alpha: 1)    //UIColor(red: 247/255, green: 107/255, blue: 028/255, alpha: 1)
+        static let oceanblue  = #colorLiteral(red: 0.02352941176, green: 0.4705882353, blue: 0.6078431373, alpha: 1)    //UIColor(red: 006/255, green: 120/255, blue: 155/255, alpha: 1)
+        static let maraschino = #colorLiteral(red: 0.8078431373, green: 0.0431372549, blue: 0.1411764706, alpha: 1)    //UIColor(red: 206/255, green: 011/255, blue: 036/255, alpha: 1)
+        static let aqua       = #colorLiteral(red: 0.2, green: 0.7843137255, blue: 0.9058823529, alpha: 1)    //UIColor(red: 051/255, green: 200/255, blue: 231/255, alpha: 1)
+        static let planetblue = #colorLiteral(red: 0.168627451, green: 0.2196078431, blue: 0.5529411765, alpha: 1)    //UIColor(red: 043/255, green: 056/255, blue: 141/255, alpha: 1)
     }
     
     //MARK: -
     struct Fonts {
         
-        static let titleText = UIFont(name: "Poppins-Black", size: 14.0)
-        static let textFieldText = UIFont(name: "Poppins-SemiBold", size: 14.0)
+        static let bigTitleText = UIFont(name: "Poppins-ExtraLight", size: 34.0)
+        static let textFieldText = UIFont(name: "Poppins-Regular", size: 16.0)
+        static let textFieldBoldText = UIFont(name: "Poppins-Bold", size: 16.0)
+        static let smallText = UIFont(name: "Poppins-Regular", size: 14.0)
         static let lightText = UIFont(name: "Poppins-Light", size: 14.0)
+
+        static let titleText = UIFont(name: "Poppins-Black", size: 14.0)
         static let titleItalicText = UIFont(name: "Poppins-BlackItalic", size: 14.0)
     }
     
     struct View {
         
-        static let buttonCornerRadius: CGFloat = 8
+        static let buttonCornerRadius: CGFloat = 25
         static let viewCornerRadius: CGFloat = 12
     }
     

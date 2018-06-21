@@ -12,8 +12,6 @@ class Login: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var overlayImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var mobileTextField: PTTextField!
@@ -171,34 +169,46 @@ class Login: UIViewController {
         
         //Setup imageView
         overlayImageView.image = #imageLiteral(resourceName: "background")
-        logoImageView.image = #imageLiteral(resourceName: "icon-logo")
-        
-        //Setup View
-        UtilityFunctions().addRoudedBorder(to: loginView, borderColor: UIColor.clear, borderWidth: 0)
         
         //Setup labels
-        welcomeLabel.text = "welcome_back".localized
-        welcomeLabel.textColor = GlobalConstants.Colors.blue
-        loginLabel.text = "login_message".localized
-        loginLabel.textColor = GlobalConstants.Colors.iron
-        
+        UtilityFunctions().setStyleForLabel(welcomeLabel,
+                                            text: "welcome_back".localized,
+                                            textColor: GlobalConstants.Colors.blue,
+                                            font: GlobalConstants.Fonts.bigTitleText!)
+        UtilityFunctions().setStyleForLabel(loginLabel,
+                                            text: "login_message".localized,
+                                            textColor: GlobalConstants.Colors.iron,
+                                            font: GlobalConstants.Fonts.textFieldText!)
+
         //Setup textFields
         mobileTextField.delegate = self
         mobileTextField.tag = 100
-        UtilityFunctions().setTextField(mobileTextField, text: "", placeHolderText: "mobile".localized, image: #imageLiteral(resourceName: "icon-mobile"))
+        UtilityFunctions().setTextField(mobileTextField,
+                                        text: mobileNumber,
+                                        placeHolderText: "mobile".localized,
+                                        image:#imageLiteral(resourceName: "icon-mobile"),
+                                        validText: mobileNumberError.isEmpty)
         passwordTextField.delegate = self
         passwordTextField.tag = 101
-        UtilityFunctions().setTextField(passwordTextField, text: "", placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"))
+        UtilityFunctions().setTextField(passwordTextField,
+                                        text: password,
+                                        placeHolderText: "password".localized,
+                                        image: #imageLiteral(resourceName: "icon-password"),
+                                        validText: mobileNumberError.isEmpty)
         passwordTextField.isSecureEntry = true
         
         //Setup buttons
-        forgotPasswordButton.setTitleColor(GlobalConstants.Colors.megnisium, for: .normal)
-        forgotPasswordButton.setTitle("forgot_password".localized, for: .normal)
         loginButton.setTitle("login".localized, for: .normal)
-        loginButton.backgroundColor = GlobalConstants.Colors.green
+        loginButton.backgroundColor = GlobalConstants.Colors.aqua
+        forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
         UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
+        
         registrationButton.setTitle("new_user".localized, for: .normal)
-        UtilityFunctions().addAttributedFont(for: registrationButton, till: 9)
+        UtilityFunctions().addAttributedFont(for: registrationButton, till: 22)//actual: 21
+        
+        forgotPasswordButton.setTitleColor(GlobalConstants.Colors.iron, for: .normal)
+        forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.smallText!
+        forgotPasswordButton.setTitle("forgot_password".localized, for: .normal)
     }
     
     private func getInputFieldError() -> String {

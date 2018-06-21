@@ -284,7 +284,7 @@ class Registration: UIViewController {
         
         //Setup buttons
         registrationButton.setTitle("signup".localized, for: .normal)
-        registrationButton.backgroundColor = GlobalConstants.Colors.green
+        //registrationButton.backgroundColor = GlobalConstants.Colors.green
         UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
         loginButton.setTitle("existing_user".localized, for: .normal)
         UtilityFunctions().addAttributedFont(for: loginButton, till: 16)
@@ -377,19 +377,19 @@ extension Registration: UITableViewDataSource, UITableViewDelegate {
 
         switch indexPath.row {
         case 0:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.name, placeHolderText: "user_name".localized, image: #imageLiteral(resourceName: "icon-user"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.name, placeHolderText: "user_name".localized, image: #imageLiteral(resourceName: "icon-user"), validText: false)
             
         case 1:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.mobile, placeHolderText: "mobile".localized, image: #imageLiteral(resourceName: "icon-mobile"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.mobile, placeHolderText: "mobile".localized, image: #imageLiteral(resourceName: "icon-mobile"), validText: false)
             
         case 2:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.gender.rawValue, placeHolderText: "gender".localized, image: #imageLiteral(resourceName: "icon-gender"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.gender.rawValue, placeHolderText: "gender".localized, image: #imageLiteral(resourceName: "icon-gender"), validText: false)
             
         case 3:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.email, placeHolderText: "email".localized, image: #imageLiteral(resourceName: "icon-email"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.email, placeHolderText: "email".localized, image: #imageLiteral(resourceName: "icon-email"), validText: false)
             
         case 4:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"))
+            UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"), validText: false)
             cell.textField.isSecureEntry = true
             
         case 5:

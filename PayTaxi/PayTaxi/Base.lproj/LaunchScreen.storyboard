@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,14 +17,14 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Nhl-dy-29x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-logo" translatesAutoresizingMaskIntoConstraints="NO" id="0gy-1a-3xj">
-                                <rect key="frame" x="90" y="308" width="195" height="195"/>
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0gy-1a-3xj" secondAttribute="height" multiplier="1:1" id="k3e-Hn-h0Q"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0gy-1a-3xj" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="195/375" id="5Cj-CS-cB1"/>
+                            <constraint firstItem="0gy-1a-3xj" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="150/375" id="5Cj-CS-cB1"/>
                             <constraint firstItem="0gy-1a-3xj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="B0m-YP-3O3"/>
                             <constraint firstItem="Nhl-dy-29x" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="E8N-63-gzE"/>
                             <constraint firstItem="0gy-1a-3xj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Hzw-O3-O1n"/>
@@ -50,6 +50,6 @@
     </scenes>
     <resources>
         <image name="icon-logo" width="231" height="231"/>
-        <image name="splashBackground" width="375" height="812"/>
+        <image name="splashBackground" width="375" height="667"/>
     </resources>
 </document>

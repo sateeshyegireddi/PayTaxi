@@ -38,9 +38,9 @@
 "cancel" = "Cancel";
 
 //Login
-"forgot_password" = "FORGOT PASSWORD?";
+"forgot_password" = "Forgot password?";
 "login" = "LOGIN";
-"new_user" = "New user?   Signup  for  a  new  account";
+"new_user" = "Don't have an account?   Signup!";
 
 //Registration
 "signup" = "SIGNUP";

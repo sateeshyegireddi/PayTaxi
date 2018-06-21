@@ -232,6 +232,9 @@ class UtilityFunctions: NSObject {
         
         let attributedString = NSMutableAttributedString(string: button.titleLabel!.text!)
         attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.lightText!, range: NSRange(location: 0, length: index))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: GlobalConstants.Colors.iron, range: NSRange(location: 0, length: index))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.textFieldBoldText!, range: NSRange(location: index + 1, length: button.titleLabel!.text!.count - index - 1))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: GlobalConstants.Colors.planetblue, range: NSRange(location: index + 1, length: button.titleLabel!.text!.count - index - 1))
         button.setAttributedTitle(attributedString, for: UIControlState.normal)
     }
     
@@ -244,6 +247,13 @@ class UtilityFunctions: NSObject {
         layer.colors = [color1.cgColor, color2.cgColor]
         //layer.locations = [NSNumber(value: 0.0), NSNumber(value: 0.6), NSNumber(value: 1.0)]
         view.layer.addSublayer(layer)
+    }
+    
+    func setStyleForLabel(_ label: UILabel, text title: String, textColor color: UIColor, font fontType: UIFont) {
+        
+        label.text = title
+        label.textColor = color
+        label.font = fontType
     }
     
     //MARK: - Model
@@ -290,12 +300,13 @@ class UtilityFunctions: NSObject {
     
     //MARK: - Custom UI
     
-    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?) {
+    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool) {
         
-        textField.margin = 20
+        textField.margin = 15
         textField.borderColor = GlobalConstants.Colors.mercury
-        textField.textColor = GlobalConstants.Colors.megnisium
+        textField.textColor = GlobalConstants.Colors.oceanblue
         textField.text = textString
+        textField.invalidText = !valid
         textField.placeHolderText = placeHolder
         textField.image = leftImage
     }

@@ -39,7 +39,7 @@ class PTPickerView: UIViewController {
         
         //Setup buttons
         cancelButton.setTitleColor(GlobalConstants.Colors.megnisium, for: .normal)
-        chooseButton.backgroundColor = GlobalConstants.Colors.green
+        //chooseButton.backgroundColor = GlobalConstants.Colors.green
         UtilityFunctions().addRoudedBorder(to: chooseButton, borderColor: UIColor.clear, borderWidth: 0)
     }
 

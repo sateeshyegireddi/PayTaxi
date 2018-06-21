@@ -34,7 +34,7 @@ class PTTextField: UIView {
     
     @IBInspectable public var placeHolderText: String = "" {
         didSet {
-            textField?.attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedStringKey.foregroundColor: GlobalConstants.Colors.megnisium])
+            textField?.attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedStringKey.foregroundColor: GlobalConstants.Colors.oceanblue])
         }
     }
     
@@ -56,7 +56,7 @@ class PTTextField: UIView {
         }
     }
     
-    @IBInspectable public var margin: CGFloat = 20 {
+    @IBInspectable public var margin: CGFloat = 15 {
         didSet {
             setup()
         }
@@ -71,6 +71,13 @@ class PTTextField: UIView {
     @IBInspectable public var enableUserInteraction: Bool = true {
         didSet {
             textField?.isUserInteractionEnabled = enableUserInteraction
+        }
+    }
+    
+    @IBInspectable public var invalidText: Bool = true {
+        didSet {
+            borderView?.layer.borderColor = invalidText ?
+                GlobalConstants.Colors.maraschino.cgColor : GlobalConstants.Colors.mercury.cgColor
         }
     }
     
@@ -91,10 +98,10 @@ class PTTextField: UIView {
     override public func layoutSubviews() {
         
         borderView?.frame = bounds
-        imageView?.frame = CGRect(x: margin, y: 0, width: 25, height: bounds.height)
-        textField?.frame = CGRect(x: imageView!.frame.origin.x + imageView!.bounds.width + 10,
+        imageView?.frame = CGRect(x: margin, y: 0, width: 20, height: bounds.height)
+        textField?.frame = CGRect(x: imageView!.frame.origin.x + imageView!.bounds.width + 15,
                                   y: 0,
-                                  width: bounds.width - (margin * 2) - (imageView!.frame.origin.x + 10),
+                                  width: bounds.width - (margin * 2) - (imageView!.frame.origin.x + 15),
                                   height: bounds.height)
     }
     
@@ -117,14 +124,14 @@ class PTTextField: UIView {
         addSubview(borderView!)
         
         //Add imageView
-        imageView = UIImageView(frame: CGRect(x: margin, y: 0, width: 25, height: bounds.height))
+        imageView = UIImageView(frame: CGRect(x: margin, y: 0, width: 20, height: bounds.height))
         imageView?.contentMode = .center
         addSubview(imageView!)
         
         //Add textField
-        textField = UITextField(frame: CGRect(x: imageView!.frame.origin.x + imageView!.bounds.width + 10,
+        textField = UITextField(frame: CGRect(x: imageView!.frame.origin.x + imageView!.bounds.width + 15,
                                               y: 0,
-                                              width: bounds.width - (margin * 2) - (imageView!.frame.origin.x + 10),
+                                              width: bounds.width - (margin * 2) - (imageView!.frame.origin.x + 15),
                                               height: bounds.height))
         textField?.delegate = self
         textField?.borderStyle = .none

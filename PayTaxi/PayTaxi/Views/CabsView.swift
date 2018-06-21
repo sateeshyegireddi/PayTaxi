@@ -52,7 +52,7 @@ class CabsView: UIView {
         //Setup view
         view.backgroundColor = UIColor.clear
         UtilityFunctions().addRoudedBorder(to: overlayView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        confirmPickupButton.backgroundColor = GlobalConstants.Colors.green
+        //confirmPickupButton.backgroundColor = GlobalConstants.Colors.green
         UtilityFunctions().addRoudedBorder(to: confirmPickupButton, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
         confirmPickupButton.setTitle("confirm_pickup".localized, for: .normal)
         
