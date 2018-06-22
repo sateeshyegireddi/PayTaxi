@@ -12,13 +12,15 @@ class Registration: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var overlayImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var registrationView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var registrationLabel: UILabel!
-    @IBOutlet weak var registrationTableView: UITableView!
+    @IBOutlet weak var userNameTextField: PTTextField!
+    @IBOutlet weak var mobileTextField: PTTextField!
+    @IBOutlet weak var emailTextField: PTTextField!
+    @IBOutlet weak var passwordTextField: PTTextField!
+    @IBOutlet var genderButtons: [UIButton]!
+    @IBOutlet weak var termsAndConditionsButton: UIButton!
     @IBOutlet weak var registrationButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
     
     //MARK: - Variables
     public enum Gender: String {
@@ -26,6 +28,7 @@ class Registration: UIViewController {
         case none = ""
         case male = "Male"
         case female = "Female"
+        case others = "Others"
     }
     
     public struct UserParameters {
@@ -59,8 +62,6 @@ class Registration: UIViewController {
     fileprivate var otpId: String!
     fileprivate var otp: String!
     fileprivate var currentTextField: PTTextField?
-    fileprivate var pickerView: PTPickerView!
-    fileprivate var genderIndex: Int!
     
     //MARK: - Views
     override func viewDidLoad() {
@@ -69,7 +70,6 @@ class Registration: UIViewController {
         //Init Variables
         userParameters = UserParameters()
         userParametersErrors = UserParameters()
-        genderIndex = 0
         otpId = ""
         otp = ""
         
@@ -79,7 +79,6 @@ class Registration: UIViewController {
         
         //Setup basic UI
         setupUI()
-        let _ = getPickerView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -230,9 +229,23 @@ class Registration: UIViewController {
         }
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction func genderButtonTapped(_ sender: UIButton) {
         
-        dismiss(animated: false, completion: nil)
+        //Get the index of button
+        if let index = genderButtons.index(of: sender) {
+            
+            //Save gender into user parameters
+            switch index {
+            case 0:
+                userParameters.gender = .male
+            case 1:
+                userParameters.gender = .female
+            case 2:
+                userParameters.gender = .others
+            default:
+                userParameters.gender = .none
+            }
+        }
     }
     
     //MARK: - Keyboard Delegate Method
@@ -266,55 +279,51 @@ class Registration: UIViewController {
         
         //Setup imageView
         overlayImageView.image = #imageLiteral(resourceName: "background")
-        logoImageView.image = #imageLiteral(resourceName: "icon-logo")
-        
-        //Setup View
-        UtilityFunctions().addRoudedBorder(to: registrationView, borderColor: UIColor.clear, borderWidth: 0)
         
         //Setup labels
-        welcomeLabel.text = "welcome_abord".localized
-        welcomeLabel.textColor = GlobalConstants.Colors.blue
-        registrationLabel.text = "registration_message".localized
-        registrationLabel.textColor = GlobalConstants.Colors.iron
+        UtilityFunctions().setStyleForLabel(welcomeLabel,
+                                            text: "welcome_abord".localized,
+                                            textColor: GlobalConstants.Colors.blue,
+                                            font: GlobalConstants.Fonts.bigTitleText!)
+        UtilityFunctions().setStyleForLabel(registrationLabel,
+                                            text: "registration_message".localized,
+                                            textColor: GlobalConstants.Colors.iron,
+                                            font: GlobalConstants.Fonts.textFieldText!)
         
-        //Setup tableView
-        registrationTableView.separatorStyle = .none
-        registrationTableView.backgroundColor = UIColor.clear
-        registerCells()
+        //Setup textFields
+        UtilityFunctions().setTextField(userNameTextField,
+                                        text: userParameters.name,
+                                        placeHolderText: "user_name".localized,
+                                        image:#imageLiteral(resourceName: "icon-user"),
+                                        validText: userParameters.name.isEmpty, delegate: self, tag: 100)
+        UtilityFunctions().setTextField(userNameTextField,
+                                        text: userParameters.mobile,
+                                        placeHolderText: "mobile".localized,
+                                        image:#imageLiteral(resourceName: "icon-mobile"),
+                                        validText: userParameters.mobile.isEmpty, delegate: self, tag: 101)
+        UtilityFunctions().setTextField(userNameTextField,
+                                        text: userParameters.email,
+                                        placeHolderText: "email".localized,
+                                        image:#imageLiteral(resourceName: "icon-email"),
+                                        validText: userParameters.email.isEmpty, delegate: self, tag: 102)
+        UtilityFunctions().setTextField(passwordTextField,
+                                        text: userParameters.password,
+                                        placeHolderText: "password".localized,
+                                        image: #imageLiteral(resourceName: "icon-password"),
+                                        validText: userParameters.password.isEmpty, delegate: self, tag: 103)
+        passwordTextField.isSecureEntry = true
         
         //Setup buttons
+        loginButton.setTitle("login".localized, for: .normal)
+        loginButton.backgroundColor = GlobalConstants.Colors.aqua
+        forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
+        UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
+
         registrationButton.setTitle("signup".localized, for: .normal)
         //registrationButton.backgroundColor = GlobalConstants.Colors.green
         UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
-        loginButton.setTitle("existing_user".localized, for: .normal)
-        UtilityFunctions().addAttributedFont(for: loginButton, till: 16)
     }
-    
-    private func registerCells() {
-        
-        let nib = UINib(nibName: EditTextFieldCell.identifier, bundle: nil)
-        registrationTableView.register(nib, forCellReuseIdentifier: EditTextFieldCell.identifier)
-        let nib2 = UINib(nibName: TermsConditionsCell.identifier, bundle: nil)
-        registrationTableView.register(nib2, forCellReuseIdentifier: TermsConditionsCell.identifier)
-    }
-    
-    
-    private func getPickerView() -> UIView {
-        
-        //Check if pickerView is nil
-        if pickerView == nil {
-            
-            //Setup View
-            pickerView = PTPickerView.initPickerView(with: [Gender.male.rawValue, Gender.female.rawValue])
-            pickerView.delegate = self
-        }
-        
-        //Setup pickerView items
-        pickerView.setPickerViewObjects([Gender.male.rawValue, Gender.female.rawValue], selectedRow: genderIndex)
-        
-        return pickerView.view
-    }
-    
+
     private func validateInputFields() -> Bool {
         
         //Check field validations
@@ -340,76 +349,6 @@ class Registration: UIViewController {
     }
 }
 
-//MARK: - UITableView Delegate -
-
-extension Registration: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 6
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.row == 5 {
-            return UITableViewAutomaticDimension
-        }
-        return 65 // 12 + 50 + 13
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.row == 5 {
-            return UITableViewAutomaticDimension
-        }
-        return 65 // 12 + 50 + 13
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //Create cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: EditTextFieldCell.identifier, for: indexPath) as! EditTextFieldCell
-        
-        //Setup cell values
-        cell.textField.delegate = self
-        cell.textField.tag = 100 + indexPath.row
-        cell.textField.isSecureEntry = false
-
-        switch indexPath.row {
-        case 0:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.name, placeHolderText: "user_name".localized, image: #imageLiteral(resourceName: "icon-user"), validText: false)
-            
-        case 1:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.mobile, placeHolderText: "mobile".localized, image: #imageLiteral(resourceName: "icon-mobile"), validText: false)
-            
-        case 2:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.gender.rawValue, placeHolderText: "gender".localized, image: #imageLiteral(resourceName: "icon-gender"), validText: false)
-            
-        case 3:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.email, placeHolderText: "email".localized, image: #imageLiteral(resourceName: "icon-email"), validText: false)
-            
-        case 4:
-            UtilityFunctions().setTextField(cell.textField, text: userParameters.password, placeHolderText: "password".localized, image: #imageLiteral(resourceName: "icon-password"), validText: false)
-            cell.textField.isSecureEntry = true
-            
-        case 5:
-            //Create cell
-            let termsCell = tableView.dequeueReusableCell(withIdentifier: TermsConditionsCell.identifier, for: indexPath) as! TermsConditionsCell
-            
-            //Setup cell
-            termsCell.titleLabel.text = "terms_conditions_message".localized
-            
-            //Return cell
-            return termsCell
-        default:
-            return UITableViewCell()
-        }
-        
-        //Return cell
-        return cell
-    }
-}
-
 //MARK: - PTTextField Delegate -
 
 extension Registration: PTTextFieldDelegate {
@@ -423,8 +362,6 @@ extension Registration: PTTextFieldDelegate {
             textField.autocorrectionType = .yes
         case 101:
             textField.keyboardType = .numberPad
-        case 102:
-            textField.inputView = getPickerView()
         case 103:
             textField.autocorrectionType = .yes
             textField.keyboardType = .emailAddress
@@ -439,7 +376,7 @@ extension Registration: PTTextFieldDelegate {
         let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         switch textField.superview!.tag {
-        case 100, 104:
+        case 100, 103:
             return newString.count < 20
         case 101:
             return newString.count < 11
@@ -456,35 +393,11 @@ extension Registration: PTTextFieldDelegate {
         case 101:
             userParameters.mobile = textField.text!
         case 102:
-            userParameters.gender = Gender.init(rawValue: textField.text!) ?? .none
-        case 103:
             userParameters.email = textField.text!
-        case 104:
+        case 103:
             userParameters.password = textField.text!
         default:
             break
         }
-    }
-}
-
-//MARK: - PTPickerView Delegate -
-extension Registration: PTPickerViewDelegate {
-    
-    func pickerViewDidEndEditing() {
-        
-        closeKeyboard()
-        genderIndex = 0
-        currentTextField?.text = ""
-    }
-    
-    func pickerViewDidChangeItem(_ item: String) {
-        
-        currentTextField?.text = item
-    }
-    
-    func pickerViewDidSelectItemAtIndex(_ index: Int) {
-        
-        closeKeyboard()
-        genderIndex = index
     }
 }

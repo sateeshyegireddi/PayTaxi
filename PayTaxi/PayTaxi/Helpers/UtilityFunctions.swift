@@ -300,7 +300,7 @@ class UtilityFunctions: NSObject {
     
     //MARK: - Custom UI
     
-    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool) {
+    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool, delegate vc: UIViewController, tag tagValue: Int) {
         
         textField.margin = 15
         textField.borderColor = GlobalConstants.Colors.mercury
@@ -309,6 +309,8 @@ class UtilityFunctions: NSObject {
         textField.invalidText = !valid
         textField.placeHolderText = placeHolder
         textField.image = leftImage
+        textField.delegate = vc as? PTTextFieldDelegate
+        textField.tag = tagValue
     }
     
     func showInternetNotAvailable() {

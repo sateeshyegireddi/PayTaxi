@@ -13,13 +13,12 @@ class Registration: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var overlayImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var registrationView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var registrationLabel: UILabel!
     @IBOutlet weak var registrationTableView: UITableView!
+    @IBOutlet weak var termsAndConditionsButton: UIButton!
+    
     @IBOutlet weak var registrationButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
 
     //MARK: - Variables
     public struct UserParameters {

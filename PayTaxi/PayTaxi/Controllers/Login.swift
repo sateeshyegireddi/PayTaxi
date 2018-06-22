@@ -181,30 +181,26 @@ class Login: UIViewController {
                                             font: GlobalConstants.Fonts.textFieldText!)
 
         //Setup textFields
-        mobileTextField.delegate = self
-        mobileTextField.tag = 100
         UtilityFunctions().setTextField(mobileTextField,
                                         text: mobileNumber,
                                         placeHolderText: "mobile".localized,
                                         image:#imageLiteral(resourceName: "icon-mobile"),
-                                        validText: mobileNumberError.isEmpty)
-        passwordTextField.delegate = self
-        passwordTextField.tag = 101
+                                        validText: mobileNumberError.isEmpty, delegate: self, tag: 100)
         UtilityFunctions().setTextField(passwordTextField,
                                         text: password,
                                         placeHolderText: "password".localized,
                                         image: #imageLiteral(resourceName: "icon-password"),
-                                        validText: mobileNumberError.isEmpty)
+                                        validText: mobileNumberError.isEmpty, delegate: self, tag: 101)
         passwordTextField.isSecureEntry = true
         
         //Setup buttons
         loginButton.setTitle("login".localized, for: .normal)
         loginButton.backgroundColor = GlobalConstants.Colors.aqua
-        forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
+        loginButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
         UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
         
         registrationButton.setTitle("new_user".localized, for: .normal)
-        UtilityFunctions().addAttributedFont(for: registrationButton, till: 22)//actual: 21
+        UtilityFunctions().addAttributedFont(for: registrationButton, till: 22)
         
         forgotPasswordButton.setTitleColor(GlobalConstants.Colors.iron, for: .normal)
         forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.smallText!
