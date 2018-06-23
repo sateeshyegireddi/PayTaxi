@@ -19,8 +19,10 @@ class Registration: UIViewController {
     @IBOutlet weak var emailTextField: PTTextField!
     @IBOutlet weak var passwordTextField: PTTextField!
     @IBOutlet var genderButtons: [UIButton]!
-    @IBOutlet weak var termsAndConditionsButton: UIButton!
+    @IBOutlet weak var termsAndConditionsLabel: UILabel!
     @IBOutlet weak var registrationButton: UIButton!
+    @IBOutlet var seperatorSpaces: [NSLayoutConstraint]!
+    @IBOutlet weak var elementHeight: NSLayoutConstraint!
     
     //MARK: - Variables
     public enum Gender: String {
@@ -218,6 +220,10 @@ class Registration: UIViewController {
         //Register user to PayTaxi if all fields are valid
         if isFieldsValid {
             
+            //Hide error pop-over message
+            UtilityFunctions().hideErrorView(on: self)
+
+            //Call registration API
             registerUser()
         } else {
             
@@ -225,12 +231,26 @@ class Registration: UIViewController {
             let error = getInputFieldError()
             
             //Show error pop-over message to user
-            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
+            UtilityFunctions().showErrorView(on: self, error: error.message, image: error.image)
         }
     }
     
     @IBAction func genderButtonTapped(_ sender: UIButton) {
         
+        //Reset button highlighting
+        for button in genderButtons {
+            button.isSelected = false
+            button.backgroundColor = UIColor.white
+            UtilityFunctions().addRoudedBorder(to: button, borderColor: GlobalConstants.Colors.megnisium, borderWidth: 1)
+        }
+        
+        //Set button as selected
+        sender.isSelected = !sender.isSelected
+        sender.backgroundColor = sender.isSelected ? GlobalConstants.Colors.aqua : UIColor.clear
+        UtilityFunctions().addRoudedBorder(to: sender,
+                                           borderColor: sender.isSelected ? UIColor.clear : GlobalConstants.Colors.megnisium,
+                                           borderWidth: 1)
+
         //Get the index of button
         if let index = genderButtons.index(of: sender) {
             
@@ -277,6 +297,17 @@ class Registration: UIViewController {
     //MARK: - Functions
     private func setupUI() {
         
+        //Adjust UI for small devices 5S, SE
+        for space in seperatorSpaces {
+            
+            space.constant = UIScreen.main.bounds.width == 320 ? 10 : 20
+        }
+        elementHeight.constant = UIScreen.main.bounds.width == 320 ? 45 : 50
+
+        //Add topView
+        let topView = TopView(frame: GlobalConstants.Constants.topViewFrame, on: self, title: "", enableBack: true)
+        view.addSubview(topView)
+        
         //Setup imageView
         overlayImageView.image = #imageLiteral(resourceName: "background")
         
@@ -289,19 +320,23 @@ class Registration: UIViewController {
                                             text: "registration_message".localized,
                                             textColor: GlobalConstants.Colors.iron,
                                             font: GlobalConstants.Fonts.textFieldText!)
-        
+        UtilityFunctions().setStyleForLabel(termsAndConditionsLabel,
+                                            text: "terms_conditions_message".localized,
+                                            textColor: GlobalConstants.Colors.megnisium,
+                                            font: GlobalConstants.Fonts.smallMediumText!)
+
         //Setup textFields
         UtilityFunctions().setTextField(userNameTextField,
                                         text: userParameters.name,
                                         placeHolderText: "user_name".localized,
                                         image:#imageLiteral(resourceName: "icon-user"),
                                         validText: userParameters.name.isEmpty, delegate: self, tag: 100)
-        UtilityFunctions().setTextField(userNameTextField,
+        UtilityFunctions().setTextField(mobileTextField,
                                         text: userParameters.mobile,
                                         placeHolderText: "mobile".localized,
                                         image:#imageLiteral(resourceName: "icon-mobile"),
                                         validText: userParameters.mobile.isEmpty, delegate: self, tag: 101)
-        UtilityFunctions().setTextField(userNameTextField,
+        UtilityFunctions().setTextField(emailTextField,
                                         text: userParameters.email,
                                         placeHolderText: "email".localized,
                                         image:#imageLiteral(resourceName: "icon-email"),
@@ -314,13 +349,13 @@ class Registration: UIViewController {
         passwordTextField.isSecureEntry = true
         
         //Setup buttons
-        loginButton.setTitle("login".localized, for: .normal)
-        loginButton.backgroundColor = GlobalConstants.Colors.aqua
-        forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
-        UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
-
-        registrationButton.setTitle("signup".localized, for: .normal)
-        //registrationButton.backgroundColor = GlobalConstants.Colors.green
+        for button in genderButtons {
+            UtilityFunctions().addRoudedBorder(to: button, borderColor: GlobalConstants.Colors.megnisium, borderWidth: 1)
+        }
+        
+        registrationButton.setTitle("login".localized, for: .normal)
+        registrationButton.backgroundColor = GlobalConstants.Colors.aqua
+        registrationButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
         UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
     }
 
@@ -329,23 +364,23 @@ class Registration: UIViewController {
         //Check field validations
         userParametersErrors.name = Validator().validateUserName(userParameters.name)
         userParametersErrors.mobile = Validator().validateMobile(userParameters.mobile)
-        userParametersErrors.genderError = Validator().validateGender(userParameters.gender.rawValue)
         userParametersErrors.email = Validator().validateEmail(userParameters.email)
         userParametersErrors.password = Validator().validatePassword(userParameters.password)
+        userParametersErrors.genderError = Validator().validateGender(userParameters.gender.rawValue)
 
-        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty &&
-            userParametersErrors.genderError.isEmpty && userParametersErrors.email.isEmpty && userParametersErrors.password.isEmpty
+        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty && userParametersErrors.email.isEmpty
+            && userParametersErrors.password.isEmpty && userParametersErrors.genderError.isEmpty
     }
     
-    private func getInputFieldError() -> String {
+    private func getInputFieldError() -> (message: String, image: UIImage?) {
         
-        guard userParametersErrors.name.isEmpty else { return userParametersErrors.name }
-        guard userParametersErrors.mobile.isEmpty else { return userParametersErrors.mobile }
-        guard userParametersErrors.genderError.isEmpty else { return userParametersErrors.genderError }
-        guard userParametersErrors.email.isEmpty else { return userParametersErrors.email }
-        guard userParametersErrors.password.isEmpty else { return userParametersErrors.password }
-        
-        return ""
+        guard userParametersErrors.name.isEmpty else { return (userParametersErrors.name, #imageLiteral(resourceName: "icon-user-white")) }
+        guard userParametersErrors.mobile.isEmpty else { return (userParametersErrors.mobile, #imageLiteral(resourceName: "icon-mobile-white")) }
+        guard userParametersErrors.email.isEmpty else { return (userParametersErrors.email, #imageLiteral(resourceName: "icon-email-white")) }
+        guard userParametersErrors.password.isEmpty else { return (userParametersErrors.password, #imageLiteral(resourceName: "icon-password-white")) }
+        guard userParametersErrors.genderError.isEmpty else { return (userParametersErrors.genderError, #imageLiteral(resourceName: "icon-others-white")) }
+
+        return ("", nil)
     }
 }
 

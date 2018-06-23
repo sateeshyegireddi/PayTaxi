@@ -19,6 +19,7 @@ class Login: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registrationButton: UIButton!
+    @IBOutlet weak var elementHeight: NSLayoutConstraint!
     
     //MARK: - Variables
     fileprivate var mobileNumber: String!
@@ -113,14 +114,19 @@ class Login: UIViewController {
         //Call login API service if all fields are valid
         if isFieldsValid {
             
+            //Hide error pop-over message
+            UtilityFunctions().hideErrorView(on: self)
+            
+            //Call login API
             login()
+            
         } else {
             
             //Get error message
             let error = getInputFieldError()
             
             //Show error pop-over message to user
-            UtilityFunctions().showSimpleAlert(OnViewController: self, Message: error)
+            UtilityFunctions().showErrorView(on: self, error: error.message, image: error.image)
         }
     }
     
@@ -167,6 +173,9 @@ class Login: UIViewController {
     
     private func setupUI() {
         
+        //Adjust UI for small screen devices 5S, SE
+        elementHeight.constant = UIScreen.main.bounds.width == 320 ? 45 : 50
+
         //Setup imageView
         overlayImageView.image = #imageLiteral(resourceName: "background")
         
@@ -207,12 +216,12 @@ class Login: UIViewController {
         forgotPasswordButton.setTitle("forgot_password".localized, for: .normal)
     }
     
-    private func getInputFieldError() -> String {
+    private func getInputFieldError() -> (message: String, image: UIImage?) {
         
-        guard mobileNumberError.isEmpty else { return mobileNumberError }
-        guard passwordError.isEmpty else { return passwordError }
+        guard mobileNumberError.isEmpty else { return (mobileNumberError, #imageLiteral(resourceName: "icon-mobile-white")) }
+        guard passwordError.isEmpty else { return (passwordError, #imageLiteral(resourceName: "icon-password-white")) }
         
-        return ""
+        return ("", nil)
     }
 }
 

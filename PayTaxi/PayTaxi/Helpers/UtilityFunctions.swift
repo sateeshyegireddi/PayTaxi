@@ -249,6 +249,15 @@ class UtilityFunctions: NSObject {
         view.layer.addSublayer(layer)
     }
     
+    func addRoundness(to corners: UIRectCorner, for view: UIView) {
+        
+        let radius: CGFloat = UIScreen.main.bounds.width == 320 ? 22.5 : 25
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        view.layer.mask = mask
+    }
+    
     func setStyleForLabel(_ label: UILabel, text title: String, textColor color: UIColor, font fontType: UIFont) {
         
         label.text = title
@@ -303,7 +312,7 @@ class UtilityFunctions: NSObject {
     func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool, delegate vc: UIViewController, tag tagValue: Int) {
         
         textField.margin = 15
-        textField.borderColor = GlobalConstants.Colors.mercury
+        textField.borderColor = GlobalConstants.Colors.megnisium
         textField.textColor = GlobalConstants.Colors.oceanblue
         textField.text = textString
         textField.invalidText = !valid
@@ -315,18 +324,69 @@ class UtilityFunctions: NSObject {
     
     func showInternetNotAvailable() {
         
+        //Get the top viewController from navigation stack/tabbar array/window
         if let vc = UIApplication.topViewController() {
-            let noConnectionView = NoConnectionView(frame: CGRect(x: 0,
-                                                                  y: 0,
-                                                                  width: UIScreen.main.bounds.width,
-                                                                  height: UIScreen.main.bounds.height == 812 ? 73 : 50),
-                                                    inView: vc)
+            
+            //Return if the no internet connection view is added already
+            for view in vc.view.subviews {
+                if let _ = view as? ErrorView { return }
+            }
+            
+            //Create and add error view, reset its alpha
+            let noConnectionView = ErrorView(frame: CGRect(x: 0, y: 0,
+                                                           width: UIScreen.main.bounds.width,
+                                                           height: UIScreen.main.bounds.height == 812 ? 83 : 60),
+                                             inView: vc,
+                                             title: GlobalConstants.Errors.internetConnection, image: #imageLiteral(resourceName: "icon-email-white"))
+            noConnectionView.accessibilityIdentifier = "noConnectionView"
             noConnectionView.alpha = 0.0
+            noConnectionView.closeButton.isHidden = true
             vc.view.addSubview(noConnectionView)
+            
+            //Show animation
             UIView.animate(withDuration: 1.0, animations: {
                 noConnectionView.alpha = 1.0
             }) { (finished) in
                 noConnectionView.alpha = 1.0
+            }
+        }
+    }
+    
+    func showErrorView(on vc: UIViewController, error title: String?, image icon: UIImage?) {
+        
+        //Hide error view if its shown
+        hideErrorView(on: vc)
+        
+        //Create and add error view, reset its alpha
+        let errorView = ErrorView(frame: CGRect(x: 0, y: 0,
+                                                       width: UIScreen.main.bounds.width,
+                                                       height: UIScreen.main.bounds.height == 812 ? 83 : 60),
+                                  inView: vc, title: title, image: icon)
+        errorView.alpha = 0.0
+        errorView.accessibilityIdentifier = "errorView"
+        vc.view.addSubview(errorView)
+
+        //Show animation
+        UIView.animate(withDuration: 0.5, animations: {
+            errorView.alpha = 1.0
+        }) { (finished) in
+            errorView.alpha = 1.0
+        }
+    }
+    
+    func hideErrorView(on vc: UIViewController) {
+        
+        //Remove with animation if the errorView is added already to viewController
+        for view in vc.view.subviews {
+            if let errorView = view as? ErrorView {
+                if errorView.accessibilityIdentifier == "errorView" {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        errorView.alpha = 0.0
+                    }) { (finished) in
+                        errorView.alpha = 0.0
+                        errorView.removeFromSuperview()
+                    }
+                }
             }
         }
     }

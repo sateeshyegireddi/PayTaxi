@@ -93,9 +93,9 @@
 		F961502020D507E000DADC0E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075DC420A1D5BA001A2E02 /* Location.swift */; };
 		F961502120D507E400DADC0E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350920B4388C0043DFA5 /* Place.swift */; };
 		F961502220D5083300DADC0E /* CabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350D20B4778A0043DFA5 /* CabsView.swift */; };
-		F961502320D5083300DADC0E /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F961502320D5083300DADC0E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* ErrorView.swift */; };
 		F961502420D5083400DADC0E /* CabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2350D20B4778A0043DFA5 /* CabsView.swift */; };
-		F961502520D5083400DADC0E /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
+		F961502520D5083400DADC0E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* ErrorView.swift */; };
 		F961502620D5084000DADC0E /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
 		F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F961502820D5084100DADC0E /* SelectPickDropPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */; };
@@ -245,6 +245,14 @@
 		F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
 		F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
+		F9C065C820DE22EA00620537 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065C720DE22EA00620537 /* TopView.swift */; };
+		F9C065C920DE22EA00620537 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065C720DE22EA00620537 /* TopView.swift */; };
+		F9C065CA20DE22EA00620537 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065C720DE22EA00620537 /* TopView.swift */; };
+		F9C065CB20DE22EA00620537 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065C720DE22EA00620537 /* TopView.swift */; };
+		F9C065CD20DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
+		F9C065CE20DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
+		F9C065CF20DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
+		F9C065D020DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
 		F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FE20B42B2B0043DFA5 /* SearchPlacesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */; };
@@ -279,10 +287,10 @@
 		F9E1700C20C06B35001023B5 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700A20C06B35001023B5 /* Validator.swift */; };
 		F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
 		F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */; };
-		F9F2D51120C8383000ED749A /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
-		F9F2D51220C8383000ED749A /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* NoConnectionView.swift */; };
-		F9F2D51420C8383E00ED749A /* NoConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* NoConnectionView.xib */; };
-		F9F2D51520C8383E00ED749A /* NoConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* NoConnectionView.xib */; };
+		F9F2D51120C8383000ED749A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* ErrorView.swift */; };
+		F9F2D51220C8383000ED749A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D51020C8383000ED749A /* ErrorView.swift */; };
+		F9F2D51420C8383E00ED749A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* ErrorView.xib */; };
+		F9F2D51520C8383E00ED749A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D51320C8383E00ED749A /* ErrorView.xib */; };
 		F9FB263C20B32464005DE756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A1E2097312700F2139A /* Main.storyboard */; };
 		F9FC1E7F20B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
 		F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
@@ -453,6 +461,8 @@
 		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
 		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
 		F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		F9C065C720DE22EA00620537 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		F9C065CC20DE22F700620537 /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
 		F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesView.swift; sourceTree = "<group>"; };
 		F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPlacesView.xib; sourceTree = "<group>"; };
 		F9C2350120B42D080043DFA5 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
@@ -468,8 +478,8 @@
 		F9E1700720C06982001023B5 /* PTLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoading.swift; sourceTree = "<group>"; };
 		F9E1700A20C06B35001023B5 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F9E62AD920A0829100D84FCE /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		F9F2D51020C8383000ED749A /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
-		F9F2D51320C8383E00ED749A /* NoConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoConnectionView.xib; sourceTree = "<group>"; };
+		F9F2D51020C8383000ED749A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F9F2D51320C8383E00ED749A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
 		F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -616,8 +626,10 @@
 				F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */,
 				F9C2350D20B4778A0043DFA5 /* CabsView.swift */,
 				F9C2351120B477950043DFA5 /* CabsView.xib */,
-				F9F2D51020C8383000ED749A /* NoConnectionView.swift */,
-				F9F2D51320C8383E00ED749A /* NoConnectionView.xib */,
+				F9F2D51020C8383000ED749A /* ErrorView.swift */,
+				F9F2D51320C8383E00ED749A /* ErrorView.xib */,
+				F9C065C720DE22EA00620537 /* TopView.swift */,
+				F9C065CC20DE22F700620537 /* TopView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1054,6 +1066,7 @@
 			files = (
 				F961500F20D507D300DADC0E /* Poppins-Light.ttf in Resources */,
 				F961501920D507D300DADC0E /* Poppins-Black.ttf in Resources */,
+				F9C065D020DE22F700620537 /* TopView.xib in Resources */,
 				F961500B20D507D300DADC0E /* Poppins-ExtraLight.ttf in Resources */,
 				F961501A20D507D300DADC0E /* Poppins-Thin.ttf in Resources */,
 				F961501520D507D300DADC0E /* Poppins-Regular.ttf in Resources */,
@@ -1112,11 +1125,12 @@
 				F9A0385C20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */,
 				F9A0383B20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				F9A0383220B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
-				F9F2D51420C8383E00ED749A /* NoConnectionView.xib in Resources */,
+				F9F2D51420C8383E00ED749A /* ErrorView.xib in Resources */,
 				F9A0382920B199B60044A1A5 /* Poppins-ThinItalic.ttf in Resources */,
 				F9A0385920B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383E20B199B60044A1A5 /* Poppins-ExtraBold.ttf in Resources */,
 				F9A0385320B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
+				F9C065CD20DE22F700620537 /* TopView.xib in Resources */,
 				F9A0382F20B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
 				F9A0385620B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
 				F9642E7B20A4837800027977 /* MainMenu.xib in Resources */,
@@ -1150,10 +1164,11 @@
 				F9A0382720B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
 				F9857A432097317000F2139A /* LaunchScreen.storyboard in Resources */,
 				F9A0385D20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */,
+				F9C065CE20DE22F700620537 /* TopView.xib in Resources */,
 				F9A0383C20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				F9A0383320B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
 				F9A0382A20B199B60044A1A5 /* Poppins-ThinItalic.ttf in Resources */,
-				F9F2D51520C8383E00ED749A /* NoConnectionView.xib in Resources */,
+				F9F2D51520C8383E00ED749A /* ErrorView.xib in Resources */,
 				F9A0385A20B199B60044A1A5 /* Poppins-Italic.ttf in Resources */,
 				F9A0383F20B199B60044A1A5 /* Poppins-ExtraBold.ttf in Resources */,
 				F9A0385420B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
@@ -1182,6 +1197,7 @@
 				F9A0383720B199B60044A1A5 /* Poppins-Medium.ttf in Resources */,
 				F9A0382E20B199B60044A1A5 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				F9A0384F20B199B60044A1A5 /* License.txt in Resources */,
+				F9C065CF20DE22F700620537 /* TopView.xib in Resources */,
 				F9A0382820B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
 				F9A0383D20B199B60044A1A5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				F9A0383A20B199B60044A1A5 /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -1404,6 +1420,7 @@
 				F961502F20D5087400DADC0E /* Login.swift in Sources */,
 				F9614FF820D5076900DADC0E /* LocationSettings.swift in Sources */,
 				F961502920D5084100DADC0E /* SearchPlacesView.swift in Sources */,
+				F9C065CB20DE22EA00620537 /* TopView.swift in Sources */,
 				F961503720D508DF00DADC0E /* MainMenuCell.swift in Sources */,
 				F961502020D507E000DADC0E /* Location.swift in Sources */,
 				F9614FE420D5071000DADC0E /* TermsConditionsCell.swift in Sources */,
@@ -1426,7 +1443,7 @@
 				F961503020D5087400DADC0E /* Registration.swift in Sources */,
 				F961502C20D5084700DADC0E /* MainMenu.swift in Sources */,
 				F961500020D5079500DADC0E /* UtilityFunctions.swift in Sources */,
-				F961502520D5083400DADC0E /* NoConnectionView.swift in Sources */,
+				F961502520D5083400DADC0E /* ErrorView.swift in Sources */,
 				F9614FE020D506CF00DADC0E /* APIHandler.swift in Sources */,
 				F961501F20D507DC00DADC0E /* User.swift in Sources */,
 			);
@@ -1453,10 +1470,11 @@
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
 				F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
-				F9F2D51120C8383000ED749A /* NoConnectionView.swift in Sources */,
+				F9F2D51120C8383000ED749A /* ErrorView.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
+				F9C065C820DE22EA00620537 /* TopView.swift in Sources */,
 				F9C2350320B42D080043DFA5 /* PlaceCell.swift in Sources */,
 				F9E1700420C05676001023B5 /* LocationSettings.swift in Sources */,
 				F961FE8C20ABF5DB00580D62 /* MapMarker.swift in Sources */,
@@ -1495,10 +1513,11 @@
 				F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */,
 				F9075DC620A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9E62ADB20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
+				F9C065C920DE22EA00620537 /* TopView.swift in Sources */,
 				F96381142099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9075DC220A1AA09001A2E02 /* SocketsManager.swift in Sources */,
-				F9F2D51220C8383000ED749A /* NoConnectionView.swift in Sources */,
+				F9F2D51220C8383000ED749A /* ErrorView.swift in Sources */,
 				F96E67A320A3037300F00FEA /* Home.swift in Sources */,
 				F96380D320999C4E00C3CC1E /* Splash.swift in Sources */,
 				F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
@@ -1543,11 +1562,12 @@
 				F9614FF720D5076800DADC0E /* LocationSettings.swift in Sources */,
 				F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */,
 				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
-				F961502320D5083300DADC0E /* NoConnectionView.swift in Sources */,
+				F961502320D5083300DADC0E /* ErrorView.swift in Sources */,
 				F9614FFA20D5077C00DADC0E /* UIApplicationExtension.swift in Sources */,
 				F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */,
 				F961502620D5084000DADC0E /* SelectPickDropPointsView.swift in Sources */,
 				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
+				F9C065CA20DE22EA00620537 /* TopView.swift in Sources */,
 				F9C2350C20B4388C0043DFA5 /* Place.swift in Sources */,
 				F961502220D5083300DADC0E /* CabsView.swift in Sources */,
 				F9614FF520D5075A00DADC0E /* Registration.swift in Sources */,

@@ -7,7 +7,7 @@
 */
 
 //MARK: - Internet messages
-"network_error" = "Can't reach to network";
+"network_error" = "Unable to reach PayTaxi's network";
 
 //MARK: - Error messages
 
