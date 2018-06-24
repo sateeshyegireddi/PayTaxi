@@ -100,7 +100,8 @@ class Login: UIViewController {
     //MARK: - Actions
     @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
         
-        
+        //Move user to send OTP screen
+        OpenScreen().sendOTP(self)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -161,7 +162,7 @@ class Login: UIViewController {
         view.endEditing(true)
     }
     
-    //MARK: - Functions
+    //MARK: - Validations
     private func validateInputFields() -> Bool {
         
         //Check field validations
@@ -171,6 +172,15 @@ class Login: UIViewController {
         return mobileNumberError.isEmpty && passwordError.isEmpty
     }
     
+    private func getInputFieldError() -> (message: String, image: UIImage?) {
+        
+        guard mobileNumberError.isEmpty else { return (mobileNumberError, #imageLiteral(resourceName: "icon-mobile-white")) }
+        guard passwordError.isEmpty else { return (passwordError, #imageLiteral(resourceName: "icon-password-white")) }
+        
+        return ("", nil)
+    }
+    
+    //MARK: - Functions
     private func setupUI() {
         
         //Adjust UI for small screen devices 5S, SE
@@ -203,10 +213,7 @@ class Login: UIViewController {
         passwordTextField.isSecureEntry = true
         
         //Setup buttons
-        loginButton.setTitle("login".localized, for: .normal)
-        loginButton.backgroundColor = GlobalConstants.Colors.aqua
-        loginButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
-        UtilityFunctions().addRoudedBorder(to: loginButton, borderColor: UIColor.clear, borderWidth: 0)
+        UtilityFunctions().setStyle(for: loginButton, text: "login".localized, backgroundColor: GlobalConstants.Colors.aqua)
         
         registrationButton.setTitle("new_user".localized, for: .normal)
         UtilityFunctions().addAttributedFont(for: registrationButton, till: 22)
@@ -214,14 +221,6 @@ class Login: UIViewController {
         forgotPasswordButton.setTitleColor(GlobalConstants.Colors.iron, for: .normal)
         forgotPasswordButton.titleLabel?.font = GlobalConstants.Fonts.smallText!
         forgotPasswordButton.setTitle("forgot_password".localized, for: .normal)
-    }
-    
-    private func getInputFieldError() -> (message: String, image: UIImage?) {
-        
-        guard mobileNumberError.isEmpty else { return (mobileNumberError, #imageLiteral(resourceName: "icon-mobile-white")) }
-        guard passwordError.isEmpty else { return (passwordError, #imageLiteral(resourceName: "icon-password-white")) }
-        
-        return ("", nil)
     }
 }
 

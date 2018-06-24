@@ -294,6 +294,31 @@ class Registration: UIViewController {
         view.endEditing(true)
     }
     
+    //MARK: - Validations
+    private func validateInputFields() -> Bool {
+        
+        //Check field validations
+        userParametersErrors.name = Validator().validateUserName(userParameters.name)
+        userParametersErrors.mobile = Validator().validateMobile(userParameters.mobile)
+        userParametersErrors.email = Validator().validateEmail(userParameters.email)
+        userParametersErrors.password = Validator().validatePassword(userParameters.password)
+        userParametersErrors.genderError = Validator().validateGender(userParameters.gender.rawValue)
+        
+        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty && userParametersErrors.email.isEmpty
+            && userParametersErrors.password.isEmpty && userParametersErrors.genderError.isEmpty
+    }
+    
+    private func getInputFieldError() -> (message: String, image: UIImage?) {
+        
+        guard userParametersErrors.name.isEmpty else { return (userParametersErrors.name, #imageLiteral(resourceName: "icon-user-white")) }
+        guard userParametersErrors.mobile.isEmpty else { return (userParametersErrors.mobile, #imageLiteral(resourceName: "icon-mobile-white")) }
+        guard userParametersErrors.email.isEmpty else { return (userParametersErrors.email, #imageLiteral(resourceName: "icon-email-white")) }
+        guard userParametersErrors.password.isEmpty else { return (userParametersErrors.password, #imageLiteral(resourceName: "icon-password-white")) }
+        guard userParametersErrors.genderError.isEmpty else { return (userParametersErrors.genderError, #imageLiteral(resourceName: "icon-others-white")) }
+        
+        return ("", nil)
+    }
+    
     //MARK: - Functions
     private func setupUI() {
         
@@ -353,34 +378,7 @@ class Registration: UIViewController {
             UtilityFunctions().addRoudedBorder(to: button, borderColor: GlobalConstants.Colors.megnisium, borderWidth: 1)
         }
         
-        registrationButton.setTitle("login".localized, for: .normal)
-        registrationButton.backgroundColor = GlobalConstants.Colors.aqua
-        registrationButton.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
-        UtilityFunctions().addRoudedBorder(to: registrationButton, borderColor: UIColor.clear, borderWidth: 0)
-    }
-
-    private func validateInputFields() -> Bool {
-        
-        //Check field validations
-        userParametersErrors.name = Validator().validateUserName(userParameters.name)
-        userParametersErrors.mobile = Validator().validateMobile(userParameters.mobile)
-        userParametersErrors.email = Validator().validateEmail(userParameters.email)
-        userParametersErrors.password = Validator().validatePassword(userParameters.password)
-        userParametersErrors.genderError = Validator().validateGender(userParameters.gender.rawValue)
-
-        return userParametersErrors.name.isEmpty && userParametersErrors.mobile.isEmpty && userParametersErrors.email.isEmpty
-            && userParametersErrors.password.isEmpty && userParametersErrors.genderError.isEmpty
-    }
-    
-    private func getInputFieldError() -> (message: String, image: UIImage?) {
-        
-        guard userParametersErrors.name.isEmpty else { return (userParametersErrors.name, #imageLiteral(resourceName: "icon-user-white")) }
-        guard userParametersErrors.mobile.isEmpty else { return (userParametersErrors.mobile, #imageLiteral(resourceName: "icon-mobile-white")) }
-        guard userParametersErrors.email.isEmpty else { return (userParametersErrors.email, #imageLiteral(resourceName: "icon-email-white")) }
-        guard userParametersErrors.password.isEmpty else { return (userParametersErrors.password, #imageLiteral(resourceName: "icon-password-white")) }
-        guard userParametersErrors.genderError.isEmpty else { return (userParametersErrors.genderError, #imageLiteral(resourceName: "icon-others-white")) }
-
-        return ("", nil)
+        UtilityFunctions().setStyle(for: registrationButton, text: "signup".localized, backgroundColor: GlobalConstants.Colors.aqua)
     }
 }
 

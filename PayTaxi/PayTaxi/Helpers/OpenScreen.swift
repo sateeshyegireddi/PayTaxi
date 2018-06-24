@@ -29,6 +29,21 @@ class OpenScreen: NSObject {
         currentViewController.present(login, animated: false, completion: nil)
     }
     
+    func sendOTP(_ currentViewController: UIViewController) {
+        
+        let sendOTP = storyboard.instantiateViewController(withIdentifier: "SendOTP") as! SendOTP
+        sendOTP.modalTransitionStyle = modalTransitionStyle
+        currentViewController.present(sendOTP, animated: false, completion: nil)
+    }
+    
+    func verifyOTP(_ currentViewController: UIViewController, for mobile: String) {
+        
+        let verifyOTP = storyboard.instantiateViewController(withIdentifier: "VerifyOTP") as! VerifyOTP
+        verifyOTP.modalTransitionStyle = modalTransitionStyle
+        verifyOTP.mobile = mobile
+        currentViewController.present(verifyOTP, animated: false, completion: nil)
+    }
+    
     func navigation(_ currentViewController: UIViewController) {
         
         let navigation = storyboard.instantiateViewController(withIdentifier: "Navigation") as! Navigation

@@ -22,12 +22,18 @@
 "registration_message" = "Signup with PayTaxi in simple steps";
 "terms_conditions_message" = "Upon clicking Signup you are accepting Terms and Conditions";
 
+//Forgot Password
+"otp_sent_message" = "We will send you a one time SMS message. Carrier rates may apply.";
+"verify_otp_message" = "Please type the Verification Code sent to";
+"otp_not_recieve_message" = "Didn’t receive the OTP?";
+
 //MARK: - Validation messages
 "email_validation" = "Please enter valid Email";
 "password_validation" = "Please enter valid Password";
 "mobile_validation" = "Please enter valid Mobile number";
 "username_validation" = "Please enter valid User name";
 "gender_validation" = "Please select valid Gender";
+"otp_validation" = "Please select valid OTP";
 
 //MARK: - Titles
 
@@ -46,6 +52,14 @@
 "signup" = "SIGNUP";
 "existing_user" = "Already a user?   Login  now";
 "terms_conditions" = "Terms and Conditions";
+
+//Forgot Password
+"otp" = "OTP";
+"send" = "SEND";
+"verification_code" = "Verification Code";
+"one_time_password" = "ONE TIME PASSWORD";
+"resend_code" = "RESEND CODE";
+"otp_on_call" = "OTP ON CALL";
 
 //Pickup
 "confirm_pickup" = "CONFIRM PICKUP";

@@ -19,7 +19,7 @@ public struct GlobalConstants {
         static let userAppName = "PayTaxi"
         static let driverAppName = "PayTaxiDriver"
         static let loading = "Loading"
-        static let topViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height == 812 ? 75 + 44 : 75)
+        static let topViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height == 812 ? 75 + 24 : 75)
         static let localEncryptionKey = "LDUH!Zpq^yFnrhkPMy4Yevybx%WB*3428009wLgERlH"
     }
     
@@ -196,6 +196,7 @@ public struct GlobalConstants {
         static let smallText = UIFont(name: "Poppins-Regular", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let lightText = UIFont(name: "Poppins-Light", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let smallMediumText = UIFont(name: "Poppins-Medium", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
+        static let smallBoldText = UIFont(name: "Poppins-Bold", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
 
         static let titleText = UIFont(name: "Poppins-Black", size: 14.0)
         static let titleItalicText = UIFont(name: "Poppins-BlackItalic", size: 14.0)

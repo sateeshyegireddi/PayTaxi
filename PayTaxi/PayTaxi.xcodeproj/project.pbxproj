@@ -253,6 +253,10 @@
 		F9C065CE20DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
 		F9C065CF20DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
 		F9C065D020DE22F700620537 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C065CC20DE22F700620537 /* TopView.xib */; };
+		F9C065D220DE824B00620537 /* SendOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065D120DE824B00620537 /* SendOTP.swift */; };
+		F9C065D420DE824B00620537 /* SendOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065D120DE824B00620537 /* SendOTP.swift */; };
+		F9C065D720DE828200620537 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065D620DE828200620537 /* VerifyOTP.swift */; };
+		F9C065D820DE828200620537 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065D620DE828200620537 /* VerifyOTP.swift */; };
 		F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FB20B42B210043DFA5 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */; };
 		F9C234FE20B42B2B0043DFA5 /* SearchPlacesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */; };
@@ -463,6 +467,8 @@
 		F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F9C065C720DE22EA00620537 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F9C065CC20DE22F700620537 /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		F9C065D120DE824B00620537 /* SendOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTP.swift; sourceTree = "<group>"; };
+		F9C065D620DE828200620537 /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 		F9C234F920B42B210043DFA5 /* SearchPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesView.swift; sourceTree = "<group>"; };
 		F9C234FD20B42B2B0043DFA5 /* SearchPlacesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPlacesView.xib; sourceTree = "<group>"; };
 		F9C2350120B42D080043DFA5 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
@@ -651,6 +657,8 @@
 				F996C469209C9167007849B3 /* Navigation.swift */,
 				F961FE8520ABF4EF00580D62 /* Login.swift */,
 				F961FE8820ABF50600580D62 /* Registration.swift */,
+				F9C065D120DE824B00620537 /* SendOTP.swift */,
+				F9C065D620DE828200620537 /* VerifyOTP.swift */,
 				F9E1700320C05676001023B5 /* LocationSettings.swift */,
 				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 			);
@@ -1466,6 +1474,7 @@
 				F9A037DF20B164780044A1A5 /* PTTextField.swift in Sources */,
 				F96380BE20999BD600C3CC1E /* Splash.swift in Sources */,
 				F96E67A520A32B0000F00FEA /* MainMenu.swift in Sources */,
+				F9C065D720DE828200620537 /* VerifyOTP.swift in Sources */,
 				F996C46E209C91DB007849B3 /* OpenScreen.swift in Sources */,
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
 				F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
@@ -1482,6 +1491,7 @@
 				F9075DC120A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F9C2350A20B4388C0043DFA5 /* Place.swift in Sources */,
+				F9C065D220DE824B00620537 /* SendOTP.swift in Sources */,
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
 				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
 				F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
@@ -1559,6 +1569,7 @@
 				F9614FE520D5071100DADC0E /* TermsConditionsCell.swift in Sources */,
 				F9614FEE20D5073300DADC0E /* PTPickerView.swift in Sources */,
 				F961501E20D507DB00DADC0E /* User.swift in Sources */,
+				F9C065D820DE828200620537 /* VerifyOTP.swift in Sources */,
 				F9614FF720D5076800DADC0E /* LocationSettings.swift in Sources */,
 				F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */,
 				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
@@ -1575,6 +1586,7 @@
 				F961503620D508DE00DADC0E /* MainMenuCell.swift in Sources */,
 				F9614FE820D5071B00DADC0E /* CabCell.swift in Sources */,
 				F9614FF420D5075A00DADC0E /* Login.swift in Sources */,
+				F9C065D420DE824B00620537 /* SendOTP.swift in Sources */,
 				F9614FF320D5075A00DADC0E /* Navigation.swift in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F9614FEC20D5072E00DADC0E /* PTTextField.swift in Sources */,

@@ -202,7 +202,7 @@ class UtilityFunctions: NSObject {
     //MARK: - Styles
     func addRoudedBorder(to view: UIView, borderColor color: UIColor, borderWidth width: CGFloat) {
         
-        view.layer.cornerRadius = (view is UIButton) ? GlobalConstants.View.buttonCornerRadius : GlobalConstants.View.viewCornerRadius
+        view.layer.cornerRadius = GlobalConstants.View.buttonCornerRadius
         view.layer.masksToBounds = true
         view.layer.borderColor = color.cgColor
         view.layer.borderWidth = width
@@ -263,6 +263,14 @@ class UtilityFunctions: NSObject {
         label.text = title
         label.textColor = color
         label.font = fontType
+    }
+    
+    func setStyle(for button: UIButton, text title: String, backgroundColor color: UIColor) {
+        
+        button.setTitle(title, for: .normal)
+        button.backgroundColor = color
+        button.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
+        UtilityFunctions().addRoudedBorder(to: button, borderColor: UIColor.clear, borderWidth: 0)
     }
     
     //MARK: - Model
