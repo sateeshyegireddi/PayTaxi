@@ -58,6 +58,14 @@ class OpenScreen: NSObject {
         currentViewController.setViewControllers([home], animated: false)
     }
     
+    func selectDropPoint(_ currentViewController: UIViewController, isPickup pickup: Bool) {
+        
+        let selectDropPoint = storyboard.instantiateViewController(withIdentifier: "SelectLocation") as! SelectLocation
+        selectDropPoint.modalTransitionStyle = modalTransitionStyle
+        selectDropPoint.isPickup = pickup
+        currentViewController.navigationController?.pushViewController(selectDropPoint, animated: false)
+    }
+    
     func locationSettings(_ currentViewController: UIViewController) {
         
         let locationSettings = storyboard.instantiateViewController(withIdentifier: "LocationSettings") as! LocationSettings

@@ -14,8 +14,6 @@ import GooglePlaces
 class Home: UIViewController {
 
     //MARK: - Outlets
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var notificationsButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
     
     //MARK: - Variables
@@ -31,8 +29,6 @@ class Home: UIViewController {
     private var markers: [GMSMarker]!
     fileprivate var isFirst: Bool = true
     fileprivate var selectPickDropPointsView: SelectPickDropPointsView!
-    fileprivate var searchPlacesView: SearchPlacesView!
-    fileprivate var isPickupPointSelection: Bool!
     fileprivate var currentLocationMarker: GMSMarker!
     fileprivate var destinationLocationMarker: GMSMarker!
     fileprivate var cabsView: CabsView!
@@ -48,31 +44,18 @@ class Home: UIViewController {
         //Init variables
         markers = []
         places = []
-        isPickupPointSelection = true
         
         rootNavigation = navigationController as! Navigation
         rootNavigation.navigationDelegate = self
         
-        //Create and add mapView
-        presentMapView()
+        //Setup UI
+        setupUI()
         
         //Register for location updates
         registerForLocationUpdates()
         
         //Listen to sever events
         listenToEvents()
-        
-        //Setup Buttons
-        UtilityFunctions().addRoudedBorder(to: myLocationButton, showCorners: false, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        view.bringSubview(toFront: menuButton)
-        view.bringSubview(toFront: notificationsButton)
-        view.bringSubview(toFront: myLocationButton)
-        
-        //Add Select pickup and drop points view
-        addSelectPickAndDropPointsView()
-        
-        //Init autoComplete fetcher
-        initiateAutoCompleteFetcher()
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,8 +76,8 @@ class Home: UIViewController {
                 //Make this func async not getting crash
                 DispatchQueue.main.async {
                     
-                    weakSelf.selectPickDropPointsView.pickupPoint.title = address!
-                    weakSelf.selectPickDropPointsView.pickPointTextField.text = address
+                    //weakSelf.selectPickDropPointsView.pickupPoint.title = address!
+                    //weakSelf.selectPickDropPointsView.pickPointTextField.text = address
                 }
             } else {
                 
@@ -149,36 +132,7 @@ class Home: UIViewController {
         requestARide(of: .mini)
     }
 
-    //MARK: - Functions
-    
-    private func presentMapView() {
-        
-        // Create the default camera position with 0, 0 coordinates
-        let camera = GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: cameraZoom)
-        
-        //Create and assign mapView to view
-        mapView = GMSMapView.map(withFrame: CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.main.bounds.size), camera: camera)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        mapView.isTrafficEnabled = true
-        view.addSubview(mapView)
-        
-        //Allow map to show user's location
-        mapView.isMyLocationEnabled = true
-        
-        //Update map GUI
-        mapView.mapType = .normal
-        //mapView.settings.myLocationButton = true
-        //mapView.settings.compassButton = true
-        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 15)
-        
-        //Set custome style to mapView
-        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.silver)
-        
-        //Hide mapView initially
-        mapView.isHidden = true
-        myLocationButton.isHidden = true
-    }
-    
+    //MARK: - Location Functions
     private func registerForLocationUpdates() {
         
         //Ask device's permission to use location services
@@ -193,54 +147,8 @@ class Home: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
- 
-    private func addSelectPickAndDropPointsView() {
-        
-        //Create and add select pickup and drop points view
-        selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 106 : 82, width: view.bounds.width, height: 115), inView: self)
-        selectPickDropPointsView.delegate = self
-        view.addSubview(selectPickDropPointsView)
-        view.bringSubview(toFront: selectPickDropPointsView)
-    }
     
-    private func addSearchPlacesView() {
-        
-        //Calculate frame
-        let originY: CGFloat = UIScreen.main.bounds.height == 812 ? 106 + 115: 82 + 115
-        let frame = CGRect(x: 0, y: originY, width: view.bounds.width, height: view.bounds.height)
-        
-        //Create and add search places view
-        searchPlacesView = SearchPlacesView(frame: frame, inView: self)
-        searchPlacesView.delegate = self
-        view.addSubview(searchPlacesView)
-        view.bringSubview(toFront: searchPlacesView)
-    }
-    
-    private func removeSearchPlacesView() {
-        
-        searchPlacesView.removeFromSuperview()
-    }
-    
-    private func initiateAutoCompleteFetcher() {
-        
-        // Set bounds to inner-west Sydney Australia.
-//        let neBoundsCorner = CLLocationCoordinate2D(latitude: -33.843366,
-//                                                    longitude: 151.134002)
-//        let swBoundsCorner = CLLocationCoordinate2D(latitude: -33.875725,
-//                                                    longitude: 151.200349)
-//        let bounds = GMSCoordinateBounds(coordinate: neBoundsCorner,
-//                                         coordinate: swBoundsCorner)
-        
-        // Set up the autocomplete filter
-        let filter = GMSAutocompleteFilter()
-        filter.type = .establishment
-        filter.country = "IN"
-        
-        // Create the fetcher
-        fetcher = GMSAutocompleteFetcher(bounds: nil, filter: filter)
-        fetcher?.delegate = self
-    }
-    
+    //MARK: - Map Functions
     private func createPolyLinePath(with polyLinePoint: String) {
         
         //Create new path between source and destination
@@ -256,8 +164,8 @@ class Home: UIViewController {
     
     func showPathBetweenSourceAndDestination() {
         
-        let source = selectPickDropPointsView.pickupPoint.title.replacingOccurrences(of: " ", with: "+")
-        let destination = selectPickDropPointsView.dropPoint.title.replacingOccurrences(of: " ", with: "+")
+        let source = ""//selectPickDropPointsView.pickupPoint.title.replacingOccurrences(of: " ", with: "+")
+        let destination = ""//selectPickDropPointsView.dropPoint.title.replacingOccurrences(of: " ", with: "+")
         
         //Get routes between source and destination
         APIHandler().getRoutes(from: source, to: destination) { [weak self] (success, distance, duration, polyLinePoint, error) in
@@ -308,7 +216,7 @@ class Home: UIViewController {
                 //Remove marker from map before adding
                 weakSelf.destinationLocationMarker?.map = nil
                 weakSelf.destinationLocationMarker = nil
-
+                
                 //Create destination location marker
                 if weakSelf.destinationLocationMarker == nil {
                     
@@ -336,6 +244,66 @@ class Home: UIViewController {
         mapView.animate(with: GMSCameraUpdate.fit(bounds))
     }
     
+    func clearMarkers() {
+        
+        //Clear all markers, overlays and all..
+        for marker in markers {
+            marker.map = nil
+        }
+        markers.removeAll()
+        polyline?.map = nil
+        currentLocationMarker = nil
+    }
+    
+    //MARK: - Functions
+    private func setupUI() {
+        
+        //Add topView
+        let topView = TopView(frame: GlobalConstants.Constants.topViewFrame, on: self, title: "pay_taxi".localized, enableBack: false, showNotifications: true)
+        view.addSubview(topView)
+
+        //Create and add mapView
+        presentMapView()
+
+        //Setup Buttons
+        UtilityFunctions().addRoudedBorder(to: myLocationButton, showCorners: false, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
+        view.bringSubview(toFront: myLocationButton)
+        
+        //Create and add select pickup and drop points view
+        selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 106 : 82, width: view.bounds.width, height: 125), inView: self)
+        selectPickDropPointsView.delegate = self
+        view.addSubview(selectPickDropPointsView)
+        view.bringSubview(toFront: topView)
+    }
+    
+    private func presentMapView() {
+        
+        // Create the default camera position with 0, 0 coordinates
+        let camera = GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: cameraZoom)
+        
+        //Create and assign mapView to view
+        mapView = GMSMapView.map(withFrame: CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.main.bounds.size), camera: camera)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        mapView.isTrafficEnabled = true
+        view.addSubview(mapView)
+        
+        //Allow map to show user's location
+        mapView.isMyLocationEnabled = true
+        
+        //Update map GUI
+        mapView.mapType = .normal
+        //mapView.settings.myLocationButton = true
+        //mapView.settings.compassButton = true
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 15)
+        
+        //Set custome style to mapView
+        mapView.mapStyle = try? GMSMapStyle.init(jsonString: GlobalConstants.GoogleMapStyle.silver)
+        
+        //Hide mapView initially
+        mapView.isHidden = true
+        myLocationButton.isHidden = true
+    }
+    
     private func addCabsView() {
         
         //Calculate frame
@@ -347,17 +315,6 @@ class Home: UIViewController {
         cabsView.confirmPickupButton.addTarget(self, action: #selector(confirmPickupButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(cabsView)
         view.bringSubview(toFront: cabsView)
-    }
-    
-    func clearMarkers() {
-        
-        //Clear all markers, overlays and all..
-        for marker in markers {
-            marker.map = nil
-        }
-        markers.removeAll()
-        polyline?.map = nil
-        currentLocationMarker = nil        
     }
     
     //MARK: - Socket Listening Functions
@@ -623,80 +580,31 @@ extension Home: NavigationDelegate {
     }
 }
 
-//MARK: - GMSAutocompleteFetcher Delegate -
-extension Home: GMSAutocompleteFetcherDelegate {
+//MARK: - SearchPlacesView Delegate -
+extension Home: SelectLocationDelegate {
     
-    func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
+    func placeDidSelect(_ place: Place, isPickup: Bool) {
         
-        //Remove all places first
-        places.removeAll()
-        
-        //Add new place from autoCompletePrediction
-        for prediction in predictions {
-            let place = Place(id: prediction.placeID ?? "", title: prediction.attributedPrimaryText.string, subTitle: prediction.attributedFullText.string)
-            places.append(place)
-            print("\n",prediction.attributedFullText.string)
-            print("\n",prediction.attributedPrimaryText.string)
-            print("\n********")
+        //Update pick/drop point location
+        if isPickup {
+            
+            selectPickDropPointsView.pickPointButton.setTitle(place.title, for: .normal)
+        } else {
+            
+            selectPickDropPointsView.dropPointButton.setTitle(place.title, for: .normal)
         }
-        
-        //Reload data
-        searchPlacesView.places = places
-        searchPlacesView.reloadData()
-    }
-    
-    func didFailAutocompleteWithError(_ error: Error) {
-        
-        print(error.localizedDescription)
     }
 }
 
-//MARK: - SearchPlacesView Delegate -
-extension Home: SearchPlacesViewDelegate {
-    
-    func placeDidSelect(_ place: Place) {
-        
-        if isPickupPointSelection {
-            selectPickDropPointsView.pickupPoint = place
-            selectPickDropPointsView.pickPointTextField.text = place.title
-        } else {
-            selectPickDropPointsView.dropPoint = place
-            selectPickDropPointsView.dropPointTextField.text = place.title
-            clearMarkers()
-            createDestinationMarker(with: place)
-        }
-        
-        view.endEditing(true)
-        
-        //Remove search places view after selection of particular place
-        removeSearchPlacesView()
-    }
-}
 
 //MARK: - SelectPickDropPointsView Delegate -
 extension Home: SelectPickDropPointsViewDelegate {
     
-    func pickPointTextFieldDidChange(_ textField: UITextField) {
-        
-        isPickupPointSelection = true
-        fetcher?.sourceTextHasChanged(textField.text)
-    }
+    func moreDestinationsDidTap() { }
     
-    func dropPointTextFieldDidChange(_ textField: UITextField) {
+    func pickDropPointDidSelect(_ pickup: Bool) {
         
-        isPickupPointSelection = false
-        fetcher?.sourceTextHasChanged(textField.text)
+        OpenScreen().selectDropPoint(self, isPickup: pickup)
     }
-    
-    func placeTextFieldDidBeginEditing(_ textField: UITextField) {
-        
-        //Show search places view while searching for places
-        addSearchPlacesView()
-    }
-    
-    func placeTextFieldDidEndEditing(_ textField: UITextField) {
-        
-        //Remove search places view after selection of particular place
-        removeSearchPlacesView()
-    }
+
 }

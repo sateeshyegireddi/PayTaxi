@@ -94,7 +94,7 @@ class VerifyOTP: UIViewController {
     func setupUI() {
         
         //Add topView
-        let topView = TopView(frame: GlobalConstants.Constants.topViewFrame, on: self, title: "", enableBack: true)
+        let topView = TopView(frame: GlobalConstants.Constants.topViewFrame, on: self, title: "", enableBack: true, showNotifications: false)
         view.addSubview(topView)
         
         //Setup imageView

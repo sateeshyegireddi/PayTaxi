@@ -61,6 +61,10 @@
 "resend_code" = "RESEND CODE";
 "otp_on_call" = "OTP ON CALL";
 
+//Home
+"pay_taxi" = "Pay Taxi";
+"enter_drop_location" = "Enter drop location";
+
 //Pickup
 "confirm_pickup" = "CONFIRM PICKUP";
 
@@ -80,3 +84,11 @@
 //Home
 "current_location" = "Current Location";
 "destination" = "Destination please.?";
+"search_locality" = "Search for a locality or landmark";
+
+
+
+
+
+
+

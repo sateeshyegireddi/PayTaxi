@@ -197,6 +197,7 @@ public struct GlobalConstants {
         static let lightText = UIFont(name: "Poppins-Light", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let smallMediumText = UIFont(name: "Poppins-Medium", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let smallBoldText = UIFont(name: "Poppins-Bold", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
+        static let verySmallText = UIFont(name: "Poppins-Regular", size: 12.0)
 
         static let titleText = UIFont(name: "Poppins-Black", size: 14.0)
         static let titleItalicText = UIFont(name: "Poppins-BlackItalic", size: 14.0)

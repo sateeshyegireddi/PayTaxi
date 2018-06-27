@@ -214,7 +214,12 @@ class UtilityFunctions: NSObject {
         
         //Corners
         if corners {
-            view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
+            
+            if view.accessibilityIdentifier == "OffersView" {
+                view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
+            } else {
+                view.layer.cornerRadius = GlobalConstants.View.buttonCornerRadius
+            }
         }
         
         //Border
@@ -224,7 +229,7 @@ class UtilityFunctions: NSObject {
         //Shadow
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowRadius = 3
+        view.layer.shadowRadius = 8
         view.layer.shadowOpacity = 0.15
     }
     

@@ -10,28 +10,25 @@ import UIKit
 
 protocol SelectPickDropPointsViewDelegate {
     
-    func pickPointTextFieldDidChange(_ textField: UITextField)
-    func dropPointTextFieldDidChange(_ textField: UITextField)
-    func placeTextFieldDidBeginEditing(_ textField: UITextField)
-    func placeTextFieldDidEndEditing(_ textField: UITextField)
+    func moreDestinationsDidTap()
+    func pickDropPointDidSelect(_ pickup: Bool)
 }
 
 class SelectPickDropPointsView: UIView {
 
     //MARK: - Outlets
     @IBOutlet weak var pickPointView: UIView!
-    @IBOutlet weak var pickPointTextField: UITextField!
+    @IBOutlet weak var pickPointButton: UIButton!
     @IBOutlet weak var dropPointView: UIView!
-    @IBOutlet weak var dropPointTextField: UITextField!
+    @IBOutlet weak var dropPointButton: UIButton!
+    @IBOutlet weak var elementHeight: NSLayoutConstraint!
     
     //MARK: - Variables
     fileprivate weak var vc: UIViewController!
     fileprivate weak var view: UIView!
-    var pickupPoint: Place!
-    var dropPoint: Place!
     var delegate: SelectPickDropPointsViewDelegate?
     
-    //MARK: - View
+    //MARK: - Initialization
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -40,6 +37,7 @@ class SelectPickDropPointsView: UIView {
         super.init(frame: frame)
         xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.vc = vc
+        self.setupUI()
     }
     
     override init(frame: CGRect) {
@@ -47,6 +45,7 @@ class SelectPickDropPointsView: UIView {
         xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
     }
     
+    //MARK: - View
     private func xibSetup(frame: CGRect) {
         
         view = loadViewFromNib()
@@ -56,24 +55,6 @@ class SelectPickDropPointsView: UIView {
         
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
-        
-        //Init
-        pickupPoint = Place()
-        dropPoint = Place()
-        
-        //Setup view
-        UtilityFunctions().addRoudedBorder(to: pickPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        UtilityFunctions().addRoudedBorder(to: dropPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        
-        //Setup textFields
-        pickPointTextField.delegate = self
-        dropPointTextField.delegate = self
-        pickPointTextField.attributedPlaceholder = NSAttributedString(string: "current_location".localized, attributes: [NSAttributedStringKey.foregroundColor: GlobalConstants.Colors.tungesten])
-        dropPointTextField.attributedPlaceholder = NSAttributedString(string: "destination".localized, attributes: [NSAttributedStringKey.foregroundColor: GlobalConstants.Colors.tungesten])
-        pickPointTextField.textColor = GlobalConstants.Colors.tungesten
-        dropPointTextField.textColor = GlobalConstants.Colors.tungesten
-        pickPointTextField.addTarget(self, action: #selector(pickPointTextFieldDidChange(_:)), for: .editingChanged)
-        dropPointTextField.addTarget(self, action: #selector(dropPointTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func loadViewFromNib() -> UIView {
@@ -86,43 +67,31 @@ class SelectPickDropPointsView: UIView {
     }
     
     //MARK: - Actions
-    @objc func pickPointTextFieldDidChange(_ textField: UITextField) {
-        
-        delegate?.pickPointTextFieldDidChange(textField)
+    @IBAction func moreDestinationsButtonTapped(_ sender: UIButton) {
+    
+        delegate?.moreDestinationsDidTap()
     }
     
-    @objc func dropPointTextFieldDidChange(_ textField: UITextField) {
+    @IBAction func pickupPointButtonTapped(_ sender: UIButton) {
+    
+        delegate?.pickDropPointDidSelect(sender == pickPointButton)
+    }
+    
+    //MARK: - Functions
+    private func setupUI() {
         
-        delegate?.dropPointTextFieldDidChange(textField)
+        //Setup view
+        elementHeight.constant = UIScreen.main.bounds.width == 320 ? 45 : 50
+        UtilityFunctions().addRoudedBorder(to: pickPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
+        UtilityFunctions().addRoudedBorder(to: dropPointView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
+        
+        //Setup textFields
+        pickPointButton.setTitle("current_location".localized, for: .normal)
+        pickPointButton.titleLabel?.font = GlobalConstants.Fonts.verySmallText!
+        pickPointButton.setTitleColor(GlobalConstants.Colors.tungesten, for: .normal)
+        
+        dropPointButton.setTitle("destination".localized, for: .normal)
+        dropPointButton.titleLabel?.font = GlobalConstants.Fonts.verySmallText!
+        dropPointButton.setTitleColor(GlobalConstants.Colors.tungesten, for: .normal)
     }
  }
-
-//MARK: - UITextField Delegate
-extension SelectPickDropPointsView: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-     
-        delegate?.placeTextFieldDidBeginEditing(textField)
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if textField == pickPointTextField {
-            pickupPoint.title = pickPointTextField.text!
-        } else {
-            dropPoint.title = dropPointTextField.text!
-        }
-        delegate?.placeTextFieldDidEndEditing(textField)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        return true
-    }
-}

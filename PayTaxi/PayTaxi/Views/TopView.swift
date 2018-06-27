@@ -21,6 +21,7 @@ class TopView: UIView {
     fileprivate weak var view: UIView!
     var title: String!
     var enableBack: Bool!
+    var showNotifications: Bool!
     
     //MARK: - Initialization
     override init(frame: CGRect) {
@@ -32,12 +33,13 @@ class TopView: UIView {
         super.init(coder: aDecoder)
     }
     
-    init(frame: CGRect, on vc: UIViewController, title text: String, enableBack back: Bool) {
+    init(frame: CGRect, on vc: UIViewController, title text: String, enableBack back: Bool, showNotifications show: Bool) {
         super.init(frame: frame)
         xibSetup(frame: CGRect(origin: CGPoint.zero, size: frame.size))
         self.vc = vc
         self.title = text
         self.enableBack = back
+        self.showNotifications = show
         self.setupUI()
     }
     
@@ -78,7 +80,7 @@ class TopView: UIView {
         leftButton.setImage(enableBack ? #imageLiteral(resourceName: "icon-back-arrow-white") : #imageLiteral(resourceName: "icon-menu"), for: .normal)
         UtilityFunctions().addRoundness(to: [.topRight, .bottomRight], for: leftButton)
         
-        rightButton.isHidden = enableBack
+        rightButton.isHidden = !showNotifications
         rightButton.backgroundColor = GlobalConstants.Colors.blue
         rightButton.setImage(#imageLiteral(resourceName: "icon-notifications"), for: .normal)
         UtilityFunctions().addRoundness(to: [.topLeft, .bottomLeft], for: rightButton)
