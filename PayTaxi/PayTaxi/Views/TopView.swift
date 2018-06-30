@@ -40,7 +40,7 @@ class TopView: UIView {
         self.title = text
         self.enableBack = back
         self.showNotifications = show
-        self.setupUI()
+        self.setupView()
     }
     
     //MARK: - View
@@ -63,7 +63,7 @@ class TopView: UIView {
         return view
     }
     
-    private func setupUI() {
+    private func setupView() {
         
         //Setup view
         view.backgroundColor = UIColor.clear

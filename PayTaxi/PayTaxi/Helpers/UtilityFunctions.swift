@@ -322,7 +322,7 @@ class UtilityFunctions: NSObject {
     
     //MARK: - Custom UI
     
-    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool, delegate vc: UIViewController, tag tagValue: Int) {
+    func setTextField(_ textField: PTTextField, text textString: String, placeHolderText placeHolder: String, image leftImage: UIImage?, validText valid: Bool, delegate responder: UIResponder, tag tagValue: Int) {
         
         textField.margin = 15
         textField.borderColor = GlobalConstants.Colors.megnisium
@@ -331,7 +331,7 @@ class UtilityFunctions: NSObject {
         textField.invalidText = !valid
         textField.placeHolderText = placeHolder
         textField.image = leftImage
-        textField.delegate = vc as? PTTextFieldDelegate
+        textField.delegate = responder as? PTTextFieldDelegate
         textField.tag = tagValue
     }
     
@@ -407,7 +407,7 @@ class UtilityFunctions: NSObject {
     //MARK: - Keyboard Functions
     func keyboardWillShow(_ notification: NSNotification, inView: UIView, percent: CGFloat) {
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             inView.frame.origin.y = 0 - keyboardSize.height * percent
         }
     }

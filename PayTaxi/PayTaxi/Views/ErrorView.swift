@@ -32,7 +32,7 @@ class ErrorView: UIView {
         self.vc = vc
         self.title = text
         self.image = pic
-        setupUI()
+        setupView()
     }
     
     override init(frame: CGRect) {
@@ -61,7 +61,7 @@ class ErrorView: UIView {
         return view
     }
     
-    private func setupUI() {
+    private func setupView() {
         
         //Setup view
         view.backgroundColor = GlobalConstants.Colors.maraschino

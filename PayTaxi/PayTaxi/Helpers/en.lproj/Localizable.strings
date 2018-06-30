@@ -67,6 +67,10 @@
 
 //Pickup
 "confirm_pickup" = "CONFIRM PICKUP";
+"home" = "HOME";
+"work" = "WORK";
+"other" = "OTHER";
+"save" = "SAVE";
 
 //MARK: - Placeholders
 

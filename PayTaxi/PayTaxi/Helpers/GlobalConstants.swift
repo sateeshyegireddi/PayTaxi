@@ -184,6 +184,7 @@ public struct GlobalConstants {
         static let maraschino = #colorLiteral(red: 0.8078431373, green: 0.0431372549, blue: 0.1411764706, alpha: 1)    //UIColor(red: 208/255, green: 002/255, blue: 027/255, alpha: 1)
         static let aqua       = #colorLiteral(red: 0.2, green: 0.7843137255, blue: 0.9058823529, alpha: 1)    //UIColor(red: 051/255, green: 200/255, blue: 231/255, alpha: 1)
         static let planetblue = #colorLiteral(red: 0.168627451, green: 0.2196078431, blue: 0.5529411765, alpha: 1)    //UIColor(red: 043/255, green: 056/255, blue: 141/255, alpha: 1)
+        static let green      = #colorLiteral(red: 0.4941176471, green: 0.8274509804, blue: 0.1294117647, alpha: 1)    //UIColor(red: 126/255, green: 211/255, blue: 033/255, alpha: 1)
     }
     
     //MARK: -

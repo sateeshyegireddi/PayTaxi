@@ -81,7 +81,13 @@ class PTTextField: UIView {
         }
     }
     
-    public func textFieldbecomeFirstResponder() {
+    @IBInspectable public var imageViewContentMode: UIViewContentMode = .center {
+        didSet {
+            imageView?.contentMode = imageViewContentMode
+        }
+    }
+    
+    public func textFieldBecomeFirstResponder() {
         
         let _ = textField?.becomeFirstResponder()
     }

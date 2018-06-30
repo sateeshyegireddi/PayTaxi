@@ -96,6 +96,7 @@ class SelectLocation: UIViewController {
         locationTextField.textColor = GlobalConstants.Colors.tungesten
         locationTextField.font = GlobalConstants.Fonts.verySmallText!
         locationTextField.addTarget(self, action: #selector(locationTextFieldDidChange(_:)), for: .editingChanged)
+        locationTextField.delegate = self
     }
 }
 
@@ -173,5 +174,15 @@ extension SelectLocation: GMSAutocompleteFetcherDelegate {
     func didFailAutocompleteWithError(_ error: Error) {
         
         print(error.localizedDescription)
+    }
+}
+
+//MARK: -
+extension SelectLocation: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
     }
 }

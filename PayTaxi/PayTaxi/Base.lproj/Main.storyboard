@@ -637,16 +637,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-fE-hv8">
-                                <rect key="frame" x="20" y="94" width="335" height="48"/>
+                                <rect key="frame" x="20" y="94" width="335" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-destination-location" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-fI-1mg">
-                                        <rect key="frame" x="25" y="17" width="14" height="14"/>
+                                        <rect key="frame" x="25" y="17" width="14" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="0cc-Os-PZJ"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination please.?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fog-Ay-EDi">
-                                        <rect key="frame" x="54" y="0.0" width="241" height="48"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fog-Ay-EDi">
+                                        <rect key="frame" x="54" y="0.0" width="241" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -662,12 +662,13 @@
                                     <constraint firstItem="fog-Ay-EDi" firstAttribute="top" secondItem="f1B-fE-hv8" secondAttribute="top" id="7c7-su-o4V"/>
                                     <constraint firstAttribute="bottom" secondItem="fog-Ay-EDi" secondAttribute="bottom" id="T1F-Bx-P5k"/>
                                     <constraint firstAttribute="trailing" secondItem="fog-Ay-EDi" secondAttribute="trailing" constant="40" id="VqU-CV-8Td"/>
+                                    <constraint firstAttribute="height" constant="50" id="YZj-OX-F11"/>
                                     <constraint firstItem="fog-Ay-EDi" firstAttribute="leading" secondItem="gmQ-fI-1mg" secondAttribute="trailing" constant="15" id="Yyw-9I-gBr"/>
                                     <constraint firstItem="gmQ-fI-1mg" firstAttribute="leading" secondItem="f1B-fE-hv8" secondAttribute="leading" constant="25" id="g4v-9V-PsK"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t53-3u-Vx9">
-                                <rect key="frame" x="20" y="162" width="335" height="505"/>
+                                <rect key="frame" x="20" y="164" width="335" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XkJ-dr-PJl" id="hgH-6Q-SM6"/>

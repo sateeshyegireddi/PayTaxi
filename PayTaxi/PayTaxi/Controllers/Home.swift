@@ -37,6 +37,9 @@ class Home: UIViewController {
 
     var trackedUser: [String:AnyObject]!
     
+    //30, June, 2018
+    fileprivate var saveFavouriteLocationView: SaveFavouriteLocationView!
+
     //MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -270,7 +273,7 @@ class Home: UIViewController {
         view.bringSubview(toFront: myLocationButton)
         
         //Create and add select pickup and drop points view
-        selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 106 : 82, width: view.bounds.width, height: 125), inView: self)
+        selectPickDropPointsView = SelectPickDropPointsView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height == 812 ? 111 : 87, width: view.bounds.width, height: 125), inView: self)
         selectPickDropPointsView.delegate = self
         view.addSubview(selectPickDropPointsView)
         view.bringSubview(toFront: topView)
@@ -317,6 +320,21 @@ class Home: UIViewController {
         view.bringSubview(toFront: cabsView)
     }
     
+    //MARK: - Save Home/Work/Other Location
+    private func addFavouriteLocationView() {
+        
+        //Create and add SaveFavouriteLocationView
+        saveFavouriteLocationView = SaveFavouriteLocationView(frame: view.bounds, on: self)
+        saveFavouriteLocationView.delegate = self
+        view.addSubview(saveFavouriteLocationView)
+        view.bringSubview(toFront: saveFavouriteLocationView)
+    }
+    
+    private func removeFavouriteLocationView() {
+        
+        saveFavouriteLocationView.removeFromSuperview()
+    }
+
     //MARK: - Socket Listening Functions
     
     //Listen to all necessary events
@@ -596,15 +614,27 @@ extension Home: SelectLocationDelegate {
     }
 }
 
-
 //MARK: - SelectPickDropPointsView Delegate -
 extension Home: SelectPickDropPointsViewDelegate {
     
-    func moreDestinationsDidTap() { }
+    func moreDestinationsDidTap() {
+        
+        //Add favourite location view
+        addFavouriteLocationView()
+    }
     
     func pickDropPointDidSelect(_ pickup: Bool) {
         
         OpenScreen().selectDropPoint(self, isPickup: pickup)
     }
 
+}
+
+//MARK: - SaveFavouriteLocationView Delegate -
+extension Home: SaveFavouriteLocationViewDelegate {
+    
+    func saveDestinationLocation(_ location: String) {
+        
+        removeFavouriteLocationView()
+    }
 }
