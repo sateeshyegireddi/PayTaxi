@@ -307,17 +307,19 @@ class Home: UIViewController {
         myLocationButton.isHidden = true
     }
     
+    //MARK: - List Available Cabs
     private func addCabsView() {
         
-        //Calculate frame
-        let originY: CGFloat = UIScreen.main.bounds.height == 812 ? view.bounds.height - 260 - 20 : view.bounds.height - 260
-        let frame = CGRect(x: 0, y: originY, width: view.bounds.width, height: UIScreen.main.bounds.height == 812 ? 280 : 260)
-        
         //Create and add cabs view
-        cabsView = CabsView(frame: frame, inView: self)
-        cabsView.confirmPickupButton.addTarget(self, action: #selector(confirmPickupButtonTapped(_:)), for: .touchUpInside)
+        cabsView = CabsView(frame: view.bounds, inView: self)
+        cabsView.requestRideButton.addTarget(self, action: #selector(confirmPickupButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(cabsView)
         view.bringSubview(toFront: cabsView)
+    }
+    
+    private func removeCabsView() {
+        
+        cabsView.removeFromSuperview()
     }
     
     //MARK: - Save Home/Work/Other Location

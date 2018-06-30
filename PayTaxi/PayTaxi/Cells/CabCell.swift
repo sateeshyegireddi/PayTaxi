@@ -11,9 +11,9 @@ import UIKit
 class CabCell: UICollectionViewCell {
 
     //MARK: - Outlets
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var cabImageView: UIImageView!
+    @IBOutlet weak var cabTypeLabel: UILabel!
     
     //MARK: - Variables
     public static let identifier = "CabCell"
@@ -27,14 +27,23 @@ class CabCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor.clear
         
         //Setup label
-        titleLabel.layer.cornerRadius = 3
-        titleLabel.layer.masksToBounds = true
+        UtilityFunctions().setStyleForLabel(priceLabel, text: "", textColor: GlobalConstants.Colors.megnisium,
+                                            font: GlobalConstants.Fonts.textFieldMediumText!)
+        UtilityFunctions().setStyleForLabel(cabTypeLabel, text: "", textColor: GlobalConstants.Colors.megnisium,
+                                            font: GlobalConstants.Fonts.textFieldBoldText!)
+    }
+    
+    func setPrice(_ price: String, cabType type: String, cabImage image: UIImage) {
+        
+        priceLabel.text = price
+        cabTypeLabel.text = type
+        cabImageView.image = image
     }
     
     func highlightView(_ highlight: Bool) {
         
-        titleLabel.backgroundColor = highlight ? GlobalConstants.Colors.aqua : GlobalConstants.Colors.silver
-        priceLabel.textColor = highlight ? GlobalConstants.Colors.aqua : GlobalConstants.Colors.silver
-        imageView.image = highlight ? #imageLiteral(resourceName: "icon-select-cab") : #imageLiteral(resourceName: "icon-deselct-cab")
+//        titleLabel.backgroundColor = highlight ? GlobalConstants.Colors.aqua : GlobalConstants.Colors.silver
+//        priceLabel.textColor = highlight ? GlobalConstants.Colors.aqua : GlobalConstants.Colors.silver
+//        imageView.image = highlight ? #imageLiteral(resourceName: "icon-select-cab") : #imageLiteral(resourceName: "icon-deselct-cab")
     }
 }

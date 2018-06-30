@@ -71,6 +71,7 @@
 "work" = "WORK";
 "other" = "OTHER";
 "save" = "SAVE";
+"request_ride" = "REQUEST RIDE";
 
 //MARK: - Placeholders
 

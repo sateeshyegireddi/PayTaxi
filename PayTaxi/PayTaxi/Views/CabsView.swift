@@ -11,15 +11,20 @@ import UIKit
 class CabsView: UIView {
 
     //MARK: - Outlets
-    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var overlayImageView: UIImageView!
+    @IBOutlet weak var requestRideButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var cabsCollectionView: UICollectionView!
-    @IBOutlet weak var confirmPickupButton: UIButton!
+    @IBOutlet weak var etaLabel: UILabel!
+    @IBOutlet weak var safeAreaView: UIView!
     
     //MARK: - Variables
     fileprivate weak var vc: UIViewController!
     fileprivate weak var view: UIView!
-    var selectedCabIndex: Int = 0
+    fileprivate var selectedCabIndex: Int = 0
     var titles: [String]!
+    var message: String!
+    var arrivalTime: String!
     
     //MARK: - View
     required init?(coder aDecoder: NSCoder) {
@@ -30,6 +35,7 @@ class CabsView: UIView {
         super.init(frame: frame)
         xibSetup(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.vc = vc
+        self.setupView()
     }
     
     override init(frame: CGRect) {
@@ -46,18 +52,6 @@ class CabsView: UIView {
         
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
-        
-        //Init
-        titles = ["Mini", "Sedan", "Hatchback", "MPV", "SUV"]
-        //Setup view
-        view.backgroundColor = UIColor.clear
-        UtilityFunctions().addRoudedBorder(to: overlayView, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        //confirmPickupButton.backgroundColor = GlobalConstants.Colors.green
-        UtilityFunctions().addRoudedBorder(to: confirmPickupButton, showCorners: true, borderColor: UIColor.clear, borderWidth: 0, showShadow: true)
-        confirmPickupButton.setTitle("confirm_pickup".localized, for: .normal)
-        
-        //Register cell to tableView
-        registerCells()
     }
     
     private func loadViewFromNib() -> UIView {
@@ -70,7 +64,39 @@ class CabsView: UIView {
     }
     
     //MARK: - Functions
-    func registerCells() {
+    private func setupView() {
+        
+        //Init Variables
+        titles = ["MINI", "RENAL", "SHARE", "MICRO", "SUV"]
+        message = "Sample message here...!"
+        arrivalTime = "ETA - --MIN"
+        
+        //Setup view
+        view.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.clear
+        safeAreaView.backgroundColor = GlobalConstants.Colors.orange
+        
+        //Setup ImageView
+        overlayImageView.image = #imageLiteral(resourceName: "cab-select-background")
+
+        //Setup Label
+        UtilityFunctions().setStyleForLabel(messageLabel, text: message,
+                                            textColor: GlobalConstants.Colors.megnisium,
+                                            font: GlobalConstants.Fonts.smallBoldText!)
+        UtilityFunctions().setStyleForLabel(etaLabel, text: arrivalTime,
+                                            textColor: UIColor.white,
+                                            font: GlobalConstants.Fonts.textFieldBoldText!)
+        etaLabel.backgroundColor = GlobalConstants.Colors.orange
+        
+        //Setup Button
+        UtilityFunctions().setStyle(for: requestRideButton, text: "request_ride".localized,
+                                    backgroundColor: GlobalConstants.Colors.green)
+        
+        //Register cell to CollectionView
+        registerCells()
+    }
+    
+    private func registerCells() {
         
         let nib = UINib(nibName: CabCell.identifier, bundle: nil)
         cabsCollectionView.register(nib, forCellWithReuseIdentifier: CabCell.identifier)
@@ -89,6 +115,13 @@ class CabsView: UIView {
         
         
     }
+    
+    @IBAction func tapOnView(_ sender: UITapGestureRecognizer) {
+        
+        //Hide keyboard if user is tapped out of content view
+        if sender.state == .ended { removeFromSuperview() }
+    }
+    
 }
 
 //MARK: - UICollectionView Delegate -
@@ -96,13 +129,13 @@ extension CabsView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 95, height: 160)
+        return CGSize(width: 90, height: 100)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,8 +148,7 @@ extension CabsView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         cell.highlightView(selectedCabIndex == indexPath.row)
         
         //Show dummy data
-        cell.priceLabel.text = "₹\(indexPath.row * 200 + 260)"
-        cell.titleLabel.text = titles[indexPath.row]
+        cell.setPrice("₹\(indexPath.row * 200 + 260)", cabType: titles[indexPath.row], cabImage: #imageLiteral(resourceName: "icon-cab-mini-select"))
         
         //Return cell
         return cell
