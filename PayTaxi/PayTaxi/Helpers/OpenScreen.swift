@@ -72,6 +72,13 @@ class OpenScreen: NSObject {
         locationSettings.modalTransitionStyle = modalTransitionStyle
         currentViewController.present(locationSettings, animated: false, completion: nil)
     }
+    
+    func payment(_ currentViewController: UIViewController) {
+        
+        let payments = storyboard.instantiateViewController(withIdentifier: "Payments") as! Payments
+        payments.modalTransitionStyle = modalTransitionStyle
+        currentViewController.present(payments, animated: false, completion: nil)
+    }
     /*
     func registration(_ currentViewController: UIViewController) {
         

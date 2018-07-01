@@ -249,6 +249,12 @@
 		F9AC8E2F20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */; };
 		F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
 		F9AC8E3220B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */; };
+		F9AD4D1C20E7CBE700B0DA75 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */; };
+		F9AD4D1D20E7CBE700B0DA75 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */; };
+		F9AD4D2020E7DE1000B0DA75 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD4D1E20E7DE1000B0DA75 /* OfferCell.swift */; };
+		F9AD4D2120E7DE1000B0DA75 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD4D1E20E7DE1000B0DA75 /* OfferCell.swift */; };
+		F9AD4D2220E7DE1000B0DA75 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AD4D1F20E7DE1000B0DA75 /* OfferCell.xib */; };
+		F9AD4D2320E7DE1000B0DA75 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AD4D1F20E7DE1000B0DA75 /* OfferCell.xib */; };
 		F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
 		F9B5ED0A20C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */; };
 		F9C065C820DE22EA00620537 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C065C720DE22EA00620537 /* TopView.swift */; };
@@ -473,6 +479,9 @@
 		F9AB2AF220B4817100E6E1A8 /* CabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabCell.xib; sourceTree = "<group>"; };
 		F9AC8E2C20B1E55A007D8D42 /* EditTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextFieldCell.swift; sourceTree = "<group>"; };
 		F9AC8E2D20B1E55A007D8D42 /* EditTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextFieldCell.xib; sourceTree = "<group>"; };
+		F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		F9AD4D1E20E7DE1000B0DA75 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		F9AD4D1F20E7DE1000B0DA75 /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
 		F9B5ED0820C3BD51008E35B4 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F9C065C720DE22EA00620537 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F9C065CC20DE22F700620537 /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
@@ -626,6 +635,8 @@
 				F9C2350220B42D080043DFA5 /* PlaceCell.xib */,
 				F9AB2AF120B4817100E6E1A8 /* CabCell.swift */,
 				F9AB2AF220B4817100E6E1A8 /* CabCell.xib */,
+				F9AD4D1E20E7DE1000B0DA75 /* OfferCell.swift */,
+				F9AD4D1F20E7DE1000B0DA75 /* OfferCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -673,6 +684,7 @@
 				F9E1700320C05676001023B5 /* LocationSettings.swift */,
 				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 				F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */,
+				F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1138,6 +1150,7 @@
 				F9A0384A20B199B60044A1A5 /* Poppins-Bold.ttf in Resources */,
 				F9A0383520B199B60044A1A5 /* Poppins-Medium.ttf in Resources */,
 				F9C234FE20B42B2B0043DFA5 /* SearchPlacesView.xib in Resources */,
+				F9AD4D2220E7DE1000B0DA75 /* OfferCell.xib in Resources */,
 				F9857A252097312800F2139A /* Assets.xcassets in Resources */,
 				F9A0380C20B17E240044A1A5 /* Localizable.strings in Resources */,
 				F9A0382620B199B60044A1A5 /* Poppins-ExtraLight.ttf in Resources */,
@@ -1211,6 +1224,7 @@
 				F9A0385E20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */,
 				F9A0384C20B199B60044A1A5 /* Poppins-Bold.ttf in Resources */,
 				F9A0383120B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
+				F9AD4D2320E7DE1000B0DA75 /* OfferCell.xib in Resources */,
 				F9A0383420B199B60044A1A5 /* Poppins-Light.ttf in Resources */,
 				F9C6A59420B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */,
 				F9A0385220B199B60044A1A5 /* Poppins-Black.ttf in Resources */,
@@ -1500,6 +1514,7 @@
 				F9C065C820DE22EA00620537 /* TopView.swift in Sources */,
 				F9C2350320B42D080043DFA5 /* PlaceCell.swift in Sources */,
 				F9E1700420C05676001023B5 /* LocationSettings.swift in Sources */,
+				F9AD4D2020E7DE1000B0DA75 /* OfferCell.swift in Sources */,
 				F961FE8C20ABF5DB00580D62 /* MapMarker.swift in Sources */,
 				F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */,
 				F9075DC120A1AA09001A2E02 /* SocketsManager.swift in Sources */,
@@ -1521,6 +1536,7 @@
 				F9E1700B20C06B35001023B5 /* Validator.swift in Sources */,
 				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
 				F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */,
+				F9AD4D1C20E7CBE700B0DA75 /* Payments.swift in Sources */,
 				F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */,
 				F9C2350E20B4778A0043DFA5 /* CabsView.swift in Sources */,
 				F96380D92099A74A00C3CC1E /* Keychain.swift in Sources */,
@@ -1597,6 +1613,7 @@
 				F9C065CA20DE22EA00620537 /* TopView.swift in Sources */,
 				F9C2350C20B4388C0043DFA5 /* Place.swift in Sources */,
 				F961502220D5083300DADC0E /* CabsView.swift in Sources */,
+				F9AD4D2120E7DE1000B0DA75 /* OfferCell.swift in Sources */,
 				F9614FF520D5075A00DADC0E /* Registration.swift in Sources */,
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
 				F961503620D508DE00DADC0E /* MainMenuCell.swift in Sources */,
@@ -1618,6 +1635,7 @@
 				F9614FF020D5074200DADC0E /* PTLoading.swift in Sources */,
 				F9614FE220D5070600DADC0E /* EditTextFieldCell.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
+				F9AD4D1D20E7CBE700B0DA75 /* Payments.swift in Sources */,
 				F9614FF620D5075A00DADC0E /* Home.swift in Sources */,
 				F9614FFF20D5079500DADC0E /* UtilityFunctions.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,

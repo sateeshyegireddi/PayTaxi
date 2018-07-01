@@ -233,6 +233,31 @@ class UtilityFunctions: NSObject {
         view.layer.shadowOpacity = 0.15
     }
     
+    func addRoudedBorder(to view: UIView, showCorners corners: Bool, borderColor color: UIColor, borderWidth width: CGFloat, showShadow show: Bool, shadowColor shadow: UIColor) {
+        
+        view.layer.masksToBounds = false
+        
+        //Corners
+        if corners {
+            
+            if view.accessibilityIdentifier == "OffersView" {
+                view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
+            } else {
+                view.layer.cornerRadius = GlobalConstants.View.buttonCornerRadius
+            }
+        }
+        
+        //Border
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = width
+        
+        //Shadow
+        view.layer.shadowColor = shadow.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.8
+    }
+    
     func addAttributedFont(for button: UIButton, till index: Int) {
         
         let attributedString = NSMutableAttributedString(string: button.titleLabel!.text!)
@@ -276,6 +301,22 @@ class UtilityFunctions: NSObject {
         button.backgroundColor = color
         button.titleLabel?.font = GlobalConstants.Fonts.textFieldBoldText!
         UtilityFunctions().addRoudedBorder(to: button, borderColor: UIColor.clear, borderWidth: 0)
+    }
+    
+    
+    func addPriceStyle(for label: UILabel, text title: String) {
+        
+        label.text = title
+        label.textColor = GlobalConstants.Colors.iron
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.priceText!,
+                                      range: NSRange.init(location: 0, length: title.count - 4))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: GlobalConstants.Fonts.rupeeText!,
+                                      range: NSRange.init(location: title.count - 3, length: 3))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                      value: GlobalConstants.Colors.iron.withAlphaComponent(0.55),
+                                      range: NSRange.init(location: 0, length: title.count))
+        label.attributedText = attributedString
     }
     
     //MARK: - Model

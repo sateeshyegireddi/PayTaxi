@@ -15,17 +15,21 @@
 
 //MARK: - Common messages
 
-//Login
+// Login
 "login_message" = "Login to continue using PayTaxi";
 
-//Registration
+// Registration
 "registration_message" = "Signup with PayTaxi in simple steps";
 "terms_conditions_message" = "Upon clicking Signup you are accepting Terms and Conditions";
 
-//Forgot Password
+// Forgot Password
 "otp_sent_message" = "We will send you a one time SMS message. Carrier rates may apply.";
 "verify_otp_message" = "Please type the Verification Code sent to";
 "otp_not_recieve_message" = "Didn’t receive the OTP?";
+
+// Payment
+"estimated_fare_message" = "ESTIMATED FARE";
+"payment_confirm_message" = "YOU HAVE TO PAY";
 
 //MARK: - Validation messages
 "email_validation" = "Please enter valid Email";
@@ -37,23 +41,23 @@
 
 //MARK: - Titles
 
-//General
+// General
 "welcome_back" = "Welcome Back!";
 "welcome_abord" = "Welcome Abord!";
 "ok" = "OK";
 "cancel" = "Cancel";
 
-//Login
+// Login
 "forgot_password" = "Forgot password?";
 "login" = "LOGIN";
 "new_user" = "Don't have an account?   Signup!";
 
-//Registration
+// Registration
 "signup" = "SIGNUP";
 "existing_user" = "Already a user?   Login  now";
 "terms_conditions" = "Terms and Conditions";
 
-//Forgot Password
+// Forgot Password
 "otp" = "OTP";
 "send" = "SEND";
 "verification_code" = "Verification Code";
@@ -61,11 +65,11 @@
 "resend_code" = "RESEND CODE";
 "otp_on_call" = "OTP ON CALL";
 
-//Home
+// Home
 "pay_taxi" = "Pay Taxi";
 "enter_drop_location" = "Enter drop location";
 
-//Pickup
+// Pickup
 "confirm_pickup" = "CONFIRM PICKUP";
 "home" = "HOME";
 "work" = "WORK";
@@ -73,20 +77,24 @@
 "save" = "SAVE";
 "request_ride" = "REQUEST RIDE";
 
+// Payment
+"payment_method" = "Payment Method";
+"confirm_ride" = "CONFIRM RIDE";
+
 //MARK: - Placeholders
 
-//Login
+// Login
 "mobile" = "Mobile number";
 "password" = "Password";
 
-//Registration
+// Registration
 "user_name" = "User name";
 "gender" = "Gender";
 "email" = "Email";
 "driver_license_no" = "Driver license no";
 "vehicle_registration_no" = "Vehicle registration no";
 
-//Home
+// Home
 "current_location" = "Current Location";
 "destination" = "Destination please.?";
 "search_locality" = "Search for a locality or landmark";
