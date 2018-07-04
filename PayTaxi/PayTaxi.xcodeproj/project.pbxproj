@@ -236,6 +236,12 @@
 		F9A0385C20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
 		F9A0385D20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
 		F9A0385E20B199B60044A1A5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */; };
+		F9A4145A20E8CE42002D37A7 /* RideNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A4145920E8CE42002D37A7 /* RideNow.swift */; };
+		F9A4145B20E8CE42002D37A7 /* RideNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A4145920E8CE42002D37A7 /* RideNow.swift */; };
+		F9A4145D20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A4145C20E8D0BB002D37A7 /* DriverInfoView.swift */; };
+		F9A4145E20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A4145C20E8D0BB002D37A7 /* DriverInfoView.swift */; };
+		F9A4146020E8D0E5002D37A7 /* DriverInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A4145F20E8D0E5002D37A7 /* DriverInfoView.xib */; };
+		F9A4146120E8D0E5002D37A7 /* DriverInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A4145F20E8D0E5002D37A7 /* DriverInfoView.xib */; };
 		F9A51E0A20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A51E0920E3EE83002A20AE /* SaveFavouriteLocationView.swift */; };
 		F9A51E0B20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A51E0920E3EE83002A20AE /* SaveFavouriteLocationView.swift */; };
 		F9A51E0D20E3EEBB002A20AE /* SaveFavouriteLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A51E0C20E3EEBB002A20AE /* SaveFavouriteLocationView.xib */; };
@@ -472,6 +478,9 @@
 		F9A0382320B199B60044A1A5 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F9A0382420B199B60044A1A5 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		F9A0382520B199B60044A1A5 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F9A4145920E8CE42002D37A7 /* RideNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideNow.swift; sourceTree = "<group>"; };
+		F9A4145C20E8D0BB002D37A7 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
+		F9A4145F20E8D0E5002D37A7 /* DriverInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DriverInfoView.xib; sourceTree = "<group>"; };
 		F9A51E0920E3EE83002A20AE /* SaveFavouriteLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavouriteLocationView.swift; sourceTree = "<group>"; };
 		F9A51E0C20E3EEBB002A20AE /* SaveFavouriteLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveFavouriteLocationView.xib; sourceTree = "<group>"; };
 		F9A917AD209C20BD0027C6E4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -658,6 +667,8 @@
 				F9C065CC20DE22F700620537 /* TopView.xib */,
 				F9A51E0920E3EE83002A20AE /* SaveFavouriteLocationView.swift */,
 				F9A51E0C20E3EEBB002A20AE /* SaveFavouriteLocationView.xib */,
+				F9A4145C20E8D0BB002D37A7 /* DriverInfoView.swift */,
+				F9A4145F20E8D0E5002D37A7 /* DriverInfoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -685,6 +696,7 @@
 				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 				F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */,
 				F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */,
+				F9A4145920E8CE42002D37A7 /* RideNow.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1167,6 +1179,7 @@
 				F9A51E0D20E3EEBB002A20AE /* SaveFavouriteLocationView.xib in Resources */,
 				F9A0382F20B199B60044A1A5 /* Poppins-BoldItalic.ttf in Resources */,
 				F9A0385620B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
+				F9A4146020E8D0E5002D37A7 /* DriverInfoView.xib in Resources */,
 				F9642E7B20A4837800027977 /* MainMenu.xib in Resources */,
 				F9C6A59220B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */,
 				F9C2351220B477950043DFA5 /* CabsView.xib in Resources */,
@@ -1239,6 +1252,7 @@
 				F9A0384620B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384320B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
 				F9A0385820B199B60044A1A5 /* Poppins-SemiBold.ttf in Resources */,
+				F9A4146120E8D0E5002D37A7 /* DriverInfoView.xib in Resources */,
 				F9A0380E20B17E240044A1A5 /* Localizable.strings in Resources */,
 				F96E67AB20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
 				F9A0385520B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
@@ -1525,10 +1539,12 @@
 				F9A51E0A20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */,
 				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
 				F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
+				F9A4145D20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */,
 				F9E1700820C06982001023B5 /* PTLoading.swift in Sources */,
 				F9927B2C20DFC187004FFCE3 /* SelectLocation.swift in Sources */,
 				F9C6A58E20B37DF900FF68A4 /* SelectPickDropPointsView.swift in Sources */,
 				F9E62ADA20A0829100D84FCE /* ViewControllerExtension.swift in Sources */,
+				F9A4145A20E8CE42002D37A7 /* RideNow.swift in Sources */,
 				F96E67AC20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F96380AA20998FD900C3CC1E /* APIHandler.swift in Sources */,
 				F9C6A58720B32C9200FF68A4 /* PTPickerView.swift in Sources */,
@@ -1624,10 +1640,12 @@
 				F9A51E0B20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
 				F9614FEC20D5072E00DADC0E /* PTTextField.swift in Sources */,
+				F9A4145E20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
 				F9927B2D20DFC187004FFCE3 /* SelectLocation.swift in Sources */,
 				F9614FEB20D5072B00DADC0E /* MapMarker.swift in Sources */,
 				F961502B20D5084600DADC0E /* MainMenu.swift in Sources */,
+				F9A4145B20E8CE42002D37A7 /* RideNow.swift in Sources */,
 				F9614FE620D5071600DADC0E /* PlaceCell.swift in Sources */,
 				F9614FF220D5075A00DADC0E /* Splash.swift in Sources */,
 				F9614FDF20D506CD00DADC0E /* APIHandler.swift in Sources */,

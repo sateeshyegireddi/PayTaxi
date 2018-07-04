@@ -81,6 +81,16 @@
 "payment_method" = "Payment Method";
 "confirm_ride" = "CONFIRM RIDE";
 
+// Ride now
+"ride_now" = "Ride Now";
+"car_number" = "Car Number";
+"vehicle_type" = "Vehicle Type";
+"rating" = "Rating";
+"payment_type" = "PAYMENT TYPE";
+"estimate" = "ESTIMATE";
+"contact" = "CONTACT";
+"share_status" = "SHARE STATUS";
+
 //MARK: - Placeholders
 
 // Login

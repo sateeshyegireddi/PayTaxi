@@ -48,7 +48,7 @@ class Payments: UIViewController {
     //MARK: - Actions
     @IBAction func confirmRideButtonTapped(_ sender: UIButton) {
     
-        
+        OpenScreen().rideNow(self)
     }
     
     //MARK: - Functions
@@ -75,7 +75,7 @@ class Payments: UIViewController {
         
         //Add TopView
         let topView = TopView(frame: GlobalConstants.Constants.topViewFrame, on: self,
-                              title: "payment_method".localized, enableBack: true, showNotifications: true)
+                              title: "payment_method".localized, enableBack: false, showNotifications: true)
         view.addSubview(topView)
 
         //Setup View
@@ -150,14 +150,3 @@ extension Payments: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
