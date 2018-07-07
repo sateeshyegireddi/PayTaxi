@@ -47,6 +47,7 @@ class RideHistory: UIViewController {
     }
 }
 
+//MARK: - UITableView Delegate -
 extension RideHistory: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,6 +85,6 @@ extension RideHistory: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        OpenScreen().rideHistoryDetails(self)
     }
 }

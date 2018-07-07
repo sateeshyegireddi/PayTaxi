@@ -102,6 +102,18 @@
 "destination" = "Destination";
 "fare" = "Fare";
 
+//Ride History Details
+"support" = "SUPPORT";
+"send_invoice" = "SEND INVOICE";
+"start_time" = "Start Time";
+"end_time" = "End Time";
+"bill_details" = "Bill Details";
+"ride_fare" = "Ride Fare";
+"taxes_fees" = "Taxes and Fees";
+"promo" = "Promo ";
+"roundoff" = "Roundoff";
+"total" = "Total";
+
 //MARK: - Placeholders
 
 // Login

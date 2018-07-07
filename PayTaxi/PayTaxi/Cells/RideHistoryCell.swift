@@ -10,9 +10,6 @@ import UIKit
 
 class RideHistoryCell: UITableViewCell {
 
-    //MARK: - Variables
-    public static let identifier = "RideHistoryCell"
-
     //MARK: - Outlets
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var carTypeLabel: UILabel!
@@ -29,12 +26,16 @@ class RideHistoryCell: UITableViewCell {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var fareLabel: UILabel!
     
+    //MARK: - Variables
+    public static let identifier = "RideHistoryCell"
+
     //MARK: - Cell Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         
         //Setup View
         overlayView.accessibilityIdentifier = "RideHistoryView"
+        overlayView.backgroundColor = UIColor.white
         UtilityFunctions().addRoudedBorder(to: overlayView, showCorners: true, borderColor: UIColor.clear,
                                            borderWidth: 0, showShadow: true, shadowColor: GlobalConstants.Colors.mercury)
         
@@ -53,7 +54,7 @@ class RideHistoryCell: UITableViewCell {
         UtilityFunctions().setStyleForLabel(journeyDateLabel, text: "", textColor: GlobalConstants.Colors.tungesten,
                                             font: GlobalConstants.Fonts.verySmallMediumText!)
         UtilityFunctions().setStyleForLabel(sourceLabel, text: "", textColor: GlobalConstants.Colors.iron.withAlphaComponent(0.55),
-                                            font: GlobalConstants.Fonts.verySmallMediumText!)
+                                            font: GlobalConstants.Fonts.tooSmallText!)
         
         UtilityFunctions().setStyleForLabel(destinationTitleLabel, text: "destination".localized,
                                             textColor: GlobalConstants.Colors.tungesten,
@@ -62,7 +63,7 @@ class RideHistoryCell: UITableViewCell {
                                             font: GlobalConstants.Fonts.verySmallMediumText!)
         UtilityFunctions().setStyleForLabel(destinationLabel, text: "",
                                             textColor: GlobalConstants.Colors.iron.withAlphaComponent(0.55),
-                                            font: GlobalConstants.Fonts.verySmallMediumText!)
+                                            font: GlobalConstants.Fonts.tooSmallText!)
         UtilityFunctions().setStyleForLabel(fareLabel, text: "", textColor: GlobalConstants.Colors.green,
                                             font: GlobalConstants.Fonts.textFieldMediumText!)
     }
