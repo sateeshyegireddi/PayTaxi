@@ -91,6 +91,11 @@
 "contact" = "CONTACT";
 "share_status" = "SHARE STATUS";
 
+// Ride Complete
+"payment_done" = "Payment done";
+"ride_complete" = "Ride Complete";
+"rate_the_ride" = "Rate your last ride with ";
+
 //MARK: - Placeholders
 
 // Login

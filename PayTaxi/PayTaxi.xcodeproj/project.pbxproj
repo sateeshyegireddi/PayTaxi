@@ -318,6 +318,8 @@
 		F9FC1E8020B3121300D8789B /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */; };
 		F9FC1E8220B3121300D8789B /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */; };
 		F9FC1E8320B3121300D8789B /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */; };
+		F9FD289920ED2A0100607CF2 /* RideComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD289820ED2A0100607CF2 /* RideComplete.swift */; };
+		F9FD289A20ED2A0100607CF2 /* RideComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD289820ED2A0100607CF2 /* RideComplete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,6 +517,7 @@
 		F9F2D51320C8383E00ED749A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		F9FC1E7D20B3121200D8789B /* TermsConditionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
 		F9FC1E7E20B3121300D8789B /* TermsConditionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
+		F9FD289820ED2A0100607CF2 /* RideComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideComplete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,6 +700,7 @@
 				F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */,
 				F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */,
 				F9A4145920E8CE42002D37A7 /* RideNow.swift */,
+				F9FD289820ED2A0100607CF2 /* RideComplete.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1553,6 +1557,7 @@
 				F996C46A209C9167007849B3 /* Navigation.swift in Sources */,
 				F951245E2099EDF000861F24 /* AESCryptor.swift in Sources */,
 				F9AD4D1C20E7CBE700B0DA75 /* Payments.swift in Sources */,
+				F9FD289920ED2A0100607CF2 /* RideComplete.swift in Sources */,
 				F9A917AE209C20BD0027C6E4 /* Home.swift in Sources */,
 				F9C2350E20B4778A0043DFA5 /* CabsView.swift in Sources */,
 				F96380D92099A74A00C3CC1E /* Keychain.swift in Sources */,
@@ -1654,6 +1659,7 @@
 				F9614FE220D5070600DADC0E /* EditTextFieldCell.swift in Sources */,
 				F996C455209C7C05007849B3 /* GlobalConstants.swift in Sources */,
 				F9AD4D1D20E7CBE700B0DA75 /* Payments.swift in Sources */,
+				F9FD289A20ED2A0100607CF2 /* RideComplete.swift in Sources */,
 				F9614FF620D5075A00DADC0E /* Home.swift in Sources */,
 				F9614FFF20D5079500DADC0E /* UtilityFunctions.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,

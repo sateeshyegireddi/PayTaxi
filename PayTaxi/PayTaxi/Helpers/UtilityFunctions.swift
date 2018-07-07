@@ -202,7 +202,8 @@ class UtilityFunctions: NSObject {
     //MARK: - Styles
     func addRoudedBorder(to view: UIView, borderColor color: UIColor, borderWidth width: CGFloat) {
         
-        view.layer.cornerRadius = GlobalConstants.View.buttonCornerRadius
+        view.layer.cornerRadius = view.accessibilityIdentifier == "PAYMENT" ?
+            GlobalConstants.View.paymentViewCornerRadius : GlobalConstants.View.buttonCornerRadius
         view.layer.masksToBounds = true
         view.layer.borderColor = color.cgColor
         view.layer.borderWidth = width
@@ -321,6 +322,7 @@ class UtilityFunctions: NSObject {
     
     func addRoudness(to view: UIView, borderColor color: UIColor) {
         
+        view.layoutIfNeeded()
         view.layer.cornerRadius = view.bounds.width / 2
         view.layer.masksToBounds = true
         view.layer.borderColor = color.cgColor

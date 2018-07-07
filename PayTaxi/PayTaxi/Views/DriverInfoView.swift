@@ -98,7 +98,7 @@ class DriverInfoView: UIView {
     
     @IBAction func contactButtonTapped(_ sender: UIButton) {
     
-        
+        OpenScreen().rideComplete(vc)
     }
     
     @IBAction func shareStatusButtonTapped(_ sender: UIButton) {
