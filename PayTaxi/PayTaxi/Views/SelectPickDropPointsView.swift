@@ -90,7 +90,7 @@ class SelectPickDropPointsView: UIView {
         pickPointButton.titleLabel?.font = GlobalConstants.Fonts.verySmallText!
         pickPointButton.setTitleColor(GlobalConstants.Colors.tungesten, for: .normal)
         
-        dropPointButton.setTitle("destination".localized, for: .normal)
+        dropPointButton.setTitle("destination_please".localized, for: .normal)
         dropPointButton.titleLabel?.font = GlobalConstants.Fonts.verySmallText!
         dropPointButton.setTitleColor(GlobalConstants.Colors.tungesten, for: .normal)
     }

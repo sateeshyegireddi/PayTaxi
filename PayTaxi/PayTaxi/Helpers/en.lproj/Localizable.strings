@@ -117,7 +117,7 @@
 
 // Home
 "current_location" = "Current Location";
-"destination" = "Destination please.?";
+"destination_please" = "Destination please.?";
 "search_locality" = "Search for a locality or landmark";
 
 
