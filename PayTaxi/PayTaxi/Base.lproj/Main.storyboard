@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUR-IQ-mqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="28"/>
+            <point key="canvasLocation" x="3038" y="-755"/>
         </scene>
         <!--PTLoading-->
         <scene sceneID="HAO-fE-pZt">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW9-mz-Yf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="28"/>
+            <point key="canvasLocation" x="3744" y="-755"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="JPb-Wz-hBU">
@@ -508,7 +508,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYA-xk-2Ei">
-                                        <rect key="frame" x="20" y="127.5" width="280" height="22"/>
+                                        <rect key="frame" x="20" y="128" width="280" height="22"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -697,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDv-Go-Zvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4029.5999999999999" y="709.29535232383819"/>
+            <point key="canvasLocation" x="4763" y="27"/>
         </scene>
         <!--Payments-->
         <scene sceneID="Ntu-30-TZB">
@@ -792,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SF-6u-3Ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="709.29535232383819"/>
+            <point key="canvasLocation" x="5469" y="25"/>
         </scene>
         <!--Ride Now-->
         <scene sceneID="X42-Rw-vmA">
@@ -807,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0d-sj-JJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5470" y="710"/>
+            <point key="canvasLocation" x="6193" y="24"/>
         </scene>
         <!--Ride Complete-->
         <scene sceneID="dDa-wM-7iP">
@@ -824,19 +824,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="261"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZi-sD-5Ac">
-                                        <rect key="frame" x="118.5" y="55" width="44" height="44.5"/>
+                                        <rect key="frame" x="118.5" y="55" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YZi-sD-5Ac" secondAttribute="height" multiplier="1:1" id="SsI-z6-iBJ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALo-53-Gcp">
-                                        <rect key="frame" x="118.5" y="120" width="43" height="23"/>
+                                        <rect key="frame" x="118.5" y="119.5" width="43" height="23"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-J5-hwh">
-                                        <rect key="frame" x="71.5" y="143.5" width="137.5" height="70"/>
+                                        <rect key="frame" x="71.5" y="143" width="137.5" height="70"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1001,7 +1001,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjQ-16-gd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6194.3999999999996" y="706.4039408866995"/>
+            <point key="canvasLocation" x="4029" y="709"/>
+        </scene>
+        <!--Ride History-->
+        <scene sceneID="XJe-sQ-7SH">
+            <objects>
+                <viewController storyboardIdentifier="RideHistory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t7C-CB-kMP" customClass="RideHistory" customModule="PayTaxi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K2P-QI-xJf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uLL-5b-ctF">
+                                <rect key="frame" x="0.0" y="95" width="320" height="473"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="t7C-CB-kMP" id="lTv-l3-B26"/>
+                                    <outlet property="delegate" destination="t7C-CB-kMP" id="1Y9-Zl-yHB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uLL-5b-ctF" firstAttribute="leading" secondItem="PKE-y1-9Z3" secondAttribute="leading" id="7WN-91-Ndy"/>
+                            <constraint firstItem="uLL-5b-ctF" firstAttribute="trailing" secondItem="PKE-y1-9Z3" secondAttribute="trailing" id="ROF-qU-FZy"/>
+                            <constraint firstItem="uLL-5b-ctF" firstAttribute="top" secondItem="PKE-y1-9Z3" secondAttribute="top" constant="75" id="ibV-nc-Mi6"/>
+                            <constraint firstItem="uLL-5b-ctF" firstAttribute="bottom" secondItem="PKE-y1-9Z3" secondAttribute="bottom" id="qpP-1m-eCf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PKE-y1-9Z3"/>
+                    </view>
+                    <connections>
+                        <outlet property="rideHistoryTableView" destination="uLL-5b-ctF" id="H02-Ie-gt9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQG-3F-1Ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4762.5" y="708.80281690140851"/>
         </scene>
         <!--Registration-->
         <scene sceneID="eFl-4l-3CW">
@@ -1088,7 +1122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="icon-checkBox" translatesAutoresizingMaskIntoConstraints="NO" id="b9u-DE-cLB">
-                                <rect key="frame" x="30" y="463" width="20" height="20"/>
+                                <rect key="frame" x="30" y="463.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b9u-DE-cLB" secondAttribute="height" multiplier="1:1" id="YN1-Dv-t3q"/>
                                     <constraint firstAttribute="height" constant="20" id="ca5-So-6mu"/>

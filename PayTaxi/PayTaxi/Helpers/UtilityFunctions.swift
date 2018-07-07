@@ -243,6 +243,8 @@ class UtilityFunctions: NSObject {
             
             if view.accessibilityIdentifier == "OffersView" {
                 view.layer.cornerRadius = GlobalConstants.View.viewCornerRadius
+            } else if view.accessibilityIdentifier == "RideHistoryView" {
+                view.layer.cornerRadius = GlobalConstants.View.rideHistoryRadius
             } else {
                 view.layer.cornerRadius = GlobalConstants.View.buttonCornerRadius
             }

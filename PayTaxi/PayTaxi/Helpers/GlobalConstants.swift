@@ -204,6 +204,8 @@ public struct GlobalConstants {
         static let smallMediumText = UIFont(name: "Poppins-Medium", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let smallBoldText = UIFont(name: "Poppins-Bold", size: UIScreen.main.bounds.width == 320 ? 12.0 : 14.0)
         static let verySmallText = UIFont(name: "Poppins-Regular", size: 12.0)
+        static let verySmallMediumText = UIFont(name: "Poppins-Medium", size: 12.0)
+        static let verySmallBoldText = UIFont(name: "Poppins-Bold", size: 12.0)
         static let tooSmallMediumText = UIFont(name: "Poppins-Medium", size: 10.0)
         static let tinyText = UIFont(name: "Poppins-Regular", size: 8.0)
 
@@ -215,6 +217,7 @@ public struct GlobalConstants {
         
         static let buttonCornerRadius: CGFloat = UIScreen.main.bounds.width == 320 ? 22.5 : 25
         static let viewCornerRadius: CGFloat = 12
+        static let rideHistoryRadius: CGFloat = 08
         static let paymentViewCornerRadius: CGFloat = 06
     }
     

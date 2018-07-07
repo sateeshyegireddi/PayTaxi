@@ -93,6 +93,13 @@ class OpenScreen: NSObject {
         rideComplete.modalTransitionStyle = modalTransitionStyle
         currentViewController.present(rideComplete, animated: false, completion: nil)
     }
+    
+    func rideHistory(_ currentViewController: UIViewController) {
+        
+        let rideHistory = storyboard.instantiateViewController(withIdentifier: "RideHistory") as! RideHistory
+        rideHistory.modalTransitionStyle = modalTransitionStyle
+        currentViewController.present(rideHistory, animated: false, completion: nil)
+    }
     /*
     func registration(_ currentViewController: UIViewController) {
         

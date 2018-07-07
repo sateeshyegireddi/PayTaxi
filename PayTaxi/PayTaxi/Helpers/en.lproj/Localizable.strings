@@ -96,6 +96,12 @@
 "ride_complete" = "Ride Complete";
 "rate_the_ride" = "Rate your last ride with ";
 
+//Ride History
+"ride_history" = "Ride History";
+"source_location" = "Source Location";
+"destination" = "Destination";
+"fare" = "Fare";
+
 //MARK: - Placeholders
 
 // Login

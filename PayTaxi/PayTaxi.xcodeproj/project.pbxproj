@@ -301,6 +301,12 @@
 		F9C6A59220B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
 		F9C6A59320B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
 		F9C6A59420B37E1200FF68A4 /* SelectPickDropPointsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */; };
+		F9DCC26720F09DFC0055F597 /* RideHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC26620F09DFC0055F597 /* RideHistory.swift */; };
+		F9DCC26820F09DFC0055F597 /* RideHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC26620F09DFC0055F597 /* RideHistory.swift */; };
+		F9DCC26B20F0A02B0055F597 /* RideHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC26920F0A02B0055F597 /* RideHistoryCell.swift */; };
+		F9DCC26C20F0A02B0055F597 /* RideHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC26920F0A02B0055F597 /* RideHistoryCell.swift */; };
+		F9DCC26D20F0A02B0055F597 /* RideHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC26A20F0A02B0055F597 /* RideHistoryCell.xib */; };
+		F9DCC26E20F0A02B0055F597 /* RideHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC26A20F0A02B0055F597 /* RideHistoryCell.xib */; };
 		F9E1700420C05676001023B5 /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
 		F9E1700520C05676001023B5 /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
 		F9E1700820C06982001023B5 /* PTLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700720C06982001023B5 /* PTLoading.swift */; };
@@ -509,6 +515,9 @@
 		F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPickerView.xib; sourceTree = "<group>"; };
 		F9C6A58D20B37DF900FF68A4 /* SelectPickDropPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPickDropPointsView.swift; sourceTree = "<group>"; };
 		F9C6A59120B37E1200FF68A4 /* SelectPickDropPointsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPickDropPointsView.xib; sourceTree = "<group>"; };
+		F9DCC26620F09DFC0055F597 /* RideHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistory.swift; sourceTree = "<group>"; };
+		F9DCC26920F0A02B0055F597 /* RideHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryCell.swift; sourceTree = "<group>"; };
+		F9DCC26A20F0A02B0055F597 /* RideHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideHistoryCell.xib; sourceTree = "<group>"; };
 		F9E1700320C05676001023B5 /* LocationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSettings.swift; sourceTree = "<group>"; };
 		F9E1700720C06982001023B5 /* PTLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoading.swift; sourceTree = "<group>"; };
 		F9E1700A20C06B35001023B5 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -649,6 +658,8 @@
 				F9AB2AF220B4817100E6E1A8 /* CabCell.xib */,
 				F9AD4D1E20E7DE1000B0DA75 /* OfferCell.swift */,
 				F9AD4D1F20E7DE1000B0DA75 /* OfferCell.xib */,
+				F9DCC26920F0A02B0055F597 /* RideHistoryCell.swift */,
+				F9DCC26A20F0A02B0055F597 /* RideHistoryCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -701,6 +712,7 @@
 				F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */,
 				F9A4145920E8CE42002D37A7 /* RideNow.swift */,
 				F9FD289820ED2A0100607CF2 /* RideComplete.swift */,
+				F9DCC26620F09DFC0055F597 /* RideHistory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1150,6 +1162,7 @@
 			files = (
 				F96E67B020A32D6000F00FEA /* MainMenuCell.xib in Resources */,
 				F9FC1E8220B3121300D8789B /* TermsConditionsCell.xib in Resources */,
+				F9DCC26D20F0A02B0055F597 /* RideHistoryCell.xib in Resources */,
 				F9AB2AF620B4817100E6E1A8 /* CabCell.xib in Resources */,
 				F9C6A58A20B32C9200FF68A4 /* PTPickerView.xib in Resources */,
 				F9C2350620B42D080043DFA5 /* PlaceCell.xib in Resources */,
@@ -1266,6 +1279,7 @@
 				F9A0384020B199B60044A1A5 /* Poppins-ExtraBold.ttf in Resources */,
 				F9A0382B20B199B60044A1A5 /* Poppins-ThinItalic.ttf in Resources */,
 				F9642E7C20A4837800027977 /* MainMenu.xib in Resources */,
+				F9DCC26E20F0A02B0055F597 /* RideHistoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1527,6 +1541,7 @@
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
 				F9F2D51120C8383000ED749A /* ErrorView.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
+				F9DCC26720F09DFC0055F597 /* RideHistory.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
 				F9C065C820DE22EA00620537 /* TopView.swift in Sources */,
@@ -1542,6 +1557,7 @@
 				F96380B62099983A00C3CC1E /* GlobalConstants.swift in Sources */,
 				F9A51E0A20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */,
 				F961FE8920ABF50600580D62 /* Registration.swift in Sources */,
+				F9DCC26B20F0A02B0055F597 /* RideHistoryCell.swift in Sources */,
 				F9AC8E2E20B1E55A007D8D42 /* EditTextFieldCell.swift in Sources */,
 				F9A4145D20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */,
 				F9E1700820C06982001023B5 /* PTLoading.swift in Sources */,
@@ -1629,6 +1645,7 @@
 				F961502320D5083300DADC0E /* ErrorView.swift in Sources */,
 				F9614FFA20D5077C00DADC0E /* UIApplicationExtension.swift in Sources */,
 				F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */,
+				F9DCC26820F09DFC0055F597 /* RideHistory.swift in Sources */,
 				F961502620D5084000DADC0E /* SelectPickDropPointsView.swift in Sources */,
 				F996C453209C7BFB007849B3 /* StringExtension.swift in Sources */,
 				F9C065CA20DE22EA00620537 /* TopView.swift in Sources */,
@@ -1644,6 +1661,7 @@
 				F9614FF320D5075A00DADC0E /* Navigation.swift in Sources */,
 				F9A51E0B20E3EE83002A20AE /* SaveFavouriteLocationView.swift in Sources */,
 				F9075DC320A1AA09001A2E02 /* SocketsManager.swift in Sources */,
+				F9DCC26C20F0A02B0055F597 /* RideHistoryCell.swift in Sources */,
 				F9614FEC20D5072E00DADC0E /* PTTextField.swift in Sources */,
 				F9A4145E20E8D0BB002D37A7 /* DriverInfoView.swift in Sources */,
 				F996C457209C7C05007849B3 /* AESCryptor.swift in Sources */,
