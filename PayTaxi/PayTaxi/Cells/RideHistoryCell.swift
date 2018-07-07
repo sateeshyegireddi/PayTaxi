@@ -41,9 +41,6 @@ class RideHistoryCell: UITableViewCell {
         //Setup ImageView
         sourceImageView.image = #imageLiteral(resourceName: "icon-source-black")
         destinationImageView.image = #imageLiteral(resourceName: "icon-destination-blue")
-        for imageView in starImageViews {
-            imageView.image = #imageLiteral(resourceName: "icon-star-deselect")
-        }
         
         //Setup Label
         UtilityFunctions().setStyleForLabel(carTypeLabel, text: "", textColor: GlobalConstants.Colors.orange,
