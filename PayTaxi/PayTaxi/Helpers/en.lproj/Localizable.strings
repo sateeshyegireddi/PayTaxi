@@ -53,7 +53,7 @@
 "offers" = "Offers";
 "notifications" = "Notifications";
 "help_support" = "Help & Support";
-"log_out" = "Logout";
+"logout" = "Logout";
 
 // Login
 "forgot_password" = "Forgot password?";

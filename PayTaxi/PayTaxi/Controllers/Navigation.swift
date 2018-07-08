@@ -19,7 +19,7 @@ class Navigation: UINavigationController {
     var isUserExists: Bool!
     var panGestureRecognizer: UIPanGestureRecognizer!
     var navigationDelegate: NavigationDelegate?
-    let shadowAlpha: CGFloat! = 0.5
+    let shadowAlpha: CGFloat! = 0.25
     let menuDuration: CGFloat! = 0.3
     let menuTriggerVelocity: CGFloat! = 350
     var isOpen: Bool!
@@ -86,7 +86,7 @@ class Navigation: UINavigationController {
                 //Calculate resultant shadow alpha with gesture translation over time
                 let changingAlpha = shadowAlpha / menuWidth * movingX + shadowAlpha / 2 //y = mx + c
                 shadowView.isHidden = false
-                shadowView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: changingAlpha)
+                shadowView.backgroundColor = GlobalConstants.Colors.blue.withAlphaComponent(0.10).withAlphaComponent(changingAlpha)
             }
         }
         
@@ -124,7 +124,7 @@ class Navigation: UINavigationController {
         //Load menu view
         let nibs = Bundle.main.loadNibNamed("MainMenu", owner: self, options: nil)
         menuView = nibs![0] as! MainMenu
-        
+
         //Setup menu variables
         menuWidth = menuView.frame.width
         menuHeight = UIScreen.main.bounds.height
@@ -136,6 +136,7 @@ class Navigation: UINavigationController {
         shadowView.backgroundColor = UIColor.clear
         shadowView.isHidden = true
         
+//        shadowView.layer.shadowOffset =
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Navigation.tappedOnShadow(_:)))
         shadowView.addGestureRecognizer(tapGestureRecognizer)
         shadowView.translatesAutoresizingMaskIntoConstraints = false
@@ -161,13 +162,16 @@ class Navigation: UINavigationController {
         //Show shadow and menu animations while opening the menu
         shadowView.isHidden = false
         UIView.animate(withDuration: TimeInterval(duration), delay: 0, options: .curveEaseInOut, animations: {
-            self.shadowView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: self.shadowAlpha)
+            self.shadowView.backgroundColor = GlobalConstants.Colors.blue.withAlphaComponent(0.10).withAlphaComponent(self.shadowAlpha)
         }, completion: nil)
         UIView.animate(withDuration: TimeInterval(duration), delay: 0, options: .beginFromCurrentState, animations: {
             self.menuView.frame = self.inFrame
         }, completion: nil)
         
         isOpen = true
+        self.menuView.layer.shadowColor = UIColor.black.cgColor
+        self.menuView.layer.shadowRadius = 12
+        self.menuView.layer.shadowOpacity = 0.3
     }
     
     func closeMenuView() {
@@ -185,6 +189,7 @@ class Navigation: UINavigationController {
         }, completion: nil)
         
         isOpen = false
+        self.menuView.layer.shadowColor = UIColor.clear.cgColor
     }
 
 }

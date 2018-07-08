@@ -11,7 +11,6 @@ import UIKit
 class MainMenu: UIView {
     
     //MARK: - Outlets
-    @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var overlayImageView: UIImageView!
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var logoutImageView: UIImageView!
@@ -34,8 +33,7 @@ class MainMenu: UIView {
         selectedIndex = -1
         
         //Setup View
-        overlayView.backgroundColor = UIColor.white
-        UtilityFunctions().addRoudedBorder(to: overlayView, showCorners: false, borderColor: GlobalConstants.Colors.iron, borderWidth: 0, showShadow: true)
+        backgroundColor = UIColor.clear
         
         //Setup ImageView
         overlayImageView.image = #imageLiteral(resourceName: "menu-background")
@@ -43,7 +41,8 @@ class MainMenu: UIView {
         
         //Setup Button
         logoutButton.titleLabel?.font = GlobalConstants.Fonts.textFieldText!
-        logoutButton.titleLabel?.textColor = GlobalConstants.Colors.megnisium
+        logoutButton.setTitleColor(GlobalConstants.Colors.megnisium, for: .normal)
+        logoutButton.setTitle("logout".localized, for: .normal)
         
         //Setup TableView
         menuTableView.backgroundColor = UIColor.clear

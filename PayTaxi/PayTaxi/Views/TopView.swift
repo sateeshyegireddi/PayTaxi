@@ -104,7 +104,10 @@ class TopView: UIView {
             }
         } else {
             
-            //TODO: Open to Menu
+            if let navigation = vc.navigationController as? Navigation {
+                
+                navigation.toggleMenu()
+            }
         }
     }
     
