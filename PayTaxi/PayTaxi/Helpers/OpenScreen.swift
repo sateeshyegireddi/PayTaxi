@@ -80,6 +80,13 @@ class OpenScreen: NSObject {
         currentViewController.navigationController?.pushViewController(payments, animated: false)
     }
     
+    func holdToCancelRide(_ currentViewController: UIViewController) {
+        
+        let cancelRide = storyboard.instantiateViewController(withIdentifier: "HoldToCancelRide") as! HoldToCancelRide
+        cancelRide.modalTransitionStyle = modalTransitionStyle
+        currentViewController.navigationController?.pushViewController(cancelRide, animated: false)
+    }
+    
     func rideNow(_ currentViewController: UIViewController) {
         
         let rideNow = storyboard.instantiateViewController(withIdentifier: "RideNow") as! RideNow

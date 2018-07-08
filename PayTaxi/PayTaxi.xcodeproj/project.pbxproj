@@ -155,6 +155,10 @@
 		F9857A3E2097316F00F2139A /* PayTaxiDriver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9857A3C2097316F00F2139A /* PayTaxiDriver.xcdatamodeld */; };
 		F9857A402097317000F2139A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9857A3F2097317000F2139A /* Assets.xcassets */; };
 		F9857A432097317000F2139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9857A412097317000F2139A /* LaunchScreen.storyboard */; };
+		F98C535A20F219CA003D1D37 /* HoldToCancelRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C535920F219CA003D1D37 /* HoldToCancelRide.swift */; };
+		F98C535D20F21D8D003D1D37 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C535B20F21D8D003D1D37 /* Pulsator.swift */; };
+		F98C535E20F21D8D003D1D37 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C535B20F21D8D003D1D37 /* Pulsator.swift */; };
+		F98C535F20F2204C003D1D37 /* HoldToCancelRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C535920F219CA003D1D37 /* HoldToCancelRide.swift */; };
 		F9927B2C20DFC187004FFCE3 /* SelectLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */; };
 		F9927B2D20DFC187004FFCE3 /* SelectLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */; };
 		F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996C443209C7B9C007849B3 /* NotificationViewController.swift */; };
@@ -468,6 +472,9 @@
 		F9857A3F2097317000F2139A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9857A422097317000F2139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9857A442097317000F2139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F98C535920F219CA003D1D37 /* HoldToCancelRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldToCancelRide.swift; sourceTree = "<group>"; };
+		F98C535B20F21D8D003D1D37 /* Pulsator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsator.swift; sourceTree = "<group>"; };
+		F98C535C20F21D8D003D1D37 /* Pulsator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pulsator.h; sourceTree = "<group>"; };
 		F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocation.swift; sourceTree = "<group>"; };
 		F996C43F209C7B9C007849B3 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F996C443209C7B9C007849B3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -748,6 +755,7 @@
 				F9A917AD209C20BD0027C6E4 /* Home.swift */,
 				F9927B2B20DFC187004FFCE3 /* SelectLocation.swift */,
 				F9AD4D1B20E7CBE700B0DA75 /* Payments.swift */,
+				F98C535920F219CA003D1D37 /* HoldToCancelRide.swift */,
 				F9A4145920E8CE42002D37A7 /* RideNow.swift */,
 				F9FD289820ED2A0100607CF2 /* RideComplete.swift */,
 				F9DCC26620F09DFC0055F597 /* RideHistory.swift */,
@@ -815,6 +823,8 @@
 				F9C6A58520B32C9200FF68A4 /* PTPickerView.swift */,
 				F9C6A58620B32C9200FF68A4 /* PTPickerView.xib */,
 				F9E1700720C06982001023B5 /* PTLoading.swift */,
+				F98C535C20F21D8D003D1D37 /* Pulsator.h */,
+				F98C535B20F21D8D003D1D37 /* Pulsator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1591,10 +1601,12 @@
 				F9DCC27420F0D49B0055F597 /* RideLocationsCell.swift in Sources */,
 				F9F2D51120C8383000ED749A /* ErrorView.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
+				F98C535A20F219CA003D1D37 /* HoldToCancelRide.swift in Sources */,
 				F9DCC26720F09DFC0055F597 /* RideHistory.swift in Sources */,
 				F9075DC520A1D5BA001A2E02 /* Location.swift in Sources */,
 				F9C234FA20B42B210043DFA5 /* SearchPlacesView.swift in Sources */,
 				F9C065C820DE22EA00620537 /* TopView.swift in Sources */,
+				F98C535D20F21D8D003D1D37 /* Pulsator.swift in Sources */,
 				F9C2350320B42D080043DFA5 /* PlaceCell.swift in Sources */,
 				F9E1700420C05676001023B5 /* LocationSettings.swift in Sources */,
 				F9AD4D2020E7DE1000B0DA75 /* OfferCell.swift in Sources */,
@@ -1740,7 +1752,9 @@
 				F9FD289A20ED2A0100607CF2 /* RideComplete.swift in Sources */,
 				F9614FF620D5075A00DADC0E /* Home.swift in Sources */,
 				F9614FFF20D5079500DADC0E /* UtilityFunctions.swift in Sources */,
+				F98C535F20F2204C003D1D37 /* HoldToCancelRide.swift in Sources */,
 				F996C444209C7B9C007849B3 /* NotificationViewController.swift in Sources */,
+				F98C535E20F21D8D003D1D37 /* Pulsator.swift in Sources */,
 				F961500320D507AB00DADC0E /* Keychain.swift in Sources */,
 				F961500920D507C700DADC0E /* Validator.swift in Sources */,
 			);
