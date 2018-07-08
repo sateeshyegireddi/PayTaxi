@@ -155,12 +155,29 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         
             switch indexPath.row {
             case 0:
+                if navigation.viewControllers.count > 0 {
+                    guard navigation.viewControllers[0] is Home else {
+                        OpenScreen().home(navigation)
+                        break
+                    }
+                }
                 break
             case 1:
+                break
+            case 2:
+                if navigation.viewControllers.count > 0 {
+                    guard navigation.viewControllers[0] is RideHistory else {
+                        OpenScreen().rideHistory(navigation)
+                        break
+                    }
+                }
                 break
             default:
                 navigation.navigationDelegate?.navigationController(navigation, selectedRow: indexPath.row, at: indexPath.section)
             }
+            
+            //Close navigation menu
+            navigation.closeMenuView()
         }
         /*
         if let navigation = vc as? Navigation {

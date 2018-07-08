@@ -291,7 +291,7 @@ class UtilityFunctions: NSObject {
         view.layer.mask = mask
     }
     
-    func setStyleForLabel(_ label: UILabel, text title: String, textColor color: UIColor, font fontType: UIFont) {
+    func setStyleForLabel(_ label: UILabel, text title: String?, textColor color: UIColor, font fontType: UIFont) {
         
         label.text = title
         label.textColor = color

@@ -94,11 +94,11 @@ class OpenScreen: NSObject {
         currentViewController.navigationController?.pushViewController(rideComplete, animated: false)
     }
     
-    func rideHistory(_ currentViewController: UIViewController) {
+    func rideHistory(_ currentViewController: UINavigationController) {
         
         let rideHistory = storyboard.instantiateViewController(withIdentifier: "RideHistory") as! RideHistory
         rideHistory.modalTransitionStyle = modalTransitionStyle
-        currentViewController.navigationController?.pushViewController(rideHistory, animated: false)
+        currentViewController.setViewControllers([rideHistory], animated: false)
     }
     
     func rideHistoryDetails(_ currentViewController: UIViewController) {
