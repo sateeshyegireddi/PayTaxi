@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,27 +13,77 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainMenu" customModule="NotificationContent" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="285" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-YC-qTR">
-                    <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU1-di-yAG">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mS-mU-p3C">
+                            <rect key="frame" x="0.0" y="292" width="275" height="375"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7mS-mU-p3C" secondAttribute="height" multiplier="11:15" id="Yh9-bb-ZbX"/>
+                            </constraints>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-YC-qTR">
+                            <rect key="frame" x="0.0" y="80" width="275" height="477"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iue-so-OyO">
+                            <rect key="frame" x="30" y="592" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="iue-so-OyO" secondAttribute="height" multiplier="1:1" id="PCK-Fp-Tdq"/>
+                                <constraint firstAttribute="height" constant="20" id="Vmy-dp-ef5"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o25-6r-gf0">
+                            <rect key="frame" x="30" y="577" width="125" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5TA-bZ-CkO"/>
+                                <constraint firstAttribute="width" secondItem="o25-6r-gf0" secondAttribute="height" multiplier="2.5:1" id="Iaa-7P-Z4D"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="zNQ-sX-Xy7"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7mS-mU-p3C" secondAttribute="trailing" id="8L9-9u-h5D"/>
+                        <constraint firstItem="nMU-YC-qTR" firstAttribute="leading" secondItem="WU1-di-yAG" secondAttribute="leading" id="QQr-Iv-fXG"/>
+                        <constraint firstItem="iue-so-OyO" firstAttribute="centerY" secondItem="o25-6r-gf0" secondAttribute="centerY" id="Rev-ZG-YvC"/>
+                        <constraint firstItem="o25-6r-gf0" firstAttribute="leading" secondItem="WU1-di-yAG" secondAttribute="leading" constant="30" id="ThP-Kw-zz0"/>
+                        <constraint firstAttribute="bottom" secondItem="o25-6r-gf0" secondAttribute="bottom" constant="40" id="WdC-ax-5Ud"/>
+                        <constraint firstItem="iue-so-OyO" firstAttribute="leading" secondItem="o25-6r-gf0" secondAttribute="leading" id="fmo-5m-IrY"/>
+                        <constraint firstAttribute="trailing" secondItem="nMU-YC-qTR" secondAttribute="trailing" id="jRY-cZ-k1a"/>
+                        <constraint firstAttribute="bottom" secondItem="7mS-mU-p3C" secondAttribute="bottom" id="lvg-Sn-keB"/>
+                        <constraint firstItem="o25-6r-gf0" firstAttribute="top" secondItem="nMU-YC-qTR" secondAttribute="bottom" constant="20" id="nA2-sw-gWP"/>
+                        <constraint firstItem="nMU-YC-qTR" firstAttribute="top" secondItem="WU1-di-yAG" secondAttribute="top" constant="80" id="r6R-30-3Y8"/>
+                        <constraint firstItem="7mS-mU-p3C" firstAttribute="leading" secondItem="WU1-di-yAG" secondAttribute="leading" id="yWY-ZG-aQx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nMU-YC-qTR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3DN-sx-eSz"/>
-                <constraint firstItem="nMU-YC-qTR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KNm-pz-dz3"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nMU-YC-qTR" secondAttribute="trailing" id="PN1-dx-hUD"/>
-                <constraint firstItem="nMU-YC-qTR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eX0-UR-xCi"/>
+                <constraint firstItem="WU1-di-yAG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1TE-Zg-40q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WU1-di-yAG" secondAttribute="trailing" constant="10" id="4Kf-VQ-JEg"/>
+                <constraint firstItem="WU1-di-yAG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Pc0-on-1HA"/>
+                <constraint firstItem="WU1-di-yAG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hde-Up-ERi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="menuTableView" destination="nMU-YC-qTR" id="K7O-UU-lM2"/>
+                <outlet property="logoutButton" destination="o25-6r-gf0" id="jAg-3S-ePb"/>
+                <outlet property="logoutImageView" destination="iue-so-OyO" id="3GP-wD-MyG"/>
+                <outlet property="menuTableView" destination="nMU-YC-qTR" id="4FQ-6T-Xvn"/>
+                <outlet property="overlayImageView" destination="7mS-mU-p3C" id="fal-6E-cpa"/>
+                <outlet property="overlayView" destination="WU1-di-yAG" id="rZ5-CV-Cxf"/>
             </connections>
-            <point key="canvasLocation" x="26" y="51.5"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
 </document>

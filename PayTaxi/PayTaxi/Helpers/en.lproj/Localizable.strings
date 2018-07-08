@@ -47,6 +47,14 @@
 "ok" = "OK";
 "cancel" = "Cancel";
 
+// Main Menu
+"my_profile" = "My Profile";
+"ride_history" = "Ride History";
+"offers" = "Offers";
+"notifications" = "Notifications";
+"help_support" = "Help & Support";
+"log_out" = "Logout";
+
 // Login
 "forgot_password" = "Forgot password?";
 "login" = "LOGIN";

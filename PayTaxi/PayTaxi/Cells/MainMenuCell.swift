@@ -13,7 +13,6 @@ class MainMenuCell: UITableViewCell {
     //MARK: - Outlets
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var seperatorLabel: UILabel!
     
     //MARK: - Cell Functions
     override func awakeFromNib() {
@@ -21,13 +20,11 @@ class MainMenuCell: UITableViewCell {
         // Initialization code
         
         //Setup view
-        //backgroundColor = UIColor.black
-        //contentView.backgroundColor = UIColor.black
+        backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.clear
         
         //Setup Label
-        //menuTitleLabel.textColor = UIColor.white
-        seperatorLabel.backgroundColor = UIColor.darkGray
-
-        //Setup ImageView
+        menuTitleLabel.textColor = GlobalConstants.Colors.megnisium
+        menuTitleLabel.font = GlobalConstants.Fonts.textFieldText!
     }
 }

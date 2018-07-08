@@ -11,7 +11,11 @@ import UIKit
 class MainMenu: UIView {
     
     //MARK: - Outlets
-    @IBOutlet var menuTableView: UITableView!
+    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var overlayImageView: UIImageView!
+    @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var logoutImageView: UIImageView!
+    @IBOutlet weak var logoutButton: UIButton!
     
     //MARK: - Variables
     weak var vc: UIViewController!
@@ -22,69 +26,44 @@ class MainMenu: UIView {
     //MARK: - View
     override func draw(_ rect: CGRect) {
         
-        //Setup View
-//        backgroundColor = UIColor.clear
-        
-        //Setup tableView
-        //menuTableView.backgroundColor = UIColor.black
-        menuTableView.dataSource = self
-        menuTableView.delegate = self
         
         //Init Variables
-        titles = ["Book a ride", "My rides", "Rate card", "Refer & Earn", "Emergency Contact", "Support"]
-        images = [#imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker"), #imageLiteral(resourceName: "icon-marker")]
+        titles = ["home".capitalized.localized, "my_profile".localized, "ride_history".localized, "offers".localized,
+                  "notifications".localized, "help_support".localized]
+        images = [#imageLiteral(resourceName: "icon-home-gray"), #imageLiteral(resourceName: "icon-user-gray"), #imageLiteral(resourceName: "icon-ride-history"), #imageLiteral(resourceName: "icon-offers"), #imageLiteral(resourceName: "icon-notifications-gray"), #imageLiteral(resourceName: "icon-help"), #imageLiteral(resourceName: "icon-logout")]
         selectedIndex = -1
+        
+        //Setup View
+        overlayView.backgroundColor = UIColor.white
+        UtilityFunctions().addRoudedBorder(to: overlayView, showCorners: false, borderColor: GlobalConstants.Colors.iron, borderWidth: 0, showShadow: true)
+        
+        //Setup ImageView
+        overlayImageView.image = #imageLiteral(resourceName: "menu-background")
+        logoutImageView.image = #imageLiteral(resourceName: "icon-logout")
+        
+        //Setup Button
+        logoutButton.titleLabel?.font = GlobalConstants.Fonts.textFieldText!
+        logoutButton.titleLabel?.textColor = GlobalConstants.Colors.megnisium
+        
+        //Setup TableView
+        menuTableView.backgroundColor = UIColor.clear
+        menuTableView.dataSource = self
+        menuTableView.delegate = self
         
         //Register tableView cells
         menuTableView.register(UINib(nibName: "MainMenuCell", bundle: nil), forCellReuseIdentifier: "MainMenuCell")
         
         reloadData()
     }
-    
-    //MARK: - Actions
-    @IBAction func sectionHeaderButtonTapped(_ sender: UIButton) {
 
-    }
-    
-    @IBAction func menuTopButonTapped(_ sender: UIButton) {
+    //MARK: - Actions
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
         
-        //Close main menu
-        switch sender.tag - 100 {
-        case 0:
-            
-            //Move user to home screen
-            if let navigation = vc as? Navigation {
-                
-                navigation.closeMenuView()
-                OpenScreen().home(self.vc as! UINavigationController)
-            }
-        case 6:
-            if let navigation = vc as? Navigation {
-                
-                navigation.closeMenuView()
-                //OpenScreen().profile(vc)
-            }
-            
-        case 7:
-            if let navigation = vc as? Navigation {
-                
-                navigation.closeMenuView()
-                //OpenScreen().settings(vc)
-            }
-            
-        case 8:
-            
-            //Call Logout API
-            self.logout()
-            
-        default:
-            break
-        }
+        //Logout user from PayTaxi
+        logout()
     }
-    
     
     //MARK: - Functions
-    
     func reloadData() {
         
         menuTableView.reloadData()
@@ -150,7 +129,12 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -165,28 +149,7 @@ extension MainMenu: UITableViewDelegate, UITableViewDataSource {
         //Return cell
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        //Create header
-        let nibs = Bundle.main.loadNibNamed("MainMenuHeader", owner: self, options: nil)
-        let mainMenuHeader = nibs![0] as! MainMenuHeader
-        
-        //Setup header values
-        mainMenuHeader.sectionTitleLabel.text = "User name"
-        mainMenuHeader.sectionImageView.image = nil
-        mainMenuHeader.sectionImageView.backgroundColor = UIColor.orange
-        mainMenuHeader.sectionButton.addTarget(self, action: #selector(MainMenu.sectionHeaderButtonTapped(_:)), for: .touchUpInside)
-        
-        //Return header view
-        return mainMenuHeader
-    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let navigation = vc as? Navigation {
