@@ -89,6 +89,11 @@ class TopView: UIView {
     //MARK: - Actions
     @IBAction func leftButtonTapped(_ sender: UIButton) {
         
+        // Don't let the user go back, if the user is entering other reason
+        if let cancelRide = vc as? CancelRide, cancelRide.isOtherReason {
+            return
+        }
+        
         //Move back if the viewController is in navigation stack
         if enableBack {
             

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CancelRideCell" rowHeight="60" id="KGk-i7-Jjw" customClass="CancelRideCell" customModule="NotificationContent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZM-2v-d3e">
+                        <rect key="frame" x="20" y="0.0" width="280" height="59.5"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="Button" image="icon-checkbox-unselect">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-8C-Lcs">
+                        <rect key="frame" x="20" y="58" width="280" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="kLa-03-JfF"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DZM-2v-d3e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="9ae-7s-6YF"/>
+                    <constraint firstItem="ICn-8C-Lcs" firstAttribute="leading" secondItem="DZM-2v-d3e" secondAttribute="leading" id="HFF-Zn-PYG"/>
+                    <constraint firstAttribute="bottom" secondItem="DZM-2v-d3e" secondAttribute="bottom" id="Rj1-Cp-nfc"/>
+                    <constraint firstItem="ICn-8C-Lcs" firstAttribute="trailing" secondItem="DZM-2v-d3e" secondAttribute="trailing" id="alm-80-Tcp"/>
+                    <constraint firstItem="DZM-2v-d3e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fQm-2g-xu8"/>
+                    <constraint firstAttribute="trailing" secondItem="DZM-2v-d3e" secondAttribute="trailing" constant="20" id="iSa-vw-f4d"/>
+                    <constraint firstAttribute="bottom" secondItem="ICn-8C-Lcs" secondAttribute="bottom" id="vBX-5i-APh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cancelButton" destination="DZM-2v-d3e" id="maz-vc-ePB"/>
+                <outlet property="seperatorImageView" destination="ICn-8C-Lcs" id="NDn-cX-8A9"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="62"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-checkbox-unselect" width="20" height="20"/>
+    </resources>
+</document>

@@ -77,35 +77,42 @@ class OpenScreen: NSObject {
         
         let payments = storyboard.instantiateViewController(withIdentifier: "Payments") as! Payments
         payments.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(payments, animated: false, completion: nil)
+        currentViewController.navigationController?.pushViewController(payments, animated: false)
     }
     
     func rideNow(_ currentViewController: UIViewController) {
         
         let rideNow = storyboard.instantiateViewController(withIdentifier: "RideNow") as! RideNow
         rideNow.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(rideNow, animated: false, completion: nil)
+        currentViewController.navigationController?.pushViewController(rideNow, animated: false)
     }
     
     func rideComplete(_ currentViewController: UIViewController) {
         
         let rideComplete = storyboard.instantiateViewController(withIdentifier: "RideComplete") as! RideComplete
         rideComplete.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(rideComplete, animated: false, completion: nil)
+        currentViewController.navigationController?.pushViewController(rideComplete, animated: false)
     }
     
     func rideHistory(_ currentViewController: UIViewController) {
         
         let rideHistory = storyboard.instantiateViewController(withIdentifier: "RideHistory") as! RideHistory
         rideHistory.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(rideHistory, animated: false, completion: nil)
+        currentViewController.navigationController?.pushViewController(rideHistory, animated: false)
     }
     
     func rideHistoryDetails(_ currentViewController: UIViewController) {
         
         let rideHistoryDetails = storyboard.instantiateViewController(withIdentifier: "RideHistoryDetails") as! RideHistoryDetails
         rideHistoryDetails.modalTransitionStyle = modalTransitionStyle
-        currentViewController.present(rideHistoryDetails, animated: false, completion: nil)
+        currentViewController.navigationController?.pushViewController(rideHistoryDetails, animated: false)
+    }
+    
+    func cancelRide(_ currentViewController: UIViewController) {
+        
+        let cancelRide = storyboard.instantiateViewController(withIdentifier: "CancelRide") as! CancelRide
+        cancelRide.modalTransitionStyle = modalTransitionStyle
+        currentViewController.navigationController?.pushViewController(cancelRide, animated: false)
     }
     /*
     func registration(_ currentViewController: UIViewController) {

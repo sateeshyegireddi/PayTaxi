@@ -321,6 +321,12 @@
 		F9DCC28120F0E4F40055F597 /* RideMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC27E20F0E4F40055F597 /* RideMapCell.swift */; };
 		F9DCC28220F0E4F40055F597 /* RideMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC27F20F0E4F40055F597 /* RideMapCell.xib */; };
 		F9DCC28320F0E4F40055F597 /* RideMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC27F20F0E4F40055F597 /* RideMapCell.xib */; };
+		F9DCC28520F11EF80055F597 /* CancelRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC28420F11EF80055F597 /* CancelRide.swift */; };
+		F9DCC28620F11EF80055F597 /* CancelRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC28420F11EF80055F597 /* CancelRide.swift */; };
+		F9DCC28920F1242B0055F597 /* CancelRideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC28720F1242B0055F597 /* CancelRideCell.swift */; };
+		F9DCC28A20F1242B0055F597 /* CancelRideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCC28720F1242B0055F597 /* CancelRideCell.swift */; };
+		F9DCC28B20F1242B0055F597 /* CancelRideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC28820F1242B0055F597 /* CancelRideCell.xib */; };
+		F9DCC28C20F1242B0055F597 /* CancelRideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DCC28820F1242B0055F597 /* CancelRideCell.xib */; };
 		F9E1700420C05676001023B5 /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
 		F9E1700520C05676001023B5 /* LocationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700320C05676001023B5 /* LocationSettings.swift */; };
 		F9E1700820C06982001023B5 /* PTLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1700720C06982001023B5 /* PTLoading.swift */; };
@@ -539,6 +545,9 @@
 		F9DCC27920F0D8D70055F597 /* TwoLabelsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLabelsCell.xib; sourceTree = "<group>"; };
 		F9DCC27E20F0E4F40055F597 /* RideMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMapCell.swift; sourceTree = "<group>"; };
 		F9DCC27F20F0E4F40055F597 /* RideMapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideMapCell.xib; sourceTree = "<group>"; };
+		F9DCC28420F11EF80055F597 /* CancelRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelRide.swift; sourceTree = "<group>"; };
+		F9DCC28720F1242B0055F597 /* CancelRideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelRideCell.swift; sourceTree = "<group>"; };
+		F9DCC28820F1242B0055F597 /* CancelRideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelRideCell.xib; sourceTree = "<group>"; };
 		F9E1700320C05676001023B5 /* LocationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSettings.swift; sourceTree = "<group>"; };
 		F9E1700720C06982001023B5 /* PTLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoading.swift; sourceTree = "<group>"; };
 		F9E1700A20C06B35001023B5 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -687,6 +696,8 @@
 				F9DCC27920F0D8D70055F597 /* TwoLabelsCell.xib */,
 				F9DCC27E20F0E4F40055F597 /* RideMapCell.swift */,
 				F9DCC27F20F0E4F40055F597 /* RideMapCell.xib */,
+				F9DCC28720F1242B0055F597 /* CancelRideCell.swift */,
+				F9DCC28820F1242B0055F597 /* CancelRideCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -741,6 +752,7 @@
 				F9FD289820ED2A0100607CF2 /* RideComplete.swift */,
 				F9DCC26620F09DFC0055F597 /* RideHistory.swift */,
 				F9DCC26F20F0CF7D0055F597 /* RideHistoryDetails.swift */,
+				F9DCC28420F11EF80055F597 /* CancelRide.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1201,6 +1213,7 @@
 				F9A0384420B199B60044A1A5 /* Poppins-Regular.ttf in Resources */,
 				F9A0384120B199B60044A1A5 /* Poppins-BlackItalic.ttf in Resources */,
 				F9A0384D20B199B60044A1A5 /* License.txt in Resources */,
+				F9DCC28B20F1242B0055F597 /* CancelRideCell.xib in Resources */,
 				F9FB263C20B32464005DE756 /* Main.storyboard in Resources */,
 				F9AC8E3120B1E55A007D8D42 /* EditTextFieldCell.xib in Resources */,
 				F9A0384720B199B60044A1A5 /* Poppins-LightItalic.ttf in Resources */,
@@ -1305,6 +1318,7 @@
 				F9A0380E20B17E240044A1A5 /* Localizable.strings in Resources */,
 				F9DCC27720F0D49B0055F597 /* RideLocationsCell.xib in Resources */,
 				F96E67AB20A32CDF00F00FEA /* MainMenuHeader.xib in Resources */,
+				F9DCC28C20F1242B0055F597 /* CancelRideCell.xib in Resources */,
 				F9A0385520B199B60044A1A5 /* Poppins-Thin.ttf in Resources */,
 				F9DCC28320F0E4F40055F597 /* RideMapCell.xib in Resources */,
 				F9A51E0E20E3EEBB002A20AE /* SaveFavouriteLocationView.xib in Resources */,
@@ -1573,6 +1587,7 @@
 				F9857A232097312700F2139A /* PayTaxi.xcdatamodeld in Sources */,
 				F9B5ED0920C3BD51008E35B4 /* UIApplicationExtension.swift in Sources */,
 				F9857A1B2097312700F2139A /* AppDelegate.swift in Sources */,
+				F9DCC28520F11EF80055F597 /* CancelRide.swift in Sources */,
 				F9DCC27420F0D49B0055F597 /* RideLocationsCell.swift in Sources */,
 				F9F2D51120C8383000ED749A /* ErrorView.swift in Sources */,
 				F96380D72099A5C000C3CC1E /* User.swift in Sources */,
@@ -1587,6 +1602,7 @@
 				F96380B42099982600C3CC1E /* UtilityFunctions.swift in Sources */,
 				F9DCC28020F0E4F40055F597 /* RideMapCell.swift in Sources */,
 				F9075DC120A1AA09001A2E02 /* SocketsManager.swift in Sources */,
+				F9DCC28920F1242B0055F597 /* CancelRideCell.swift in Sources */,
 				F96381132099CAB600C3CC1E /* StringExtension.swift in Sources */,
 				F9C2350A20B4388C0043DFA5 /* Place.swift in Sources */,
 				F9C065D220DE824B00620537 /* SendOTP.swift in Sources */,
@@ -1681,6 +1697,7 @@
 				F961502720D5084000DADC0E /* SearchPlacesView.swift in Sources */,
 				F96E67AD20A32CDF00F00FEA /* MainMenuHeader.swift in Sources */,
 				F961502320D5083300DADC0E /* ErrorView.swift in Sources */,
+				F9DCC28620F11EF80055F597 /* CancelRide.swift in Sources */,
 				F9DCC27520F0D49B0055F597 /* RideLocationsCell.swift in Sources */,
 				F9614FFA20D5077C00DADC0E /* UIApplicationExtension.swift in Sources */,
 				F9075DC720A1D5BA001A2E02 /* Location.swift in Sources */,
@@ -1695,6 +1712,7 @@
 				F996C458209C7C07007849B3 /* Reachability.m in Sources */,
 				F9DCC28120F0E4F40055F597 /* RideMapCell.swift in Sources */,
 				F961503620D508DE00DADC0E /* MainMenuCell.swift in Sources */,
+				F9DCC28A20F1242B0055F597 /* CancelRideCell.swift in Sources */,
 				F9614FE820D5071B00DADC0E /* CabCell.swift in Sources */,
 				F9614FF420D5075A00DADC0E /* Login.swift in Sources */,
 				F9C065D420DE824B00620537 /* SendOTP.swift in Sources */,

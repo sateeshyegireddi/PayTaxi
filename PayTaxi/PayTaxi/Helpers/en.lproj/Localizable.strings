@@ -114,6 +114,11 @@
 "roundoff" = "Roundoff";
 "total" = "Total";
 
+//Cancel Ride
+"cancel_reason" = "Select Cancel Reason";
+"submit" = "SUBMIT";
+"text_here" = "Text Here...";
+
 //MARK: - Placeholders
 
 // Login
