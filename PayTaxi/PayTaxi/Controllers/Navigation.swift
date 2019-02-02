@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NavigationDelegate {
+protocol NavigationDelegate: class {
     
     func navigationController(_ navigationController: UINavigationController, selectedRow row: Int, at section: Int)
 }
@@ -18,7 +18,7 @@ class Navigation: UINavigationController {
     //MARK: - Variables
     var isUserExists: Bool!
     var panGestureRecognizer: UIPanGestureRecognizer!
-    var navigationDelegate: NavigationDelegate?
+    weak var navigationDelegate: NavigationDelegate?
     let shadowAlpha: CGFloat! = 0.25
     let menuDuration: CGFloat! = 0.3
     let menuTriggerVelocity: CGFloat! = 350

@@ -403,7 +403,8 @@ class Home: UIViewController {
     fileprivate func fetchNearByCabs() {
         
         //Get near by cabs for user by sending request to socket server
-        SocketsManager.sharedInstance.fetchNearByCabs(completionHandler: { (driverLocationsData) in
+        SocketsManager.sharedInstance.fetchNearByCabs(completionHandler: { [weak self] (driverLocationsData) in
+            guard let weakSelf = self else { return }
             
             //Check if drivers data exists
             if driverLocationsData.count > 0 {
@@ -412,7 +413,7 @@ class Home: UIViewController {
                 if let driverLocations = driverLocationsData[0] as? [[String: Any]] {
 
                     //Clear markers data on map but remember destination marker is also being removed.
-                    self.clearMarkers()
+                    weakSelf.clearMarkers()
                     
                     //Going through each driver's location
                     for driverLocation in driverLocations {
@@ -426,9 +427,9 @@ class Home: UIViewController {
                         let coordinate = CLLocationCoordinate2DMake(Double(lat) ?? 0, Double(long) ?? 0)
                         
                         //Create and add marker with geo-coordinate
-                        let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-taxi"), at: coordinate, title: "", placeOn: self.mapView)
-                        marker.map = self.mapView
-                        self.markers.append(marker)
+                        let marker = MapMarker().createMarker(with: #imageLiteral(resourceName: "icon-taxi"), at: coordinate, title: "", placeOn: weakSelf.mapView)
+                        marker.map = weakSelf.mapView
+                        weakSelf.markers.append(marker)
                     }
                 }
             }
